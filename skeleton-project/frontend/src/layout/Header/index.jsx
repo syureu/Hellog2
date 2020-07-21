@@ -122,6 +122,16 @@ const Header = props => {
                     Create a Vote
                   </Button>
                 </Grid>
+                <Grid item onClick={onClickRedirectPathHandler('/MyLog')}>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={window.scrollTo(0, 0)}
+                    className="header-button"
+                  >
+                    My Log
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
 
