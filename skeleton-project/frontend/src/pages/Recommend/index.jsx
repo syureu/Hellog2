@@ -2,7 +2,15 @@ import React, { useState, useEffect, useContext } from 'react';
 import Layout from '../../layout/';
 import Wrapper from './styles';
 
-import { AppBar, Tabs, Tab, Typography, Box, Divider } from '@material-ui/core';
+import {
+  AppBar,
+  Tabs,
+  Tab,
+  Typography,
+  Box,
+  Divider,
+  Button,
+} from '@material-ui/core';
 
 import Axios from 'axios';
 
@@ -14,6 +22,49 @@ import VoteGridList from '../../components/Grid/VoteGridList';
 import VoteGridTitle from '../../components/Grid/VoteGridTitle';
 
 import categoryDats from './dump.json';
+
+const TestClicked = () => {
+  console.log('Test 성공');
+};
+
+///////////////////////////////////////////////
+// main section (운동법)
+
+const MainSection = props => {
+  const { level } = props;
+  if (level == 0) {
+    return (
+      <Box>
+        <label>index : 0 </label>
+        <Button onClick={TestClicked}>Test</Button>
+      </Box>
+    );
+  } else if (level == 1) {
+    return (
+      <Box>
+        <label>index : 1 </label>
+      </Box>
+    );
+  } else if (level == 2) {
+    return (
+      <Box>
+        <label>index : 2 </label>
+      </Box>
+    );
+  } else if (level == 3) {
+    return (
+      <Box>
+        <label>index : 3 </label>
+      </Box>
+    );
+  } else {
+    return (
+      <>
+        <label>Nothing</label>
+      </>
+    );
+  }
+};
 
 ///////////////////////////////////////////////
 // sub
@@ -31,6 +82,7 @@ const TabPanel = props => {
       {...other}
     >
       {value === index && <Box>{children}</Box>}
+      <MainSection level={index}></MainSection>
     </Typography>
   );
 };
@@ -84,6 +136,7 @@ const useOnChangeIndex = categoryDatas => {
 
   return [onChangeIndexHandler, appbarIndex, appbarIndexDelta];
 };
+
 ///////////////////////////////////////////////
 // main
 

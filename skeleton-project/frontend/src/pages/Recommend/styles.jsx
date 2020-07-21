@@ -16,10 +16,10 @@ const Wrapper = styled.div`
   }
   & .tab {
     padding: 0;
-    margin: 10px 5px;
+    margin: 20px auto;
     border-radius: 5px;
     min-width: 160px;
-    width: 200px;
+    width: 800px;
   }
   & .tab-panel {
     padding: 170px 0 20px 0;
