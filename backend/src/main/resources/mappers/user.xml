@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.user.UserRepository">
+
+    <insert id="insertUser" parameterType="com.ssafy.pjt1track3.user.User">
+        insert into user(
+        id,
+        pw,
+        name,
+        age,
+        phone,
+        is_male,
+        sign_up_day,
+        height,
+        weight,
+        gym_id
+        ) values (
+        #{id},
+        #{pw},
+        #{name},
+        #{age},
+        #{phone},
+        #{isMale},
+        now(),
+        #{height},
+        #{weight},
+        #{gymId}
+        )
+    </insert>
+
+
+
+</mapper>
