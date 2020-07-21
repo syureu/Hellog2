@@ -86,7 +86,7 @@ const Header = props => {
                 className="logo"
                 onClick={onClickRedirectPathHandler('/MainVote')}
               >
-                Logo
+                메인사진
               </Typography>
             </Grid>
 
