@@ -8,7 +8,7 @@ public class User {
     private String name;
     private int age;
     private String phone;
-    private boolean isMale;
+    private boolean male;
     private Date signUpDay;
     private int height;
     private int weight;
@@ -55,11 +55,11 @@ public class User {
     }
 
     public boolean isMale() {
-        return isMale;
+        return male;
     }
 
     public void setMale(boolean male) {
-        isMale = male;
+        this.male = male;
     }
 
     public Date getSignUpDay() {

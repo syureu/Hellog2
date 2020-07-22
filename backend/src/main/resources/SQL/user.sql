@@ -4,7 +4,7 @@ CREATE TABLE pjt1track3.`user` (
 	name varchar(30) NOT NULL,
 	age INT NOT NULL,
 	phone varchar(11) NOT NULL,
-	is_male BOOL NOT NULL,
+	male BOOL NOT NULL,
 	sign_up_day DATETIME DEFAULT now() NOT NULL,
 	height INT NOT NULL,
 	weight INT NOT NULL,
