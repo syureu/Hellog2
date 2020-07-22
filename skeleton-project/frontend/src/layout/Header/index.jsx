@@ -132,14 +132,14 @@ const Header = props => {
                     My Log
                   </Button>
                 </Grid>
-                <Grid item onClick={onClickRedirectPathHandler('/Recommend')}>
+                <Grid item onClick={onClickRedirectPathHandler('/DietManage')}>
                   <Button
                     color="primary"
                     variant="contained"
                     onClick={window.scrollTo(0, 0)}
                     className="header-button"
                   >
-                    Recommend
+                    Diet Manage
                   </Button>
                 </Grid>
               </Grid>
