@@ -20,6 +20,7 @@ import ContactUs from './pages/ContactUs/';
 import CreateVote from './pages/CreateVote/';
 import SearchVote from './pages/SearchVote/';
 import MyLog from './pages/MyLog/';
+import Recommend from './pages/Recommend';
 
 // css
 // import './index.css';
@@ -115,6 +116,7 @@ const App = () => {
             <Route exact path="/not-found" component={NotFound} />
             <Route exact path="/CreateVote" component={CreateVote} />
             <Route exact path="/MyLog" component={MyLog} />
+            <Route exact path="/Recommend" component={Recommend} />
             <Redirect to="/not-found" />
           </Switch>
         </BrowserRouter>
