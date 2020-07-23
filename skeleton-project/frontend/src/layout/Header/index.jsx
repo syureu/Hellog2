@@ -86,7 +86,7 @@ const Header = props => {
                 className="logo"
                 onClick={onClickRedirectPathHandler('/MainVote')}
               >
-                Logo
+                메인사진
               </Typography>
             </Grid>
 
@@ -120,6 +120,26 @@ const Header = props => {
                     className="header-button"
                   >
                     Create a Vote
+                  </Button>
+                </Grid>
+                <Grid item onClick={onClickRedirectPathHandler('/MyLog')}>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={window.scrollTo(0, 0)}
+                    className="header-button"
+                  >
+                    My Log
+                  </Button>
+                </Grid>
+                <Grid item onClick={onClickRedirectPathHandler('/DietManage')}>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={window.scrollTo(0, 0)}
+                    className="header-button"
+                  >
+                    Diet Manage
                   </Button>
                 </Grid>
               </Grid>
