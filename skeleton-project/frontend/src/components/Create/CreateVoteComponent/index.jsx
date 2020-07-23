@@ -53,7 +53,7 @@ const InputTitleComponent = () => {
   return (
     <Wrapper>
       <Input
-        placeholder="Vote Title"
+        placeholder="제목을 입력해주세요 (ex. 2020.01.01 홍길동 저녁 식단)"
         defaultValue={title}
         inputProps={{
           'aria-label': 'description',
@@ -63,7 +63,7 @@ const InputTitleComponent = () => {
         className="input-title-component-input1"
       />
       <Input
-        placeholder="Description of this vote."
+        placeholder="식단에 대해서 설명해주세요"
         defaultValue={description}
         multiline={true}
         inputProps={{
@@ -105,7 +105,7 @@ const SubTitleGroupComponent = () => {
         >
           <Grid item xs={12}>
             <h2>
-              Question
+              식단 종류
               <Divider
                 variant="fullWidth"
                 orientation="horizontal"

@@ -142,6 +142,16 @@ const Header = props => {
                     Diet Manage
                   </Button>
                 </Grid>
+                <Grid item onClick={onClickRedirectPathHandler('/TestPage')}>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={window.scrollTo(0, 0)}
+                    className="header-button"
+                  >
+                    Test Page
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
 
