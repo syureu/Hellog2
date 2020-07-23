@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Layout from '../../layout/';
 import Wrapper from './styles';
-
 import {
   AppBar,
   Tabs,
@@ -10,6 +9,7 @@ import {
   Box,
   Divider,
   Button,
+  Grid,
 } from '@material-ui/core';
 
 import Axios from 'axios';
@@ -32,27 +32,73 @@ const TestClicked = () => {
 ///////////////////////////////////////////////
 // main section (운동법)
 
-const MainSection = (props) => {
+const MainSection = props => {
   const { level } = props;
   if (level == 0) {
     return (
-      <Box>
-        <label>index : 0 </label>
-        <Button onClick={TestClicked}>Test</Button>
-        <img src={TestImage}></img>
-      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <label>index : 0 </label>
+        </Grid>
+        <Grid item xs={6}>
+          <Button onClick={TestClicked}>스트레칭</Button>
+          <Button onClick={TestClicked}>Day1</Button>
+          <Button onClick={TestClicked}>Day2</Button>
+          <Button onClick={TestClicked}>Day3</Button>
+          <Button onClick={TestClicked}>Day4</Button>
+          <Button onClick={TestClicked}>Day5</Button>
+        </Grid>
+        <Grid item xs={6}>
+          <img src={TestImage}></img>
+        </Grid>
+        <Grid item xs={3}>
+          Section 2
+        </Grid>
+        <Grid item xs={3}>
+          Section 3
+        </Grid>
+      </Grid>
     );
   } else if (level == 1) {
     return (
-      <Box>
-        <label>index : 1 </label>
-      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <label>index : 2 </label>
+        </Grid>
+        <Grid item xs={6}>
+          <Button onClick={TestClicked}>Test</Button>
+        </Grid>
+        <Grid item xs={6}>
+          중급자 이미지 넣기
+        </Grid>
+        <Grid item xs={3}>
+          Section 2
+        </Grid>
+        <Grid item xs={3}>
+          Section 3
+        </Grid>
+      </Grid>
     );
   } else if (level == 2) {
     return (
-      <Box>
-        <label>index : 2 </label>
-      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <label>index : 3 </label>
+        </Grid>
+        <Grid item xs={6}>
+          <Button onClick={TestClicked}>Day1</Button>
+          <Button onClick={TestClicked}>Day2</Button>
+        </Grid>
+        <Grid item xs={6}>
+          상급자 이미지 넣기
+        </Grid>
+        <Grid item xs={3}>
+          Section 2
+        </Grid>
+        <Grid item xs={3}>
+          Section 3
+        </Grid>
+      </Grid>
     );
   } else if (level == 3) {
     return (
@@ -72,7 +118,7 @@ const MainSection = (props) => {
 ///////////////////////////////////////////////
 // sub
 
-const TabPanel = (props) => {
+const TabPanel = props => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -90,7 +136,7 @@ const TabPanel = (props) => {
   );
 };
 
-const a11yProps = (index) => {
+const a11yProps = index => {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
@@ -100,7 +146,7 @@ const a11yProps = (index) => {
 ///////////////////////////////////////////////
 // hook
 
-const useGetCategoryDatas = (url) => {
+const useGetCategoryDatas = url => {
   const { serverUrl, user, setUser } = useContext(CommonContext);
   const [data, setData] = useState([]);
 
@@ -117,7 +163,7 @@ const useGetCategoryDatas = (url) => {
   return data;
 };
 
-const useOnChangeIndex = (categoryDatas) => {
+const useOnChangeIndex = categoryDatas => {
   const [appbarIndex, setAppbarIndex] = useState(0);
   const [appbarIndexDelta, setAppbarIndexDelta] = useState(0);
 
@@ -143,7 +189,7 @@ const useOnChangeIndex = (categoryDatas) => {
 ///////////////////////////////////////////////
 // main
 
-const MainVote = (props) => {
+const Recommend = props => {
   const { drawerOpen, serverUrlBase, serverImgUrl } = useContext(CommonContext);
 
   const categoryDatas = useGetCategoryDatas('/category');
@@ -212,4 +258,4 @@ const MainVote = (props) => {
   );
 };
 
-export default MainVote;
+export default Recommend;
