@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link, Route, Switch, BrowserRouter } from 'react-router-dom';
 import Layout from '../../layout/';
 import Wrapper from './styles';
 import {
@@ -23,7 +24,8 @@ import VoteGridTitle from '../../components/Grid/VoteGridTitle';
 
 import categoryDats from './dump.json';
 
-import TestImage from './TestImage.jpg';
+import Stretching from './Beginner/stretching';
+import Day1 from './Beginner/day1';
 
 const TestClicked = () => {
   console.log('Test 성공');
@@ -36,28 +38,31 @@ const MainSection = props => {
   const { level } = props;
   if (level == 0) {
     return (
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <label>index : 0 </label>
+      <BrowserRouter>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <label>index : 0 </label>
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/stretching">
+              <Button>스트레칭</Button>
+            </Link>
+            <Link to="/day1">
+              <Button>Day1</Button>
+            </Link>
+            <Button onClick={TestClicked}>Day2</Button>
+            <Button onClick={TestClicked}>Day3</Button>
+            <Button onClick={TestClicked}>Day4</Button>
+            <Button onClick={TestClicked}>Day5</Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route path="/stretching" component={Stretching}></Route>
+              <Route path="/day1" component={Day1}></Route>
+            </Switch>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <Button onClick={TestClicked}>스트레칭</Button>
-          <Button onClick={TestClicked}>Day1</Button>
-          <Button onClick={TestClicked}>Day2</Button>
-          <Button onClick={TestClicked}>Day3</Button>
-          <Button onClick={TestClicked}>Day4</Button>
-          <Button onClick={TestClicked}>Day5</Button>
-        </Grid>
-        <Grid item xs={6}>
-          <img src={TestImage}></img>
-        </Grid>
-        <Grid item xs={3}>
-          Section 2
-        </Grid>
-        <Grid item xs={3}>
-          Section 3
-        </Grid>
-      </Grid>
+      </BrowserRouter>
     );
   } else if (level == 1) {
     return (
@@ -77,6 +82,7 @@ const MainSection = props => {
         <Grid item xs={3}>
           Section 3
         </Grid>
+        <Grid item xs={12}></Grid>
       </Grid>
     );
   } else if (level == 2) {
@@ -132,6 +138,7 @@ const TabPanel = props => {
     >
       {value === index && <Box>{children}</Box>}
       <MainSection level={index}></MainSection>
+      <h1> 항목을 선택해주세요 </h1>
     </Typography>
   );
 };
