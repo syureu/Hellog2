@@ -24,7 +24,7 @@ import NavigationIcon from '@material-ui/icons/Navigation';
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
-import categoryDats from './dump.json';
+import categoryDats from './trainers.json';
 
 const themeSubTitleGroupComponent = createMuiTheme({
   overrides: {
@@ -113,22 +113,6 @@ const SubTitleGroupComponent = () => {
               />
             </h2>
           </Grid>
-
-          <Grid item xs={12}>
-            <Grid item>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={isMultipleChoice}
-                    onChange={onChangeIsMultipleChoiceHandler('checkedBt')}
-                    value="checkedBt"
-                    color="primary"
-                  />
-                }
-                label="Multiple choice"
-              />
-            </Grid>
-          </Grid>
         </Grid>
       </ThemeProvider>
     </Wrapper>
@@ -168,7 +152,7 @@ const SelectCategoryComponent = () => {
           required
         >
           <MenuItem value={0} disabled>
-            Select category
+            담당 트레이너를 선택해주세요
           </MenuItem>
 
           {categoryDatas.map((data, index) => (
@@ -243,7 +227,7 @@ const ThumbnailImageComponent = props => {
 
   return (
     <Wrapper>
-      <h4 className="ThumbnailImageComponentH4">corver preview</h4>
+      <h4 className="ThumbnailImageComponentH4">식단 사진</h4>
       <Paper>
         <section className="container">
           <div {...getRootProps({ className: 'dropzone' })}>
@@ -262,8 +246,7 @@ const ThumbnailImageComponent = props => {
             <input {...getInputProps()} />
           </div>
           <aside className="thumbnail-image-component-aside">
-            <h4>Image Requirement</h4>
-            <h4>Minimum size of "800x600"</h4>
+            <h4>최소 "800x600" 이상의 사진을 올려주세요</h4>
             <ul>{files}</ul>
           </aside>
         </section>
