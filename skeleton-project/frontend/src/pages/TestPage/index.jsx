@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Layout from '../../layout/';
 import { ViewContext } from '../../context/ViewContext';
 import DialogActionsComponet from '../../components/Create/DialogActionsComponet/index';
-import CreateVoteComponent from '../../components/Create/CreateVoteComponent/index';
+import CreateArticleComponent from '../../components/Create/CreateArticleComponent/index';
 
 const TestPage = props => {
   const [nowSelectedIndex, setNowSelectedIndex] = useState(0);
@@ -62,7 +62,7 @@ const TestPage = props => {
       >
         <DialogActionsComponet props={props} />
         <h2>식단을 입력해주세요</h2>
-        <CreateVoteComponent />
+        <CreateArticleComponent />
       </ViewContext.Provider>
     </Layout>
   );
