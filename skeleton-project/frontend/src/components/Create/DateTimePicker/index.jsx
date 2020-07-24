@@ -8,7 +8,7 @@ function BasicDateTimePicker() {
 
   return (
     <DateTimePicker
-      label="Set the end of the vote"
+      label="식단 등록 시간"
       inputVariant="outlined"
       format={'yyyy-MM-dd HH:mm'}
       disablePast

@@ -124,7 +124,7 @@ const DialogActionsComponet = () => {
           onClick={handleClose}
           className="up-cancel-fab dialog-actions-componet-fab1"
         >
-          CANCEL
+          취소
         </Fab>
 
         <Fab
@@ -137,7 +137,7 @@ const DialogActionsComponet = () => {
             backgroundColor: readyToUpload ? '#1FA212' : '#E0E0E0',
           }}
         >
-          UPLOAD
+          식단 등록
         </Fab>
       </Grid>
     </Wrapper>
