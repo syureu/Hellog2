@@ -12,6 +12,7 @@ import {
   Paper,
 } from '@material-ui/core';
 import Stretching from './img/stretching.jpg';
+import './styles.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,6 +22,13 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(4),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    width: 350,
+  },
+  imgpaper: {
+    padding: theme.spacing(4),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    width: 700,
   },
 }));
 
@@ -31,8 +39,8 @@ export default function Day1() {
     <div className={classes.root}>
       <Grid container>
         <Grid item xs={6}>
-          <Paper className={classes.paper}>
-            <img src={Stretching}></img>
+          <Paper className={classes.imgpaper}>
+            <img className="photo" src={Stretching}></img>
           </Paper>
         </Grid>
         <Grid item xs={3}>
@@ -49,7 +57,7 @@ export default function Day1() {
           <Paper className={classes.paper}>
             <p>Section3</p>
             <br />
-            <p>
+            <p className="textbox">
               ddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddd
               ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
             </p>

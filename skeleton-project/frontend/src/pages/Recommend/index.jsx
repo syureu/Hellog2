@@ -26,6 +26,7 @@ import categoryDats from './dump.json';
 
 import Stretching from './Beginner/stretching';
 import Day1 from './Beginner/day1';
+import Day2 from './Beginner/day2';
 
 const TestClicked = () => {
   console.log('Test 성공');
@@ -44,21 +45,27 @@ const MainSection = props => {
             <label>index : 0 </label>
           </Grid>
           <Grid item xs={6}>
-            <Link to="/stretching">
+            <Link to="/Recommend/stretching">
               <Button>스트레칭</Button>
             </Link>
-            <Link to="/day1">
+            <Link to="/Recommend/day1">
               <Button>Day1</Button>
             </Link>
-            <Button onClick={TestClicked}>Day2</Button>
+            <Link to="/Recommend/day2">
+              <Button>Day2</Button>
+            </Link>
             <Button onClick={TestClicked}>Day3</Button>
             <Button onClick={TestClicked}>Day4</Button>
             <Button onClick={TestClicked}>Day5</Button>
           </Grid>
           <Grid item xs={12}>
             <Switch>
-              <Route path="/stretching" component={Stretching}></Route>
-              <Route path="/day1" component={Day1}></Route>
+              <Route
+                path="/Recommend/stretching"
+                component={Stretching}
+              ></Route>
+              <Route path="/Recommend/day1" component={Day1}></Route>
+              <Route path="/Recommend/day2" component={Day2}></Route>
             </Switch>
           </Grid>
         </Grid>
