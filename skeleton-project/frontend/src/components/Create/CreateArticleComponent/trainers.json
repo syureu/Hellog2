@@ -1,0 +1,58 @@
+[
+  {
+    "cat_no": 1,
+    "cat_type": "Ryan",
+    "cat_title": "Trainer1",
+    "cat_desc": "Any substance consumed to provide nutritional support for the body.",
+    "cat_img_url": "IMAGE-category-food.jpg"
+  },
+  {
+    "cat_no": 2,
+    "cat_type": "Apeach",
+    "cat_title": "Trainer2",
+    "cat_desc": "Movie, the art of video",
+    "cat_img_url": "IMAGE-category-movie.jpg"
+  },
+  {
+    "cat_no": 3,
+    "cat_type": "Muzi",
+    "cat_title": "Trainer3",
+    "cat_desc": "Played in various genres, including computer, mobile, console, etc.",
+    "cat_img_url": "IMAGE-category-game.jpg"
+  },
+  {
+    "cat_no": 4,
+    "cat_type": "Con",
+    "cat_title": "Trainer4",
+    "cat_desc": "When it comes to a product's features and benefits.",
+    "cat_img_url": "IMAGE-category-brand.jpg"
+  },
+  {
+    "cat_no": 5,
+    "cat_type": "Tube",
+    "cat_title": "Trainer5",
+    "cat_desc": "A flower blossomed by society, created by all members",
+    "cat_img_url": "IMAGE-category-culture.jpg"
+  },
+  {
+    "cat_no": 6,
+    "cat_type": "Frodo",
+    "cat_title": "Trainer6",
+    "cat_desc": "Actively moving creature",
+    "cat_img_url": "IMAGE-category-animals.jpg"
+  },
+  {
+    "cat_no": 7,
+    "cat_type": "Neo",
+    "cat_title": "Trainer7",
+    "cat_desc": "Valuable objects made through human hands",
+    "cat_img_url": "IMAGE-category-product.jpg"
+  },
+  {
+    "cat_no": 8,
+    "cat_type": "Trainer8",
+    "cat_title": "Jay-G",
+    "cat_desc": "Draw an idea",
+    "cat_img_url": "IMAGE-category-design.jpg"
+  }
+]

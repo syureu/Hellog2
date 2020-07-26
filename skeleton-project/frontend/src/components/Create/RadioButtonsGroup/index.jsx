@@ -65,7 +65,7 @@ const VoteOptionSubjectInputComponent = props => {
 
   return (
     <Input
-      placeholder={`option ${index + 1}`}
+      placeholder={`식단 ${index + 1}`}
       autoFocus={nowSelectedIndex === index}
       className="input"
       inputProps={{
@@ -358,7 +358,7 @@ const VoteInputComponent = props => {
       >
         <Grid item xs={12}>
           <Grid>
-            <VoteInputRadioComponent index={index} />
+            {/* <VoteInputRadioComponent index={index} /> */}
             <VoteOptionSubjectInputComponent index={index} />
           </Grid>
           <Grid>
@@ -412,7 +412,7 @@ const OptionButtonComponet = () => {
           className="option-button-componet-fab"
         >
           <AddIcon />
-          Add more options...
+          식단 추가...
         </Fab>
       ) : (
         <Fab size="small" aria-label="add" color="primary">

@@ -21,7 +21,7 @@ import CreateVote from './pages/CreateVote/';
 import SearchVote from './pages/SearchVote/';
 import MyLog from './pages/MyLog/';
 import DietManage from './pages/DietManage/';
-import Recommend from './pages/Recommend/';
+import TestPage from './pages/TestPage/';
 
 // css
 // import './index.css';
@@ -118,7 +118,7 @@ const App = () => {
             <Route exact path="/CreateVote" component={CreateVote} />
             <Route exact path="/MyLog" component={MyLog} />
             <Route exact path="/DietManage" component={DietManage} />
-            <Route exact path="/Recommend" component={Recommend} />
+            <Route exact path="/TestPage" component={TestPage} />
 
             <Redirect to="/not-found" />
           </Switch>
