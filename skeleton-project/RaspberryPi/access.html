@@ -11,16 +11,21 @@
       <table>
         <tr>
           <td>아이디</td>
-          <td><input type="text" placeholder="admin" /></td>
+          <td><input id="userId" type="text" placeholder="admin" /></td>
         </tr>
         <tr>
           <td>비밀번호</td>
-          <td><input type="password" /></td>
+          <td><input id="userPassword" type="password" /></td>
         </tr>
         <tr>
-          <td><button>로그인</button></td>
+          <td><button onclick="login()">로그인</button></td>
         </tr>
       </table>
     </div>
+    <script>
+      function login() {
+        location.href = "main.html";
+      }
+    </script>
   </body>
 </html>
