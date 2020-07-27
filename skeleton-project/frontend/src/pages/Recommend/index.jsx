@@ -27,6 +27,11 @@ import categoryDats from './dump.json';
 import Stretching from './Beginner/stretching';
 import Day1 from './Beginner/day1';
 import Day2 from './Beginner/day2';
+import Day3 from './Beginner/day3';
+import Day4 from './Beginner/day4';
+import Day5 from './Beginner/day5';
+
+import ronnie from './ronnie.jpg';
 
 const TestClicked = () => {
   console.log('Test 성공');
@@ -42,30 +47,41 @@ const MainSection = props => {
       <BrowserRouter>
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            <label>index : 0 </label>
+            <label>
+              <h4>Beginner Routine </h4>
+            </label>
           </Grid>
-          <Grid item xs={6}>
-            <Link to="/Recommend/stretching">
+          <Grid item xs={6} align="right">
+            <Link to="/Recommend/beginner/stretching">
               <Button>스트레칭</Button>
             </Link>
-            <Link to="/Recommend/day1">
+            <Link to="/Recommend/beginner/day1">
               <Button>Day1</Button>
             </Link>
-            <Link to="/Recommend/day2">
+            <Link to="/Recommend/beginner/day2">
               <Button>Day2</Button>
             </Link>
-            <Button onClick={TestClicked}>Day3</Button>
-            <Button onClick={TestClicked}>Day4</Button>
-            <Button onClick={TestClicked}>Day5</Button>
+            <Link to="/Recommend/beginner/day3">
+              <Button>Day3</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day4">
+              <Button>Day4</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day5">
+              <Button>Day5</Button>
+            </Link>
           </Grid>
           <Grid item xs={12}>
             <Switch>
               <Route
-                path="/Recommend/stretching"
+                path="/Recommend/beginner/stretching"
                 component={Stretching}
               ></Route>
-              <Route path="/Recommend/day1" component={Day1}></Route>
-              <Route path="/Recommend/day2" component={Day2}></Route>
+              <Route path="/Recommend/beginner/day1" component={Day1}></Route>
+              <Route path="/Recommend/beginner/day2" component={Day2}></Route>
+              <Route path="/Recommend/beginner/day3" component={Day3}></Route>
+              <Route path="/Recommend/beginner/day4" component={Day4}></Route>
+              <Route path="/Recommend/beginner/day5" component={Day5}></Route>
             </Switch>
           </Grid>
         </Grid>
@@ -73,50 +89,136 @@ const MainSection = props => {
     );
   } else if (level == 1) {
     return (
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <label>index : 2 </label>
+      <BrowserRouter>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <label>
+              <h4>Intermegidate Routine </h4>
+            </label>
+          </Grid>
+          <Grid item xs={6} align="right">
+            <Link to="/Recommend/intermediate/day1">
+              <Button>Day1</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day2">
+              <Button>Day2</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day3">
+              <Button>Day3</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day4">
+              <Button>Day4</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day5">
+              <Button>Day5</Button>
+            </Link>
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route
+                path="/Recommend/intermediate/day1"
+                component={Day1}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day2"
+                component={Day2}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day3"
+                component={Day3}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day4"
+                component={Day4}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day5"
+                component={Day5}
+              ></Route>
+            </Switch>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <Button onClick={TestClicked}>Test</Button>
-        </Grid>
-        <Grid item xs={6}>
-          중급자 이미지 넣기
-        </Grid>
-        <Grid item xs={3}>
-          Section 2
-        </Grid>
-        <Grid item xs={3}>
-          Section 3
-        </Grid>
-        <Grid item xs={12}></Grid>
-      </Grid>
+      </BrowserRouter>
+      //   <Grid container spacing={2}>
+      //     <Grid item xs={6}>
+      //       <label>
+      //         <h4>Intermidiate Routine </h4>
+      //       </label>
+      //     </Grid>
+      //     <Grid item xs={6}>
+      //       <Button onClick={TestClicked}>Test</Button>
+      //     </Grid>
+      //     <Grid item xs={6}>
+      //       중급자 이미지 넣기
+      //     </Grid>
+      //     <Grid item xs={3}>
+      //       Section 2
+      //     </Grid>
+      //     <Grid item xs={3}>
+      //       Section 3
+      //     </Grid>
+      //     <Grid item xs={12}></Grid>
+      //   </Grid>
     );
   } else if (level == 2) {
     return (
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <label>index : 3 </label>
+      <BrowserRouter>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <label>
+              <h4>Advanced Routine </h4>
+            </label>
+          </Grid>
+          <Grid item xs={6} align="right">
+            <Link to="/Recommend/intermediate/day1">
+              <Button>Day1</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day2">
+              <Button>Day2</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day3">
+              <Button>Day3</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day4">
+              <Button>Day4</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day5">
+              <Button>Day5</Button>
+            </Link>
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route
+                path="/Recommend/intermediate/day1"
+                component={Day1}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day2"
+                component={Day2}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day3"
+                component={Day3}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day4"
+                component={Day4}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day5"
+                component={Day5}
+              ></Route>
+            </Switch>
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <Button onClick={TestClicked}>Day1</Button>
-          <Button onClick={TestClicked}>Day2</Button>
-        </Grid>
-        <Grid item xs={6}>
-          상급자 이미지 넣기
-        </Grid>
-        <Grid item xs={3}>
-          Section 2
-        </Grid>
-        <Grid item xs={3}>
-          Section 3
-        </Grid>
-      </Grid>
+      </BrowserRouter>
     );
   } else if (level == 3) {
     return (
       <Box>
-        <label>index : 3 </label>
+        <label>
+          <h4>PT Cource </h4>
+        </label>
       </Box>
     );
   } else {

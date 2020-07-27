@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import tbarrow from './img/tbarrow.png';
+import widegriplatpulldown from './img/widegriplatpulldown.png';
 import './styles.css';
 
 const StyledTableCell = withStyles(theme => ({
@@ -28,21 +29,28 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat) {
-  return { name, calories, fat };
+function createData(pic, exp, prog) {
+  return { pic, exp, prog };
 }
 
 const rows = [
-  createData(<img className="photo" src={tbarrow}></img>, 150, 6.0),
-  createData('Ice cream sandwich', 237, 9.0),
-  createData('Eclair', 262, 16.0),
-  createData('Cupcake', 305, 3.7),
-  createData('Gingerbread', 356, 16.0),
+  createData(
+    <img className="photo" src={tbarrow}></img>,
+    <div>
+      <h2>T-bar-row</h2>등 운동
+    </div>,
+    '10 * 5',
+  ),
+  createData(
+    <img className="photo" src={widegriplatpulldown}></img>,
+    <p>등 운동 </p>,
+    '10 * 5',
+  ),
 ];
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 700,
+    maxWidth: 1200,
   },
 });
 
@@ -50,25 +58,35 @@ export default function Day2() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell align="center">운동종류</StyledTableCell>
-            <StyledTableCell align="center">운동 설명</StyledTableCell>
-            <StyledTableCell align="center">추천 횟수</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell align="center">{row.name}</StyledTableCell>
-              <StyledTableCell align="center">{row.calories}</StyledTableCell>
-              <StyledTableCell align="center">{row.fat}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div>
+      <h1>등 운 동</h1>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell align="center" width="50%">
+                운동 종류
+              </StyledTableCell>
+              <StyledTableCell align="center" width="25%">
+                운동 설명
+              </StyledTableCell>
+              <StyledTableCell align="center" width="25%">
+                추천 프로그램 <br />
+                횟수 * set 수
+              </StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map(row => (
+              <StyledTableRow key={row.pic}>
+                <StyledTableCell align="center">{row.pic}</StyledTableCell>
+                <StyledTableCell align="center">{row.exp}</StyledTableCell>
+                <StyledTableCell align="center">{row.prog}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }
