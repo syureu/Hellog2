@@ -7,8 +7,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import smithmachinesquat from './img/Smithmachinesquat.png';
-import lunge from './img/Lunge.png';
+import tbarrow from './img/tbarrow.png';
+import widegriplatpulldown from './img/widegriplatpulldown.png';
 import './styles.css';
 
 const StyledTableCell = withStyles(theme => ({
@@ -35,13 +35,17 @@ function createData(pic, exp, prog) {
 
 const rows = [
   createData(
-    <img className="photo" src={smithmachinesquat}></img>,
+    <img className="photo" src={tbarrow}></img>,
     <div>
-      <h2>스미스머신 스쿼트</h2>안전을 위해 스미스머신을 통해서
+      <h2>T-bar-row</h2>등 운동
     </div>,
     '10 * 5',
   ),
-  createData(<img className="photo" src={lunge}></img>, <p>하체 </p>, '10 * 5'),
+  createData(
+    <img className="photo" src={widegriplatpulldown}></img>,
+    <p>등 운동 </p>,
+    '10 * 5',
+  ),
 ];
 
 const useStyles = makeStyles({
@@ -50,13 +54,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Day5() {
+export default function BDay2() {
   const classes = useStyles();
 
   return (
     <div>
-      <h1> 전 신 운 동</h1>
-
+      <h1>등 운 동</h1>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>

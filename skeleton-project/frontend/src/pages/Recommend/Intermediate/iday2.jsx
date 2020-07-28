@@ -54,7 +54,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Day2() {
+export default function IDay2() {
   const classes = useStyles();
 
   return (

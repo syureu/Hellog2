@@ -24,12 +24,18 @@ import VoteGridTitle from '../../components/Grid/VoteGridTitle';
 
 import categoryDats from './dump.json';
 
-import Stretching from './Beginner/stretching';
-import Day1 from './Beginner/day1';
-import Day2 from './Beginner/day2';
-import Day3 from './Beginner/day3';
-import Day4 from './Beginner/day4';
-import Day5 from './Beginner/day5';
+import Stretching from './stretching';
+import BDay1 from './Beginner/bday1';
+import BDay2 from './Beginner/bday2';
+import BDay3 from './Beginner/bday3';
+import BDay4 from './Beginner/bday4';
+import BDay5 from './Beginner/bday5';
+
+import IDay1 from './Intermediate/iday1';
+import IDay2 from './Intermediate/iday2';
+import IDay3 from './Intermediate/iday3';
+import IDay4 from './Intermediate/iday4';
+import IDay5 from './Intermediate/iday5';
 
 import ronnie from './ronnie.jpg';
 
@@ -52,9 +58,9 @@ const MainSection = props => {
             </label>
           </Grid>
           <Grid item xs={6} align="right">
-            <Link to="/Recommend/beginner/stretching">
+            {/* <Link to="/Recommend/beginner/stretching">
               <Button>스트레칭</Button>
-            </Link>
+            </Link> */}
             <Link to="/Recommend/beginner/day1">
               <Button>Day1</Button>
             </Link>
@@ -73,15 +79,15 @@ const MainSection = props => {
           </Grid>
           <Grid item xs={12}>
             <Switch>
-              <Route
+              {/* <Route
                 path="/Recommend/beginner/stretching"
                 component={Stretching}
-              ></Route>
-              <Route path="/Recommend/beginner/day1" component={Day1}></Route>
-              <Route path="/Recommend/beginner/day2" component={Day2}></Route>
-              <Route path="/Recommend/beginner/day3" component={Day3}></Route>
-              <Route path="/Recommend/beginner/day4" component={Day4}></Route>
-              <Route path="/Recommend/beginner/day5" component={Day5}></Route>
+              ></Route> */}
+              <Route path="/Recommend/beginner/day1" component={BDay1}></Route>
+              <Route path="/Recommend/beginner/day2" component={BDay2}></Route>
+              <Route path="/Recommend/beginner/day3" component={BDay3}></Route>
+              <Route path="/Recommend/beginner/day4" component={BDay4}></Route>
+              <Route path="/Recommend/beginner/day5" component={BDay5}></Route>
             </Switch>
           </Grid>
         </Grid>
@@ -117,23 +123,23 @@ const MainSection = props => {
             <Switch>
               <Route
                 path="/Recommend/intermediate/day1"
-                component={Day1}
+                component={IDay1}
               ></Route>
               <Route
                 path="/Recommend/intermediate/day2"
-                component={Day2}
+                component={IDay2}
               ></Route>
               <Route
                 path="/Recommend/intermediate/day3"
-                component={Day3}
+                component={IDay3}
               ></Route>
               <Route
                 path="/Recommend/intermediate/day4"
-                component={Day4}
+                component={IDay4}
               ></Route>
               <Route
                 path="/Recommend/intermediate/day5"
-                component={Day5}
+                component={IDay5}
               ></Route>
             </Switch>
           </Grid>
@@ -170,44 +176,29 @@ const MainSection = props => {
             </label>
           </Grid>
           <Grid item xs={6} align="right">
-            <Link to="/Recommend/intermediate/day1">
+            <Link to="/Recommend/advanced/day1">
               <Button>Day1</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day2">
+            <Link to="/Recommend/advanced/day2">
               <Button>Day2</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day3">
+            <Link to="/Recommend/advanced/day3">
               <Button>Day3</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day4">
+            <Link to="/Recommend/advanced/day4">
               <Button>Day4</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day5">
+            <Link to="/Recommend/advanced/day5">
               <Button>Day5</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
             <Switch>
-              <Route
-                path="/Recommend/intermediate/day1"
-                component={Day1}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day2"
-                component={Day2}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day3"
-                component={Day3}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day4"
-                component={Day4}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day5"
-                component={Day5}
-              ></Route>
+              <Route path="/Recommend/advanced/day1" component={IDay1}></Route>
+              <Route path="/Recommend/advanced/day2" component={IDay2}></Route>
+              <Route path="/Recommend/advanced/day3" component={IDay3}></Route>
+              <Route path="/Recommend/advanced/day4" component={IDay4}></Route>
+              <Route path="/Recommend/advanced/day5" component={IDay5}></Route>
             </Switch>
           </Grid>
         </Grid>
@@ -247,7 +238,7 @@ const TabPanel = props => {
     >
       {value === index && <Box>{children}</Box>}
       <MainSection level={index}></MainSection>
-      <h1> 항목을 선택해주세요 </h1>
+      <Stretching />
     </Typography>
   );
 };

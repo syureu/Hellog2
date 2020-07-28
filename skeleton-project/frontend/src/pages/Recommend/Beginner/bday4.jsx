@@ -50,7 +50,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Day4() {
+export default function BDay4() {
   const classes = useStyles();
 
   return (
