@@ -58,9 +58,9 @@ const MainSection = props => {
             </label>
           </Grid>
           <Grid item xs={6} align="right">
-            {/* <Link to="/Recommend/beginner/stretching">
-              <Button>스트레칭</Button>
-            </Link> */}
+            <Link to="/Recommend/stretching">
+              <Button>Warm-up</Button>
+            </Link>
             <Link to="/Recommend/beginner/day1">
               <Button>Day1</Button>
             </Link>
@@ -79,10 +79,10 @@ const MainSection = props => {
           </Grid>
           <Grid item xs={12}>
             <Switch>
-              {/* <Route
-                path="/Recommend/beginner/stretching"
+              <Route
+                path="/Recommend/stretching"
                 component={Stretching}
-              ></Route> */}
+              ></Route>
               <Route path="/Recommend/beginner/day1" component={BDay1}></Route>
               <Route path="/Recommend/beginner/day2" component={BDay2}></Route>
               <Route path="/Recommend/beginner/day3" component={BDay3}></Route>
@@ -103,6 +103,9 @@ const MainSection = props => {
             </label>
           </Grid>
           <Grid item xs={6} align="right">
+            <Link to="/Recommend/stretching">
+              <Button>Warm-up</Button>
+            </Link>
             <Link to="/Recommend/intermediate/day1">
               <Button>Day1</Button>
             </Link>
@@ -121,6 +124,10 @@ const MainSection = props => {
           </Grid>
           <Grid item xs={12}>
             <Switch>
+              <Route
+                path="/Recommend/stretching"
+                component={Stretching}
+              ></Route>
               <Route
                 path="/Recommend/intermediate/day1"
                 component={IDay1}
@@ -145,26 +152,6 @@ const MainSection = props => {
           </Grid>
         </Grid>
       </BrowserRouter>
-      //   <Grid container spacing={2}>
-      //     <Grid item xs={6}>
-      //       <label>
-      //         <h4>Intermidiate Routine </h4>
-      //       </label>
-      //     </Grid>
-      //     <Grid item xs={6}>
-      //       <Button onClick={TestClicked}>Test</Button>
-      //     </Grid>
-      //     <Grid item xs={6}>
-      //       중급자 이미지 넣기
-      //     </Grid>
-      //     <Grid item xs={3}>
-      //       Section 2
-      //     </Grid>
-      //     <Grid item xs={3}>
-      //       Section 3
-      //     </Grid>
-      //     <Grid item xs={12}></Grid>
-      //   </Grid>
     );
   } else if (level == 2) {
     return (
@@ -176,6 +163,9 @@ const MainSection = props => {
             </label>
           </Grid>
           <Grid item xs={6} align="right">
+            <Link to="/Recommend/stretching">
+              <Button>Warm-up</Button>
+            </Link>
             <Link to="/Recommend/advanced/day1">
               <Button>Day1</Button>
             </Link>
@@ -194,6 +184,10 @@ const MainSection = props => {
           </Grid>
           <Grid item xs={12}>
             <Switch>
+              <Route
+                path="/Recommend/stretching"
+                component={Stretching}
+              ></Route>
               <Route path="/Recommend/advanced/day1" component={IDay1}></Route>
               <Route path="/Recommend/advanced/day2" component={IDay2}></Route>
               <Route path="/Recommend/advanced/day3" component={IDay3}></Route>
@@ -238,7 +232,7 @@ const TabPanel = props => {
     >
       {value === index && <Box>{children}</Box>}
       <MainSection level={index}></MainSection>
-      <Stretching />
+      {/* <img align="center" width="700" src={ronnie}></img> */}
     </Typography>
   );
 };
