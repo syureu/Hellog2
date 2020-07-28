@@ -7,7 +7,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import stretching from './img/stretching.jpg';
+import smithmachinesquat from './img/Smithmachinesquat.png';
+import lunge from './img/Lunge.png';
 import './styles.css';
 
 const StyledTableCell = withStyles(theme => ({
@@ -34,13 +35,13 @@ function createData(pic, exp, prog) {
 
 const rows = [
   createData(
-    <img className="photo" src={stretching}></img>,
+    <img className="photo" src={smithmachinesquat}></img>,
     <div>
-      <h2>스트레칭</h2>
-      근육의 이완에 집중하여 부상방지를 위해 풀어준다
+      <h2>스미스머신 스쿼트</h2>안전을 위해 스미스머신을 통해서
     </div>,
     '10 * 5',
   ),
+  createData(<img className="photo" src={lunge}></img>, <p>하체 </p>, '10 * 5'),
 ];
 
 const useStyles = makeStyles({
@@ -49,13 +50,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Stretching() {
+export default function Day5() {
   const classes = useStyles();
 
   return (
     <div>
-      {' '}
-      <h1>가 슴 운 동</h1>
+      <h1> 전 신 운 동</h1>
+
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
