@@ -152,14 +152,14 @@ const Header = props => {
                     Test Page
                   </Button>
                 </Grid>
-                <Grid item onClick={onClickRedirectPathHandler('/FinalTest')}>
+                <Grid item onClick={onClickRedirectPathHandler('/Recommend')}>
                   <Button
                     color="primary"
                     variant="contained"
                     onClick={window.scrollTo(0, 0)}
                     className="header-button"
                   >
-                    Final Test
+                    Recommend
                   </Button>
                 </Grid>
               </Grid>

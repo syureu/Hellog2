@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <labe>NFC 태그 혹은 연결된 키보드로 로그인 하세요.</labe>
+    <div>
+      <table>
+        <tr>
+          <td>아이디</td>
+          <td><input id="userId" type="text" placeholder="admin" /></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td><input id="userPassword" type="password" /></td>
+        </tr>
+        <tr>
+          <td><button onclick="login()">로그인</button></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function login() {
+        location.href = "main.html";
+      }
+    </script>
+  </body>
+</html>

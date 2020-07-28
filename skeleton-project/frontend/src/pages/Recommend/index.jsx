@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link, Route, Switch, BrowserRouter } from 'react-router-dom';
 import Layout from '../../layout/';
 import Wrapper from './styles';
-
 import {
   AppBar,
   Tabs,
@@ -10,6 +10,7 @@ import {
   Box,
   Divider,
   Button,
+  Grid,
 } from '@material-ui/core';
 
 import Axios from 'axios';
@@ -23,7 +24,14 @@ import VoteGridTitle from '../../components/Grid/VoteGridTitle';
 
 import categoryDats from './dump.json';
 
-import TestImage from './TestImage.jpg';
+import Stretching from './Beginner/stretching';
+import Day1 from './Beginner/day1';
+import Day2 from './Beginner/day2';
+import Day3 from './Beginner/day3';
+import Day4 from './Beginner/day4';
+import Day5 from './Beginner/day5';
+
+import ronnie from './ronnie.jpg';
 
 const TestClicked = () => {
   console.log('Test 성공');
@@ -32,32 +40,185 @@ const TestClicked = () => {
 ///////////////////////////////////////////////
 // main section (운동법)
 
-const MainSection = (props) => {
+const MainSection = props => {
   const { level } = props;
   if (level == 0) {
     return (
-      <Box>
-        <label>index : 0 </label>
-        <Button onClick={TestClicked}>Test</Button>
-        <img src={TestImage}></img>
-      </Box>
+      <BrowserRouter>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <label>
+              <h4>Beginner Routine </h4>
+            </label>
+          </Grid>
+          <Grid item xs={6} align="right">
+            <Link to="/Recommend/beginner/stretching">
+              <Button>스트레칭</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day1">
+              <Button>Day1</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day2">
+              <Button>Day2</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day3">
+              <Button>Day3</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day4">
+              <Button>Day4</Button>
+            </Link>
+            <Link to="/Recommend/beginner/day5">
+              <Button>Day5</Button>
+            </Link>
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route
+                path="/Recommend/beginner/stretching"
+                component={Stretching}
+              ></Route>
+              <Route path="/Recommend/beginner/day1" component={Day1}></Route>
+              <Route path="/Recommend/beginner/day2" component={Day2}></Route>
+              <Route path="/Recommend/beginner/day3" component={Day3}></Route>
+              <Route path="/Recommend/beginner/day4" component={Day4}></Route>
+              <Route path="/Recommend/beginner/day5" component={Day5}></Route>
+            </Switch>
+          </Grid>
+        </Grid>
+      </BrowserRouter>
     );
   } else if (level == 1) {
     return (
-      <Box>
-        <label>index : 1 </label>
-      </Box>
+      <BrowserRouter>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <label>
+              <h4>Intermegidate Routine </h4>
+            </label>
+          </Grid>
+          <Grid item xs={6} align="right">
+            <Link to="/Recommend/intermediate/day1">
+              <Button>Day1</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day2">
+              <Button>Day2</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day3">
+              <Button>Day3</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day4">
+              <Button>Day4</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day5">
+              <Button>Day5</Button>
+            </Link>
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route
+                path="/Recommend/intermediate/day1"
+                component={Day1}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day2"
+                component={Day2}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day3"
+                component={Day3}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day4"
+                component={Day4}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day5"
+                component={Day5}
+              ></Route>
+            </Switch>
+          </Grid>
+        </Grid>
+      </BrowserRouter>
+      //   <Grid container spacing={2}>
+      //     <Grid item xs={6}>
+      //       <label>
+      //         <h4>Intermidiate Routine </h4>
+      //       </label>
+      //     </Grid>
+      //     <Grid item xs={6}>
+      //       <Button onClick={TestClicked}>Test</Button>
+      //     </Grid>
+      //     <Grid item xs={6}>
+      //       중급자 이미지 넣기
+      //     </Grid>
+      //     <Grid item xs={3}>
+      //       Section 2
+      //     </Grid>
+      //     <Grid item xs={3}>
+      //       Section 3
+      //     </Grid>
+      //     <Grid item xs={12}></Grid>
+      //   </Grid>
     );
   } else if (level == 2) {
     return (
-      <Box>
-        <label>index : 2 </label>
-      </Box>
+      <BrowserRouter>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <label>
+              <h4>Advanced Routine </h4>
+            </label>
+          </Grid>
+          <Grid item xs={6} align="right">
+            <Link to="/Recommend/intermediate/day1">
+              <Button>Day1</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day2">
+              <Button>Day2</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day3">
+              <Button>Day3</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day4">
+              <Button>Day4</Button>
+            </Link>
+            <Link to="/Recommend/intermediate/day5">
+              <Button>Day5</Button>
+            </Link>
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route
+                path="/Recommend/intermediate/day1"
+                component={Day1}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day2"
+                component={Day2}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day3"
+                component={Day3}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day4"
+                component={Day4}
+              ></Route>
+              <Route
+                path="/Recommend/intermediate/day5"
+                component={Day5}
+              ></Route>
+            </Switch>
+          </Grid>
+        </Grid>
+      </BrowserRouter>
     );
   } else if (level == 3) {
     return (
       <Box>
-        <label>index : 3 </label>
+        <label>
+          <h4>PT Cource </h4>
+        </label>
       </Box>
     );
   } else {
@@ -72,7 +233,7 @@ const MainSection = (props) => {
 ///////////////////////////////////////////////
 // sub
 
-const TabPanel = (props) => {
+const TabPanel = props => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -86,11 +247,12 @@ const TabPanel = (props) => {
     >
       {value === index && <Box>{children}</Box>}
       <MainSection level={index}></MainSection>
+      <h1> 항목을 선택해주세요 </h1>
     </Typography>
   );
 };
 
-const a11yProps = (index) => {
+const a11yProps = index => {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
@@ -100,7 +262,7 @@ const a11yProps = (index) => {
 ///////////////////////////////////////////////
 // hook
 
-const useGetCategoryDatas = (url) => {
+const useGetCategoryDatas = url => {
   const { serverUrl, user, setUser } = useContext(CommonContext);
   const [data, setData] = useState([]);
 
@@ -117,7 +279,7 @@ const useGetCategoryDatas = (url) => {
   return data;
 };
 
-const useOnChangeIndex = (categoryDatas) => {
+const useOnChangeIndex = categoryDatas => {
   const [appbarIndex, setAppbarIndex] = useState(0);
   const [appbarIndexDelta, setAppbarIndexDelta] = useState(0);
 
@@ -143,7 +305,7 @@ const useOnChangeIndex = (categoryDatas) => {
 ///////////////////////////////////////////////
 // main
 
-const MainVote = (props) => {
+const Recommend = props => {
   const { drawerOpen, serverUrlBase, serverImgUrl } = useContext(CommonContext);
 
   const categoryDatas = useGetCategoryDatas('/category');
@@ -212,4 +374,4 @@ const MainVote = (props) => {
   );
 };
 
-export default MainVote;
+export default Recommend;

@@ -22,7 +22,7 @@ import SearchVote from './pages/SearchVote/';
 import MyLog from './pages/MyLog/';
 import DietManage from './pages/DietManage/';
 import TestPage from './pages/TestPage/';
-import { FinalTest } from './pages/FinalTest/';
+import Recommend from './pages/Recommend/';
 
 // css
 // import './index.css';
@@ -120,7 +120,7 @@ const App = () => {
             <Route exact path="/MyLog" component={MyLog} />
             <Route exact path="/DietManage" component={DietManage} />
             <Route exact path="/TestPage" component={TestPage} />
-            <Route exact path="/FinalTest" component={FinalTest} />
+            <Route exact path="/Recommend" component={Recommend} />
 
             <Redirect to="/not-found" />
           </Switch>
