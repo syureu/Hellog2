@@ -112,16 +112,6 @@ const Header = props => {
                     My Vote
                   </Button>
                 </Grid>
-                <Grid item onClick={onClickRedirectPathHandler('/CreateVote')}>
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={window.scrollTo(0, 0)}
-                    className="header-button"
-                  >
-                    Create a Vote
-                  </Button>
-                </Grid>
                 <Grid item onClick={onClickRedirectPathHandler('/MyLog')}>
                   <Button
                     color="primary"
@@ -132,26 +122,7 @@ const Header = props => {
                     My Log
                   </Button>
                 </Grid>
-                <Grid item onClick={onClickRedirectPathHandler('/DietManage')}>
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={window.scrollTo(0, 0)}
-                    className="header-button"
-                  >
-                    Diet Manage
-                  </Button>
-                </Grid>
-                <Grid item onClick={onClickRedirectPathHandler('/TestPage')}>
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={window.scrollTo(0, 0)}
-                    className="header-button"
-                  >
-                    Test Page
-                  </Button>
-                </Grid>
+
                 <Grid item onClick={onClickRedirectPathHandler('/FinalTest')}>
                   <Button
                     color="primary"

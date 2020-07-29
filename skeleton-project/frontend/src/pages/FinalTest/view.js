@@ -58,7 +58,10 @@ class view extends Component {
 
               <div className="date_div">{date}</div>
             </div>
-
+            <div
+              id="contents_div"
+              dangerouslySetInnerHTML={{ __html: data.data[0].contents }}
+            ></div>
             <div>
               <textarea
                 id="content_txt"
