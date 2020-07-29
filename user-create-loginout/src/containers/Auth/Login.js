@@ -44,16 +44,15 @@ class Login extends Component {
 
     try {
       await AuthActions.localLogin({ username, password });
-      console.log(this.props);
-      console.log(this.props.result);
+      // console.log(this.props);
+      // console.log(this.props.result);
 
-      setTimeout(() => {
-        const loggedInfo = this.props.result.toJS();
+      const loggedInfo = this.props.result;
+      console.log(loggedInfo);
 
-        UserActions.setLoggedInfo(loggedInfo);
-        history.push("/");
-        storage.set("loggedInfo", loggedInfo);
-      }, 3000);
+      UserActions.setLoggedInfo(loggedInfo);
+      history.push("/");
+      storage.set("loggedInfo", loggedInfo);
     } catch (e) {
       console.log(e);
       this.setError("잘못된 계정정보입니다.");
