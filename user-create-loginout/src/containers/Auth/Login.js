@@ -40,33 +40,38 @@ class Login extends Component {
 
   handleLocalLogin = async () => {
     const { form, AuthActions, UserActions, history } = this.props;
-    const { email, password } = form.toJS();
+    const { username, password } = form.toJS();
 
     try {
-      await AuthActions.localLogin({ email, password });
-      const loggedInfo = this.props.result.toJS();
+      await AuthActions.localLogin({ username, password });
+      console.log(this.props);
+      console.log(this.props.result);
 
-      UserActions.setLoggedInfo(loggedInfo);
-      history.push("/");
-      storage.set("loggedInfo", loggedInfo);
+      setTimeout(() => {
+        const loggedInfo = this.props.result.toJS();
+
+        UserActions.setLoggedInfo(loggedInfo);
+        history.push("/");
+        storage.set("loggedInfo", loggedInfo);
+      }, 3000);
     } catch (e) {
-      console.log("a");
+      console.log(e);
       this.setError("잘못된 계정정보입니다.");
     }
   };
 
   render() {
-    const { email, password } = this.props.form.toJS(); // form 에서 email 과 password 값을 읽어옴
+    const { username, password } = this.props.form.toJS(); // form 에서 email 과 password 값을 읽어옴
     const { handleChange, handleLocalLogin } = this;
     const { error } = this.props;
 
     return (
       <AuthContent title="로그인">
         <InputWithLabel
-          label="이메일"
-          name="email"
-          placeholder="이메일"
-          value={email}
+          label="아이디"
+          name="username"
+          placeholder="아이디"
+          value={username}
           onChange={handleChange}
         />
         <InputWithLabel

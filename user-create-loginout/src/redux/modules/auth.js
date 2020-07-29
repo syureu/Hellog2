@@ -51,7 +51,7 @@ const initialState = Map({
   }),
   login: Map({
     form: Map({
-      email: "",
+      username: "",
       password: "",
     }),
   }),
