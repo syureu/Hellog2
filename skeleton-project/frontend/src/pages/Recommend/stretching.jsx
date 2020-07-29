@@ -7,8 +7,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import stretching from './img/stretching.jpg';
-import './styles.css';
+import stretching from './stretching/stretching.jpg';
+import './Beginner/styles.css';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -55,7 +55,7 @@ export default function Stretching() {
   return (
     <div>
       {' '}
-      <h1>가 슴 운 동</h1>
+      <h1>스 트 레 칭</h1> <h4>완료 후 오늘의 루틴을 선택하세요</h4>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>

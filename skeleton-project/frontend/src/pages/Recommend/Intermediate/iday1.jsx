@@ -7,8 +7,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import smithmachinesquat from './img/Smithmachinesquat.png';
-import lunge from './img/Lunge.png';
+import inclinedumbbellfly from './img/Inclinedumbbellfly.png';
+import chestpress from './img/chestpress.jpg';
 import './styles.css';
 
 const StyledTableCell = withStyles(theme => ({
@@ -35,13 +35,18 @@ function createData(pic, exp, prog) {
 
 const rows = [
   createData(
-    <img className="photo" src={smithmachinesquat}></img>,
+    <img className="photo" src={inclinedumbbellfly}></img>,
     <div>
-      <h2>스미스머신 스쿼트</h2>안전을 위해 스미스머신을 통해서
+      <h2>incline-dumbbell-fly</h2>가슴 중앙을 채우는 운동
+      ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
     </div>,
     '10 * 5',
   ),
-  createData(<img className="photo" src={lunge}></img>, <p>하체 </p>, '10 * 5'),
+  createData(
+    <img className="photo" src={chestpress}></img>,
+    <p>가슴운동 </p>,
+    '10 * 5',
+  ),
 ];
 
 const useStyles = makeStyles({
@@ -50,13 +55,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Day2() {
+export default function IDay1() {
   const classes = useStyles();
 
   return (
     <div>
-      <h1>하 체 운 동</h1>
-
+      <h1>가 슴 운 동</h1>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
