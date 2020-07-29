@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Hellog</h1>
-    <h3>인터넷 연결을 확인합니다.</h3>
+{% extends 'base.html' %} {% block content %}
 
-    <script>
-      setTimeout("checkOnLine()", 500);
-      function checkOnLine() {
-        let check = navigator.onLine;
-        console.log(check);
+<h1>Hellog</h1>
+<h3>인터넷 연결을 확인합니다.</h3>
 
-        if (check) {
-          location.href = "access.html";
-        } else {
-          location.href = "unconnected.html";
-        }
-      }
-    </script>
-  </body>
-</html>
+<script>
+  setTimeout("checkOnLine()", 500);
+  function checkOnLine() {
+    let check = navigator.onLine;
+    console.log(check);
+
+    if (check) {
+      location.href = "./access";
+    } else {
+      location.href = "./unconnected";
+    }
+  }
+</script>
+{% endblock %}
