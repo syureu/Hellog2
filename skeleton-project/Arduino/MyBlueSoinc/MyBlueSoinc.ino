@@ -36,5 +36,5 @@ void loop() {
    BTSerial.print(cm);
   }
 
-    delay(1000);
+    delay(100);
 }
