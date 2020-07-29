@@ -30,7 +30,7 @@
         )
     </insert>
 
-    <select id="selectUser" parameterType="String" resultType="User">
+    <select id="selectUser" parameterType="Long" resultType="User">
         select *
         from user
         where id=#{id}
@@ -49,7 +49,7 @@
         where id=#{id}
     </update>
 
-    <delete id="deleteUser" parameterType="String">
+    <delete id="deleteUser" parameterType="Long">
         delete from user
         where id=#{id}
     </delete>

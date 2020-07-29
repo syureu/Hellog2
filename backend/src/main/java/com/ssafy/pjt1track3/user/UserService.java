@@ -7,5 +7,22 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private UserJpaRepository userRepository;
+    private UserRepository userRepository;
+
+    public int insertUser(User user) {
+        return userRepository.insertUser(user);
+    }
+
+    public User selectUser(Long userId) {
+        return userRepository.selectUser(userId);
+    }
+
+    public int updateUser(Long userId, User user) {
+        user.setId(userId);
+        return userRepository.updateUser(user);
+    }
+
+    public int deleteUser(Long userId) {
+        return userRepository.deleteUser(userId);
+    }
 }
