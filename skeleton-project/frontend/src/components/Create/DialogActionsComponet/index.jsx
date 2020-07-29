@@ -34,26 +34,26 @@ const DialogActionsComponet = () => {
 
   const createVoteHandler = async () => {
     if (user.user_id === '') {
-      alert('Pleae sign in to upload.');
+      alert('Please sign in to upload.');
       setSignDialogOpen(true);
       return;
     }
 
     if (title === '') {
-      alert(`Please enter your vote title.`);
+      alert(`제목을 입력해주세요.`);
       return;
     }
     if (category === 0) {
-      alert(`Please select your vote category.`);
+      alert(`식사 시간대를 선택해주세요.`);
       return;
     }
 
     if (thumbnailImageData.img === '') {
-      alert(`Please register thumbnail image to upload your vote.`);
+      alert(`사진을 등록해주세요.`);
       return;
     }
     if (data[0].optionTitle === '' || data[1].optionTitle === '') {
-      alert(`Option1 and option2 are mandatory.`);
+      alert(`식재료를 입력해주세요.`);
       return;
     }
 
@@ -102,7 +102,7 @@ const DialogActionsComponet = () => {
 
     //
     alert('Registered.');
-    history.push(`/MyVote`);
+    history.push(`/FinalTest/`);
   };
 
   const handleClose = () => {
@@ -134,7 +134,7 @@ const DialogActionsComponet = () => {
           onClick={readyToUpload && createVoteHandler}
           className="up-cancel-fab"
           style={{
-            backgroundColor: readyToUpload ? '#1FA212' : '#E0E0E0',
+            backgroundColor: readyToUpload ? 'Red' : 'Gray',
           }}
         >
           식단 등록

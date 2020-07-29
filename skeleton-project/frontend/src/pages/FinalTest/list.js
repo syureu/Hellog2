@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './main.css';
 import { Search } from './index.jsx';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 import queryString from 'query-string';
 import axios from 'axios';
@@ -79,6 +80,11 @@ class list extends Component {
 
     return (
       <div className="List">
+        <Link to="/FinalTest/write">
+          <Button variant="danger">식단 등록</Button>
+        </Link>
+        <br />
+        <br />
         <div className="list_grid list_tit">
           <div> 제목 </div>
           <div> 조회수 </div>

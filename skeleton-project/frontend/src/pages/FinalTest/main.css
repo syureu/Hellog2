@@ -1,6 +1,5 @@
 .Mains {
   display: grid;
-  grid-template-columns: 19% 62% 19%;
 }
 
 #Mains-left {
@@ -15,7 +14,7 @@
   padding-left: 30px;
 }
 
-.Write div {
+.Write #Title {
   margin-top: 30px;
   margin-left: 50px;
 }
@@ -107,7 +106,7 @@
   padding: 2px;
   margin-right: 5px;
   margin-top: 15px;
-  width: 50%;
+  width: 90%;
 }
 
 .serach_submit {
@@ -163,4 +162,10 @@
 .Category ul li .pre_cat {
   font-weight: bold;
   color: teal;
+}
+
+.CKEditor {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 86.3%;
 }

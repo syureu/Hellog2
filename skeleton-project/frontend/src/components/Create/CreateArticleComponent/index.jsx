@@ -24,7 +24,7 @@ import NavigationIcon from '@material-ui/icons/Navigation';
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
-import categoryDats from './trainers.json';
+import categoryDats from './meal.json';
 
 const themeSubTitleGroupComponent = createMuiTheme({
   overrides: {
@@ -152,7 +152,7 @@ const SelectCategoryComponent = () => {
           required
         >
           <MenuItem value={0} disabled>
-            담당 트레이너를 선택해주세요
+            식사 시간대를 골라주세요
           </MenuItem>
 
           {categoryDatas.map((data, index) => (
@@ -182,7 +182,7 @@ const CreateVoteMainComponent = () => {
         </Grid>
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={4}>
               <SelectCategoryComponent />
             </Grid>
             <Grid item>
@@ -227,7 +227,7 @@ const ThumbnailImageComponent = props => {
 
   return (
     <Wrapper>
-      <h4 className="ThumbnailImageComponentH4">식단 사진</h4>
+      <h5 className="ThumbnailImageComponentH4">식단 사진</h5>
       <Paper>
         <section className="container">
           <div {...getRootProps({ className: 'dropzone' })}>
@@ -246,7 +246,7 @@ const ThumbnailImageComponent = props => {
             <input {...getInputProps()} />
           </div>
           <aside className="thumbnail-image-component-aside">
-            <h4>최소 "800x600" 이상의 사진을 올려주세요</h4>
+            <h5>최소 "800x600" 이상의 사진을 올려주세요</h5>
             <ul>{files}</ul>
           </aside>
         </section>

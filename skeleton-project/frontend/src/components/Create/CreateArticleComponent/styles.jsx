@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     min-width: 200px;
   }
   & .input-title-component-input1 {
-    font-size: 35px;
+    font-size: 25px;
   }
   & .input-title-component-input2 {
     margin-top: 30px;
