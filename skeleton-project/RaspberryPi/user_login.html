@@ -1,7 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-
 <div id="access_table">
-  <label>'관리자 로그인' NFC 태그 혹은 연결된 키보드로 로그인 하세요.</label>
+  <label> NFC 태그 혹은 연결된 키보드로 로그인 하세요.</label>
   <table>
     <tr>
       <td>아이디</td>
@@ -19,8 +18,7 @@
 </div>
 <script>
   function login() {
-    location.href = "../setting";
+    location.href = "../select";
   }
 </script>
-
 {% endblock %}

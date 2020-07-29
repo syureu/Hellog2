@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>이 디바이스를 사용하기 위해 인터넷 연결이 필요합니다.</h1>
-    <h3>인터넷 재연결 후 버튼을 눌러주세요.</h3>
-    <button onclick="location.href='index.html'">연결 완료</button>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h1>이 디바이스를 사용하기 위해 인터넷 연결이 필요합니다.</h1>
+<h3>인터넷 재연결 후 버튼을 눌러주세요.</h3>
+<button onclick="location.href='index.html'">연결 완료</button>
+{% endblock %}
