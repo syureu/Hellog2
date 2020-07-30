@@ -55,3 +55,9 @@
    python manage.py runserver
 
 ---
+
+### 라즈베리파이 미니콘다
+
+1. 라즈베리파이의 OS는 ARM 32bit 이므로 일반 linux에 miniconda를 설치하는 방식은 불가
+
+2. arm 버전의 최신은 파이썬 3.4 이므로 Django의 버전도 2.0.0 으로 낮춰야 한다.
