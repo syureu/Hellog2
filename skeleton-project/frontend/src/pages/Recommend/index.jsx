@@ -37,6 +37,8 @@ import IDay3 from './Intermediate/iday3';
 import IDay4 from './Intermediate/iday4';
 import IDay5 from './Intermediate/iday5';
 
+import mdt from './Advanced/mdt';
+
 import ronnie from './ronnie.jpg';
 
 const TestClicked = () => {
@@ -167,7 +169,7 @@ const MainSection = props => {
               <Button>Warm-up</Button>
             </Link>
             <Link to="/Recommend/advanced/day1">
-              <Button>Day1</Button>
+              <Button>MDT</Button>
             </Link>
             <Link to="/Recommend/advanced/day2">
               <Button>Day2</Button>
@@ -188,7 +190,7 @@ const MainSection = props => {
                 path="/Recommend/stretching"
                 component={Stretching}
               ></Route>
-              <Route path="/Recommend/advanced/day1" component={IDay1}></Route>
+              <Route path="/Recommend/advanced/day1" component={mdt}></Route>
               <Route path="/Recommend/advanced/day2" component={IDay2}></Route>
               <Route path="/Recommend/advanced/day3" component={IDay3}></Route>
               <Route path="/Recommend/advanced/day4" component={IDay4}></Route>
