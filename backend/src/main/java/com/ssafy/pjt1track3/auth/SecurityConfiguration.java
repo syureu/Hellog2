@@ -3,7 +3,6 @@ package com.ssafy.pjt1track3.auth;
 import com.ssafy.pjt1track3.auth.jwt.JwtAuthenticationFilter;
 import com.ssafy.pjt1track3.auth.jwt.JwtAuthorizationFilter;
 import com.ssafy.pjt1track3.user.UserJpaRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -21,11 +20,15 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final UserPrincipalDetailsService userPrincipalDetailsService;
     private final UserJpaRepository userRepository;
+
+    public SecurityConfiguration(final UserPrincipalDetailsService userPrincipalDetailsService, final UserJpaRepository userRepository) {
+        this.userPrincipalDetailsService = userPrincipalDetailsService;
+        this.userRepository = userRepository;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
