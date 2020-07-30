@@ -32,7 +32,8 @@
    conda deactivate [환경이름]
 
 4. 장고 설치
-   pip install Django==2.1.7
+   ~~pip install Django==2.1.7~~
+   pip install Django==2.0 (최신 miniconda가 python 3.4.3을 지원함)
 
 5. 장고 프레임워크 생성
    django-admin startproject [폴더이름][위치]
