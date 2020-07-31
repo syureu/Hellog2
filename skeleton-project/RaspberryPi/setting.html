@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
 <!--관리자만 접근 가능-->
 <!--디바이스 최초 설치 시 설정페이지-->
-<button onclick="location.href='../user_login'">유저 로그인 환경으로</button>
+<button onclick="location.href='../user_login'" class="btn btn-secondary">
+  유저 로그인 환경으로
+</button>
 {% endblock %}
