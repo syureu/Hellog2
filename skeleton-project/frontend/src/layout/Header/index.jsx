@@ -122,7 +122,16 @@ const Header = props => {
                     My Log
                   </Button>
                 </Grid>
-
+                <Grid item onClick={onClickRedirectPathHandler('/realFinal')}>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={window.scrollTo(0, 0)}
+                    className="header-button"
+                  >
+                    realFinal
+                  </Button>
+                </Grid>
                 <Grid item onClick={onClickRedirectPathHandler('/FinalTest')}>
                   <Button
                     color="primary"

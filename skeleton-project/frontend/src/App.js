@@ -23,6 +23,7 @@ import MyLog from './pages/MyLog/';
 import DietManage from './pages/DietManage/';
 import FinalTest from './pages/FinalTest/main';
 import Recommend from './pages/Recommend/';
+import realFinal from './pages/realFinal/realFinal';
 
 // css
 // import './index.css';
@@ -121,6 +122,7 @@ const App = () => {
             <Route exact path="/DietManage" component={DietManage} />
             <Route exact path="/FinalTest" component={FinalTest} />
             <Route exact path="/Recommend" component={Recommend} />
+            <Route exact path="/realFinal" component={realFinal} />
 
             <Redirect to="/not-found" />
           </Switch>
