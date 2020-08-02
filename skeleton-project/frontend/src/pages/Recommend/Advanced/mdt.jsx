@@ -7,8 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import chest from './chestpress.jpg';
 import './styles.css';
+
+import chest from './chestpress.jpg';
+import lunge from './Lunge.png';
 
 import Modal from '@material-ui/core/Modal';
 
@@ -59,19 +61,25 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(pic, exp, prog) {
-  return { pic, exp, prog };
+function createData(name, pic, exp, prog) {
+  return { name, pic, exp, prog };
 }
 
 const rows = [
   createData(
     <div>ChestPress</div>,
+    <img className="photo" src={lunge}></img>,
     <div>
       <h2>ChestPress</h2>머신을 이용해 가슴 중앙을 운동함
     </div>,
     '10 * 5',
   ),
-  createData(<div>운동2</div>, <p>가슴운동 </p>, '10 * 5'),
+  createData(
+    <div>Lunge</div>,
+    <img className="photo" src={chest}></img>,
+    <p>가슴운동 </p>,
+    '10 * 5',
+  ),
 ];
 
 export default function MDT() {
@@ -85,11 +93,6 @@ export default function MDT() {
   const handleClose = () => {
     setOpen(false);
   };
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <img className="photo" src={chest}></img>
-    </div>
-  );
   return (
     <div>
       <h1>가 슴 운 동</h1>
@@ -111,15 +114,21 @@ export default function MDT() {
           </TableHead>
           <TableBody>
             {rows.map(row => (
-              <StyledTableRow key={row.pic}>
+              <StyledTableRow key={row.name}>
                 <StyledTableCell align="center">
                   <button type="button" onClick={handleOpen}>
-                    {row.pic}
+                    {row.name}
                   </button>
-                  <Modal open={open} onClose={handleClose}>
-                    {body}
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                  >
+                    {row.pic}
                   </Modal>
                 </StyledTableCell>
+
                 <StyledTableCell align="center">{row.exp}</StyledTableCell>
                 <StyledTableCell align="center">{row.prog}</StyledTableCell>
               </StyledTableRow>

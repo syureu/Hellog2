@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import stretching from './stretching/stretching.jpg';
+import stretching from './stretching/workoutstretching.jpg';
 import './Beginner/styles.css';
 
 const StyledTableCell = withStyles(theme => ({
@@ -28,16 +28,16 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-function createData(pic, exp, prog) {
-  return { pic, exp, prog };
+function createData(pic, exp) {
+  return { pic, exp };
 }
 
 const rows = [
   createData(
     <img className="photo" src={stretching}></img>,
     <div>
-      <h2>스트레칭</h2>
-      근육의 이완에 집중하여 부상방지를 위해 풀어준다
+      <h4> 오늘 운동할 부위를</h4>
+      <h4> 집중적으로 풀어주세요</h4>
     </div>,
     '10 * 5',
   ),
@@ -54,21 +54,18 @@ export default function Stretching() {
 
   return (
     <div>
-      {' '}
-      <h1>스 트 레 칭</h1> <h4>완료 후 오늘의 루틴을 선택하세요</h4>
+      <div align="center">
+        <h1>스 트 레 칭</h1> <h4>완료 후 오늘의 루틴을 선택하세요</h4>
+      </div>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell align="center" width="50%">
-                운동 종류
+              <StyledTableCell align="center" width="70%">
+                추천스트레칭
               </StyledTableCell>
-              <StyledTableCell align="center" width="25%">
-                운동 설명
-              </StyledTableCell>
-              <StyledTableCell align="center" width="25%">
-                추천 프로그램 <br />
-                횟수 * set 수
+              <StyledTableCell align="center" width="30%">
+                주의
               </StyledTableCell>
             </TableRow>
           </TableHead>
@@ -77,7 +74,6 @@ export default function Stretching() {
               <StyledTableRow key={row.pic}>
                 <StyledTableCell align="center">{row.pic}</StyledTableCell>
                 <StyledTableCell align="center">{row.exp}</StyledTableCell>
-                <StyledTableCell align="center">{row.prog}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
