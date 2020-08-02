@@ -25,11 +25,10 @@ import VoteGridTitle from '../../components/Grid/VoteGridTitle';
 import categoryDats from './dump.json';
 
 import Stretching from './stretching';
-import BDay1 from './Beginner/bday1';
-import BDay2 from './Beginner/bday2';
-import BDay3 from './Beginner/bday3';
-import BDay4 from './Beginner/bday4';
-import BDay5 from './Beginner/bday5';
+import Week13 from './Beginner/week13';
+import Week47 from './Beginner/week47';
+import Week710 from './Beginner/week710';
+import Week1012 from './Beginner/week1012';
 
 import IDay1 from './Intermediate/iday1';
 import IDay2 from './Intermediate/iday2';
@@ -54,6 +53,34 @@ const MainSection = props => {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
+          <Grid item xs={12} align="center">
+            <label align="center">
+              <div align="center">
+                <h4>
+                  "Beginner Program" 은 앞으로 계속 될 운동들을 진행 할 수
+                  있도록
+                </h4>
+                <h4>기초적인 체력 및 근육 발달을 위한 프로그램입니다</h4>
+              </div>
+              <br />
+              <ul align="center">
+                <li>
+                  <h5>
+                    총 12주 프로그램이며, 각 주차별 운동법이 소개되어 있습니다.
+                  </h5>
+                </li>
+                <li>
+                  <h5>
+                    소개된 프로그램은 1일 운동 프로그램이며, 수행 후 1~2일의
+                    휴식을 취하세요.
+                  </h5>
+                </li>
+                <li>
+                  <h5> 주 3회(일) 정도의 운동을 권장합니다.</h5>
+                </li>
+              </ul>
+            </label>
+          </Grid>
           <Grid item xs={6}>
             <label>
               <h4>Beginner Routine </h4>
@@ -63,20 +90,17 @@ const MainSection = props => {
             <Link to="/Recommend/stretching">
               <Button>Warm-up</Button>
             </Link>
-            <Link to="/Recommend/beginner/day1">
-              <Button>Day1</Button>
+            <Link to="/Recommend/beginner/week13">
+              <Button>1-3 Weeks</Button>
             </Link>
-            <Link to="/Recommend/beginner/day2">
-              <Button>Day2</Button>
+            <Link to="/Recommend/beginner/week47">
+              <Button>4-6 Weeks</Button>
             </Link>
-            <Link to="/Recommend/beginner/day3">
-              <Button>Day3</Button>
+            <Link to="/Recommend/beginner/week710">
+              <Button>7-9 Weeks</Button>
             </Link>
-            <Link to="/Recommend/beginner/day4">
-              <Button>Day4</Button>
-            </Link>
-            <Link to="/Recommend/beginner/day5">
-              <Button>Day5</Button>
+            <Link to="/Recommend/beginner/week1012">
+              <Button>10-12 Weeks</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -85,11 +109,22 @@ const MainSection = props => {
                 path="/Recommend/stretching"
                 component={Stretching}
               ></Route>
-              <Route path="/Recommend/beginner/day1" component={BDay1}></Route>
-              <Route path="/Recommend/beginner/day2" component={BDay2}></Route>
-              <Route path="/Recommend/beginner/day3" component={BDay3}></Route>
-              <Route path="/Recommend/beginner/day4" component={BDay4}></Route>
-              <Route path="/Recommend/beginner/day5" component={BDay5}></Route>
+              <Route
+                path="/Recommend/beginner/week13"
+                component={Week13}
+              ></Route>
+              <Route
+                path="/Recommend/beginner/week47"
+                component={Week47}
+              ></Route>
+              <Route
+                path="/Recommend/beginner/week710"
+                component={Week710}
+              ></Route>
+              <Route
+                path="/Recommend/beginner/week1012"
+                component={Week1012}
+              ></Route>
             </Switch>
           </Grid>
         </Grid>
