@@ -206,7 +206,7 @@ class realFinal extends Component {
   // 카테고리 변동
   _changeCatgory = target => {
     sessionStorage.setItem('category', target);
-    return (window.location.href = '/');
+    return (window.location.href = '/realFinal');
   };
 
   _getPreAndNextData = async board_id => {

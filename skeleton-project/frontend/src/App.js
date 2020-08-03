@@ -30,7 +30,7 @@ import realFinal from './pages/realFinal/realFinal';
 
 // const
 const defaultThumbnailImage = 'default_user.jpg';
-const HOST = '192.168.0.82:3001';
+const HOST = '192.168.0.82:3000';
 const serverUrl = `http://${HOST}/v1`;
 const serverUrlBase = `http://${HOST}`;
 const serverImgUrl = `https://ssafy-viba-s3.s3.ap-northeast-2.amazonaws.com/public/`;
