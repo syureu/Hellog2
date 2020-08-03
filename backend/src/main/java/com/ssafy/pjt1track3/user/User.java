@@ -1,10 +1,25 @@
 package com.ssafy.pjt1track3.user;
 
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+
+@Entity
+@Getter
+@Setter
 public class User {
-    private String id;
-    private String pw;
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(nullable=false)
+    private String username;
+    @Column(nullable=false)
+    private String password;
     private String name;
     private int age;
     private String phone;
@@ -13,84 +28,35 @@ public class User {
     private int height;
     private int weight;
     private int gymId;
+    private int active;
+    private String roles="";
+    private String permissions="";
 
-    public String getId() {
-        return id;
+    public User(String username, String password, String roles, String permissions){
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+        this.permissions = permissions;
+
+        this.active = 1;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    protected User(){
     }
 
-    public String getPw() {
-        return pw;
+    public List<String> getRoleList(){
+        if(this.roles.length()>0){
+            return Arrays.asList(this.roles.split(","));
+        }
+
+        return new ArrayList<>();
     }
 
-    public void setPw(String pw) {
-        this.pw = pw;
-    }
+    public List<String> getPermissionList(){
+        if(this.permissions.length()>0){
+            return Arrays.asList(this.permissions.split(","));
+        }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public boolean isMale() {
-        return male;
-    }
-
-    public void setMale(boolean male) {
-        this.male = male;
-    }
-
-    public Date getSignUpDay() {
-        return signUpDay;
-    }
-
-    public void setSignUpDay(Date signUpDay) {
-        this.signUpDay = signUpDay;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public int getGymId() {
-        return gymId;
-    }
-
-    public void setGymId(int gymId) {
-        this.gymId = gymId;
+        return new ArrayList<>();
     }
 }

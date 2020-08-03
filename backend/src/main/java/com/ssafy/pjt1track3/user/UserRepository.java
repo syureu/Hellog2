@@ -4,8 +4,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserRepository {
-    int insertUser(User user);
-    User selectUser(String id);
-    int updateUser(User user);
-    int deleteUser(String id);
+    public int insertUser(User user);
+    public User selectUser(Long Id);
+    public int updateUser(User user);
+    public int deleteUser(Long Id);
 }

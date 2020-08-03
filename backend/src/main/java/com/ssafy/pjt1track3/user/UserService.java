@@ -13,15 +13,16 @@ public class UserService {
         return userRepository.insertUser(user);
     }
 
-    public User selectUser(String id) {
-        return userRepository.selectUser(id);
+    public User selectUser(Long userId) {
+        return userRepository.selectUser(userId);
     }
 
-    public int updateUser(User user) {
+    public int updateUser(Long userId, User user) {
+        user.setId(userId);
         return userRepository.updateUser(user);
     }
 
-    public int deleteUser(String id) {
-        return userRepository.deleteUser(id);
+    public int deleteUser(Long userId) {
+        return userRepository.deleteUser(userId);
     }
 }
