@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+/*
 
 @RequiredArgsConstructor
 @Service
@@ -69,3 +70,5 @@ public class DbInit implements CommandLineRunner {
         this.userRepository.insertUser(coach);
     }
 }
+
+ */

@@ -4,10 +4,10 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserRepository {
-    public User findByUsername(String username);
-    public void insertUser(User user);
-    public User selectUser(Long Id);
-    public void updateUser(User user);
-    public void deleteUser(Long Id);
-    public void deleteAll();
+    User findByUsername(String username);
+    void insertUser(User user);
+    User selectUser(Long Id);
+    void updateUser(User user);
+    void deleteUser(Long Id);
+    void deleteAll();
 }

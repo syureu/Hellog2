@@ -33,12 +33,12 @@
         #{age},
         #{phone},
         #{male},
-        #{signUpDay},
+        now(),
         #{height},
         #{weight},
         #{gymId},
         #{active},
-        #{limitPermitDay},
+        "2030-01-01",
         #{roles},
         #{permissions}
         )
@@ -53,7 +53,7 @@
     <update id="updateUser" parameterType="User">
         update user
         set
-        pw=#{pw},
+        password=#{password},
         name=#{name},
         age=#{age},
         phone=#{phone},
@@ -63,7 +63,7 @@
         where id=#{id}
     </update>
 
-    <delete id="deleteUser" parameterType="int">
+    <delete id="deleteUser" parameterType="Long">
         delete from user
         where id=#{id}
     </delete>

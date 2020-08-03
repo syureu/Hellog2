@@ -44,7 +44,7 @@ public class User {
     private String roles = "";
     private String permissions = "";
 
-    public User(String username, String password, String name, int age, String phone, boolean male, Date signUpDay, int height, int weight, Date limitPermitDay, String roles, String permissions) {
+    public User(String username, String password, String name, int age, String phone, boolean male, Date signUpDay, int height, int weight, Date limitPermitDay) {
         this.username = username;
         this.password = password;
         this.name = name;
@@ -55,8 +55,7 @@ public class User {
         this.height = height;
         this.weight = weight;
         this.limitPermitDay = limitPermitDay;
-        this.roles = roles;
-        this.permissions = permissions;
+        this.roles = "USER";
 
         this.active = 1;
     }

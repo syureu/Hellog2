@@ -1,7 +1,5 @@
 package com.ssafy.pjt1track3.gym;
 
-import com.ssafy.pjt1track3.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,31 +17,32 @@ public class GymController {
     }
 
     @PostMapping("/gym")
+    @PreAuthorize(value="hasAuthority('ADMIN')")
     public ResponseEntity<String> createGym(@RequestBody Gym gym) {
-        gymrService.insertGym(gym);
+        gymService.insertGym(gym);
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
 
-    @GetMapping("/{user_id}")
+    @GetMapping("/{gymId}")
     @PreAuthorize(value="hasAuthority('ADMIN')" +
-            "or authentication.principal.equals(#userId)")
-    public ResponseEntity<User> checkUser(@PathVariable Long userId) {
-        return new ResponseEntity<>(userService.selectUser(userId), HttpStatus.OK);
+            "or authentication.principal.equals(#gymId)")
+    public ResponseEntity<Gym> readGym(@PathVariable Long gymId) {
+        return new ResponseEntity<>(gymService.selectGym(gymId), HttpStatus.OK);
     }
 
-    @PutMapping("/{user_id}")
+    @PutMapping("/{gymId}")
     @PreAuthorize(value="hasAuthority('ADMIN')" +
-            "or authentication.principal.equals(#userId)")
-    public ResponseEntity<String> modifyUser(@PathVariable Long userId, @RequestBody User user) {
-        userService.updateUser(userId, user);
+            "or authentication.principal.equals(#gymId)")
+    public ResponseEntity<String> updateGym(@PathVariable Long gymId, @RequestBody Gym gym) {
+        gymService.updateGym(gymId, gym);
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
 
-    @DeleteMapping("/{user_id}")
+    @DeleteMapping("/{gymId}")
     @PreAuthorize(value="hasAuthority('ADMIN')" +
-            "or authentication.principal.equals(#userId)")
-    public ResponseEntity<String> removeUser(@PathVariable("user_id") Long userId) {
-        userService.deleteUser(userId);
+            "or authentication.principal.equals(#gymId)")
+    public ResponseEntity<String> deleteGym(@PathVariable Long gymId) {
+        gymService.deleteGym(gymId);
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
 }
