@@ -2,12 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssafy.pjt1track3.user.UserJpaRepository">
+<mapper namespace="com.ssafy.pjt1track3.user.UserRepository">
+
+    <select id="findByUsername" parameterType="String" resultType="User">
+        select *
+        from user
+        where username=#{username}
+    </select>
 
     <insert id="insertUser" parameterType="com.ssafy.pjt1track3.user.User" >
         insert into user(
-        id,
-        pw,
+        username,
+        password,
         name,
         age,
         phone,
@@ -15,18 +21,26 @@
         sign_up_day,
         height,
         weight,
-        gym_id
+        gym_id,
+        active,
+        limit_permit_day,
+        roles,
+        permissions
         ) values (
-        #{id},
-        #{pw},
+        #{username},
+        #{password},
         #{name},
         #{age},
         #{phone},
         #{male},
-        now(),
+        #{signUpDay},
         #{height},
         #{weight},
-        null
+        #{gymId},
+        #{active},
+        #{limitPermitDay},
+        #{roles},
+        #{permissions}
         )
     </insert>
 
@@ -49,8 +63,13 @@
         where id=#{id}
     </update>
 
-    <delete id="deleteUser" parameterType="Long">
+    <delete id="deleteUser" parameterType="int">
         delete from user
         where id=#{id}
+    </delete>
+
+    <delete id="deleteAll">
+        delete from user
+        where 1=1
     </delete>
 </mapper>
