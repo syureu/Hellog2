@@ -77,3 +77,64 @@
 5. 아두이노에서 센서값이 올 때마다 라즈베리파이 웹페이지에 카운트 증가 구현
 
 ---
+
+### nfc 모듈 연결
+
+1. 라즈베리파이 i2c enable 설정 (sudo raspi-config)
+
+2. packages 다운로드
+   sudo apt-get update
+   sudo apt-get install libusb-dev libpcsclite-dev i2c-tools
+
+3. Download and unzip
+   cd ~
+   wget http://dl.bintray.com/nfc-tools/sources/libnfc-1.7.1.tar.bz2
+   tar -xf libnfc-1.7.1.tar.bz2
+
+4. Compile and install
+   cd libnfc-1.7.1
+   ./configure --prefix=/usr --sysconfdir=/etc
+   make
+   sudo make install
+
+5. libnfc.conf 설정
+   cd /etc
+   sudo mkdir nfc
+   sudo nano /etc/nfc/libnfc.conf
+
+libnfc.config 내용
+
+#Allow device auto-detection (default: true)
+#Note: if this auto-detection is disabled, user has to set manually a device
+#configuration using file or environment variable
+allow_autoscan = true
+
+#Allow intrusive auto-detection (default: false)
+#Warning: intrusive auto-detection can seriously disturb other devices
+#This option is not recommended, user should prefer to add manually his device.
+allow_intrusive_scan = false
+
+#Set log level (default: error)
+#Valid log levels are (in order of verbosity): 0 (none), 1 (error), 2 (info), 3 (debug)
+#Note: if you compiled with --enable-debug option, the default log level is "debug"
+log_level = 1
+
+#Manually set default device (no default)
+#To set a default device, you must set both name and connstring for your device
+#Note: if autoscan is enabled, default device will be the first device available in device list.
+#device.name = "\_PN532_SPI"
+#device.connstring = "pn532_spi:/dev/spidev0.0:500000"
+device.name = "\_PN532_I2c"
+device.connstring = "pn532_i2c:/dev/i2c-1"
+
+6. 선 연결 - I2C mode로 변경  
+   SEL0 -> H  
+   SEL1 -> L
+
+   PN532 Raspberry  
+   5V 5V  
+   GND GND  
+   SDA SDA0  
+   SCL SCL0
+
+---
