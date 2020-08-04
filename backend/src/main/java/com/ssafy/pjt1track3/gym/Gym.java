@@ -1,7 +1,7 @@
 package com.ssafy.pjt1track3.gym;
 
 public class Gym {
-    private Long gym_id;
+    private Long gymId;
     private String name;
     private String location;
     private String phone;
@@ -14,12 +14,12 @@ public class Gym {
         this.representative = representative;
     }
 
-    public Long getGym_id() {
-        return gym_id;
+    public Long getGymId() {
+        return gymId;
     }
 
-    public void setGym_id(Long gym_id) {
-        this.gym_id = gym_id;
+    public void setGymId(Long gymId) {
+        this.gymId = gymId;
     }
 
     public String getName() {

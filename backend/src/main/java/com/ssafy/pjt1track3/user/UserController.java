@@ -1,15 +1,13 @@
 package com.ssafy.pjt1track3.user;
 
-import com.ssafy.pjt1track3.auth.UserPrincipal;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+
+import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
 @RestController
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
@@ -31,17 +29,11 @@ public class UserController {
         return false;
     }
 
-    private boolean isAdmin(Principal principal) {
-        if (principal.getName().equals("admin"))
-            return true;
-        return false;
-    }
-
     @PostMapping("/user")
     public ResponseEntity<String> createUser(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.insertUser(user);
-        return new ResponseEntity<>("success", HttpStatus.OK);
+        return new ResponseEntity<>("", HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -65,7 +57,7 @@ public class UserController {
             User user = userService.selectUser(id);
             if (user != null) {
                 userService.updateUser(id, requestUser);
-                return new ResponseEntity<>("user update success", HttpStatus.OK);
+                return new ResponseEntity<>("", HttpStatus.OK);
             } else if (isAdmin(principal)) {
                 return new ResponseEntity<>("", HttpStatus.NO_CONTENT);
             } else {
@@ -81,7 +73,7 @@ public class UserController {
             User user = userService.selectUser(id);
             if (user != null) {
                 userService.deleteUser(id);
-                return new ResponseEntity<>("user delete success", HttpStatus.OK);
+                return new ResponseEntity<>("", HttpStatus.OK);
             } else if (isAdmin(principal)) {
                 return new ResponseEntity<>("", HttpStatus.NO_CONTENT);
             } else {

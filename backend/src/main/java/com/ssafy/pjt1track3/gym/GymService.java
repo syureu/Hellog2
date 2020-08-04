@@ -20,11 +20,15 @@ public class GymService {
     }
 
     public void updateGym(Long gymId, Gym gym) {
-        gym.setGym_id(gymId);
+        gym.setGymId(gymId);
         gymRepository.updateGym(gym);
     }
 
     public void deleteGym(Long gymId) {
         gymRepository.deleteGym(gymId);
+    }
+
+    public String selectGymRepresentativeUsernameByGymId(Long gymId) {
+        return gymRepository.selectGymRepresentativeUsernameByGymId(gymId);
     }
 }

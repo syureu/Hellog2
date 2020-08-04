@@ -1,12 +1,16 @@
 package com.ssafy.pjt1track3.gym;
 
+import com.ssafy.pjt1track3.user.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
+import static com.ssafy.pjt1track3.util.Util.isAdmin;
+
 @RestController
-@CrossOrigin(origins={"*"}, maxAge = 6000)
+@CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/gyms")
 public class GymController {
 
@@ -16,33 +20,52 @@ public class GymController {
         this.gymService = gymService;
     }
 
+    private boolean isOwnGym(Long gymId, Principal principal) {
+        if (principal.getName().equals(gymService.selectGymRepresentativeUsernameByGymId(gymId))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @PostMapping("/gym")
-    @PreAuthorize(value="hasAuthority('ADMIN')")
-    public ResponseEntity<String> createGym(@RequestBody Gym gym) {
-        gymService.insertGym(gym);
-        return new ResponseEntity<>("success", HttpStatus.OK);
+    public ResponseEntity<String> createGym(@RequestBody Gym gym, Principal principal) {
+        if (isAdmin(principal)) {
+            gymService.insertGym(gym);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
     }
 
     @GetMapping("/{gymId}")
-    @PreAuthorize(value="hasAuthority('ADMIN')" +
-            "or authentication.principal.equals(#gymId)")
     public ResponseEntity<Gym> readGym(@PathVariable Long gymId) {
-        return new ResponseEntity<>(gymService.selectGym(gymId), HttpStatus.OK);
+        Gym gym = gymService.selectGym(gymId);
+        if (gym != null) {
+            return new ResponseEntity<>(gym, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(gym, HttpStatus.NO_CONTENT);
+        }
     }
 
     @PutMapping("/{gymId}")
-    @PreAuthorize(value="hasAuthority('ADMIN')" +
-            "or authentication.principal.equals(#gymId)")
-    public ResponseEntity<String> updateGym(@PathVariable Long gymId, @RequestBody Gym gym) {
-        gymService.updateGym(gymId, gym);
-        return new ResponseEntity<>("success", HttpStatus.OK);
+    public ResponseEntity<String> updateGym(@PathVariable Long gymId, @RequestBody Gym gym, Principal principal) {
+        if (isAdmin(principal) || isOwnGym(gymId, principal)) {
+            gymService.updateGym(gymId, gym);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
     }
 
     @DeleteMapping("/{gymId}")
-    @PreAuthorize(value="hasAuthority('ADMIN')" +
-            "or authentication.principal.equals(#gymId)")
-    public ResponseEntity<String> deleteGym(@PathVariable Long gymId) {
-        gymService.deleteGym(gymId);
-        return new ResponseEntity<>("success", HttpStatus.OK);
+    public ResponseEntity<String> deleteGym(@PathVariable Long gymId, Principal principal) {
+        if (isAdmin(principal) || isOwnGym(gymId, principal)) {
+            gymService.deleteGym(gymId);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
     }
 }
+

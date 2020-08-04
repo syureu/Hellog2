@@ -8,4 +8,5 @@ public interface GymRepository {
     Gym selectGym(Long gymId);
     void updateGym(Gym gym);
     void deleteGym(Long gymId);
+    String selectGymRepresentativeUsernameByGymId(Long gymId);
 }
