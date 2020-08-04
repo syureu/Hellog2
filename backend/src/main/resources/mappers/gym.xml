@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.gym.GymRepository">
+
+    <!-- void insertGym(Gym gym); -->
+    <insert id="insertGym" parameterType="Gym">
+        insert into
+            gym(
+                name,
+                location,
+                phone,
+                representative
+            )
+        value(
+            #{name},
+            #{location},
+            #{phone},
+            #{representative}
+        )
+    </insert>
+
+    <!-- Gym selectGym(Long gymId); -->
+    <select id="selectGym" parameterType="Long" resultType="Gym">
+        select
+            *
+        from
+            gym
+        where
+            gym_id = #{gymId}
+    </select>
+
+    <!-- void updateGym(Gym gym); -->
+    <update id="updateGym" parameterType="Gym">
+        update
+            gym
+        set
+           name = #{name},
+           location = #{location},
+           phone = #{phone},
+           representative = #{representative}
+        where
+            gym_id = #{gymId}
+    </update>
+
+    <!-- void deleteGym(Long gymId); -->
+    <delete id="deleteGym" parameterType="Long">
+        delete from
+            gym
+        where
+            gym_id = #{gymId}
+    </delete>
+
+    <!-- String selectGymRepresentativeUsernameByGymId(Long gymId); -->
+    <select id="selectGymRepresentativeUsernameByGymId" parameterType="Long" resultType="String">
+        select
+            user.username
+        from
+            user, gym
+        where
+            user.id=gym.representative
+    </select>
+</mapper>

@@ -2,7 +2,7 @@ package com.ssafy.pjt1track3.auth;
 
 import com.ssafy.pjt1track3.auth.jwt.JwtAuthenticationFilter;
 import com.ssafy.pjt1track3.auth.jwt.JwtAuthorizationFilter;
-import com.ssafy.pjt1track3.user.UserJpaRepository;
+import com.ssafy.pjt1track3.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -23,9 +23,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final UserPrincipalDetailsService userPrincipalDetailsService;
-    private final UserJpaRepository userRepository;
+    private final UserRepository userRepository;
 
-    public SecurityConfiguration(final UserPrincipalDetailsService userPrincipalDetailsService, final UserJpaRepository userRepository) {
+    public SecurityConfiguration(final UserPrincipalDetailsService userPrincipalDetailsService, final UserRepository userRepository) {
         this.userPrincipalDetailsService = userPrincipalDetailsService;
         this.userRepository = userRepository;
     }
@@ -78,6 +78,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/public/management/*").hasRole("MANAGER")
                 .antMatchers("/api/public/admin/*").hasRole("ADMIN")
                 // userController
+                .antMatchers(HttpMethod.POST, "/api/users/user").permitAll()
                 .anyRequest().authenticated();
     }
 

@@ -9,20 +9,20 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public int insertUser(User user) {
-        return userRepository.insertUser(user);
+    public void insertUser(User user) {
+        userRepository.insertUser(user);
     }
 
     public User selectUser(Long userId) {
         return userRepository.selectUser(userId);
     }
 
-    public int updateUser(Long userId, User user) {
+    public void updateUser(Long userId, User user) {
         user.setId(userId);
-        return userRepository.updateUser(user);
+        userRepository.updateUser(user);
     }
 
-    public int deleteUser(Long userId) {
-        return userRepository.deleteUser(userId);
+    public void deleteUser(Long userId) {
+        userRepository.deleteUser(userId);
     }
 }
