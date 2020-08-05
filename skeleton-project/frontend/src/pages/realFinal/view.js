@@ -72,7 +72,7 @@ class view extends Component {
       const board_id = this.props.match.params.data;
       const obj = { user_id: user_id, board_id: board_id };
 
-      const getData = await axios('/realFinal/check/like', {
+      const getData = await axios('/check/like', {
         method: 'POST',
         headers: new Headers(),
         data: obj,
@@ -86,7 +86,7 @@ class view extends Component {
   };
 
   _addViewCnt = async function(board_id) {
-    await axios('/realFinal/update/view_cnt', {
+    await axios('/update/view_cnt', {
       method: 'POST',
       headers: new Headers(),
       data: { id: board_id },

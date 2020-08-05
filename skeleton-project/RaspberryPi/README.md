@@ -78,6 +78,7 @@
 
 ---
 
+
 ### nfc 모듈 연결
 
 1. 라즈베리파이 i2c enable 설정 (sudo raspi-config)
@@ -137,4 +138,17 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
    SDA SDA0  
    SCL SCL0
 
----
+
+### Read NFC DATA
+
+1. \$ nfc-mfultralight r output.mfd
+
+- 위 명령어 실행시 output.mfd 이름의 바이너리 파일이 생성
+
+2. \$ strings output.mfd > output.txt
+
+- 위 명령어 실행시 바이너리 파일을 output.txt로 출력
+
+3. NFC 안의 데이터 형태가 text/plain, 데이터 내용이 Hello ! 일경우
+   text/plainHello ! 형태로 출력됨
+>>>>>>> skeleton-project/RaspberryPi/README.md

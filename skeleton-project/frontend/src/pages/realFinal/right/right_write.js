@@ -33,7 +33,7 @@ class right_write extends Component {
 
     if (!this.props.match.params.data) {
       const data = { title: title, contents: contents, category: category };
-      const res = await axios('/realFinal/add/board', {
+      const res = await axios('/add/board', {
         method: 'POST',
         data: data,
         headers: new Headers(),
@@ -51,7 +51,7 @@ class right_write extends Component {
         board_id: this.props.match.params.data,
       };
 
-      const res = await axios('/realFinal/update/board', {
+      const res = await axios('/update/board', {
         method: 'POST',
         data: data,
         headers: new Headers(),
