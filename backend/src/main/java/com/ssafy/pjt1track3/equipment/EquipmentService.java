@@ -23,4 +23,8 @@ public class EquipmentService {
         equipment.setEquipmentId(equipmentId);
         equipmentRepository.updateEquipment(equipment);
     }
+
+    public void updateDelete(Long equipmentId) {
+        equipmentRepository.deleteEquipment(equipmentId);
+    }
 }

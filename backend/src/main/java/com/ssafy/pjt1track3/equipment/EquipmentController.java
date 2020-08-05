@@ -51,9 +51,19 @@ public class EquipmentController {
     }
 
     @PutMapping("/{equipmentId}")
-    public ResponseEntity<String> updateEquipment(@PathVariable long equipmentId, @RequestBody Equipment equipment, Principal principal) {
+    public ResponseEntity<String> updateEquipment(@PathVariable Long equipmentId, @RequestBody Equipment equipment, Principal principal) {
         if(isAdmin(principal) || isOwnGym(equipment.getGymId(), principal)){
             equipmentService.updateEquipment(equipmentId, equipment);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @DeleteMapping("/{equipmentId}")
+    public ResponseEntity<String> deleteEquipment(@PathVariable Long equipmentId, Principal principal){
+        if(isAdmin(principal) || isOwnGym(equipmentService.selectEquipment(equipmentId).getGymId(), principal)){
+            equipmentService.updateDelete(equipmentId);
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
