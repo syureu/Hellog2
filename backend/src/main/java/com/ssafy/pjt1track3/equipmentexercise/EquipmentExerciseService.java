@@ -23,4 +23,8 @@ public class EquipmentExerciseService {
         equipmentExercise.setEquipmentExerciseId(eeId);
         equipmentExerciseRepository.updateEquipmentExercise(equipmentExercise);
     }
+
+    public void deleteEquipmentExercise(Long eeId) {
+        equipmentExerciseRepository.deleteEquipmentExercise(eeId);
+    }
 }

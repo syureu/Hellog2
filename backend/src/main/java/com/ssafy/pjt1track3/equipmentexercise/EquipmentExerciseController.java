@@ -55,7 +55,7 @@ public class EquipmentExerciseController {
     @GetMapping("/{eeId}")
     public ResponseEntity<EquipmentExercise> readEquipmentExercise(@PathVariable Long eeId) {
         EquipmentExercise equipmentExercise = equipmentExerciseService.selectEquipmentExercise(eeId);
-        if(equipmentExercise!=null) {
+        if (equipmentExercise != null) {
             return new ResponseEntity<>(equipmentExercise, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
@@ -71,8 +71,21 @@ public class EquipmentExerciseController {
         if (representative.equals(principal.getName()) || isAdmin(principal)) {
             equipmentExerciseService.updateEquipmentExercise(eeId, equipmentExercise);
             return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
-        else {
+    }
+
+    @DeleteMapping("/{eeId}")
+    public ResponseEntity<String> deleteEquipmentExercise(@PathVariable Long eeId, Principal principal) {
+        String representative = gymService.selectGymRepresentativeUsernameByGymId(
+                equipmentService.selectEquipment(
+                        equipmentExerciseService.selectEquipmentExercise(eeId).getEquipmentId())
+                        .getGymId());
+        if (representative.equals(principal.getName()) || isAdmin(principal)) {
+            equipmentExerciseService.deleteEquipmentExercise(eeId);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }

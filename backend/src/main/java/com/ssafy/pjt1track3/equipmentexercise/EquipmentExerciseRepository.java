@@ -7,4 +7,5 @@ public interface EquipmentExerciseRepository {
     void insertEquipmentExercise(EquipmentExercise equipmentExercise);
     EquipmentExercise selectEquipmentExercise(Long eeId);
     void updateEquipmentExercise(EquipmentExercise equipmentExercise);
+    void deleteEquipmentExercise(Long eeId);
 }

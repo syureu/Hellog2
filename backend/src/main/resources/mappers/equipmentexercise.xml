@@ -36,4 +36,13 @@
         where
             equipment_exercise_id = #{equipmentExerciseId}
     </update>
+
+    <!-- void deleteEquipmentExercise(Long eeId); -->
+    <delete id="deleteEquipmentExercise" parameterType="Long">
+        delete from
+            equipment_exercise
+        where
+            equipment_exercise_id = #{equipmentExerciseId}
+    </delete>
+
 </mapper>
