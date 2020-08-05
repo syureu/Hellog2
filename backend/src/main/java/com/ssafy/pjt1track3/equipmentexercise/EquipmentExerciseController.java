@@ -52,13 +52,28 @@ public class EquipmentExerciseController {
         }
     }
 
-    @GetMapping("{eeId}")
+    @GetMapping("/{eeId}")
     public ResponseEntity<EquipmentExercise> readEquipmentExercise(@PathVariable Long eeId) {
         EquipmentExercise equipmentExercise = equipmentExerciseService.selectEquipmentExercise(eeId);
         if(equipmentExercise!=null) {
             return new ResponseEntity<>(equipmentExercise, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @PutMapping("/{eeId}")
+    public ResponseEntity<String> updateEquipmentExercise(@PathVariable Long eeId, @RequestBody EquipmentExercise equipmentExercise, Principal principal) {
+        String representative = gymService.selectGymRepresentativeUsernameByGymId(
+                equipmentService.selectEquipment(
+                        equipmentExercise.getEquipmentId())
+                        .getGymId());
+        if (representative.equals(principal.getName()) || isAdmin(principal)) {
+            equipmentExerciseService.updateEquipmentExercise(eeId, equipmentExercise);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
 }

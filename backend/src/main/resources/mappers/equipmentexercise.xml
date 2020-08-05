@@ -25,4 +25,15 @@
         where
             equipment_exercise_id = #{equipmentExerciseId}
     </select>
+
+    <!-- void updateEquipmentExercise(EquipmentExercise equipmentExercise); -->
+    <update id="updateEquipmentExercise" parameterType="EquipmentExercise">
+        update
+            equipment_exercise
+        set
+            equipment_id = #{equipmentId},
+            exercise_id = #{exerciseId}
+        where
+            equipment_exercise_id = #{equipmentExerciseId}
+    </update>
 </mapper>

@@ -18,4 +18,9 @@ public class EquipmentExerciseService {
     public EquipmentExercise selectEquipmentExercise(Long eeId) {
         return equipmentExerciseRepository.selectEquipmentExercise(eeId);
     }
+
+    public void updateEquipmentExercise(Long eeId, EquipmentExercise equipmentExercise) {
+        equipmentExercise.setEquipmentExerciseId(eeId);
+        equipmentExerciseRepository.updateEquipmentExercise(equipmentExercise);
+    }
 }
