@@ -7,9 +7,16 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import tbarrow from './img/tbarrow.png';
-import widegriplatpulldown from './img/widegriplatpulldown.png';
 import './styles.css';
+
+//사진들
+import barbelldeadlift from './img/WorkoutB/barbell-deadlift.png';
+import pullup from './img/WorkoutB/pull-up.png';
+import seatedcablerow from './img/WorkoutB/cablerow.png';
+import bentoverdumbbellrow from './img/WorkoutB/bent-over-one-arm-dumbbell-row.png';
+import ezbarcurl from './img/WorkoutB/EZ-Bar-Curl.png';
+import wheelrollout from './img/WorkoutB/wheel-rollout.png';
+import dumbbelllyingexternalshoulderrotation from './img/WorkoutB/dumbbell-lying-external-shoulder-rotation.png';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -35,16 +42,53 @@ function createData(pic, exp, prog) {
 
 const rows = [
   createData(
-    <img className="photo" src={tbarrow}></img>,
+    <img className="photo" src={barbelldeadlift}></img>,
     <div>
-      <h2>T-bar-row</h2>등 운동
+      <h4>Barbell Deadlift</h4>ㅇ
     </div>,
-    '10 * 5',
+    '3 X 9-11',
   ),
   createData(
-    <img className="photo" src={widegriplatpulldown}></img>,
-    <p>등 운동 </p>,
-    '10 * 5',
+    <img className="photo" src={pullup}></img>,
+    <div>
+      <h4>Pull up</h4>ㅇ
+    </div>,
+    '3 X 9-11',
+  ),
+  createData(
+    <img className="photo" src={seatedcablerow}></img>,
+    <div>
+      <h4>Seated Cable Row</h4>ㅇ
+    </div>,
+    '2 X 9-11',
+  ),
+  createData(
+    <img className="photo" src={bentoverdumbbellrow}></img>,
+    <div>
+      <h4>Bent Over Dumbbell Row</h4>ㅇ
+    </div>,
+    '2 X 9-11',
+  ),
+  createData(
+    <img className="photo" src={ezbarcurl}></img>,
+    <div>
+      <h4>EZ-Bar Curl</h4>ㅇ
+    </div>,
+    '3 X 9-11',
+  ),
+  createData(
+    <img className="photo" src={wheelrollout}></img>,
+    <div>
+      <h4>Wheel Rollout</h4>ㅇ
+    </div>,
+    '3 X 10-15',
+  ),
+  createData(
+    <img className="photo" src={dumbbelllyingexternalshoulderrotation}></img>,
+    <div>
+      <h4>Dumbbell Lying Shoulder</h4>ㅇ
+    </div>,
+    '2 X 15-20',
   ),
 ];
 
@@ -54,12 +98,22 @@ const useStyles = makeStyles({
   },
 });
 
-export default function IDay2() {
+export default function Week13() {
   const classes = useStyles();
 
   return (
     <div>
-      <h1>등 운 동</h1>
+      <div align="center">
+        <h4>주의사항</h4>
+        <ul>
+          <li>슈퍼세트로 운동을 진행합니다</li>
+          <li>(한 운동의 한세트가 끝나면 바로 이어서 다음 운동 한세트 수행)</li>
+          <li>세트 간 휴식은 2-3분</li>
+          <li>전체 운동시간은 1시간 미만</li>
+          <li>횟수를 수행 가능한 무게로 하되 점차 늘려갈 것</li>
+        </ul>
+      </div>
+      <br />
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
@@ -71,8 +125,7 @@ export default function IDay2() {
                 운동 설명
               </StyledTableCell>
               <StyledTableCell align="center" width="25%">
-                추천 프로그램 <br />
-                횟수 * set 수
+                횟수
               </StyledTableCell>
             </TableRow>
           </TableHead>

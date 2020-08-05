@@ -141,16 +141,13 @@ const MainSection = props => {
               <br />
               <ul align="center">
                 <li>
-                  <h5>A : 등, 이두 / B : 가슴, 어깨, 삼두 / C : 하체</h5>
+                  <h5> A : 가슴, 어깨, 삼두 / B : 등, 이두 / C : 하체</h5>
                 </li>
                 <li>
                   <h5>
                     하루에 Chapter 하나씩, 한 주간 A B C 휴식 A B 코스를
                     권장합니다
                   </h5>
-                </li>
-                <li>
-                  <h5> 무게는 횟수를 수행 가능한 최대 무게로 진행합니다</h5>
                 </li>
               </ul>
             </label>
