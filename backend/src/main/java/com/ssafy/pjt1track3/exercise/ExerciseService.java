@@ -23,4 +23,8 @@ public class ExerciseService {
         exercise.setExerciseId(exerciseId);
         exerciseRepository.updateExercise(exercise);
     }
+
+    public void deleteExercise(Long exerciseId) {
+        exerciseRepository.deleteExercise(exerciseId);
+    }
 }

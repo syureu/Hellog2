@@ -4,6 +4,7 @@ import com.ssafy.pjt1track3.user.UserService;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -50,6 +51,17 @@ public class ExerciseController {
         List<String> userRoleList = userService.selectRoleListByUsername(principal.getName());
         if (userRoleList.contains("COACH") || isAdmin(principal)) {
             exerciseService.updateExercise(exerciseId, exercise);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @DeleteMapping("/{exerciseId}")
+    public ResponseEntity<String> deleteExercise(@PathVariable Long exerciseId, Principal principal) {
+        List<String> userRoleList = userService.selectRoleListByUsername(principal.getName());
+        if (userRoleList.contains("COACH") || isAdmin(principal)) {
+            exerciseService.deleteExercise(exerciseId);
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);

@@ -38,4 +38,11 @@
             exercise_id = #{exerciseId}
     </update>
 
+    <!-- void deleteExercise(Long exerciseId); -->
+    <delete id="deleteExercise" parameterType="Long">
+        delete from
+            exercise
+        where
+            exercise_id = #{exerciseId}
+    </delete>
 </mapper>

@@ -7,4 +7,5 @@ public interface ExerciseRepository {
     void insertExercise(Exercise exercise);
     Exercise selectExercise(Long exerciseId);
     void updateExercise(Exercise exercise);
+    void deleteExercise(Long exerciseId);
 }
