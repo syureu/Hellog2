@@ -18,4 +18,9 @@ public class EquipmentService {
     public Equipment selectEquipment(Long equipmentId) {
         return equipmentRepository.selectEquipment(equipmentId);
     }
+
+    public void updateEquipment(long equipmentId, Equipment equipment) {
+        equipment.setEquipmentId(equipmentId);
+        equipmentRepository.updateEquipment(equipment);
+    }
 }

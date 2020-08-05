@@ -32,8 +32,7 @@ public class EquipmentController {
 
     @PostMapping("/equipment")
     public ResponseEntity<String> createEquipment(@RequestBody Equipment equipment, Principal principal) {
-        boolean isAdminFlag= isAdmin(principal);
-        if(isAdminFlag || isOwnGym(equipment.getGymId(), principal)){
+        if(isAdmin(principal) || isOwnGym(equipment.getGymId(), principal)){
             equipmentService.insertEquipment(equipment);
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
@@ -48,6 +47,16 @@ public class EquipmentController {
             return new ResponseEntity<>(equipment, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @PutMapping("/{equipmentId}")
+    public ResponseEntity<String> updateEquipment(@PathVariable long equipmentId, @RequestBody Equipment equipment, Principal principal) {
+        if(isAdmin(principal) || isOwnGym(equipment.getGymId(), principal)){
+            equipmentService.updateEquipment(equipmentId, equipment);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
 }
