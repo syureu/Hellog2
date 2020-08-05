@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.equipmentexercise.EquipmentExerciseRepository">
+    <!-- void insertEquipmentExercise(EquipmentExercise equipmentExercise); -->
+    <insert id="insertEquipmentExercise" parameterType="EquipmentExercise">
+        insert into
+            equipment_exercise(
+                equipment_id,
+                exercise_id
+            )
+        values(
+            #{equipmentId},
+            #{exerciseId}
+        )
+    </insert>
+
+    <!-- EquipmentExercise selectEquipmentExercise(Long eeId); -->
+    <select id="selectEquipmentExercise" parameterType="Long" resultType="EquipmentExercise">
+        select
+            *
+        from
+            equipment_exercise
+        where
+            equipment_exercise_id = #{equipmentExerciseId}
+    </select>
+
+    <!-- void updateEquipmentExercise(EquipmentExercise equipmentExercise); -->
+    <update id="updateEquipmentExercise" parameterType="EquipmentExercise">
+        update
+            equipment_exercise
+        set
+            equipment_id = #{equipmentId},
+            exercise_id = #{exerciseId}
+        where
+            equipment_exercise_id = #{equipmentExerciseId}
+    </update>
+
+    <!-- void deleteEquipmentExercise(Long eeId); -->
+    <delete id="deleteEquipmentExercise" parameterType="Long">
+        delete from
+            equipment_exercise
+        where
+            equipment_exercise_id = #{equipmentExerciseId}
+    </delete>
+
+</mapper>
