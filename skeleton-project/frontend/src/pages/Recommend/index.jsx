@@ -30,11 +30,9 @@ import Week47 from './Beginner/week47';
 import Week710 from './Beginner/week710';
 import Week1012 from './Beginner/week1012';
 
-import IDay1 from './Intermediate/iday1';
-import IDay2 from './Intermediate/iday2';
-import IDay3 from './Intermediate/iday3';
-import IDay4 from './Intermediate/iday4';
-import IDay5 from './Intermediate/iday5';
+import WorkoutA from './Intermediate/workouta';
+import WorkoutB from './Intermediate/workoutb';
+import WorkoutC from './Intermediate/workoutc';
 
 import mdt from './Advanced/mdt';
 
@@ -134,6 +132,29 @@ const MainSection = props => {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
+          <Grid item xs={12} align="center">
+            <label align="center">
+              <div align="center">
+                <h4>"Intermediate Program" 은 Beginner Routine을 끝내고</h4>
+                <h4>3분할을 통해 집중적으로 운동하는 Routine입니다</h4>
+              </div>
+              <br />
+              <ul align="center">
+                <li>
+                  <h5>A : 등, 이두 / B : 가슴, 어깨, 삼두 / C : 하체</h5>
+                </li>
+                <li>
+                  <h5>
+                    하루에 Chapter 하나씩, 한 주간 A B C 휴식 A B 코스를
+                    권장합니다
+                  </h5>
+                </li>
+                <li>
+                  <h5> 무게는 횟수를 수행 가능한 최대 무게로 진행합니다</h5>
+                </li>
+              </ul>
+            </label>
+          </Grid>
           <Grid item xs={6}>
             <label>
               <h4>Intermegidate Routine </h4>
@@ -143,20 +164,14 @@ const MainSection = props => {
             <Link to="/Recommend/stretching">
               <Button>Warm-up</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day1">
-              <Button>Day1</Button>
+            <Link to="/Recommend/intermediate/workouta">
+              <Button>A</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day2">
-              <Button>Day2</Button>
+            <Link to="/Recommend/intermediate/workoutb">
+              <Button>B</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day3">
-              <Button>Day3</Button>
-            </Link>
-            <Link to="/Recommend/intermediate/day4">
-              <Button>Day4</Button>
-            </Link>
-            <Link to="/Recommend/intermediate/day5">
-              <Button>Day5</Button>
+            <Link to="/Recommend/intermediate/workoutc">
+              <Button>C</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -166,24 +181,16 @@ const MainSection = props => {
                 component={Stretching}
               ></Route>
               <Route
-                path="/Recommend/intermediate/day1"
-                component={IDay1}
+                path="/Recommend/intermediate/workouta"
+                component={WorkoutA}
               ></Route>
               <Route
-                path="/Recommend/intermediate/day2"
-                component={IDay2}
+                path="/Recommend/intermediate/workoutb"
+                component={WorkoutB}
               ></Route>
               <Route
-                path="/Recommend/intermediate/day3"
-                component={IDay3}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day4"
-                component={IDay4}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day5"
-                component={IDay5}
+                path="/Recommend/intermediate/workoutc"
+                component={WorkoutC}
               ></Route>
             </Switch>
           </Grid>
@@ -226,10 +233,22 @@ const MainSection = props => {
                 component={Stretching}
               ></Route>
               <Route path="/Recommend/advanced/day1" component={mdt}></Route>
-              <Route path="/Recommend/advanced/day2" component={IDay2}></Route>
-              <Route path="/Recommend/advanced/day3" component={IDay3}></Route>
-              <Route path="/Recommend/advanced/day4" component={IDay4}></Route>
-              <Route path="/Recommend/advanced/day5" component={IDay5}></Route>
+              <Route
+                path="/Recommend/advanced/day2"
+                component={WorkoutA}
+              ></Route>
+              <Route
+                path="/Recommend/advanced/day3"
+                component={WorkoutA}
+              ></Route>
+              <Route
+                path="/Recommend/advanced/day4"
+                component={WorkoutA}
+              ></Route>
+              <Route
+                path="/Recommend/advanced/day5"
+                component={WorkoutA}
+              ></Route>
             </Switch>
           </Grid>
         </Grid>
