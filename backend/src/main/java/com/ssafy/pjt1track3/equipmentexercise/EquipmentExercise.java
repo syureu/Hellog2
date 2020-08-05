@@ -1,4 +1,4 @@
-package com.ssafy.pjt1track3.exerciseEquipment;
+package com.ssafy.pjt1track3.equipmentexercise;
 
 public class EquipmentExercise {
     private Long equipmentExerciseId;
