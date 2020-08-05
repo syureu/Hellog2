@@ -51,4 +51,14 @@ public class EquipmentExerciseController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @GetMapping("{eeId}")
+    public ResponseEntity<EquipmentExercise> readEquipmentExercise(@PathVariable Long eeId) {
+        EquipmentExercise equipmentExercise = equipmentExerciseService.selectEquipmentExercise(eeId);
+        if(equipmentExercise!=null) {
+            return new ResponseEntity<>(equipmentExercise, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
 }

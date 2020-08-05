@@ -15,4 +15,14 @@
             #{exerciseId}
         )
     </insert>
+
+    <!-- EquipmentExercise selectEquipmentExercise(Long eeId); -->
+    <select id="selectEquipmentExercise" parameterType="Long" resultType="EquipmentExercise">
+        select
+            *
+        from
+            equipment_exercise
+        where
+            equipment_exercise_id = #{equipmentExerciseId}
+    </select>
 </mapper>

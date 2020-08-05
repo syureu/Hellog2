@@ -14,4 +14,8 @@ public class EquipmentExerciseService {
     public void insertEquipmentExercise(EquipmentExercise equipmentExercise) {
         equipmentExerciseRepository.insertEquipmentExercise(equipmentExercise);
     }
+
+    public EquipmentExercise selectEquipmentExercise(Long eeId) {
+        return equipmentExerciseRepository.selectEquipmentExercise(eeId);
+    }
 }
