@@ -48,13 +48,16 @@ const initialState = Map({
       email: false,
       password: false,
     }),
+    error: null,
   }),
   login: Map({
     form: Map({
       username: "",
       password: "",
     }),
+    error: null,
   }),
+  result: Map({}),
 });
 
 //reducer
