@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
@@ -81,5 +82,10 @@ public class UserController {
             }
         }
         return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+    }
+
+    @GetMapping("/roles")
+    public ResponseEntity<List<String>> readLoginUsersRoles(Principal principal) {
+        return new ResponseEntity<>(userService.selectRoleListByUsername(principal.getName()),HttpStatus.OK);
     }
 }
