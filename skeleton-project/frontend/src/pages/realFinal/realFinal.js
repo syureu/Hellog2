@@ -173,7 +173,17 @@ class realFinal extends Component {
     }
 
     this.setState({
-      list_data: JSON.stringify(total_list.data),
+      list_data: [
+        {
+          board_id: 1,
+          title: '테스트1',
+          contents: '테스트중',
+          data: new Date(),
+          view_cnt: 1,
+          cat_id: 1,
+          likes: 1,
+        },
+      ],
       list_all_page: page_arr,
       list_search: search,
     });
@@ -225,9 +235,13 @@ class realFinal extends Component {
   };
 
   _getAllCategoryData = async function() {
-    const getData = await axios('/get/category');
+    const getData = [
+      { id: 1, name: '아침' },
+      { id: 2, name: '점심' },
+      { id: 3, name: '저녁' },
+    ];
 
-    this.setState({ category_data: getData.data });
+    this.setState({ category_data: getData });
   };
 
   _selectCategoryData = async board_id => {
@@ -292,7 +306,17 @@ class realFinal extends Component {
     let result = new Object();
 
     // 전체 페이지 수 구하기
-    let page_arr = [];
+    let page_arr = [
+      {
+        board_id: 1,
+        title: '테스트1',
+        contents: '테스트중',
+        data: new Date(),
+        view_cnt: 1,
+        cat_id: 1,
+        likes: 1,
+      },
+    ];
 
     const { reply_limit, reply_block_limit } = this.state;
 

@@ -8,11 +8,7 @@ class category extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: [
-        { id: 1, name: '아침' },
-        { id: 2, name: '점심' },
-        { id: 3, name: '저녁' },
-      ],
+      category: [],
       edit: false,
     };
   }
@@ -22,9 +18,13 @@ class category extends Component {
   }
 
   _getCategoryData = async function() {
-    const getData = await axios('/get/category');
+    const getData = [
+      { id: 1, name: '아침' },
+      { id: 2, name: '점심' },
+      { id: 3, name: '저녁' },
+    ];
 
-    this.setState({ category: getData.data });
+    this.setState({ category: getData });
   };
 
   // _addCategory = async function() {
