@@ -44,4 +44,15 @@ public class ExerciseController {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         }
     }
+
+    @PutMapping("/{exerciseId}")
+    public ResponseEntity<String> updateExercise(@PathVariable Long exerciseId, @RequestBody Exercise exercise, Principal principal) {
+        List<String> userRoleList = userService.selectRoleListByUsername(principal.getName());
+        if (userRoleList.contains("COACH") || isAdmin(principal)) {
+            exerciseService.updateExercise(exerciseId, exercise);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
 }

@@ -27,4 +27,15 @@
             exercise_id = #{exerciseId}
     </select>
 
+    <!-- void updateExercise(Exercise exercise); -->
+    <update id="updateExercise" parameterType="exercise">
+        update
+            exercise
+        set
+            name = #{name},
+            part = #{part}
+        where
+            exercise_id = #{exerciseId}
+    </update>
+
 </mapper>

@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface ExerciseRepository {
     void insertExercise(Exercise exercise);
     Exercise selectExercise(Long exerciseId);
+    void updateExercise(Exercise exercise);
 }

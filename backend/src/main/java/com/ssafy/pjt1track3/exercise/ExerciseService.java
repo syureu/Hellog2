@@ -18,4 +18,9 @@ public class ExerciseService {
     public Exercise selectExercise(Long exerciseId) {
         return exerciseRepository.selectExercise(exerciseId);
     }
+
+    public void updateExercise(Long exerciseId, Exercise exercise) {
+        exercise.setExerciseId(exerciseId);
+        exerciseRepository.updateExercise(exercise);
+    }
 }
