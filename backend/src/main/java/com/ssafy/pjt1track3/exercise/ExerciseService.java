@@ -14,4 +14,8 @@ public class ExerciseService {
     public void insertExercise(Exercise exercise) {
         exerciseRepository.insertExercise(exercise);
     }
+
+    public Exercise selectExercise(Long exerciseId) {
+        return exerciseRepository.selectExercise(exerciseId);
+    }
 }

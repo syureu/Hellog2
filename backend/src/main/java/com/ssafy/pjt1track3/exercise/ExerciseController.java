@@ -1,6 +1,7 @@
 package com.ssafy.pjt1track3.exercise;
 
 import com.ssafy.pjt1track3.user.UserService;
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,16 @@ public class ExerciseController {
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @GetMapping("/{exerciseId}")
+    public ResponseEntity<Exercise> readExercise(@PathVariable Long exerciseId){
+        Exercise exercise = exerciseService.selectExercise(exerciseId);
+        if(exercise != null) {
+            return new ResponseEntity<>(exercise, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         }
     }
 }
