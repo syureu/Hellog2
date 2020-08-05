@@ -14,4 +14,8 @@ public class EquipmentService {
     public void insertEquipment(Equipment equipment) {
         equipmentRepository.insertEquipment(equipment);
     }
+
+    public Equipment selectEquipment(Long equipmentId) {
+        return equipmentRepository.selectEquipment(equipmentId);
+    }
 }

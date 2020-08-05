@@ -5,4 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EquipmentRepository {
     void insertEquipment(Equipment equipment);
+    Equipment selectEquipment(Long equipmentId);
 }

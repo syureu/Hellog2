@@ -40,4 +40,14 @@ public class EquipmentController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @GetMapping("/{equipmentId}")
+    public ResponseEntity<Equipment> readEquipment(@PathVariable Long equipmentId) {
+        Equipment equipment = equipmentService.selectEquipment(equipmentId);
+        if(equipment != null) {
+            return new ResponseEntity<>(equipment, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
 }

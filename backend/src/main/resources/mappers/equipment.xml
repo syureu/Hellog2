@@ -16,4 +16,13 @@
         )
     </insert>
 
+    <!-- Equipment selectEquipment(Long equipmentId); -->
+    <select id="selectEquipment" parameterType="Long" resultType="Equipment">
+        select
+            *
+        from
+            equipment
+        where
+            equipment_id = #{equipmentId}
+    </select>
 </mapper>
