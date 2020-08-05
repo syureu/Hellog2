@@ -1,26 +1,65 @@
 {% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
 <div id="access_table">
   <label> NFC 태그 혹은 연결된 키보드로 로그인 하세요.</label>
-  <table style="margin: auto;">
-    <tr>
-      <td>아이디</td>
-      <td><input id="userId" type="text" placeholder="admin" /></td>
-    </tr>
-    <tr>
-      <td>비밀번호</td>
-      <td><input id="userPassword" type="password" /></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <button onclick="login()" class="btn btn-secondary">로그인</button>
-      </td>
-    </tr>
-  </table>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <table style="margin: auto;">
+      <tr>
+        <td>
+          <label for="username">username:</label>
+        </td>
+        <td>
+          <input
+            id="username"
+            type="text"
+            name="username"
+            placeholder="아이디"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password">password:</label>
+        </td>
+        <td>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="비밀번호"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="OK" />
+        </td>
+      </tr>
+    </table>
+    <!--<table style="margin: auto;">
+      <tr>
+        <td>아이디</td>
+        <td><input id="username" type="text" placeholder="admin" /></td>
+      </tr>
+      <tr>
+        <td>비밀번호</td>
+        <td><input id="password" type="password" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="submit" class="btn btn-secondary">
+            로그인
+          </button>
+        </td>
+      </tr>
+    </table> -->
+  </form>
 </div>
 <script>
   function login() {
-    location.href = "../select";
+    location.href = "../login";
   }
 </script>
 {% endblock %}
