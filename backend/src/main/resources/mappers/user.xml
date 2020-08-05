@@ -68,8 +68,13 @@
         where id=#{id}
     </delete>
 
-    <delete id="deleteAll">
-        delete from user
-        where 1=1
-    </delete>
+    <!-- User selectUserByUsername(String username); -->
+    <select id="selectUserByUsername" parameterType="String" resultType="User">
+        select
+            *
+        from
+            user
+        where
+            username = #{username}
+    </select>
 </mapper>
