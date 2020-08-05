@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
+  const baseUrl = "http://syureu.iptime.org:29002";
   const loginApi = (user) => {
-    return fetch("/users/login", {
+    return fetch(baseUrl + "/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,8 +20,8 @@ const Login = ({ setHasCookie }) => {
     }
     try {
       const response = await loginApi({
-        user_id: userId,
-        user_pw: userPw,
+        username: userId,
+        password: userPw,
       });
       if (response.result === "ok") {
         setHasCookie(true);
@@ -40,7 +41,7 @@ const Login = ({ setHasCookie }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="user_id"
+          name="username"
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
           placeholder="id"
