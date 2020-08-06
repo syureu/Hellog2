@@ -137,6 +137,8 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
    SDA SDA0  
    SCL SCL0
 
+---
+
 ### Read NFC DATA
 
 1. \$ nfc-mfultralight r output.mfd
@@ -150,6 +152,10 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 3. NFC 안의 데이터 형태가 text/plain, 데이터 내용이 Hello ! 일경우
    text/plainHello ! 형태로 출력됨
 
-### NFC Encrypt
+---
 
-Use AES 256
+### NFC Tag Hash 생성
+
+1. libnfc를 활용하여 nfc sticker에서 데이터를 추출
+
+2. SHA256을 활용하여 추출된 데이터를 해싱
