@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
+
+<h1>Hellog</h1>
+<h3>인터넷 연결을 확인합니다.</h3>
+
+<script>
+  setTimeout("checkOnLine()", 500);
+  function checkOnLine() {
+    let check = navigator.onLine;
+    console.log(check);
+
+    if (check) {
+      location.href = "./access";
+    } else {
+      location.href = "./unconnected";
+    }
+  }
+</script>
+{% endblock %}
