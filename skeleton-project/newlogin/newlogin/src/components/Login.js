@@ -9,6 +9,7 @@ const Login = ({ setHasCookie }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // 여기에 Authorization 관해서 저장되게 해야할 거 같은데
       },
       body: JSON.stringify(user),
     }).then((response) => response.json());
