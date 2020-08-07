@@ -159,3 +159,11 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 1. libnfc를 활용하여 nfc sticker에서 데이터를 추출
 
 2. SHA256을 활용하여 추출된 데이터를 해싱
+
+---
+
+### NFC Hash Send
+
+1. 해쉬값 추출
+
+2. 해쉬값 백엔드로 전송
