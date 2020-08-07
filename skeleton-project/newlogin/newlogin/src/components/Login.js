@@ -18,22 +18,24 @@ const Login = ({ setHasCookie }) => {
     e.preventDefault();
     if (!userId || !userPw) {
       return;
-    }
-    try {
-      const response = await loginApi({
-        username: userId,
-        password: userPw,
-      });
-      if (response.result === "ok") {
-        setHasCookie(true);
-      } else {
-        throw new Error(response.error);
+    } else {
+      try {
+        const response = await loginApi({
+          username: userId,
+          password: userPw,
+        });
+        if (response.result === "ok") {
+          console.log(response.headers);
+          setHasCookie(true);
+        } else {
+          throw new Error(response.error);
+        }
+      } catch (err) {
+        alert("로그인에 실패했습니다.");
+        setUserId("");
+        setUserPw("");
+        console.error("login error", err);
       }
-    } catch (err) {
-      alert("로그인에 실패했습니다.");
-      setUserId("");
-      setUserPw("");
-      console.error("login error", err);
     }
   };
   return (
