@@ -6,19 +6,19 @@ public class Record {
     private Long recordId;
     private Long id;
     private Long equipmentExerciseId;
-    private int set;
+    private int sett;
     private String weight;
-    private int count;
+    private int countt;
     private Date startTime;
     private Date endTime;
 
-    public Record(Long recordId, Long id, Long equipmentExerciseId, int set, String weight, int count, Date startTime, Date endTime) {
+    public Record(Long recordId, Long id, Long equipmentExerciseId, int sett, String weight, int countt, Date startTime, Date endTime) {
         this.recordId = recordId;
         this.id = id;
         this.equipmentExerciseId = equipmentExerciseId;
-        this.set = set;
+        this.sett = sett;
         this.weight = weight;
-        this.count = count;
+        this.countt = countt;
         this.startTime = startTime;
         this.endTime = endTime;
     }
@@ -47,12 +47,12 @@ public class Record {
         this.equipmentExerciseId = equipmentExerciseId;
     }
 
-    public int getSet() {
-        return set;
+    public int getSett() {
+        return sett;
     }
 
-    public void setSet(int set) {
-        this.set = set;
+    public void setSett(int sett) {
+        this.sett = sett;
     }
 
     public String getWeight() {
@@ -63,12 +63,12 @@ public class Record {
         this.weight = weight;
     }
 
-    public int getCount() {
-        return count;
+    public int getCountt() {
+        return countt;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCountt(int countt) {
+        this.countt = countt;
     }
 
     public Date getStartTime() {
