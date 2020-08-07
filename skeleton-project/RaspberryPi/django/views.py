@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import LoginForm
+from .forms import LoginForm, WorkingSetForm, RecordForm
 from django.shortcuts import render, redirect
 from .models import User, Record, Machine
 import requests, json, datetime
@@ -12,13 +12,33 @@ def index(request):
 def access(request):
     return render(request,'rasp_server/access.html',{})
 
-def main(request, set_cnt, cnt):
-    context ={
-        'setted_info' :{
-            'set': set_cnt,
-            'cnt': cnt,
-        }
+def main(request):
+    set_cnt = 0
+    cnt = 0
+    
+    if request.method == 'POST':
+        form = WorkingSetForm(request.POST)
+        print('-----------')
+        print(request.POST)
+        print('-----------')
+        print(form.is_valid())
+        if(form.is_valid()):
+            set_cnt = form.cleaned_data['set_cnt']
+            cnt = form.cleaned_data['cnt']
+
+    setted_info = {
+        'set': set_cnt,
+        'cnt': cnt,
     }
+    
+    username = User.objects.all()[0].username
+    machine_name = Machine.objects.all()[0].machine_name
+    context ={
+        'username': username,
+        'machine_name': machine_name,
+        'setted_info': setted_info
+    }
+
     return render(request, 'rasp_server/main.html',context)
 
 def setting(request):
@@ -71,12 +91,11 @@ def manager_login(request):
 
                 user.save()
 
+                machine_list = Machine.objects.all()
+
                 context ={
                     'username': username,
-                    'machine_list': [
-                         {'machine_name': '레그 프레스'} 
-                        ,{'machine_name': '벤치 프레스'}
-                        ],    
+                    'machine_list': machine_list, 
                 }
 
                 return render(request, 'rasp_server/setting.html',context)
@@ -108,7 +127,6 @@ def user_login(request):
                 ## 로그인 이후 정보 얻기 위해 필요한 개인 키
                 auth_key = res.headers["authorization"]
                 ##print(auth_key)
-                msg =  'login success'
 
                 headers = {'authorization': auth_key}
                 getRole_res = requests.get(URL + 'api/users/roles',headers=headers)
@@ -123,7 +141,7 @@ def user_login(request):
 
                 user.save()
                 
-                machine_name = Machine.objects.all()[0].machine_name
+                machine_name = Machine.objects.get(selected=True).machine_name
 
                 return render(request, 'rasp_server/main.html', {'username': username, 'role': role, 'machine_name': machine_name})
         ## 로그인 실패
@@ -133,15 +151,49 @@ def user_login(request):
 
 def selected(request, machine_name):
     print(machine_name)
-    #machine = Machine(machine_id=111, machine_name=machine_name)
-    #machine.save()
-    return HttpResponseRedirect('../../user_login')
+    try:
+        machine = Machine.objects.get(selected=True)
+        machine.selected=False
+        machine.save()
+    except Machine.DoesNotExist:
+        print("There is no machine had seleted")
+    finally :
+        machine = Machine.objects.get(machine_name=machine_name)
+        machine.selected=True
+        machine.save()
 
-def user_logout(request, username):
-    User.objects.filter(username=username).delete()
-    return HttpResponseRedirect('../../user_login')
+        User.objects.all().delete()
+        return HttpResponseRedirect('../../user_login')
+
+def user_logout(request):
+    form = RecordForm(request.POST)
+
+    if(form.is_valid()):
+        username = form.cleaned_data["username"]
+        set_cnt = form.cleaned_data["set_cnt"]
+        cnt = form.cleaned_data["cnt"]
+
+        machine = Machine.objects.get(selected=True)
+
+        record = Record(
+            auth_key=User.objects.get(username=username).auth_key,
+            date_record = datetime.datetime.now(),
+            machine_name=machine.machine_name,
+            machine_id=machine.machine_id,
+            set_cnt=set_cnt,
+            cnt=cnt
+        )
+
+        record.save()
+
+        User.objects.filter(username=username).delete()
+    return HttpResponseRedirect('../user_login')
 
 def manager_logout(request, username):
     User.objects.filter(username=username).delete()
     return render(request, 'rasp_server/index.html', {})
 
+# db 완료되면 하기
+def set_machine_list(): 
+    
+    return None

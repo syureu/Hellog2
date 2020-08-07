@@ -1,19 +1,29 @@
 {% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
 
 <label>운동 사용자 입력</label>
-<table>
-  <tr>
-    <td>
-      세트
-    </td>
-    <td><input type="number" placeholder="0" /></td>
-  </tr>
-  <tr>
-    <td>
-      횟수
-    </td>
-    <td><input type="number" placeholder="0" /></td>
-  </tr>
-</table>
-<a href="{% url 'main' %}" class="btn btn-secondary">운동 시작</a>
+<form action="{% url 'main' %}" method="POST">
+  {% csrf_token %}
+  <table style="margin: auto;">
+    <tr>
+      <td>
+        <label for="set_cnt">세트</label>
+      </td>
+      <td>
+        <input id="set_cnt" name="set_cnt" type="number" placeholder="0" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="cnt">횟수</label>
+      </td>
+      <td><input id="cnt" name="cnt" type="number" placeholder="0" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" class="btn btn-secondary">설정 완료</button>
+      </td>
+    </tr>
+  </table>
+</form>
 {% endblock %}

@@ -8,11 +8,14 @@ class User(models.Model):
     role = models.CharField(max_length=100)
 
 class Record(models.Model):
-    cur_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    auth_key = models.CharField(max_length=200)
     date_record = models.CharField(max_length=100)
-    set_record = models.IntegerField(default=0)
-    cnt_record = models.IntegerField(default=0)
+    machine_id = models.IntegerField(default=0)
+    machine_name = models.CharField(max_length=100)
+    set_cnt = models.IntegerField(default=0)
+    cnt = models.IntegerField(default=0)
 
 class Machine(models.Model):
     machine_id = models.IntegerField()
     machine_name = models.CharField(max_length=50)
+    selected = models.BooleanField(default=False)

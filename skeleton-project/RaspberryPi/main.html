@@ -47,9 +47,6 @@
         >관리자 로그아웃</a
       >
       {% endif %}
-      <a href="{% url 'user_logout' username %}" class="btn btn-secondary">
-        사용 종료
-      </a>
     </div>
     <div id="help">
       <span>{{machine_name}}</span>
@@ -92,16 +89,38 @@
     {% endif %}
     <div id="workingTime">00:00</div>
     <div id="workingCount">
-      <table>
-        <tr>
-          <td>0</td>
-          <td>세트</td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>회</td>
-        </tr>
-      </table>
+      <form action="{% url 'user_logout'%}" method="POST">
+        {% csrf_token %}
+        <table>
+          <tr>
+            <td>
+              <input id="set_cnt" type="number" name="set_cnt" value="0" />
+            </td>
+            <td><label for="set_cnt">세트</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input id="cnt" type="number" name="cnt" value="0" />
+            </td>
+            <td><label for="cnt">회</label></td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit" class="btn btn-secondary">
+                사용 종료
+              </button>
+            </td>
+            <td>
+              <input
+                id="username"
+                type="hidden"
+                name="username"
+                value="{{username}}"
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
     </div>
   </section>
 </div>
