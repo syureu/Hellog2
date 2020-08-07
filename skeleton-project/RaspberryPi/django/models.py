@@ -12,3 +12,7 @@ class Record(models.Model):
     date_record = models.CharField(max_length=100)
     set_record = models.IntegerField(default=0)
     cnt_record = models.IntegerField(default=0)
+
+class Machine(models.Model):
+    machine_id = models.IntegerField()
+    machine_name = models.CharField(max_length=50)

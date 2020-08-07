@@ -42,12 +42,17 @@
   <header class="main_header">
     <div id="userInfo">
       <span>{{username}}님</span>
-      <button onclick="location.href='../user_login'" class="btn btn-secondary">
+      {% if role == "ADMIN"%}
+      <a class="btn btn-secondary" href="{% url 'manager_logout' username %}"
+        >관리자 로그아웃</a
+      >
+      {% endif %}
+      <a href="{% url 'user_logout' username %}" class="btn btn-secondary">
         사용 종료
-      </button>
+      </a>
     </div>
     <div id="help">
-      <span>운동기구 이름</span>
+      <span>{{machine_name}}</span>
       <button class="btn btn-secondary">기구 설명 확인하기</button>
     </div>
   </header>
@@ -56,20 +61,35 @@
     <button class="btn btn-secondary">오늘 운동 기록</button>
     <div>
       <ul class="list-unstyled">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        {% for record in record_list %}
+        <li>
+          <a href=""></a>
+        </li>
+        {% endfor %}
       </ul>
     </div>
   </aside>
   <section>
+    {% if setted_info %}
+    <table>
+      <tr>
+        <th></th>
+        <th>목표</th>
+      </tr>
+      <tr>
+        <td>세트</td>
+        <td>{{setted_info.set}}</td>
+      </tr>
+      <tr>
+        <td>횟수</td>
+        <td>{{setted_info.cnt}}</td>
+      </tr>
+    </table>
+    {% else %}
+    <a class="btn btn-secondary" href="{% url 'working_set' %}"
+      >운동 목표 설정하기</a
+    >
+    {% endif %}
     <div id="workingTime">00:00</div>
     <div id="workingCount">
       <table>
