@@ -10,9 +10,9 @@
     console.log(check);
 
     if (check) {
-      location.href = "./access";
+      location.href = "{% url 'access' %}";
     } else {
-      location.href = "./unconnected";
+      location.href = "{% url 'unconnected' %}";
     }
   }
 </script>

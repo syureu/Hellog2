@@ -1,7 +1,19 @@
 {% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
 <!--관리자만 접근 가능-->
 <!--디바이스 최초 설치 시 설정페이지-->
-<button onclick="location.href='../user_login'" class="btn btn-secondary">
-  유저 로그인 환경으로
-</button>
-{% endblock %}
+{% if machine_list %}
+<a class="btn btn-secondary" href="">기구 리스트 새로고침</a>
+<ul>
+  {% for machine in machine_list %}
+  <li>
+    <a
+      class="btn btn-secondary"
+      href="{% url 'selected' machine.machine_name %}"
+      >{{machine.machine_name}}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>관리자 페이지에서 기구를 먼저 등록하세요</p>
+{% endif %} {% endblock %}

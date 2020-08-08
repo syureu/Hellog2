@@ -1,7 +1,7 @@
-from django.http import HttpResponse
-from .forms import LoginForm
+from django.http import HttpResponse, HttpResponseRedirect
+from .forms import LoginForm, WorkingSetForm, RecordForm
 from django.shortcuts import render, redirect
-from .models import User, Record
+from .models import User, Record, Machine
 import requests, json, datetime
 
 URL = "http://syureu.iptime.org:29002/"
@@ -13,7 +13,33 @@ def access(request):
     return render(request,'rasp_server/access.html',{})
 
 def main(request):
-    return render(request, 'rasp_server/main.html',{})
+    set_cnt = 0
+    cnt = 0
+    
+    if request.method == 'POST':
+        form = WorkingSetForm(request.POST)
+        print('-----------')
+        print(request.POST)
+        print('-----------')
+        print(form.is_valid())
+        if(form.is_valid()):
+            set_cnt = form.cleaned_data['set_cnt']
+            cnt = form.cleaned_data['cnt']
+
+    setted_info = {
+        'set': set_cnt,
+        'cnt': cnt,
+    }
+    
+    username = User.objects.all()[0].username
+    machine_name = Machine.objects.all()[0].machine_name
+    context ={
+        'username': username,
+        'machine_name': machine_name,
+        'setted_info': setted_info
+    }
+
+    return render(request, 'rasp_server/main.html',context)
 
 def setting(request):
     return render(request, 'rasp_server/setting.html',{})
@@ -65,19 +91,26 @@ def manager_login(request):
 
                 user.save()
 
-                return render(request, 'rasp_server/setting.html',{'username': username})
+                machine_list = Machine.objects.all()
+
+                context ={
+                    'username': username,
+                    'machine_list': machine_list, 
+                }
+
+                return render(request, 'rasp_server/setting.html',context)
             ## 로그인 실패
             else :
                 return render(request, 'rasp_server/access.html',{'msg' : '로그인 실패'})
 
-    return render(request, 'rasp_server/setting.html', {})
+    return render(request, 'rasp_server/access.html', {'msg': '로그인 실패'})
 
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        print("--------------")
-        print(request.POST.values)
-        print("--------------")
+        #print("--------------")
+        #print(request.POST.values)
+        #print("--------------")
         if form.is_valid():
             username=form.cleaned_data['username']
             password=form.cleaned_data['password']
@@ -87,7 +120,6 @@ def user_login(request):
                 'password': password,
             }
             print(user)
-            ## headers = {'Content-Type': 'application/json; charset=utf-8'}
             res = requests.post(URL + 'login',data=json.dumps(user))
             
             ## 로그인 성공
@@ -95,7 +127,6 @@ def user_login(request):
                 ## 로그인 이후 정보 얻기 위해 필요한 개인 키
                 auth_key = res.headers["authorization"]
                 ##print(auth_key)
-                msg =  'login success'
 
                 headers = {'authorization': auth_key}
                 getRole_res = requests.get(URL + 'api/users/roles',headers=headers)
@@ -110,8 +141,59 @@ def user_login(request):
 
                 user.save()
                 
-                return render(request, 'rasp_server/main.html', {'username': username, 'role': role})
+                machine_name = Machine.objects.get(selected=True).machine_name
+
+                return render(request, 'rasp_server/main.html', {'username': username, 'role': role, 'machine_name': machine_name})
         ## 로그인 실패
         return render(request, 'rasp_server/user_login.html',{'msg': '로그인 실패'})
     else :
         return render(request, 'rasp_server/user_login.html',{})
+
+def selected(request, machine_name):
+    print(machine_name)
+    try:
+        machine = Machine.objects.get(selected=True)
+        machine.selected=False
+        machine.save()
+    except Machine.DoesNotExist:
+        print("There is no machine had seleted")
+    finally :
+        machine = Machine.objects.get(machine_name=machine_name)
+        machine.selected=True
+        machine.save()
+
+        User.objects.all().delete()
+        return HttpResponseRedirect('../../user_login')
+
+def user_logout(request):
+    form = RecordForm(request.POST)
+
+    if(form.is_valid()):
+        username = form.cleaned_data["username"]
+        set_cnt = form.cleaned_data["set_cnt"]
+        cnt = form.cleaned_data["cnt"]
+
+        machine = Machine.objects.get(selected=True)
+
+        record = Record(
+            auth_key=User.objects.get(username=username).auth_key,
+            date_record = datetime.datetime.now(),
+            machine_name=machine.machine_name,
+            machine_id=machine.machine_id,
+            set_cnt=set_cnt,
+            cnt=cnt
+        )
+
+        record.save()
+
+        User.objects.filter(username=username).delete()
+    return HttpResponseRedirect('../user_login')
+
+def manager_logout(request, username):
+    User.objects.filter(username=username).delete()
+    return render(request, 'rasp_server/index.html', {})
+
+# db 완료되면 하기
+def set_machine_list(): 
+    
+    return None
