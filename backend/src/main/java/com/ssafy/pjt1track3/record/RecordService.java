@@ -30,4 +30,9 @@ public class RecordService {
     public Record selectRecordByRecordId(Long recordId) {
         return recordRepository.selectRecord(recordId);
     }
+
+    public void updateRecord(Long recordId, Record record) {
+        record.setRecordId(recordId);
+        recordRepository.updateRecord(record);
+    }
 }

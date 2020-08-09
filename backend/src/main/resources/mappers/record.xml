@@ -37,4 +37,21 @@
             record_id = #{recordId}
     </select>
 
+
+    <!-- void updateRecord(Record record); -->
+    <update id="updateRecord" parameterType="Record">
+        update
+            record
+        set
+            id = #{id},
+            equipment_exercise_id = #{equipmentExerciseId},
+            sett = #{sett},
+            weight = #{weight},
+            countt = #{countt},
+            start_time = #{startTime},
+            end_time = #{endTime}
+        where
+            record_id = #{recordId}
+    </update>
+
 </mapper>

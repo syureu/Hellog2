@@ -38,4 +38,14 @@ public class RecordController {
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
     }
+
+    @PutMapping("/{recordId}")
+    public ResponseEntity<String> updateRecord(@PathVariable Long recordId, @RequestBody Record record, Principal principal) {
+        if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
+            recordService.updateRecord(recordId, record);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
 }
