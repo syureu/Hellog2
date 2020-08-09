@@ -22,4 +22,12 @@ public class RecordService {
     public void insertRecord(Record record) {
         recordRepository.insertRecord(record);
     }
+
+    public User selectUserByRecordId(Long recordId) {
+        return userRepository.selectUser(recordRepository.selectRecord(recordId).getId());
+    }
+
+    public Record selectRecordByRecordId(Long recordId) {
+        return recordRepository.selectRecord(recordId);
+    }
 }

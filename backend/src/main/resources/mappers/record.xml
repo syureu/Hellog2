@@ -27,4 +27,14 @@
         )
     </insert>
 
+    <!-- Record selectRecord(Long recordId); -->
+    <select id="selectRecord" parameterType="Long" resultType="Record">
+        select
+            *
+        from
+            record
+        where
+            record_id = #{recordId}
+    </select>
+
 </mapper>

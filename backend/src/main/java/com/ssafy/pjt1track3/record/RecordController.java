@@ -29,4 +29,13 @@ public class RecordController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @GetMapping("/{recordId}")
+    public ResponseEntity<Record> readRecord(@PathVariable Long recordId, Principal principal) {
+        if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
+            return new ResponseEntity<>(recordService.selectRecordByRecordId(recordId), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        }
+    }
 }
