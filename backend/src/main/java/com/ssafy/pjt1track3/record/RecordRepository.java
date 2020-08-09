@@ -7,4 +7,5 @@ public interface RecordRepository {
     void insertRecord(Record record);
     Record selectRecord(Long recordId);
     void updateRecord(Record record);
+    void deleteRecord(Long recordId);
 }

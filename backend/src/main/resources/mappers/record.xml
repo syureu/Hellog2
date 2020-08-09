@@ -54,4 +54,12 @@
             record_id = #{recordId}
     </update>
 
+    <!-- void deleteRecord(Long recordId); -->
+    <delete id="deleteRecord" parameterType="Long">
+        delete from
+            record
+        where
+            record_id = #{recordId}
+    </delete>
+
 </mapper>

@@ -35,4 +35,8 @@ public class RecordService {
         record.setRecordId(recordId);
         recordRepository.updateRecord(record);
     }
+
+    public void deleteRecord(Long recordId) {
+        recordRepository.deleteRecord(recordId);
+    }
 }

@@ -48,4 +48,14 @@ public class RecordController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @DeleteMapping("/{recordId}")
+    public ResponseEntity<String> deleteRecord(@PathVariable Long recordId, Principal principal) {
+        if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
+            recordService.deleteRecord(recordId);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
 }
