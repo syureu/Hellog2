@@ -25,18 +25,26 @@ import VoteGridTitle from '../../components/Grid/VoteGridTitle';
 import categoryDats from './dump.json';
 
 import Stretching from './stretching';
+
+//Beginner
 import Week13 from './Beginner/week13';
 import Week47 from './Beginner/week47';
 import Week710 from './Beginner/week710';
 import Week1012 from './Beginner/week1012';
 
-import IDay1 from './Intermediate/iday1';
-import IDay2 from './Intermediate/iday2';
-import IDay3 from './Intermediate/iday3';
-import IDay4 from './Intermediate/iday4';
-import IDay5 from './Intermediate/iday5';
+//intermediate
+import WorkoutA from './Intermediate/workouta';
+import WorkoutB from './Intermediate/workoutb';
+import WorkoutC from './Intermediate/workoutc';
 
-import mdt from './Advanced/mdt';
+//Advanced
+
+import Back from './Advanced/back';
+import Biceps from './Advanced/biceps';
+import Chest from './Advanced/chest';
+import Leg from './Advanced/leg';
+import Shoulder from './Advanced/shoulder';
+import Triceps from './Advanced/triceps';
 
 import ronnie from './ronnie.jpg';
 
@@ -134,6 +142,26 @@ const MainSection = props => {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
+          <Grid item xs={12} align="center">
+            <label align="center">
+              <div align="center">
+                <h4>"Intermediate Program" 은 Beginner Routine을 끝내고</h4>
+                <h4>3분할을 통해 집중적으로 운동하는 Routine입니다</h4>
+              </div>
+              <br />
+              <ul align="center">
+                <li>
+                  <h5> A : 가슴, 어깨, 삼두 / B : 등, 이두 / C : 하체</h5>
+                </li>
+                <li>
+                  <h5>
+                    하루에 Chapter 하나씩, 한 주간 A B C 휴식 A B 코스를
+                    권장합니다
+                  </h5>
+                </li>
+              </ul>
+            </label>
+          </Grid>
           <Grid item xs={6}>
             <label>
               <h4>Intermegidate Routine </h4>
@@ -143,20 +171,14 @@ const MainSection = props => {
             <Link to="/Recommend/stretching">
               <Button>Warm-up</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day1">
-              <Button>Day1</Button>
+            <Link to="/Recommend/intermediate/workouta">
+              <Button>A</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day2">
-              <Button>Day2</Button>
+            <Link to="/Recommend/intermediate/workoutb">
+              <Button>B</Button>
             </Link>
-            <Link to="/Recommend/intermediate/day3">
-              <Button>Day3</Button>
-            </Link>
-            <Link to="/Recommend/intermediate/day4">
-              <Button>Day4</Button>
-            </Link>
-            <Link to="/Recommend/intermediate/day5">
-              <Button>Day5</Button>
+            <Link to="/Recommend/intermediate/workoutc">
+              <Button>C</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -166,24 +188,16 @@ const MainSection = props => {
                 component={Stretching}
               ></Route>
               <Route
-                path="/Recommend/intermediate/day1"
-                component={IDay1}
+                path="/Recommend/intermediate/workouta"
+                component={WorkoutA}
               ></Route>
               <Route
-                path="/Recommend/intermediate/day2"
-                component={IDay2}
+                path="/Recommend/intermediate/workoutb"
+                component={WorkoutB}
               ></Route>
               <Route
-                path="/Recommend/intermediate/day3"
-                component={IDay3}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day4"
-                component={IDay4}
-              ></Route>
-              <Route
-                path="/Recommend/intermediate/day5"
-                component={IDay5}
+                path="/Recommend/intermediate/workoutc"
+                component={WorkoutC}
               ></Route>
             </Switch>
           </Grid>
@@ -194,29 +208,49 @@ const MainSection = props => {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
+          <Grid item xs={12} align="center">
+            <label align="center">
+              <div align="center">
+                <h4>"Advanced Program" 은 Intermediate Routine을 끝내고</h4>
+                <h4>자신만의 루틴을 만들어 나가야합니다.</h4>
+              </div>
+              <br />
+              <ul align="center">
+                <li>
+                  <h5> 항상 부상위험에 주의해주세요</h5>
+                </li>
+                <li>
+                  <h5>
+                    각 부위별 운동만 소개해놓았습니다. 본인에게 맞는 Routine을
+                    완성하세요
+                  </h5>
+                </li>
+              </ul>
+            </label>
+          </Grid>
           <Grid item xs={6}>
             <label>
               <h4>Advanced Routine </h4>
             </label>
           </Grid>
           <Grid item xs={6} align="right">
-            <Link to="/Recommend/stretching">
-              <Button>Warm-up</Button>
+            <Link to="/Recommend/advanced/chest">
+              <Button>Chest</Button>
             </Link>
-            <Link to="/Recommend/advanced/day1">
-              <Button>MDT</Button>
+            <Link to="/Recommend/advanced/back">
+              <Button>Back</Button>
             </Link>
-            <Link to="/Recommend/advanced/day2">
-              <Button>Day2</Button>
+            <Link to="/Recommend/advanced/leg">
+              <Button>Leg</Button>
             </Link>
-            <Link to="/Recommend/advanced/day3">
-              <Button>Day3</Button>
+            <Link to="/Recommend/advanced/shoulder">
+              <Button>Shoulder</Button>
             </Link>
-            <Link to="/Recommend/advanced/day4">
-              <Button>Day4</Button>
+            <Link to="/Recommend/advanced/biceps">
+              <Button>Biceps</Button>
             </Link>
-            <Link to="/Recommend/advanced/day5">
-              <Button>Day5</Button>
+            <Link to="/Recommend/advanced/triceps">
+              <Button>Triceps</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -225,11 +259,21 @@ const MainSection = props => {
                 path="/Recommend/stretching"
                 component={Stretching}
               ></Route>
-              <Route path="/Recommend/advanced/day1" component={mdt}></Route>
-              <Route path="/Recommend/advanced/day2" component={IDay2}></Route>
-              <Route path="/Recommend/advanced/day3" component={IDay3}></Route>
-              <Route path="/Recommend/advanced/day4" component={IDay4}></Route>
-              <Route path="/Recommend/advanced/day5" component={IDay5}></Route>
+              <Route path="/Recommend/advanced/chest" component={Chest}></Route>
+              <Route path="/Recommend/advanced/back" component={Back}></Route>
+              <Route path="/Recommend/advanced/leg" component={Leg}></Route>
+              <Route
+                path="/Recommend/advanced/shoulder"
+                component={Shoulder}
+              ></Route>
+              <Route
+                path="/Recommend/advanced/biceps"
+                component={Biceps}
+              ></Route>
+              <Route
+                path="/Recommend/advanced/triceps"
+                component={Triceps}
+              ></Route>
             </Switch>
           </Grid>
         </Grid>
