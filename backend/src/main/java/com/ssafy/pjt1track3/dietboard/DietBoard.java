@@ -2,7 +2,7 @@ package com.ssafy.pjt1track3.dietboard;
 
 import java.util.Date;
 
-public class dietBoard {
+public class DietBoard {
     Long dietBoardContentId;
     String title;
     Long writer;
@@ -11,7 +11,7 @@ public class dietBoard {
     String content;
     Byte[] picture;
 
-    public dietBoard(Long dietBoardContentId, String title, Long writer, Date writeTime, Date editTime, String content, Byte[] picture) {
+    public DietBoard(Long dietBoardContentId, String title, Long writer, Date writeTime, Date editTime, String content, Byte[] picture) {
         this.dietBoardContentId = dietBoardContentId;
         this.title = title;
         this.writer = writer;
