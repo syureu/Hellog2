@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.dietboardcomment.DietBoardCommentRepository">
+
+    <!-- void insertDietBoardComment(DietBoardComment dietBoardComment); -->
+    <insert id="insertDietBoardComment" parameterType="DietBoardComment">
+        insert into
+            diet_board_comment(
+                diet_board_content_id,
+                writer,
+                write_time,
+                content,
+                reference_id
+            )
+        values(
+            #{dietBoardContentId},
+            #{writer},
+            now(),
+            #{content},
+            #{referenceId}
+        )
+    </insert>
+
+</mapper>

@@ -1,10 +1,8 @@
 package com.ssafy.pjt1track3.dietboard;
 
 import com.ssafy.pjt1track3.user.UserService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
