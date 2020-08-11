@@ -4,6 +4,7 @@ import com.ssafy.pjt1track3.user.UserService;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -40,6 +41,16 @@ public class DietBoardController {
             return new ResponseEntity<>(board, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @PutMapping("/{boardId}")
+    public ResponseEntity<String> updateDietBoard(@PathVariable Long boardId, @RequestBody DietBoard dietBoard, Principal principal) {
+        if (userService.selectUser(dietBoard.getWriter()).getUsername().equals(principal.getName()) || isAdmin(principal)) {
+            dietBoardService.updateDietBoard(boardId, dietBoard);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
 }

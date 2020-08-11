@@ -35,4 +35,18 @@
             diet_board_content_id = #{boardId}
     </select>
 
+    <!-- void updateDietBoard(DietBoard dietBoard); -->
+    <update id="updateDietBoard" parameterType="DietBoard">
+        update
+            diet_board
+        set
+            title = #{title},
+            writer = #{writer},
+            edit_time = now(),
+            content = #{content},
+            picture = #{picture}
+        where
+            diet_board_content_id = #{dietBoardContentId}
+    </update>
+
 </mapper>
