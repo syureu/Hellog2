@@ -14,4 +14,8 @@ public class DietBoardService {
     public void insertDietBoard(DietBoard dietBoard) {
         dietBoardRepository.insertDietBoard(dietBoard);
     }
+
+    public DietBoard selectDietBoard(Long boardId) {
+        return dietBoardRepository.selectDietBoard(boardId);
+    }
 }

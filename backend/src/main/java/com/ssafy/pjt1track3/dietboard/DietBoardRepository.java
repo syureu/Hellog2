@@ -5,4 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface DietBoardRepository {
     void insertDietBoard(DietBoard dietBoard);
+    DietBoard selectDietBoard(Long boardId);
 }

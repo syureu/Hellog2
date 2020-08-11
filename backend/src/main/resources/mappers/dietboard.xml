@@ -25,4 +25,14 @@
         )
     </insert>
 
+    <!-- DietBoard selectDietBoard(Long boardId); -->
+    <select id="selectDietBoard" parameterType="Long" resultType="DietBoard">
+        select
+            *
+        from
+            diet_board
+        where
+            diet_board_content_id = #{boardId}
+    </select>
+
 </mapper>

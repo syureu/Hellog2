@@ -1,6 +1,7 @@
 package com.ssafy.pjt1track3.dietboard;
 
 import com.ssafy.pjt1track3.user.UserService;
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +33,13 @@ public class DietBoardController {
         }
     }
 
-
+    @GetMapping("/{boardId}")
+    public ResponseEntity<DietBoard> readDietBoard(@PathVariable Long boardId) {
+        DietBoard board = dietBoardService.selectDietBoard(boardId);
+        if(board != null) {
+            return new ResponseEntity<>(board, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
 }
