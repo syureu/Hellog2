@@ -83,6 +83,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/exercises/*").permitAll()
                 .antMatchers("/api/equipments/*").permitAll()
                 .antMatchers("/api/equipmentExercises/*").permitAll()
+                .antMatchers("/api/records/*").permitAll()
+                .antMatchers("/api/dietboards/*").permitAll()
                 .anyRequest().authenticated();
     }
 
