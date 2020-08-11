@@ -7,4 +7,5 @@ public interface DietBoardRepository {
     void insertDietBoard(DietBoard dietBoard);
     DietBoard selectDietBoard(Long boardId);
     void updateDietBoard(DietBoard dietBoard);
+    void deleteDietBoard(Long boardId);
 }

@@ -49,4 +49,12 @@
             diet_board_content_id = #{dietBoardContentId}
     </update>
 
+    <!-- void deleteDietBoard(Long boardId); -->
+    <delete id="deleteDietBoard" parameterType="Long">
+        delete from
+            diet_board
+        where
+            diet_board_content_id = #{boardId}
+    </delete>
+
 </mapper>

@@ -53,4 +53,14 @@ public class DietBoardController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @DeleteMapping("/{boardId}")
+    public ResponseEntity<String> deleteDietBoard(@PathVariable Long boardId, Principal principal) {
+        if (userService.selectUser(dietBoardService.selectDietBoard(boardId).getWriter()).getUsername().equals(principal.getName()) || isAdmin(principal)) {
+            dietBoardService.deleteDietBoard(boardId);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
 }

@@ -23,4 +23,8 @@ public class DietBoardService {
         dietBoard.setDietBoardContentId(boardId);
         dietBoardRepository.updateDietBoard(dietBoard);
     }
+
+    public void deleteDietBoard(Long boardId) {
+        dietBoardRepository.deleteDietBoard(boardId);
+    }
 }
