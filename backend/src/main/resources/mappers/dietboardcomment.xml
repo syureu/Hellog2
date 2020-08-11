@@ -44,4 +44,12 @@
             diet_board_comment_id = #{dietBoardCommentId}
     </update>
 
+    <!-- void deleteDietBoardComment(Long commentId); -->
+    <delete id="deleteDietBoardComment" parameterType="Long">
+        delete from
+            diet_board_comment
+        where
+            diet_board_comment_id = #{dietBoardCommentId}
+    </delete>
+
 </mapper>

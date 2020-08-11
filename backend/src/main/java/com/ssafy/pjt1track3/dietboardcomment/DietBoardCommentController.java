@@ -52,4 +52,14 @@ public class DietBoardCommentController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @DeleteMapping("/{commentId}")
+    public ResponseEntity<String> deleteDietBoardComment(@PathVariable Long commentId, Principal principal) {
+        if(userService.selectUser(dietBoardCommentService.selectDietBoardComment(commentId).getWriter()).getUsername().equals(principal.getName())||isAdmin(principal)) {
+            dietBoardCommentService.deleteDietBoardComment(commentId);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
 }

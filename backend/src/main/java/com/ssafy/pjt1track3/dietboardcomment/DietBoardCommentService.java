@@ -23,4 +23,8 @@ public class DietBoardCommentService {
         dietBoardComment.setDietBoardCommentId(commentId);
         dietBoardCommentRepository.updateDietBoardComment(dietBoardComment);
     }
+
+    public void deleteDietBoardComment(Long commentId) {
+        dietBoardCommentRepository.deleteDietBoardComment(commentId);
+    }
 }
