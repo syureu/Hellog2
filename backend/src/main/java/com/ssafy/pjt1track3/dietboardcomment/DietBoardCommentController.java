@@ -42,4 +42,14 @@ public class DietBoardCommentController {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         }
     }
+
+    @PutMapping("/{commentId}")
+    public ResponseEntity<String> updateDietBoardComment(@PathVariable Long commentId, @RequestBody DietBoardComment dietBoardComment, Principal principal) {
+        if(userService.selectUser(dietBoardComment.getWriter()).getUsername().equals(principal.getName())||isAdmin(principal)) {
+            dietBoardCommentService.updateDietBoardComment(commentId, dietBoardComment);
+            return new ResponseEntity<>("", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
 }

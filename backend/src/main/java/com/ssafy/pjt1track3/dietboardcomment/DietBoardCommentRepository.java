@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface DietBoardCommentRepository {
     void insertDietBoardComment(DietBoardComment dietBoardComment);
     DietBoardComment selectDietBoardComment(Long commentId);
+    void updateDietBoardComment(DietBoardComment dietBoardComment);
 }

@@ -33,4 +33,15 @@
             diet_board_comment_id = #{dietBoardCommentId}
     </select>
 
+    <!-- void updateDietBoardComment(DietBoardComment dietBoardComment); -->
+    <update id="updateDietBoardComment" parameterType="DietBoardComment">
+        update
+            diet_board_comment
+        set
+            edit_time = now(),
+            content = #{content}
+        where
+            diet_board_comment_id = #{dietBoardCommentId}
+    </update>
+
 </mapper>
