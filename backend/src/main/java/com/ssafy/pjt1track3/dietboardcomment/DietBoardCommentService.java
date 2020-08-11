@@ -14,4 +14,8 @@ public class DietBoardCommentService {
     public void insertDietBoardComment(DietBoardComment dietBoardComment) {
         dietBoardCommentRepository.insertDietBoardComment(dietBoardComment);
     }
+
+    public DietBoardComment selectDietBoardComment(Long commentId) {
+        return dietBoardCommentRepository.selectDietBoardComment(commentId);
+    }
 }

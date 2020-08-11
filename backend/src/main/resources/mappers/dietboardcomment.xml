@@ -23,4 +23,14 @@
         )
     </insert>
 
+    <!-- DietBoardComment selectDietBoardComment(Long commentId); -->
+    <select id="selectDietBoardComment" parameterType="Long" resultType="DietBoardComment">
+        select
+            *
+        from
+            diet_board_comment
+        where
+            diet_board_comment_id = #{dietBoardCommentId}
+    </select>
+
 </mapper>

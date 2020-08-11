@@ -26,7 +26,6 @@ public class DietBoardCommentController {
     @PostMapping("/dietboardcomment")
     public ResponseEntity<String> createDietBoardComment(@RequestBody DietBoardComment dietBoardComment, Principal principal) {
         if(userService.selectUser(dietBoardComment.getWriter()).getUsername().equals(principal.getName())||isAdmin(principal)) {
-            System.out.println("진입");
             dietBoardCommentService.insertDietBoardComment(dietBoardComment);
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
@@ -34,4 +33,13 @@ public class DietBoardCommentController {
         }
     }
 
+    @GetMapping("/{commentId}")
+    public ResponseEntity<DietBoardComment> readDietBoardComment(@PathVariable Long commentId) {
+        DietBoardComment comment = dietBoardCommentService.selectDietBoardComment(commentId);
+        if(comment!= null) {
+            return new ResponseEntity<>(comment, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
 }
