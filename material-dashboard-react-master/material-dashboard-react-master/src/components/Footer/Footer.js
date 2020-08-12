@@ -16,7 +16,7 @@ export default function Footer(props) {
     <footer className={classes.footer}>
       <div className={classes.container}>
         <div className={classes.left}>
-          <List className={classes.list}>
+          {/* <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="#home" className={classes.block}>
                 Home
@@ -37,19 +37,15 @@ export default function Footer(props) {
                 Blog
               </a>
             </ListItem>
-          </List>
+          </List> */}
         </div>
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a
-              href="https://www.creative-tim.com?ref=mdr-footer"
-              target="_blank"
-              className={classes.a}
-            >
-              Creative Tim
+            <a href="#" target="_blank" className={classes.a}>
+              구미 2반 3팀
             </a>
-            , made with love for a better web
+            , 여기는 푸터다
           </span>
         </p>
       </div>
