@@ -47,4 +47,8 @@ public class RecordService {
     public List<Record> selectTodayRecordByUsername(String name) {
         return recordRepository.selectTodayRecordByUsername(name);
     }
+
+    public List<Record> selectRecordByUsernameAndEquipmentId(String name, Long equipmentId) {
+        return recordRepository.selectRecordByUsernameAndEquipmentId(new UserEquipmentDto(name, equipmentId));
+    }
 }

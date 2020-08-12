@@ -70,4 +70,9 @@ public class RecordController {
     public ResponseEntity<List<Record>> readMyTodayRecordList(Principal principal) {
         return new ResponseEntity<>(recordService.selectTodayRecordByUsername(principal.getName()), HttpStatus.OK);
     }
+
+    @GetMapping("/myrecord/equipment/{equipmentId}")
+    public ResponseEntity<List<Record>> readMyRecordListByEquipmentId(@PathVariable Long equipmentId, Principal principal) {
+        return new ResponseEntity<>(recordService.selectRecordByUsernameAndEquipmentId(principal.getName(), equipmentId),HttpStatus.OK);
+    }
 }

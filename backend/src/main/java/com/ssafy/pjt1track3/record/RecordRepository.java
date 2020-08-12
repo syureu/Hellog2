@@ -12,4 +12,5 @@ public interface RecordRepository {
     void deleteRecord(Long recordId);
     List<Record> selectRecordByUsername(String name);
     List<Record> selectTodayRecordByUsername(String name);
+    List<Record> selectRecordByUsernameAndEquipmentId(UserEquipmentDto userEquipmentDto);
 }

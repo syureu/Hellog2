@@ -98,4 +98,26 @@
             and month(record.start_time) = month(now())
             and day(record.start_time) = day(now());
     </select>
+
+    <!-- List<Record> selectRecordByUsernameAndEquipmentId(UserEquipmentDto userEquipmentDto); -->
+    <select id="selectRecordByUsernameAndEquipmentId" resultType="Record" parameterType="UserEquipmentDto">
+        SELECT
+            record.record_id as record_id,
+            record.id as id,
+            record.equipment_exercise_id as equipment_exercise_id,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, equipment, equipment_exercise, record
+        where
+            user.username = #{username} AND
+            equipment.equipment_id = #{equipmentId} AND
+            equipment.equipment_id = equipment_exercise.equipment_id AND
+            equipment_exercise.equipment_id = record.equipment_exercise_id AND
+            user.id = record.id;
+    </select>
+
 </mapper>
