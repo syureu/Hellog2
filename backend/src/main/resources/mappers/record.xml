@@ -79,4 +79,23 @@
             user.username = #{name} and user.id = record.id;
     </select>
 
+    <!-- List<Record> selectTodayRecordByUsername(String name); -->
+    <select id="selectTodayRecordByUsername" parameterType="String" resultType="Record">
+        SELECT
+            record.record_id as record_id,
+            record.id as id,
+            record.equipment_exercise_id as equipment_exercise_id,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, record
+        where
+            user.username = #{name} and user.id = record.id
+            and year(record.start_time) = year(now())
+            and month(record.start_time) = month(now())
+            and day(record.start_time) = day(now());
+    </select>
 </mapper>

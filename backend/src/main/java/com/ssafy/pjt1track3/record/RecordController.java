@@ -3,6 +3,7 @@ package com.ssafy.pjt1track3.record;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -63,5 +64,10 @@ public class RecordController {
     @GetMapping("/myrecord")
     public ResponseEntity<List<Record>> readMyRecordList(Principal principal) {
         return new ResponseEntity<>(recordService.selectRecordByUsername(principal.getName()), HttpStatus.OK);
+    }
+
+    @GetMapping("/myrecord/today")
+    public ResponseEntity<List<Record>> readMyTodayRecordList(Principal principal) {
+        return new ResponseEntity<>(recordService.selectTodayRecordByUsername(principal.getName()), HttpStatus.OK);
     }
 }

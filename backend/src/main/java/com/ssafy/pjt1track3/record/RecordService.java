@@ -44,4 +44,7 @@ public class RecordService {
     public List<Record> selectRecordByUsername(String name) {
         return recordRepository.selectRecordByUsername(name);
     }
+    public List<Record> selectTodayRecordByUsername(String name) {
+        return recordRepository.selectTodayRecordByUsername(name);
+    }
 }
