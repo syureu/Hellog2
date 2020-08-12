@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
@@ -9,10 +10,11 @@ const Login = ({ setHasCookie }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer",
         // 여기에 Authorization 관해서 저장되게 해야할 거 같은데
       },
       body: JSON.stringify(user),
-    }).then((response) => response.json());
+    });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,9 +26,17 @@ const Login = ({ setHasCookie }) => {
           username: userId,
           password: userPw,
         });
-        if (response.result === "ok") {
-          console.log(response.headers);
+        console.log(response);
+        if (response.status === 200) {
           setHasCookie(true);
+          window.sessionStorage.setItem("id", userId);
+          window.sessionStorage.setItem("password", userPw);
+          window.sessionStorage.setItem(
+            "token",
+            response.headers.get("Authorization")
+          );
+
+          console.log(response.headers.get("Authorization"));
         } else {
           throw new Error(response.error);
         }

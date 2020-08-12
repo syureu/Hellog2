@@ -11,10 +11,11 @@ const Todo = ({ setHasCookie, removeCookie }) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer",
           },
-        })
-          .then((res) => resolve(res.json()))
-          .catch((err) => reject(err));
+        });
+        // .then((res) => resolve(res.json()))
+        // .catch((err) => reject(err));
       });
     };
     const onTodoLoad = async () => {
@@ -38,22 +39,10 @@ const Todo = ({ setHasCookie, removeCookie }) => {
   }, [todos, setHasCookie]);
   return (
     <div>
-      <h2>
-        Todo
-        <button type="button" onClick={removeCookie}>
-          logout
-        </button>
-      </h2>
-      <ul>
-        {todos &&
-          todos.map((todo) => (
-            <li key={todo._id}>
-              <span>{todo.content}</span>
-              <span>{todo.created_at}</span>
-              <input type="checkbox" value={todo.complete} />
-            </li>
-          ))}
-      </ul>
+      <h2>Complete Login Todo</h2>
+      <button type="button" onClick={removeCookie}>
+        logout
+      </button>
     </div>
   );
 };
