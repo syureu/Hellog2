@@ -24,6 +24,7 @@ public class UserService {
         user.setSignUpDay(new Date());
         user.setActive(1);
         user.setRoles("USER");
+        user.setPermissions("");
         user.setLimitPermitDay(new Date(2030, Calendar.JANUARY, 1));
         userRepository.insertUser(user);
     }
