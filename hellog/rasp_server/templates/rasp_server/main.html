@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
+{% extends 'base.html' %}{% block content %}
 <style>
   .main_header {
     height: 50px;
@@ -11,13 +11,13 @@
   }
   aside {
     float: left;
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 300px;
   }
   section {
     float: right;
-    width: 700px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
   }
   section > * {
     margin: auto;
@@ -100,7 +100,9 @@
           <td>
             <label id="cur_set_cnt" type="number" name="cur_set_cnt">0</label>
           </td>
-          <td><label id="cur_cnt" type="number" name="cur_cnt">0</label></td>
+          <td>
+            <label id="cur_cnt" type="number" name="cur_cnt">{{ value }}</label>
+          </td>
         </tr>
         <tr>
           <td>
@@ -134,11 +136,25 @@
   today_list = [];
   before_list = [];
 
+  // $(document).ready(function () {
+  //   setInterval(function () {
+  //     $.getJSON('/rasp_server/check', function (data) {
+  //       let n_cnt = Number(data['cnt']);
+  //       let cur_cnt = Number($('#cur_cnt').text());
+  //       console.log(n_cnt);
+  //       console.log(cur_cnt);
+  //       if (cur_cnt != n_cnt) {
+  //         $('#cur_cnt').text(n_cnt);
+  //       }
+  //     });
+  //   }, 1000);
+  // });
+
   function timer_start() {
-    time = document.getElementById("workingTime").innerText;
+    time = document.getElementById('workingTime').innerText;
     timeIntervalId = setInterval(function () {
       workingTime.innerText = time;
-      time_sep = time.split(":");
+      time_sep = time.split(':');
       hour = Number(time_sep[0]);
       minute = Number(time_sep[1]);
       second = Number(time_sep[2]);
@@ -155,48 +171,48 @@
       hour += 1;
       minute = 0;
     }
-    if (hour < 10) hour = "0" + hour;
-    if (minute < 10) minute = "0" + minute;
-    if (second < 10) second = "0" + second;
+    if (hour < 10) hour = '0' + hour;
+    if (minute < 10) minute = '0' + minute;
+    if (second < 10) second = '0' + second;
 
-    return hour + ":" + minute + ":" + second;
+    return hour + ':' + minute + ':' + second;
   }
 
   function set_toggle() {
-    btn_value = document.getElementById("btn_set_toggle");
-    if (btn_value.value == "세트 시작") {
+    btn_value = document.getElementById('btn_set_toggle');
+    if (btn_value.value == '세트 시작') {
       // 시작
       cur_set += 1;
-      document.getElementById("cur_set").innerText = cur_set + "세트";
+      document.getElementById('cur_set').innerText = cur_set + '세트';
       timer_start();
-      btn_value.value = "세트 종료";
+      btn_value.value = '세트 종료';
     } else {
       // 종료
       clearInterval(timeIntervalId);
 
       today_list.push({
-        time: document.getElementById("workingTime").innerText,
-        set_cnt: document.getElementById("cur_set").innerText,
-        cnt: document.getElementById("cur_cnt").innerText,
+        time: document.getElementById('workingTime').innerText,
+        set_cnt: document.getElementById('cur_set').innerText,
+        cnt: document.getElementById('cur_cnt').innerText,
       });
 
-      worked_list = document.getElementById("worked_list");
+      worked_list = document.getElementById('worked_list');
 
       let i = today_list.length - 1;
-      let li = document.createElement("li");
+      let li = document.createElement('li');
       li.innerText =
-        today_list[i]["time"] +
-        " " +
-        today_list[i]["set_cnt"] +
-        " " +
-        today_list[i]["cnt"] +
-        " 회";
+        today_list[i]['time'] +
+        ' ' +
+        today_list[i]['set_cnt'] +
+        ' ' +
+        today_list[i]['cnt'] +
+        ' 회';
       worked_list.appendChild(li);
 
       // 시간 초기화
-      document.getElementById("workingTime").innerText = "00:00:00";
+      document.getElementById('workingTime').innerText = '00:00:00';
       //
-      btn_value.value = "세트 시작";
+      btn_value.value = '세트 시작';
     }
   }
 </script>
