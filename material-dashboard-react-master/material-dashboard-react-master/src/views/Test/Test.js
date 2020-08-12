@@ -1,17 +1,18 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import gym_unsplash from "../Test/gym_unsplash.jpg";
+import gym_unsplash2 from "../Test/gym_unsplash2.jpg";
+import gym_unsplash3 from "../Test/gym_unsplash3.jpg";
 
 export default function Test() {
   return (
     <div>
       <Carousel>
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://picsum.photos/100/50"
-            alt="First slide"
-          />
+          <img className="d-block w-100" src={gym_unsplash} alt="First slide" />
           <Carousel.Caption>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -20,7 +21,7 @@ export default function Test() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/100/50"
+            src={gym_unsplash2}
             alt="Third slide"
           />
 
@@ -32,7 +33,7 @@ export default function Test() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://picsum.photos/100/50"
+            src={gym_unsplash3}
             alt="Third slide"
           />
 
@@ -41,6 +42,7 @@ export default function Test() {
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
+            <Button variant="light">회원가입</Button>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
