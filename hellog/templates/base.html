@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 1080px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/d203.css' %}" rel="stylesheet" />
+  </head>
+  <body class="text-center">
+    <div class="cover-container-01 d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div style="text-align: center;" class="inner">
+          <h2 class="masthead-brand">Hellog</h2>
+          <label
+            class="masthead-brand"
+            type="text"
+            style="float: right;"
+            id="cur_time"
+            value="error"
+          ></label>
+        </div>
+      </header>
+      <main style="text-align: center;" role="main" class="inner cover">
+        {% block content %} {% endblock %}
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>~~ 헬스장</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    get_time();
+    setInterval(get_time, 30000);
+    function get_time() {
+      let now = new Date();
+      let year = now.getFullYear();
+      let month = now.getMonth();
+      let date = now.getDate();
+
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      if (hour < 10) hour = "0" + hour;
+      if (minute < 10) minute = "0" + minute;
+
+      let date_and_time =
+        year + "/" + month + "/" + date + " " + hour + ":" + minute;
+
+      document.getElementById("cur_time").innerText = date_and_time;
+    }
+  </script>
+</html>

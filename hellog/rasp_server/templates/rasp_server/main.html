@@ -1,0 +1,203 @@
+{% extends 'base.html' %} {% load bootstrap4 %} {% block content %}
+<style>
+  .main_header {
+    height: 50px;
+  }
+  #userInfo {
+    float: left;
+  }
+  #help {
+    float: right;
+  }
+  aside {
+    float: left;
+    width: 300px;
+    height: 400px;
+  }
+  section {
+    float: right;
+    width: 700px;
+    height: 400px;
+  }
+  section > * {
+    margin: auto;
+  }
+
+  input {
+    width: 200px;
+  }
+  #workingTime,
+  #workingCount {
+    margin: auto;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+  }
+  #workingCount > table {
+    margin: auto;
+    text-align: center;
+  }
+  footer {
+    clear: both;
+  }
+</style>
+<div id="container">
+  <header class="main_header">
+    <div id="userInfo">
+      <span id="username">'{{username}}'님 환영합니다.</span>
+      {% if role == "ADMIN"%}
+      <a class="btn btn-secondary" href="{% url 'manager_logout' username %}"
+        >관리자 로그아웃</a
+      >
+      {% endif %}
+    </div>
+    <div id="help">
+      <span>{{machine_name}}</span>
+      <button class="btn btn-secondary">기구 설명 확인하기</button>
+    </div>
+  </header>
+  <aside>
+    <button class="btn btn-secondary">기구 사용 기록</button>
+    <button class="btn btn-secondary">오늘 운동 기록</button>
+    <div>
+      <ul id="worked_list" class="list-unstyled">
+        <!--{% for record in record_list %}
+        <li>
+          <a href=""></a>
+        </li>
+        {% endfor %}-->
+      </ul>
+    </div>
+  </aside>
+  <section>
+    {% if setted_info %} {% else %}
+    <a class="btn btn-secondary" href="{% url 'working_set' %}"
+      >운동 목표 설정하기</a
+    >
+    {% endif %}
+    <div id="workingCount">
+      <table>
+        <tr>
+          <td><label id="cur_set"></label></td>
+          <td>
+            <span id="workingTime">00:00:00</span>
+          </td>
+        </tr>
+        <tr>
+          <th>목표</th>
+          <th>현재</th>
+        </tr>
+        <tr>
+          <td>
+            <label id="pur_set_cnt" type="number" name="pur_set_cnt">0</label>
+          </td>
+          <td>
+            <label id="pur_cnt" type="number" name="pur_cnt">0</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label id="cur_set_cnt" type="number" name="cur_set_cnt">0</label>
+          </td>
+          <td><label id="cur_cnt" type="number" name="cur_cnt">0</label></td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              style="width: 150px;"
+              id="btn_set_toggle"
+              type="button"
+              class="btn btn-secondary"
+              value="세트 시작"
+              onclick="set_toggle()"
+            />
+          </td>
+          <td>
+            <button
+              style="width: 150px;"
+              type="submit"
+              class="btn btn-secondary"
+            >
+              사용 종료
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</div>
+<script>
+  let cur_set = 0;
+  let timeIntervalId;
+
+  today_list = [];
+  before_list = [];
+
+  function timer_start() {
+    time = document.getElementById("workingTime").innerText;
+    timeIntervalId = setInterval(function () {
+      workingTime.innerText = time;
+      time_sep = time.split(":");
+      hour = Number(time_sep[0]);
+      minute = Number(time_sep[1]);
+      second = Number(time_sep[2]);
+      time = timer_go(hour, minute, second);
+    }, 999);
+  }
+  function timer_go(hour, minute, second) {
+    second = second + 1;
+    if (second == 60) {
+      minute += 1;
+      second = 0;
+    }
+    if (minute == 60) {
+      hour += 1;
+      minute = 0;
+    }
+    if (hour < 10) hour = "0" + hour;
+    if (minute < 10) minute = "0" + minute;
+    if (second < 10) second = "0" + second;
+
+    return hour + ":" + minute + ":" + second;
+  }
+
+  function set_toggle() {
+    btn_value = document.getElementById("btn_set_toggle");
+    if (btn_value.value == "세트 시작") {
+      // 시작
+      cur_set += 1;
+      document.getElementById("cur_set").innerText = cur_set + "세트";
+      timer_start();
+      btn_value.value = "세트 종료";
+    } else {
+      // 종료
+      clearInterval(timeIntervalId);
+
+      today_list.push({
+        time: document.getElementById("workingTime").innerText,
+        set_cnt: document.getElementById("cur_set").innerText,
+        cnt: document.getElementById("cur_cnt").innerText,
+      });
+
+      worked_list = document.getElementById("worked_list");
+
+      let i = today_list.length - 1;
+      let li = document.createElement("li");
+      li.innerText =
+        today_list[i]["time"] +
+        " " +
+        today_list[i]["set_cnt"] +
+        " " +
+        today_list[i]["cnt"] +
+        " 회";
+      worked_list.appendChild(li);
+
+      // 시간 초기화
+      document.getElementById("workingTime").innerText = "00:00:00";
+      //
+      btn_value.value = "세트 시작";
+    }
+  }
+</script>
+{% endblock %}
