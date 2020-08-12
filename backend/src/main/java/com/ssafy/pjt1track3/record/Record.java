@@ -7,12 +7,12 @@ public class Record {
     private Long id;
     private Long equipmentExerciseId;
     private int sett;
-    private String weight;
+    private int weight;
     private int countt;
     private Date startTime;
     private Date endTime;
 
-    public Record(Long recordId, Long id, Long equipmentExerciseId, int sett, String weight, int countt, Date startTime, Date endTime) {
+    public Record(Long recordId, Long id, Long equipmentExerciseId, int sett, int weight, int countt, Date startTime, Date endTime) {
         this.recordId = recordId;
         this.id = id;
         this.equipmentExerciseId = equipmentExerciseId;
@@ -55,11 +55,11 @@ public class Record {
         this.sett = sett;
     }
 
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
