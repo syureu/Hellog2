@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
-  const baseUrl = "http://syureu.iptime.org:29002";
+  const baseUrl = "http://i3d203.p.ssafy.io:29001/";
   const loginApi = (user) => {
     return fetch(baseUrl + "/login", {
       method: "POST",
