@@ -78,7 +78,6 @@
 
 ---
 
-
 ### nfc 모듈 연결
 
 1. 라즈베리파이 i2c enable 설정 (sudo raspi-config)
@@ -138,6 +137,7 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
    SDA SDA0  
    SCL SCL0
 
+---
 
 ### Read NFC DATA
 
@@ -151,4 +151,32 @@ device.connstring = "pn532_i2c:/dev/i2c-1"
 
 3. NFC 안의 데이터 형태가 text/plain, 데이터 내용이 Hello ! 일경우
    text/plainHello ! 형태로 출력됨
->>>>>>> skeleton-project/RaspberryPi/README.md
+
+---
+
+### NFC Tag Hash 생성
+
+1. libnfc를 활용하여 nfc sticker에서 데이터를 추출
+
+2. SHA256을 활용하여 추출된 데이터를 해싱
+
+---
+
+### NFC Hash Send
+
+1. 해쉬값 추출
+
+2. 해쉬값 백엔드로 전송
+
+---
+
+### 라즈베리파이 부팅 시 웹페이지 출력
+
+1. 웹 서버 실행 스크립트 작성
+
+2. /etc/profile 파일 가장 아래에 작성한 스크립트 경로를 작성
+   ex) . /home/pi/~.sh
+
+3. /home/pi/etc/xdg/lxsession/LXDE-pi/autostart 수정<br>@xset s off<br>@xset -dpms<br>@xset s noblank<br>@chromium-browser --kiosk http://192.168.0.7/<br> 추가
+
+4. 마우스 커서 삭제<br>1. /etc/lightdm/lightdm.conf<br>2. xserver-command=X 찾기<br>3. X 뒤에 -nocursor 작성
