@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
@@ -38,11 +39,11 @@ public class EquipmentExerciseController {
         // 그 운동기구가 소속된 헬스장을 타고
         // 그 헬스장의 대표코치의 username이 뭔지 알아야 됨
         // 헬스장 대표코치 혹은 관리자면 OK
-        String representative = gymService.selectGymRepresentativeUsernameByGymId(
+        List<String> representative = gymService.selectGymRepresentativeUsernameByGymId(
                 equipmentService.selectEquipment(
                         equipmentExercise.getEquipmentId())
                         .getGymId());
-        if (representative.equals(principal.getName()) || isAdmin(principal)) {
+        if (representative.contains(principal.getName()) || isAdmin(principal)) {
             equipmentExerciseService.insertEquipmentExercise(equipmentExercise);
             return new ResponseEntity<>("", HttpStatus.OK);
         }
@@ -64,11 +65,11 @@ public class EquipmentExerciseController {
 
     @PutMapping("/{eeId}")
     public ResponseEntity<String> updateEquipmentExercise(@PathVariable Long eeId, @RequestBody EquipmentExercise equipmentExercise, Principal principal) {
-        String representative = gymService.selectGymRepresentativeUsernameByGymId(
+        List<String> representative = gymService.selectGymRepresentativeUsernameByGymId(
                 equipmentService.selectEquipment(
                         equipmentExercise.getEquipmentId())
                         .getGymId());
-        if (representative.equals(principal.getName()) || isAdmin(principal)) {
+        if (representative.contains(principal.getName()) || isAdmin(principal)) {
             equipmentExerciseService.updateEquipmentExercise(eeId, equipmentExercise);
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
@@ -78,11 +79,11 @@ public class EquipmentExerciseController {
 
     @DeleteMapping("/{eeId}")
     public ResponseEntity<String> deleteEquipmentExercise(@PathVariable Long eeId, Principal principal) {
-        String representative = gymService.selectGymRepresentativeUsernameByGymId(
+        List<String> representative = gymService.selectGymRepresentativeUsernameByGymId(
                 equipmentService.selectEquipment(
                         equipmentExerciseService.selectEquipmentExercise(eeId).getEquipmentId())
                         .getGymId());
-        if (representative.equals(principal.getName()) || isAdmin(principal)) {
+        if (representative.contains(principal.getName()) || isAdmin(principal)) {
             equipmentExerciseService.deleteEquipmentExercise(eeId);
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {

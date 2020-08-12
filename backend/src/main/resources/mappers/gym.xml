@@ -61,4 +61,15 @@
         where
             user.id=gym.representative
     </select>
+
+    <!-- List<Equipment> selectGymEquipmentsListByUsername(String name); -->
+    <select id="selectGymEquipmentsListByUsername" parameterType="String" resultType="Equipment">
+        SELECT
+	        equipment.equipment_id as equipment_id, equipment.gym_id as gym_id, equipment.name as name
+        FROM
+	        user, equipment
+        where
+	        user.username = #{name} and user.gym_id = equipment.gym_id;
+    </select>
+
 </mapper>

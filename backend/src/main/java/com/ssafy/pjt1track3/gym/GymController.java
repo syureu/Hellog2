@@ -1,11 +1,13 @@
 package com.ssafy.pjt1track3.gym;
 
+import com.ssafy.pjt1track3.equipment.Equipment;
 import com.ssafy.pjt1track3.user.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
@@ -21,7 +23,7 @@ public class GymController {
     }
 
     private boolean isOwnGym(Long gymId, Principal principal) {
-        if (principal.getName().equals(gymService.selectGymRepresentativeUsernameByGymId(gymId))) {
+        if (gymService.selectGymRepresentativeUsernameByGymId(gymId).contains(principal.getName())) {
             return true;
         } else {
             return false;
@@ -66,6 +68,11 @@ public class GymController {
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
+    }
+
+    @GetMapping("/equipments")
+    public ResponseEntity<List<Equipment>> readGymEquipmentsList(Principal principal) {
+        return new ResponseEntity<>(gymService.selectGymEquipmentsListByUsername(principal.getName()),HttpStatus.OK);
     }
 }
 

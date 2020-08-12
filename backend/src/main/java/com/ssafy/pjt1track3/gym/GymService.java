@@ -1,6 +1,9 @@
 package com.ssafy.pjt1track3.gym;
 
+import com.ssafy.pjt1track3.equipment.Equipment;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class GymService {
@@ -28,7 +31,11 @@ public class GymService {
         gymRepository.deleteGym(gymId);
     }
 
-    public String selectGymRepresentativeUsernameByGymId(Long gymId) {
+    public List<String> selectGymRepresentativeUsernameByGymId(Long gymId) {
         return gymRepository.selectGymRepresentativeUsernameByGymId(gymId);
+    }
+
+    public List<Equipment> selectGymEquipmentsListByUsername(String name) {
+        return gymRepository.selectGymEquipmentsListByUsername(name);
     }
 }
