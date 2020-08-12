@@ -1,10 +1,11 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .forms import LoginForm, WorkingSetForm, RecordForm
 from django.shortcuts import render, redirect
 from .models import User, Record, Machine
 import requests, json, datetime
 
 URL = "http://syureu.iptime.org:29002/"
+g_cnt = 0;
 
 def index(request):
     return render(request, 'rasp_server/index.html',{})
@@ -15,7 +16,8 @@ def access(request):
 def main(request):
     set_cnt = 0
     cnt = 0
-    
+    global g_cnt
+
     if request.method == 'POST':
         form = WorkingSetForm(request.POST)
         print('-----------')
@@ -36,7 +38,8 @@ def main(request):
     context ={
         'username': username,
         'machine_name': machine_name,
-        'setted_info': setted_info
+        'setted_info': setted_info,
+        'value': g_cnt
     }
 
     return render(request, 'rasp_server/main.html',context)
@@ -200,3 +203,25 @@ def manager_logout(request, username):
 def set_machine_list(): 
     
     return None
+
+def up(request):
+    global g_cnt
+    g_cnt += 1
+    data = {
+        'cnt' : g_cnt
+    }
+    return JsonResponse(data)
+
+def check(request):
+    global g_cnt
+    data = {
+        'cnt' : g_cnt
+    }
+    return JsonResponse(data)
+
+def watch(request):
+    f = open("/home/pi/Hash/result.mfd", "r")
+    str = f.readline()
+    os.remove("/home/pi/Hash/result.mfd")
+    return 
+
