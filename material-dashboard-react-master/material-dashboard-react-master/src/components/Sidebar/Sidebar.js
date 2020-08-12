@@ -17,6 +17,9 @@ import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
+import logoLion from "../Sidebar/logoLion.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const useStyles = makeStyles(styles);
 
 export default function Sidebar(props) {
@@ -83,16 +86,16 @@ export default function Sidebar(props) {
   var brand = (
     <div className={classes.logo}>
       <a
-        href="/admin/Dietboard"
+        href="/admin/Test"
         className={classNames(classes.logoLink, {
           [classes.logoLinkRTL]: props.rtlActive,
         })}
         // target="_blank"
       >
         <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
+          <img src={logoLion} alt="logo" className="mb-4" width="200" />
         </div>
-        {logoText}
+        {/* {logoText} */}
       </a>
     </div>
   );
