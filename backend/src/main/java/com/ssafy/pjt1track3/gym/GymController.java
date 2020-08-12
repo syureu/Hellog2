@@ -70,7 +70,7 @@ public class GymController {
         }
     }
 
-    @GetMapping("/equipments")
+    @GetMapping("/mygym/equipments")
     public ResponseEntity<List<Equipment>> readGymEquipmentsList(Principal principal) {
         return new ResponseEntity<>(gymService.selectGymEquipmentsListByUsername(principal.getName()),HttpStatus.OK);
     }
