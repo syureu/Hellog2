@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
@@ -57,5 +58,10 @@ public class RecordController {
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
+    }
+
+    @GetMapping("/myrecord")
+    public ResponseEntity<List<Record>> readMyRecordList(Principal principal) {
+        return new ResponseEntity<>(recordService.selectRecordByUsername(principal.getName()), HttpStatus.OK);
     }
 }

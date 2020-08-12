@@ -4,6 +4,8 @@ import com.ssafy.pjt1track3.user.User;
 import com.ssafy.pjt1track3.user.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RecordService {
 
@@ -38,5 +40,8 @@ public class RecordService {
 
     public void deleteRecord(Long recordId) {
         recordRepository.deleteRecord(recordId);
+    }
+    public List<Record> selectRecordByUsername(String name) {
+        return recordRepository.selectRecordByUsername(name);
     }
 }

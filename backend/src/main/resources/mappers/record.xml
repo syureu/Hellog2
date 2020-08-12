@@ -62,4 +62,21 @@
             record_id = #{recordId}
     </delete>
 
+    <!-- List<Record> selectRecordByUsername(String name); -->
+    <select id="selectRecordByUsername" resultType="Record" parameterType="String">
+        SELECT
+            record.record_id as record_id,
+            record.id as id,
+            record.equipment_exercise_id as equipment_exercise_id,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, record
+        where
+            user.username = #{name} and user.id = record.id;
+    </select>
+
 </mapper>
