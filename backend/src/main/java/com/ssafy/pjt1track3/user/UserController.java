@@ -16,11 +16,9 @@ import static com.ssafy.pjt1track3.util.Util.isAdmin;
 public class UserController {
 
     private UserService userService;
-    private PasswordEncoder passwordEncoder;
 
-    public UserController(final UserService userService, final PasswordEncoder passwordEncoder) {
+    public UserController(final UserService userService) {
         this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
     }
 
     private boolean isOwn(Long id, Principal principal) {
@@ -32,7 +30,6 @@ public class UserController {
 
     @PostMapping("/user")
     public ResponseEntity<String> createUser(@RequestBody User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.insertUser(user);
         return new ResponseEntity<>("", HttpStatus.OK);
     }
@@ -86,6 +83,6 @@ public class UserController {
 
     @GetMapping("/roles")
     public ResponseEntity<List<String>> readLoginUsersRoles(Principal principal) {
-        return new ResponseEntity<>(userService.selectRoleListByUsername(principal.getName()),HttpStatus.OK);
+        return new ResponseEntity<>(userService.selectRoleListByUsername(principal.getName()), HttpStatus.OK);
     }
 }
