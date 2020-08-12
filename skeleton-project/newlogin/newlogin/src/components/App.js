@@ -47,3 +47,9 @@ const App = () => {
   );
 };
 export default withCookies(App);
+
+// 우리는 백엔드에서 쿠키가 아닌 토큰을 발급 받아서
+// 쿠키를 저장하는게 아니라 토큰을 저장해야함
+// 토큰은 DB에서 보내줄 때 응답이 headers에 Authentication에 들어있고
+// 이 구성을 별도의 login 링크로 보내고
+// 로그인 시 돌아가는 링크를 메인 화면으로 함?
