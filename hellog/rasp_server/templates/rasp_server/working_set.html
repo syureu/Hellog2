@@ -20,13 +20,15 @@
       </td>
       <td>
         <input id="cnt1" name="cnt1" type="number" value="10" />
-        <button onclick="up_cnt('cnt1')">up</button>
-        <button onclick="down_cnt('cnt1')">down</button>
+        <button id="up_cnt_1">up</button>
+        <button id="down_cnt_1">down</button>
       </td>
       <td>
         <input id="weight1" name="1" type="number" value="20" />
-        <button onclick="up_weight('weight1')">up</button>
-        <button onclick="down_weight('weight1')">down</button>
+        <button id="up_weight_1">up</button>
+        <button id="down_weight_1">
+          down
+        </button>
       </td>
     </tr>
 
@@ -45,6 +47,7 @@
 </table>
 <script>
   let set_max = 1;
+  set_long_press(set_max);
   function up_cnt(pur_id) {
     pur_set = document.getElementById(pur_id);
     if (pur_set == null) return;
@@ -84,11 +87,13 @@
     cnt_input.setAttribute("value", "10");
 
     up_btn = document.createElement("button");
-    up_btn.setAttribute("onclick", "up_cnt('cnt" + set_max + "')");
+    //up_btn.setAttribute("onclick", "up_cnt('cnt" + set_max + "')");
+    up_btn.setAttribute("id", "up_cnt_" + set_max);
     up_btn.innerHTML = "up";
 
     down_btn = document.createElement("button");
-    down_btn.setAttribute("onclick", "down_cnt('cnt" + set_max + "')");
+    //down_btn.setAttribute("onclick", "down_cnt('cnt" + set_max + "')");
+    down_btn.setAttribute("id", "down_cnt_" + set_max);
     down_btn.innerHTML = "down";
 
     cnt_td.appendChild(cnt_input);
@@ -101,11 +106,13 @@
     weight_input.setAttribute("value", "20");
 
     up_btn = document.createElement("button");
-    up_btn.setAttribute("onclick", "up_weight('weight" + set_max + "')");
+    //up_btn.setAttribute("onclick", "up_weight('weight" + set_max + "')");
+    up_btn.setAttribute("id", "up_weight_" + set_max);
     up_btn.innerHTML = "up";
 
     down_btn = document.createElement("button");
-    down_btn.setAttribute("onclick", "down_weight('weight" + set_max + "')");
+    //down_btn.setAttribute("onclick", "down_weight('weight" + set_max + "')");
+    down_btn.setAttribute("id", "down_weight_" + set_max);
     down_btn.innerHTML = "down";
 
     weight_td.appendChild(weight_input);
@@ -118,8 +125,53 @@
 
     input_table = document.getElementById("table_body");
     input_table.insertBefore(tr, input_table.childNodes[set_max + 2]);
+
+    set_long_press(set_max);
   }
 
+  function set_long_press(index) {
+    let intervals;
+
+    $("#up_cnt_" + index)
+      .mouseup(function () {
+        clearInterval(intervals);
+      })
+      .mousedown(function () {
+        intervals = setInterval(function () {
+          up_cnt("cnt" + index);
+        }, 200);
+      });
+
+    $("#down_cnt_" + index)
+      .mouseup(function () {
+        clearInterval(intervals);
+      })
+      .mousedown(function () {
+        intervals = setInterval(function () {
+          down_cnt("cnt" + index);
+        }, 200);
+      });
+
+    $("#up_weight_" + index)
+      .mouseup(function () {
+        clearInterval(intervals);
+      })
+      .mousedown(function () {
+        intervals = setInterval(function () {
+          up_weight("weight" + index);
+        }, 200);
+      });
+
+    $("#down_weight_" + index)
+      .mouseup(function () {
+        clearInterval(intervals);
+      })
+      .mousedown(function () {
+        intervals = setInterval(function () {
+          down_weight("weight" + index);
+        }, 200);
+      });
+  }
   function set_complete() {
     let set_list = [];
     for (let i = 1; i <= set_max; i++) {
@@ -129,8 +181,11 @@
         weight: document.getElementById("weight" + i).value,
       };
       set_list.push(cur_set);
-      console.log(set_list);
     }
+    console.log(set_list);
+    console.log(typeof JSON.stringify(set_list));
+    sessionStorage.setItem("set_list", JSON.stringify(set_list));
+    location.href = "/rasp_server/main";
   }
 </script>
 {% endblock %}

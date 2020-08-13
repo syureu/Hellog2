@@ -38,8 +38,11 @@ ReactDOM.render(
     </CookiesProvider> */}
     <Switch>
       <Route path="/admin" component={Admin} />
+
       <Route path="/login" component={Login} />
       <Redirect from="/" to="/admin/dashboard" />
+      <Redirect from="/" to="/admin/Test" />
+
     </Switch>
   </Router>,
   document.getElementById("root")
