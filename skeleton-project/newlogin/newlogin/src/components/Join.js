@@ -4,23 +4,38 @@ const Join = () => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
   const [userName, setUserName] = useState("");
+  const [userBirthday, setBirthday] = useState("");
+  const [phone, setPhone] = useState("");
+  const [male, setMale] = useState("");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+
   const [isJoinSuccess, setJoinSuccess] = useState(false);
+  const baseUrl = "http://i3d203.p.ssafy.io:29001/";
   const createUserApi = (user) => {
-    return fetch("/users/new", {
+    return fetch(baseUrl + "/api/users/user", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((response) => response.json());
+    });
+    // .then((response) => response.json());
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    var birthday = new Date(userBirthday).getTime();
     try {
       const response = await createUserApi({
-        user_id: userId,
-        user_pw: userPw,
-        user_name: userName,
+        username: userId,
+        password: userPw,
+        name: userName,
+        birthday: birthday,
+        phone: phone,
+        male: male,
+        height: height,
+        weight: weight,
       });
       if (response.result === "ok") {
         setJoinSuccess(true);
@@ -56,6 +71,41 @@ const Join = () => {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               placeholder="name"
+            />
+            <input
+              type="text"
+              name="birthday"
+              value={userBirthday}
+              onChange={(e) => setBirthday(e.target.value)}
+              placeholder="생년월일 6자리"
+            />
+            <input
+              type="text"
+              name="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="010-0000-0000 양식에 맞춰서"
+            />
+            <input
+              type="text"
+              name="male"
+              value={male}
+              onChange={(e) => setMale(e.target.value)}
+              placeholder="R U male? (true or false 입력)"
+            />
+            <input
+              type="text"
+              name="height"
+              value={height}
+              onChange={(e) => setHeight(e.target.value)}
+              placeholder="height"
+            />
+            <input
+              type="text"
+              name="weight"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+              placeholder="weight"
             />
             <button type="submit">제출</button>
           </form>

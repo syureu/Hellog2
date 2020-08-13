@@ -39,8 +39,20 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 import Dietboard from "views/Dietboard/Dietboard.js";
 import MyLog from "views/MyLog/index.jsx";
 import Test from "views/Test/Test.js";
+import Login from "components/Auth/Signin/Login.js";
+import Recommend from "views/Recommend/index";
+import abc from "views/abc/abc.js";
+
 
 const dashboardRoutes = [
+  {
+    path: "/Test",
+    name: "Test",
+    rtlName: "wtf",
+    icon: Dashboard,
+    component: Test,
+    layout: "/admin",
+  },
   {
     path: "/Dietboard",
     name: "Dietboard",
@@ -53,16 +65,24 @@ const dashboardRoutes = [
     path: "/MyLog",
     name: "MyLog",
     rtlName: "wtf",
-    icon: Dashboard,
+    icon: "book_online",
     component: MyLog,
     layout: "/admin",
   },
   {
-    path: "/Test",
-    name: "Test",
+    path: "/Recommend",
+    name: "Recommend",
     rtlName: "wtf",
-    icon: Dashboard,
-    component: Test,
+    icon: "list",
+    component: Recommend,
+    layout: "/admin",
+  },
+  {
+    path: "/abc",
+    name: "abc",
+    rtlName: "wtf",
+    icon: "list",
+    component: abc,
     layout: "/admin",
   },
   {
@@ -70,7 +90,7 @@ const dashboardRoutes = [
     name: "Dashboard",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
-    component: DashboardPage,
+    component: Recommend,
     layout: "/admin",
   },
   {
@@ -97,6 +117,14 @@ const dashboardRoutes = [
     component: Typography,
     layout: "/admin",
   },
+  // {
+  //   path: "/login",
+  //   name: "login",
+  //   rtlName: "wtf",
+  //   icon: LibraryBooks,
+  //   component: Login,
+  //   layout: "/admin",
+  // },
   {
     path: "/icons",
     name: "Icons",

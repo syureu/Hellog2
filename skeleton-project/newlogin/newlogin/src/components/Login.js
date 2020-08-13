@@ -1,37 +1,51 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
+  const baseUrl = "http://i3d203.p.ssafy.io:29001";
   const loginApi = (user) => {
-    return fetch("/users/login", {
+    return fetch(baseUrl + "/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer",
+        // 여기에 Authorization 관해서 저장되게 해야할 거 같은데
       },
       body: JSON.stringify(user),
-    }).then((response) => response.json());
+    });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userId || !userPw) {
       return;
-    }
-    try {
-      const response = await loginApi({
-        user_id: userId,
-        user_pw: userPw,
-      });
-      if (response.result === "ok") {
-        setHasCookie(true);
-      } else {
-        throw new Error(response.error);
+    } else {
+      try {
+        const response = await loginApi({
+          username: userId,
+          password: userPw,
+        });
+        console.log(response);
+        if (response.status === 200) {
+          setHasCookie(true);
+          window.sessionStorage.setItem("id", userId);
+          window.sessionStorage.setItem("password", userPw);
+          window.sessionStorage.setItem(
+            "token",
+            response.headers.get("Authorization")
+          );
+
+          console.log(response.headers.get("Authorization"));
+        } else {
+          throw new Error(response.error);
+        }
+      } catch (err) {
+        alert("로그인에 실패했습니다.");
+        setUserId("");
+        setUserPw("");
+        console.error("login error", err);
       }
-    } catch (err) {
-      alert("로그인에 실패했습니다.");
-      setUserId("");
-      setUserPw("");
-      console.error("login error", err);
     }
   };
   return (
@@ -40,7 +54,7 @@ const Login = ({ setHasCookie }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="user_id"
+          name="username"
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
           placeholder="id"
