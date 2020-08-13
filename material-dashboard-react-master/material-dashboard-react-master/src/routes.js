@@ -39,8 +39,10 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 import Dietboard from "views/Dietboard/Dietboard.js";
 import MyLog from "views/MyLog/index.jsx";
 import Test from "views/Test/Test.js";
+import Login from "components/Auth/Signin/Login.js";
 import Recommend from "views/Recommend/index";
 import abc from "views/abc/abc.js";
+
 
 const dashboardRoutes = [
   {
@@ -115,6 +117,14 @@ const dashboardRoutes = [
     component: Typography,
     layout: "/admin",
   },
+  // {
+  //   path: "/login",
+  //   name: "login",
+  //   rtlName: "wtf",
+  //   icon: LibraryBooks,
+  //   component: Login,
+  //   layout: "/admin",
+  // },
   {
     path: "/icons",
     name: "Icons",
