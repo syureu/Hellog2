@@ -14,6 +14,10 @@ export default function Test() {
         <Carousel.Item>
           <img className="d-block w-100" src={gym_unsplash} alt="First slide" />
           <Carousel.Caption>
+            <h2>
+              <b>First slide label</b>
+            </h2>
+            <h2>First slide label</h2>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
@@ -42,7 +46,10 @@ export default function Test() {
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
-            <Button variant="light">회원가입</Button>
+            <div>
+              <Button variant="light">로그인</Button>
+              <Button variant="light">회원가입</Button>
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
