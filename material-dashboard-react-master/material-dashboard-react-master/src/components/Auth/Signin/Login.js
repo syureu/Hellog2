@@ -41,14 +41,16 @@ const Login = ({ setHasCookie }) => {
           // setHasCookie(true);
           // console.log("쿠키확인");
           console.log(response);
-          console.log(response.headers.get(userId));
-
+          // console.log(response.headers.get(userId));
           // window.localStorage.setItem("userInfo", JSON.stringify(json));
-
           // this.setState({
 
           // })
           console.log(response.headers.get("Authorization"));
+          window.sessionStorage.setItem(
+            "AuthID",
+            response.headers.get("Authorization")
+          );
           console.log("pass");
 
           // props.history.push("/admin");
