@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './main.css';
+import React, { Component } from "react";
+import "./main.css";
 
-import { Link } from 'react-router-dom';
-import { Search } from './index.js';
+import { Link } from "react-router-dom";
+import { Search } from "./index.js";
 
 class list extends Component {
   render() {
@@ -17,31 +17,36 @@ class list extends Component {
     return (
       <div className="List">
         <div className="list_grid list_tit">
+          <div> No. </div>
           <div> 제목 </div>
-          <div> 조회수 </div>
-          <div className="acenter"> 날짜 </div>
+          <div> 작성자 </div>
+          <div className="acenter"> 등록일자 </div>
         </div>
-        {list_data !== '[]' && list_data.length ? (
+        {list_data !== "[]" && list_data.length ? (
           JSON.parse(list_data).map((el, key) => {
-            const view_url = '/view/' + el.board_id;
+            const view_url = "/view/" + el.board_id;
 
             return (
               <div className="list_grid list_data" key={key}>
                 <div>
+                  <p>{el.board_id}</p>
+                </div>
+                <div>
                   <Link to={view_url}> {el.title} </Link>
                 </div>
-                <div> </div>
+                <div></div>
                 <div className="acenter"> {el.date.slice(0, 10)} </div>
               </div>
             );
           })
         ) : (
           <div className="not_data acenter">
-            {list_search && list_search !== '' ? (
-              <div> 검색된 결과가 없습니다. </div> // 검색 사용
-            ) : (
-              <div> 데이터가 없습니다. </div>
-            ) // 검색 사용 X
+            {
+              list_search && list_search !== "" ? (
+                <div> 검색된 결과가 없습니다. </div> // 검색 사용
+              ) : (
+                <div> 데이터가 없습니다. </div>
+              ) // 검색 사용 X
             }
           </div>
         )}
