@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -20,6 +21,8 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
+
+import Login from "components/Auth/Signin/Login.js";
 
 const useStyles = makeStyles(styles);
 
@@ -206,11 +209,22 @@ export default function AdminNavbarLinks() {
                       Settings
                     </MenuItem>
                     <Divider light />
-                    <MenuItem
+                    {/* <MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Login
+                      Logout
+                    </MenuItem> */}
+                    <MenuItem className={classes.dropdownItem}>
+                      <a href="/login">
+                        <Button>Login</Button>
+                      </a>
+                      {/* <Link to="/admin/login">
+                        <Button>Login</Button>
+                      </Link> */}
+                      <Switch>
+                        <Route path="/admin/login" component={Login}></Route>
+                      </Switch>
                     </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
