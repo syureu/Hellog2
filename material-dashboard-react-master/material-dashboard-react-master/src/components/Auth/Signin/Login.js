@@ -38,6 +38,8 @@ const Login = ({ setHasCookie }) => {
         console.log(response);
         if (response.status === 200) {
           console.log("200확인");
+          alert(userId + "님 환영합니다.");
+
           // setHasCookie(true);
           // console.log("쿠키확인");
           console.log(response);
