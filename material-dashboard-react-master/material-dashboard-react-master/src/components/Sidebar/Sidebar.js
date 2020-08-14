@@ -17,7 +17,8 @@ import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
-import logoLion from "../Sidebar/logoLion.png";
+import logoLion from "../Sidebar/logoLion3.png";
+import sidebarImg from "../Sidebar/sidebar2.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const useStyles = makeStyles(styles);
@@ -93,7 +94,7 @@ export default function Sidebar(props) {
         // target="_blank"
       >
         <div className={classes.logoImage}>
-          <img src={logoLion} alt="logo" className="mb-4" width="200" />
+          <img src={logoLion} alt="logo" width="150" />
         </div>
         {/* {logoText} */}
       </a>
@@ -121,12 +122,10 @@ export default function Sidebar(props) {
             {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
             {links}
           </div>
-          {image !== undefined ? (
-            <div
-              className={classes.background}
-              style={{ backgroundImage: "url(" + image + ")" }}
-            />
-          ) : null}
+          <div
+            className={classes.background}
+            style={{ backgroundImage: { sidebarImg } }}
+          />
         </Drawer>
       </Hidden>
       <Hidden smDown implementation="css">
@@ -142,12 +141,10 @@ export default function Sidebar(props) {
         >
           {brand}
           <div className={classes.sidebarWrapper}>{links}</div>
-          {image !== undefined ? (
-            <div
-              className={classes.background}
-              style={{ backgroundImage: "url(" + image + ")" }}
-            />
-          ) : null}
+          <div
+            className={classes.background}
+            style={{ backgroundImage: { sidebarImg } }}
+          />
         </Drawer>
       </Hidden>
     </div>

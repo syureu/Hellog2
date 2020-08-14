@@ -52,7 +52,7 @@ const Login = ({ setHasCookie }) => {
             response.headers.get("Authorization")
           );
           console.log("pass");
-
+          window.location.href = "/admin/Test";
           // props.history.push("/admin");
         } else {
           console.log("Error");
