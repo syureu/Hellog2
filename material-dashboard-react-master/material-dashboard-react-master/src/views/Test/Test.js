@@ -10,9 +10,10 @@ import gym_unsplash3 from "../Test/gym_unsplash3.jpg";
 export default function Test() {
   return (
     <div>
-      <Carousel>
+      <Carousel interval={null}>
         <Carousel.Item>
           <img className="d-block w-100" src={gym_unsplash} alt="First slide" />
+
           <Carousel.Caption>
             <h2>
               <b>First slide label</b>
@@ -44,12 +45,11 @@ export default function Test() {
           <Carousel.Caption>
             <h3>Third slide label</h3>
             <p>
+              <a href="/login">
+                <Button className="btn btn-light">로그인</Button>
+              </a>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
-            <div>
-              <Button variant="light">로그인</Button>
-              <Button variant="light">회원가입</Button>
-            </div>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

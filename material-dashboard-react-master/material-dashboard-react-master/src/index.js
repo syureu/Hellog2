@@ -18,14 +18,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
-import Test from "views/Test/Test";
-import { CookiesProvider } from "react-cookie";
-import Login from "components/Auth/Signin/Login.js";
-import "bootstrap/dist/css/bootstrap.css";
-
-// core components
-import Admin from "layouts/Admin.js";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import App from "views/App/App.js";
 
 import "assets/css/material-dashboard-react.css?v=1.9.0";
 
@@ -36,14 +35,7 @@ ReactDOM.render(
     {/* <CookiesProvider>
       <Test />
     </CookiesProvider> */}
-    <Switch>
-      <Route path="/admin" component={Admin} />
-
-      <Route path="/login" component={Login} />
-      <Redirect from="/" to="/admin/dashboard" />
-      <Redirect from="/" to="/admin/Test" />
-
-    </Switch>
+    <App />
   </Router>,
   document.getElementById("root")
 );
