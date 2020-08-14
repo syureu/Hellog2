@@ -7,7 +7,7 @@ import {
   withRouter,
 } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-
+import Admin from "layouts/Admin.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Login = ({ setHasCookie }) => {
@@ -36,12 +36,13 @@ const Login = ({ setHasCookie }) => {
           password: userPw,
         });
         console.log(response);
+        // const { history } = this.props;
         if (response.status === 200) {
           console.log("200확인");
           alert(userId + "님 환영합니다.");
 
           // setHasCookie(true);
-          // console.log("쿠키확인");
+
           console.log(response);
           // console.log(response.headers.get(userId));
           // window.localStorage.setItem("userInfo", JSON.stringify(json));
@@ -55,7 +56,7 @@ const Login = ({ setHasCookie }) => {
           );
           console.log("pass");
 
-          // props.history.push("/admin");
+          window.location.href = "/";
         } else {
           console.log("Error");
           throw new Error(response.error);

@@ -351,15 +351,15 @@ const useOnChangeIndex = (categoryDatas) => {
   const onChangeIndexHandler = (event, newIndex) => {
     let deltaValue = 0;
 
-    if (newIndex > appbarIndex && newIndex !== categoryDatas.length - 1) {
-      deltaValue = 1;
+    if (newIndex !== categoryDatas.length - 1) {
+      deltaValue = 0;
     }
-    if (newIndex < appbarIndex && newIndex !== 0) {
-      deltaValue = -1;
+    if (newIndex !== 0) {
+      deltaValue = 0;
     }
-    if (appbarIndex === newIndex) {
-      deltaValue = appbarIndexDelta * -1;
-    }
+    // if (appbarIndex === newIndex) {
+    //   deltaValue = appbarIndexDelta * -1;
+    // }
     setAppbarIndexDelta(deltaValue);
     setAppbarIndex(newIndex);
   };
@@ -387,11 +387,7 @@ const Recommend = (props) => {
         categoryDatas,
       }}
     >
-      {/* <AppBar
-        position="fixed"
-        color="inherit"
-        className={drawerOpen ? "appbar appbar-shift" : "appbar"}
-      > */}
+      {/* <AppBar position="fixed" color="inherit" className="appbar"> */}
       <Tabs
         value={appbarIndex + appbarIndexDelta}
         onChange={onChangeIndexHandler}
@@ -409,7 +405,7 @@ const Recommend = (props) => {
             label={
               <ButtonBases
                 categoryData={categoryData}
-                isSelected={index === appbarIndex ? true : false}
+                // isSelected={index === appbarIndex ? true : false}
                 // serverUrlBase={serverUrlBase}
                 // serverImgUrl={serverImgUrl}
                 index={index}
