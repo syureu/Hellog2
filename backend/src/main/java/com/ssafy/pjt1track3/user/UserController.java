@@ -34,6 +34,11 @@ public class UserController {
         return new ResponseEntity<>("", HttpStatus.OK);
     }
 
+    @GetMapping("/myinfo")
+    public ResponseEntity<User> readMyUserInfo(Principal principal){
+        return new ResponseEntity<>(userService.selectUserByUsername(principal.getName()), HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<User> readUser(@PathVariable Long id, Principal principal) {
         if (isAdmin(principal) || isOwn(id, principal)) {
@@ -84,10 +89,5 @@ public class UserController {
     @GetMapping("/roles")
     public ResponseEntity<List<String>> readLoginUsersRoles(Principal principal) {
         return new ResponseEntity<>(userService.selectRoleListByUsername(principal.getName()), HttpStatus.OK);
-    }
-
-    @GetMapping("/myinfo")
-    public ResponseEntity<User> readMyUserInfo(Principal principal){
-        return new ResponseEntity<>(userService.selectUserByUsername(principal.getName()), HttpStatus.OK);
     }
 }
