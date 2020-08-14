@@ -13,6 +13,7 @@ export default function Test() {
       <Carousel interval={null}>
         <Carousel.Item>
           <img className="d-block w-100" src={gym_unsplash} alt="First slide" />
+
           <Carousel.Caption>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
