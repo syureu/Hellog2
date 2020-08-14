@@ -35,10 +35,6 @@ def main(request):
         # set_cnt = form.cleaned_data['set_cnt']
         # cnt = form.cleaned_data['cnt']
 
-    setted_info = {
-        'set': set_cnt,
-        'cnt': cnt,
-    }
     cur_user = User.objects.all()[0]
     username = cur_user.username
     role = cur_user.role
@@ -47,7 +43,6 @@ def main(request):
         'username': username,
         'machine_name': machine_name,
         'role': role,
-        'setted_info': setted_info,
         'value': g_cnt
     }
 
@@ -220,13 +215,6 @@ def manager_logout(request):
     User.objects.all().delete()
     return render(request, 'rasp_server/index.html', {})
 
-# db 완료되면 하기
-
-
-def set_machine_list():
-
-    return None
-
 
 def up(request):
     global g_cnt
@@ -310,3 +298,83 @@ def renew_machines(request):
     }
 
     return render(request, "rasp_server/setting.html", context)
+
+
+def get_past_record(request, btn_name):
+    user = User.objects.all()[0]
+    auth_key = user.auth_key
+    headers = {'authorization': auth_key,
+               'Content-type': 'application/json', 'Accept': 'application/json'}
+    if(btn_name == "machine"):
+        machine = Machine.objects.get(selected=True)
+        equipmentId = str(machine.machine_id)
+        response = requests.get(
+            URL + "api/records/myrecord/equipment/" + equipmentId, headers=headers)
+    else:
+        response = requests.get(
+            URL + "api/records/myrecord/today/", headers=headers)
+
+    record_list = response.json()
+
+    data = {
+        "record_list": record_list
+    }
+    return JsonResponse(data)
+
+
+@csrf_exempt
+def finish_work(request):
+    if(request.method == "POST"):
+        auth_key = User.objects.all()[0].auth_key
+        # print(auth_key)
+        machine = Machine.objects.get(selected=True)
+
+        headers = {'authorization': auth_key,
+                   'Content-type': 'application/json', 'Accept': 'application/json'}
+
+        # id 설정
+        myinfo = requests.get(URL + 'api/users/myinfo/', headers=headers)
+        # print(myinfo.content.decode('utf-8'))
+        id = myinfo.json()['id']
+
+        equipmentExerciseId = machine.machine_id
+
+        today_list = request.POST
+        list_size = int(request.POST.get('size'))
+        # print(today_list)
+        for i in range(0, list_size):
+            set_str = today_list.get(
+                'today_list[' + str(i) + '][set_cnt]').split()
+            set_cnt = int(set_str[0][:1])
+            weight = int(set_str[1].split("kg")[0])
+            cnt = int(today_list.get('today_list[' + str(i) + '][cnt]'))
+            startTime = str(today_list.get(
+                'today_list[' + str(i) + '][startTime]'))[:23] + "+09:00"
+            endTime = str(today_list.get(
+                'today_list[' + str(i) + '][endTime]'))[:23] + "+09:00"
+
+            today_record = {
+                "id": id,
+                "equipmentExerciseId": equipmentExerciseId,
+                "sett": set_cnt,
+                "weight": weight,
+                "countt": cnt,
+                "startTime": startTime,
+                "endTime": endTime
+            }
+            # print(today_record)
+            res_record = requests.post(
+                URL + 'api/records/record', headers=headers, data=json.dumps(today_record))
+
+            # print(res_record.json)
+            if(res_record.status_code == 200):
+                msg = "운동기록을 성공적으로 전송하였습니다."
+                result = True
+            else:
+                msg = "서버 문제로 기기 내부에 저장됩니다. <br> 서버 정상 작동시 데이터가 전송됩니다."
+                result = False
+    data = {
+        "msg": msg,
+        "result": result
+    }
+    return JsonResponse(data)
