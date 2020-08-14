@@ -7,7 +7,7 @@ import {
   withRouter,
 } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-
+import Admin from "layouts/Admin.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Login = ({ setHasCookie }) => {
@@ -36,6 +36,7 @@ const Login = ({ setHasCookie }) => {
           password: userPw,
         });
         console.log(response);
+        // const { history } = this.props;
         if (response.status === 200) {
           console.log("200확인");
           // setHasCookie(true);
@@ -53,7 +54,7 @@ const Login = ({ setHasCookie }) => {
           );
           console.log("pass");
 
-          // props.history.push("/admin");
+          // this.props.history.push("/");
         } else {
           console.log("Error");
           throw new Error(response.error);
@@ -116,7 +117,7 @@ const Login = ({ setHasCookie }) => {
     </MDBContainer>
   );
 };
-export default Login;
+export default withRouter(Login);
 
 /* { <form onSubmit={handleSubmit}>
         <input
