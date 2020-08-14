@@ -17,7 +17,7 @@ import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
-import logoLion from "../Sidebar/logoLion.png";
+import logoLion from "../Sidebar/logoLion3.png";
 import sidebarImg from "../Sidebar/sidebar2.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -94,7 +94,7 @@ export default function Sidebar(props) {
         // target="_blank"
       >
         <div className={classes.logoImage}>
-          <img src={logoLion} alt="logo" className="mb-4" width="200" />
+          <img src={logoLion} alt="logo" width="150" />
         </div>
         {/* {logoText} */}
       </a>

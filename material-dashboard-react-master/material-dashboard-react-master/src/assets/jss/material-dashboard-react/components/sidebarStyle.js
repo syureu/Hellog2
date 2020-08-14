@@ -62,7 +62,7 @@ const sidebarStyle = (theme) => ({
   },
   logo: {
     position: "relative",
-    padding: "15px 15px",
+    padding: "15px 15px 0 15px",
     zIndex: "4",
     // "&:after": {
     //   content: '""',
@@ -94,11 +94,12 @@ const sidebarStyle = (theme) => ({
     textAlign: "right",
   },
   logoImage: {
-    width: "30px",
+    width: "100%",
     display: "inline-block",
-    maxHeight: "30px",
-    marginLeft: "10px",
-    marginRight: "15px",
+    textAlign: "center",
+    maxHeight: "150px",
+    marginLeft: "0px",
+    marginRight: "0px",
   },
   img: {
     width: "35px",
@@ -129,7 +130,7 @@ const sidebarStyle = (theme) => ({
     },
   },
   list: {
-    marginTop: "20px",
+    marginTop: "0px",
     paddingLeft: "0",
     paddingTop: "0",
     paddingBottom: "0",
