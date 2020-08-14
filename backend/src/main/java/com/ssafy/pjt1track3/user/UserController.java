@@ -85,4 +85,9 @@ public class UserController {
     public ResponseEntity<List<String>> readLoginUsersRoles(Principal principal) {
         return new ResponseEntity<>(userService.selectRoleListByUsername(principal.getName()), HttpStatus.OK);
     }
+
+    @GetMapping("/myinfo")
+    public ResponseEntity<User> readMyUserInfo(Principal principal){
+        return new ResponseEntity<>(userService.selectUserByUsername(principal.getName()), HttpStatus.OK);
+    }
 }

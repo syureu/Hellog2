@@ -45,4 +45,8 @@ public class UserService {
     public List<String> selectRoleListByUsername(String username) {
         return userRepository.selectUserByUsername(username).getRoleList();
     }
+
+    public User selectUserByUsername(String name) {
+        return userRepository.selectUserByUsername(name);
+    }
 }
