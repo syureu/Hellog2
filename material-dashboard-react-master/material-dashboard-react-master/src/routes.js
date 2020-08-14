@@ -43,7 +43,6 @@ import Login from "components/Auth/Signin/Login.js";
 import Recommend from "views/Recommend/index";
 import abc from "views/abc/abc.js";
 
-
 const dashboardRoutes = [
   {
     path: "/Test",
@@ -85,38 +84,38 @@ const dashboardRoutes = [
     component: abc,
     layout: "/admin",
   },
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    rtlName: "لوحة القيادة",
-    icon: Dashboard,
-    component: Recommend,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/dashboard",
+  //   name: "Dashboard",
+  //   rtlName: "لوحة القيادة",
+  //   icon: Dashboard,
+  //   component: Recommend,
+  //   layout: "/admin",
+  // },
   {
     path: "/user",
-    name: "User Profile",
+    name: "Contact Us",
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
     layout: "/admin",
   },
-  {
-    path: "/table",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: LibraryBooks,
-    component: Typography,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/table",
+  //   name: "Table List",
+  //   rtlName: "قائمة الجدول",
+  //   icon: "content_paste",
+  //   component: TableList,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/typography",
+  //   name: "Typography",
+  //   rtlName: "طباعة",
+  //   icon: LibraryBooks,
+  //   component: Typography,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/login",
   //   name: "login",
@@ -133,22 +132,22 @@ const dashboardRoutes = [
     component: Icons,
     layout: "/admin",
   },
-  {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin",
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/maps",
+  //   name: "Maps",
+  //   rtlName: "خرائط",
+  //   icon: LocationOn,
+  //   component: Maps,
+  //   layout: "/admin",
+  // },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+  //   rtlName: "إخطارات",
+  //   icon: Notifications,
+  //   component: NotificationsPage,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/rtl-page",
   //   name: "RTL Support",
