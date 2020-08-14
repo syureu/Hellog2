@@ -117,7 +117,7 @@ const Login = ({ setHasCookie }) => {
     </MDBContainer>
   );
 };
-export default withRouter(Login);
+export default Login;
 
 /* { <form onSubmit={handleSubmit}>
         <input
