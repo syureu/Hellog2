@@ -40,7 +40,7 @@ const Login = ({ setHasCookie }) => {
         if (response.status === 200) {
           console.log("200확인");
           // setHasCookie(true);
-          // console.log("쿠키확인");
+
           console.log(response);
           // console.log(response.headers.get(userId));
           // window.localStorage.setItem("userInfo", JSON.stringify(json));
@@ -54,7 +54,7 @@ const Login = ({ setHasCookie }) => {
           );
           console.log("pass");
 
-          // this.props.history.push("/");
+          window.location.href = "/";
         } else {
           console.log("Error");
           throw new Error(response.error);
