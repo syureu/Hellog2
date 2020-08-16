@@ -22,7 +22,7 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
-import Login from "components/Auth/Signin/Login.js";
+import Login from "components/Auth/Signinup/Login.js";
 
 const useStyles = makeStyles(styles);
 
