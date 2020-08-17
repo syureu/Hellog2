@@ -54,9 +54,11 @@ const Login = ({ setHasCookie }) => {
             "AuthID",
             response.headers.get("Authorization")
           );
+          var AuthID = sessionStorage.getItem("AuthID");
+          console.log(AuthID);
           console.log("pass");
 
-          window.location.href = "/";
+          // window.location.href = "/";
         } else {
           console.log("Error");
           throw new Error(response.error);
@@ -76,10 +78,10 @@ const Login = ({ setHasCookie }) => {
     }
   };
   return (
-    <MDBContainer>
+    <MDBContainer align="center" md="6">
       <h2>Login</h2>
-      <MDBRow>
-        <MDBCol md="6">
+      <MDBRow align="center">
+        <MDBCol>
           <form onSubmit={handleSubmit}>
             <p className="h4 text-center mb-4">Sign in</p>
             <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
@@ -108,14 +110,14 @@ const Login = ({ setHasCookie }) => {
               placeholder="pw"
             />
             <div className="text-center mt-4">
-              <MDBBtn color="indigo" type="submit">
-                Login
+              <MDBBtn type="submit">
+                <button>Login </button>
               </MDBBtn>
             </div>
           </form>
         </MDBCol>
       </MDBRow>
-      <Link to="/join">회원가입</Link>
+      <Link to="/signup">회원가입</Link>
     </MDBContainer>
   );
 };

@@ -14,6 +14,12 @@
     width: 300px;
     height: 300px;
   }
+  #record_area {
+    float: left;
+    margin-left: 20px;
+    width: 200px;
+    height: 300px;
+  }
   section {
     float: right;
     width: 350px;
@@ -58,18 +64,21 @@
     </div>
   </header>
   <aside>
-    <button class="btn btn-secondary">기구 사용 기록</button>
-    <button class="btn btn-secondary">오늘 운동 기록</button>
+    <button onclick="set_machine_record('machine')" class="btn btn-secondary">
+      기구 사용 기록
+    </button>
+    <button onclick="set_machine_record('today')" class="btn btn-secondary">
+      오늘 운동 기록
+    </button>
     <div>
-      <ul id="worked_list" class="list-unstyled">
-        <!--{% for record in record_list %}
-        <li>
-          <a href=""></a>
-        </li>
-        {% endfor %}-->
+      <ul id="past_record" class="list-unstyled">
+        <span>운동 기록을 보기 위해 버튼을 누르세요</span>
       </ul>
     </div>
   </aside>
+  <div id="record_area">
+    <ul id="worked_list" class="list-unstyled"></ul>
+  </div>
   <section>
     <a class="btn btn-secondary" href="{% url 'working_set' %}"
       >운동 목표 설정하기</a
@@ -112,6 +121,7 @@
               style="width: 150px;"
               type="submit"
               class="btn btn-secondary"
+              onclick="finish_work()"
             >
               사용 종료
             </button>
@@ -124,6 +134,8 @@
 <script>
   let cur_set = 0;
   let timeIntervalId;
+  let s_time = 0;
+  let e_time = 0;
 
   let set_list = JSON.parse(sessionStorage.getItem("set_list"));
 
@@ -189,6 +201,19 @@
     btn_value = document.getElementById("btn_set_toggle");
     if (btn_value.value == "세트 시작") {
       // 시작
+      if (set_list == null) {
+        alert("운동 목표를 먼저 설정하세요");
+        location.href = "{% url 'working_set' %}";
+      }
+      if (cur_set == set_list.length) {
+        alert("목표한 운동을 모두 마쳤습니다!");
+        return;
+      }
+
+      ////////// 최초 시작 시간 정하기
+      s_time = new Date().toISOString();
+      console.log(s_time);
+
       cur_set += 1;
       document.getElementById("cur_set").innerText =
         set_list[cur_set - 1].set_cnt +
@@ -204,10 +229,16 @@
       count_stop();
       clearInterval(timeIntervalId);
 
+      ////////// 종료 시간 정하기
+      e_time = new Date().toISOString();
+      console.log(e_time);
+
       today_list.push({
         time: document.getElementById("workingTime").innerText,
         set_cnt: document.getElementById("cur_set").innerText,
         cnt: document.getElementById("cur_cnt").innerText,
+        startTime: s_time,
+        endTime: e_time,
       });
 
       worked_list = document.getElementById("worked_list");
@@ -228,6 +259,58 @@
       //
       btn_value.value = "세트 시작";
     }
+  }
+
+  function set_machine_record(btn_name) {
+    ul = $("#past_record");
+    ul.empty();
+
+    $.ajax({
+      url: "/rasp_server/past_record/" + btn_name,
+      success: function (data) {
+        let cnt = 0;
+
+        data.record_list.some(function (record) {
+          cnt++;
+          li = document.createElement("li");
+          li_str =
+            record.startTime.split("T")[0] +
+            " " +
+            record.startTime.split("T")[1].split(".")[0] +
+            " ~ " +
+            record.endTime.split("T")[1].split(".")[0] +
+            "\n" +
+            record.sett +
+            "세트 " +
+            record.weight +
+            "kg " +
+            record.countt +
+            "회 ";
+          li.innerText = li_str;
+          li.setAttribute("style", "font-size: 15px;");
+          ul.append(li);
+          if (cnt == 5) return true;
+        });
+      },
+    });
+  }
+
+  function finish_work() {
+    //if(cur_set < set_list.length)
+    //for (let i = 0; i < today_list.length; i++) {}
+    $.ajax({
+      url: "/rasp_server/finish_work/",
+      method: "POST",
+      data: { today_list: today_list, size: today_list.length },
+      success: function (data) {
+        if (data.result) {
+          alert(data.msg);
+          location.href = "{% url 'user_login' %}";
+        } else {
+          alert(data.msg);
+        }
+      },
+    });
   }
 </script>
 {% endblock %}
