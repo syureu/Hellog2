@@ -24,7 +24,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import App from "views/App/App.js";
+import App from "./components/Navbars/App.js";
 
 import "assets/css/material-dashboard-react.css?v=1.9.0";
 

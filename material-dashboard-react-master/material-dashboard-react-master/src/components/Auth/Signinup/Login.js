@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.css";
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
-  const baseUrl = "http://i3d203.p.ssafy.io:29001";
+  const baseUrl = "https://i3d203.p.ssafy.io:29002";
   const loginApi = (user) => {
     return fetch(baseUrl + "/login", {
       method: "POST",
@@ -39,6 +39,8 @@ const Login = ({ setHasCookie }) => {
         // const { history } = this.props;
         if (response.status === 200) {
           console.log("200확인");
+          alert(userId + "님 환영합니다.");
+
           // setHasCookie(true);
 
           console.log(response);
@@ -52,6 +54,8 @@ const Login = ({ setHasCookie }) => {
             "AuthID",
             response.headers.get("Authorization")
           );
+          var AuthID = sessionStorage.getItem("AuthID");
+          console.log(AuthID);
           console.log("pass");
 
           window.location.href = "/";
@@ -74,10 +78,10 @@ const Login = ({ setHasCookie }) => {
     }
   };
   return (
-    <MDBContainer>
+    <MDBContainer align="center" md="6">
       <h2>Login</h2>
-      <MDBRow>
-        <MDBCol md="6">
+      <MDBRow align="center">
+        <MDBCol>
           <form onSubmit={handleSubmit}>
             <p className="h4 text-center mb-4">Sign in</p>
             <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
@@ -106,14 +110,14 @@ const Login = ({ setHasCookie }) => {
               placeholder="pw"
             />
             <div className="text-center mt-4">
-              <MDBBtn color="indigo" type="submit">
-                Login
+              <MDBBtn type="submit">
+                <button>Login </button>
               </MDBBtn>
             </div>
           </form>
         </MDBCol>
       </MDBRow>
-      <Link to="/join">회원가입</Link>
+      <Link to="/signup">회원가입</Link>
     </MDBContainer>
   );
 };

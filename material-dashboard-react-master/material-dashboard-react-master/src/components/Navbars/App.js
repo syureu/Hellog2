@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Test from "views/Test/Test";
 import { CookiesProvider } from "react-cookie";
-import Login from "components/Auth/Signin/Login.js";
-import Profilebar from "components/Navbars/AdminNavbarLinks.js";
-import "bootstrap/dist/css/bootstrap.css";
+import Login from "components/Auth/Signinup/Login.js";
+import Signup from "components/Auth/Signinup/Signup.js";
+// import Profilebar from "components/Navbars/AdminNavbarLinks.js";
 
 // core components
 import Admin from "layouts/Admin.js";
@@ -35,22 +35,24 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const id = window.sessionStorage.getItem("Authorization");
+    const id = window.sessionStorage.getItem("AuthID");
     if (id) {
       this.onLogin();
     } else {
       this.onLogout();
     }
   }
+
   render() {
     const { logged, onLogout } = this.state;
-
+    // exports.logged = logged;
     return (
       <BrowserRouter>
-        <Profilebar logged={logged} onLogout={onLogout}></Profilebar>
+        {/* <Profilebar logged={logged} onLogout={onLogout}></Profilebar> */}
         <Switch>
           <Route path="/admin" component={Admin} />
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
           <Redirect from="/" to="/admin/dashboard" />
           <Redirect from="/" to="/admin/Test" />
         </Switch>
