@@ -90,4 +90,14 @@ public class UserController {
     public ResponseEntity<List<String>> readLoginUsersRoles(Principal principal) {
         return new ResponseEntity<>(userService.selectRoleListByUsername(principal.getName()), HttpStatus.OK);
     }
+
+    @GetMapping("/username/{username}")
+    public ResponseEntity<String> usernameOverlapCheck(@PathVariable String username) {
+        User user = userService.selectUserByUsername(username);
+        if(user != null) {
+            return new ResponseEntity<>("", HttpStatus.CONFLICT);
+        } else {
+            return new ResponseEntity<>("", HttpStatus.OK);
+        }
+    }
 }
