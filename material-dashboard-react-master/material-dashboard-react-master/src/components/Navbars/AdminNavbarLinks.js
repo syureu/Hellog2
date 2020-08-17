@@ -31,7 +31,7 @@ export default function AdminNavbarLinks() {
   const [openNotification, setOpenNotification] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
   // const { logged, onLogout } = this.props;
-
+  const id = window.sessionStorage.getItem("AuthID");
   const handleClickNotification = (event) => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
@@ -51,6 +51,9 @@ export default function AdminNavbarLinks() {
   };
   const handleCloseProfile = () => {
     setOpenProfile(null);
+  };
+  const onLogout = () => {
+    window.sessionStorage.clear();
   };
   return (
     <div>
@@ -218,15 +221,15 @@ export default function AdminNavbarLinks() {
                       Logout
                     </MenuItem> */}
                     <MenuItem className={classes.dropdownItem}>
-                      {/* {logged ? (
+                      {id ? (
                         <a href="/logout">
-                          <Button>Logout</Button>
+                          <Button onClick={onLogout}>Logout</Button>
                         </a>
                       ) : (
-                          )} */}
-                      <a href="/login">
-                        <Button>Login / 회원가입</Button>
-                      </a>
+                        <a href="/login">
+                          <Button>Login</Button>
+                        </a>
+                      )}
                       {/* <Link to="/admin/login">
                         <Button>Login</Button>
                       </Link> */}

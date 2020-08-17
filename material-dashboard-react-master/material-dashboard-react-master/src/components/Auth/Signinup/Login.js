@@ -58,7 +58,7 @@ const Login = ({ setHasCookie }) => {
           console.log(AuthID);
           console.log("pass");
 
-          // window.location.href = "/";
+          window.location.href = "/";
         } else {
           console.log("Error");
           throw new Error(response.error);
