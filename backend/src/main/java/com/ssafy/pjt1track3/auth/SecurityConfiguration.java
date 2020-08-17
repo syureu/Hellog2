@@ -36,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    DaoAuthenticationProvider authenticationProvider(){
+    DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
         daoAuthenticationProvider.setUserDetailsService(this.userPrincipalDetailsService);
@@ -71,13 +71,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 // add jwt filters (1. authentication, 2. authorization)
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-                .addFilter(new JwtAuthorizationFilter(authenticationManager(),  this.userRepository))
+                .addFilter(new JwtAuthorizationFilter(authenticationManager(), this.userRepository))
                 .authorizeRequests()
                 // configure access rules
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers("/api/public/management/*").hasRole("MANAGER")
                 .antMatchers("/api/public/admin/*").hasRole("ADMIN")
                 // permitAllList
+                .antMatchers("/v2/api-docs", "/swagger-resources/configuration/ui",
+                        "/swagger-resources", "/swagger-resources/configuration/security",
+                        "/swagger-ui.html", "/webjars/**", "/swagger/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/users/user").permitAll()
                 .antMatchers("/api/gyms/*").permitAll()
                 .antMatchers("/api/exercises/*").permitAll()
@@ -89,7 +92,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 

@@ -1,6 +1,8 @@
 package com.ssafy.pjt1track3.dietboard;
 
 import com.ssafy.pjt1track3.user.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import static com.ssafy.pjt1track3.util.Util.isAdmin;
 @RestController
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/dietboards")
+@Api(value="DietBoard")
 public class DietBoardController {
 
     private DietBoardService dietBoardService;
@@ -23,6 +26,7 @@ public class DietBoardController {
     }
 
     @PostMapping("/dietboard")
+    @ApiOperation(value = "식단관리 게시판에 게시글을 입력합니다.", response = String.class)
     public ResponseEntity<String> createDietBoard(@RequestBody DietBoard dietBoard, Principal principal) {
         if (userService.selectUser(dietBoard.getWriter()).getUsername().equals(principal.getName()) || isAdmin(principal)) {
             dietBoardService.insertDietBoard(dietBoard);
