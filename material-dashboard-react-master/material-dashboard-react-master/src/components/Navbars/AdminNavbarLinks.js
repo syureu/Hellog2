@@ -54,6 +54,7 @@ export default function AdminNavbarLinks() {
   };
   const onLogout = () => {
     window.sessionStorage.clear();
+    window.location.href = "/";
   };
   return (
     <div>
@@ -222,9 +223,7 @@ export default function AdminNavbarLinks() {
                     </MenuItem> */}
                     <MenuItem className={classes.dropdownItem}>
                       {id ? (
-                        <a href="/logout">
-                          <Button onClick={onLogout}>Logout</Button>
-                        </a>
+                        <Button onClick={onLogout}>Logout</Button>
                       ) : (
                         <a href="/login">
                           <Button>Login</Button>

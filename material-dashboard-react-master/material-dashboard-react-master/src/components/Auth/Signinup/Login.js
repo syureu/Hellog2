@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.css";
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
-  const baseUrl = "http://i3d203.p.ssafy.io:29001";
+  const baseUrl = "https://i3d203.p.ssafy.io:29002";
   const loginApi = (user) => {
     return fetch(baseUrl + "/login", {
       method: "POST",
