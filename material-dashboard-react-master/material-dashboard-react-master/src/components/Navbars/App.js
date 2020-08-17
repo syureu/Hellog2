@@ -42,6 +42,7 @@ class App extends Component {
       this.onLogout();
     }
   }
+
   render() {
     const { logged, onLogout } = this.state;
 

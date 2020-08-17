@@ -30,6 +30,8 @@ export default function AdminNavbarLinks() {
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
+  // const { logged, onLogout } = this.props;
+
   const handleClickNotification = (event) => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
@@ -216,8 +218,14 @@ export default function AdminNavbarLinks() {
                       Logout
                     </MenuItem> */}
                     <MenuItem className={classes.dropdownItem}>
+                      {/* {logged ? (
+                        <a href="/logout">
+                          <Button>Logout</Button>
+                        </a>
+                      ) : (
+                          )} */}
                       <a href="/login">
-                        <Button>Login</Button>
+                        <Button>Login / 회원가입</Button>
                       </a>
                       {/* <Link to="/admin/login">
                         <Button>Login</Button>
