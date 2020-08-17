@@ -1,16 +1,16 @@
-import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import stretching from './stretching/workoutstretching.jpg';
-import './Beginner/styles.css';
+import React from "react";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import stretching from "./stretching/workoutstretching.jpg";
+import "./Beginner/styles.css";
 
-const StyledTableCell = withStyles(theme => ({
+const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
@@ -20,9 +20,9 @@ const StyledTableCell = withStyles(theme => ({
   },
 }))(TableCell);
 
-const StyledTableRow = withStyles(theme => ({
+const StyledTableRow = withStyles((theme) => ({
   root: {
-    '&:nth-of-type(odd)': {
+    "&:nth-of-type(odd)": {
       backgroundColor: theme.palette.action.hover,
     },
   },
@@ -38,8 +38,11 @@ const rows = [
     <div>
       <h4> 오늘 운동할 부위를</h4>
       <h4> 집중적으로 풀어주세요</h4>
+      <h4>
+        충분한 스트레칭이 이루어지지 않는다면 부상은 갑작스럽게 찾아옵니다.
+      </h4>
     </div>,
-    '10 * 5',
+    "10 * 5"
   ),
 ];
 
@@ -70,7 +73,7 @@ export default function Stretching() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map(row => (
+            {rows.map((row) => (
               <StyledTableRow key={row.pic}>
                 <StyledTableCell align="center">{row.pic}</StyledTableCell>
                 <StyledTableCell align="center">{row.exp}</StyledTableCell>

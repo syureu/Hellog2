@@ -22,7 +22,7 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
-import Login from "components/Auth/Signin/Login.js";
+import Login from "components/Auth/Signinup/Login.js";
 
 const useStyles = makeStyles(styles);
 
@@ -30,6 +30,8 @@ export default function AdminNavbarLinks() {
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
+  // const { logged, onLogout } = this.props;
+  const id = window.sessionStorage.getItem("AuthID");
   const handleClickNotification = (event) => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
@@ -49,6 +51,10 @@ export default function AdminNavbarLinks() {
   };
   const handleCloseProfile = () => {
     setOpenProfile(null);
+  };
+  const onLogout = () => {
+    window.sessionStorage.clear();
+    window.location.href = "/";
   };
   return (
     <div>
@@ -216,9 +222,13 @@ export default function AdminNavbarLinks() {
                       Logout
                     </MenuItem> */}
                     <MenuItem className={classes.dropdownItem}>
-                      <a href="/login">
-                        <Button>Login</Button>
-                      </a>
+                      {id ? (
+                        <Button onClick={onLogout}>Logout</Button>
+                      ) : (
+                        <a href="/login">
+                          <Button>Login</Button>
+                        </a>
+                      )}
                       {/* <Link to="/admin/login">
                         <Button>Login</Button>
                       </Link> */}
