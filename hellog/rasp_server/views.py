@@ -7,9 +7,11 @@ import requests
 import json
 import datetime
 import os
+import ssl
 
-URL = "http://i3d203.p.ssafy.io:29001/"
+URL = "https://i3d203.p.ssafy.io:29002/"
 g_cnt = 0
+ssl_context = ssl._create_unverified_context()
 
 
 def index(request):
@@ -81,7 +83,8 @@ def manager_login(request):
                 'password': password,
             }
 
-            res = requests.post(URL + 'login', data=json.dumps(user))
+            res = requests.post(
+                URL + 'login', data=json.dumps(user), verify=False)
 
             # 로그인 성공
             if res.status_code == 200:
@@ -91,7 +94,7 @@ def manager_login(request):
                 headers = {'authorization': auth_key,
                            'Content-Type': 'application/json; charset=utf-8'}
                 getRole_res = requests.get(
-                    URL + 'api/users/roles', headers=headers)
+                    URL + 'api/users/roles', headers=headers, verify=False)
                 role = getRole_res.json()[0]
                 if 'USER' == getRole_res.json()[0]:
                     return render(request, 'rasp_server/access.html', {'msg': '일반회원은 로그인 할 수 없습니다.'})
@@ -115,6 +118,7 @@ def manager_login(request):
                 return render(request, 'rasp_server/setting.html', context)
             # 로그인 실패
             else:
+                print(res.status_code)
                 return render(request, 'rasp_server/access.html', {'msg': '로그인 실패'})
 
     return render(request, 'rasp_server/access.html', {'msg': '로그인 실패'})
@@ -135,7 +139,8 @@ def user_login(request):
                 'password': password,
             }
             print(user)
-            res = requests.post(URL + 'login', data=json.dumps(user))
+            res = requests.post(
+                URL + 'login', data=json.dumps(user), verify=False)
 
             # 로그인 성공
             if res.status_code == 200:
@@ -145,7 +150,7 @@ def user_login(request):
 
                 headers = {'authorization': auth_key}
                 getRole_res = requests.get(
-                    URL + 'api/users/roles', headers=headers)
+                    URL + 'api/users/roles', headers=headers, verify=False)
 
                 role = getRole_res.json()[0]
 
@@ -268,7 +273,7 @@ def renew_machines(request):
     headers = {'authorization': auth_key}
 
     response = requests.get(
-        URL + "api/gyms/mygym/equipments", headers=headers)
+        URL + "api/gyms/mygym/equipments", headers=headers, verify=False)
 
     machine_list = []
     if(response.status_code == 200):
@@ -305,26 +310,45 @@ def get_past_record(request, btn_name):
     auth_key = user.auth_key
     headers = {'authorization': auth_key,
                'Content-type': 'application/json', 'Accept': 'application/json'}
+
+    machine = Machine.objects.get(selected=True)
+
     if(btn_name == "machine"):
-        machine = Machine.objects.get(selected=True)
         equipmentId = str(machine.machine_id)
         response = requests.get(
-            URL + "api/records/myrecord/equipment/" + equipmentId, headers=headers)
+            URL + "api/records/myrecord/equipment/" + equipmentId, headers=headers, verify=False)
     else:
         response = requests.get(
-            URL + "api/records/myrecord/today/", headers=headers)
+            URL + "api/records/myrecord/today/", headers=headers, verify=False)
 
     record_list = response.json()
+    print(record_list)
+    # print(type(record_list))
+    for record in record_list:
+        machine_id = record['equipmentExerciseId']
+        try:
+            machine_name = Machine.objects.get(
+                machine_id=machine_id).machine_name
+        except Machine.DoesNotExist:
+            continue
+        record["machine_name"] = machine_name
+        # print(record["machine_name"])
 
     data = {
-        "record_list": record_list
+        "record_list": record_list,
     }
     return JsonResponse(data)
 
 
-@csrf_exempt
+@ csrf_exempt
 def finish_work(request):
     if(request.method == "POST"):
+        print(request.POST.get("size"))
+        if(request.POST.get("size") == '0'):
+            return JsonResponse({
+                "msg": "저장할 데이터가 없습니다.",
+                "result": [],
+            })
         auth_key = User.objects.all()[0].auth_key
         # print(auth_key)
         machine = Machine.objects.get(selected=True)
@@ -333,7 +357,8 @@ def finish_work(request):
                    'Content-type': 'application/json', 'Accept': 'application/json'}
 
         # id 설정
-        myinfo = requests.get(URL + 'api/users/myinfo/', headers=headers)
+        myinfo = requests.get(URL + 'api/users/myinfo/',
+                              headers=headers, verify=False)
         # print(myinfo.content.decode('utf-8'))
         id = myinfo.json()['id']
 
@@ -349,9 +374,9 @@ def finish_work(request):
             weight = int(set_str[1].split("kg")[0])
             cnt = int(today_list.get('today_list[' + str(i) + '][cnt]'))
             startTime = str(today_list.get(
-                'today_list[' + str(i) + '][startTime]'))[:23] + "+09:00"
+                'today_list[' + str(i) + '][startTime]'))[:23] + "+00:00"
             endTime = str(today_list.get(
-                'today_list[' + str(i) + '][endTime]'))[:23] + "+09:00"
+                'today_list[' + str(i) + '][endTime]'))[:23] + "+00:00"
 
             today_record = {
                 "id": id,
@@ -364,17 +389,61 @@ def finish_work(request):
             }
             # print(today_record)
             res_record = requests.post(
-                URL + 'api/records/record', headers=headers, data=json.dumps(today_record))
+                URL + 'api/records/record', headers=headers, data=json.dumps(today_record), verify=False)
 
             # print(res_record.json)
             if(res_record.status_code == 200):
                 msg = "운동기록을 성공적으로 전송하였습니다."
                 result = True
+                # 전송실패로 내부 DB에 저장된 record 전송
+                send_local_record()
             else:
                 msg = "서버 문제로 기기 내부에 저장됩니다. <br> 서버 정상 작동시 데이터가 전송됩니다."
                 result = False
+                cur_record = Record(
+                    rid=today_record["id"],
+                    auth_key=auth_key,
+                    equipmentExerciseId=today_record["equipmentExerciseId"],
+                    sett=today_record["sett"],
+                    countt=today_record["countt"],
+                    weight=today_record["weight"],
+                    startTime=today_record["startTime"],
+                    endTime=today_record["endTime"],
+                )
+                cur_record.save()
     data = {
         "msg": msg,
         "result": result
     }
     return JsonResponse(data)
+
+
+def send_local_record():
+    msg = "nothing"
+    try:
+        record_list = Record.objects.all()
+        for record in record_list:
+            headers = {'authorization': record.auth_key,
+                       'Content-Type': 'application/json; charset=utf-8'}
+            today_record = {
+                "id": record.rid,
+                "equipmentExerciseId": record.equipmentExerciseId,
+                "sett": record.sett,
+                "weight": record.weight,
+                "countt": record.countt,
+                "startTime": record.startTime,
+                "endTime": record.endTime
+            }
+            # print(today_record)
+            res_record = requests.post(
+                URL + 'api/records/record', headers=headers, data=json.dumps(today_record), verify=False)
+
+            if(res_record.status_code == 200):
+                Record.objects.filter(startTime=record.startTime).delete()
+
+        msg = "ok"
+    except Record.DoesNotExist:
+        msg = "no data"
+    finally:
+        print(msg)
+    return msg
