@@ -63,12 +63,6 @@ const Login = ({ setHasCookie }) => {
           console.log("Error");
           throw new Error(response.error);
         }
-        // window.sessionStorage.setItem("id", userId);
-        // window.sessionStorage.setItem("password", userPw);
-        // window.sessionStorage.setItem(
-        //   "token",
-        //   response.headers.get("Authorization")
-        // );
       } catch (err) {
         alert("로그인에 실패했습니다.");
         setUserId("");
