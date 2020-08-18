@@ -1,8 +1,28 @@
 package com.ssafy.pjt1track3.equipment;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Equipment {
+    @ApiModelProperty(
+            value = "운동기구 DB 관리용 ID",
+            required = false,
+            example = "1",
+            hidden = true
+    )
     private Long equipmentId;
+    @ApiModelProperty(
+            value = "헬스장(의 gymId)",
+            required = true,
+            example = "1",
+            hidden = false
+    )
     private Long gymId;
+    @ApiModelProperty(
+            value = "운동기구의 이름",
+            required = true,
+            example = "벤치프레스머신 1번",
+            hidden = false
+    )
     private String name;
 
     public Equipment(Long equipmentId, Long gymId, String name) {

@@ -3,6 +3,8 @@ package com.ssafy.pjt1track3.equipmentexercise;
 import com.ssafy.pjt1track3.equipment.EquipmentService;
 import com.ssafy.pjt1track3.gym.GymService;
 import com.ssafy.pjt1track3.user.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,10 @@ import static com.ssafy.pjt1track3.util.Util.isAdmin;
 @RestController
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/equipmentexercises")
+@Api(
+        tags = {"EquipmentExercise"},
+        description = "운동기구에서 할 수 있는 운동목록"
+)
 public class EquipmentExerciseController {
 
     private EquipmentExerciseService equipmentExerciseService;
@@ -34,6 +40,7 @@ public class EquipmentExerciseController {
     }
 
     @PostMapping("/equipmentexercise")
+    @ApiOperation(value="\"운동기구에서 할 수 있는 운동목록\" 하나를 입력요청합니다.")
     public ResponseEntity<String> createEquipmentExercise(@RequestBody EquipmentExercise equipmentExercise, Principal principal) {
         // 지금 리퀘스트들어온 기구로 할 수 있는 운동 의 운동기구를 타고
         // 그 운동기구가 소속된 헬스장을 타고
@@ -54,6 +61,7 @@ public class EquipmentExerciseController {
     }
 
     @GetMapping("/{eeId}")
+    @ApiOperation(value="\"운동기구에서 할 수 있는 운동목록\" 하나를 운동기구별 운동목록 번호를 통해 열람 요청합니다.")
     public ResponseEntity<EquipmentExercise> readEquipmentExercise(@PathVariable Long eeId) {
         EquipmentExercise equipmentExercise = equipmentExerciseService.selectEquipmentExercise(eeId);
         if (equipmentExercise != null) {
@@ -64,6 +72,7 @@ public class EquipmentExerciseController {
     }
 
     @PutMapping("/{eeId}")
+    @ApiOperation(value="\"운동기구에서 할 수 있는 운동목록\" 하나를 운동기구별 운동목록 번호를 통해 수정 요청합니다.")
     public ResponseEntity<String> updateEquipmentExercise(@PathVariable Long eeId, @RequestBody EquipmentExercise equipmentExercise, Principal principal) {
         List<String> representative = gymService.selectGymRepresentativeUsernameByGymId(
                 equipmentService.selectEquipment(
@@ -78,6 +87,7 @@ public class EquipmentExerciseController {
     }
 
     @DeleteMapping("/{eeId}")
+    @ApiOperation(value="\"운동기구에서 할 수 있는 운동목록\" 하나를 운동기구별 운동목록 번호를 통해 삭제 요청합니다.")
     public ResponseEntity<String> deleteEquipmentExercise(@PathVariable Long eeId, Principal principal) {
         List<String> representative = gymService.selectGymRepresentativeUsernameByGymId(
                 equipmentService.selectEquipment(

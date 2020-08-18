@@ -6,52 +6,52 @@ import java.util.Date;
 
 public class DietBoard {
     @ApiModelProperty(
-            value="DB 관리용 ID",
-            required=false,
-            example="1",
-            hidden=true
+            value = "식단관리 게시판 게시글 DB 관리용 ID",
+            required = false,
+            example = "1",
+            hidden = true
     )
     Long dietBoardContentId;
     @ApiModelProperty(
-            value="게시글 제목",
-            required=true,
-            example="제가 만든 아침인데 백종원 선생님께서 보시고 우셨습니다.",
-            hidden=false
+            value = "게시글 제목",
+            required = true,
+            example = "제가 만든 아침인데 백종원 선생님께서 보시고 우셨습니다.",
+            hidden = false
     )
     String title;
     @ApiModelProperty(
-            value="작성자(의 Id)",
-            required=true,
-            example="1",
-            hidden=false
+            value = "작성자(의 id)",
+            required = true,
+            example = "1",
+            hidden = false
     )
     Long writer;
     @ApiModelProperty(
-            value="게시글 작성 시간(서버에 요청한 시간으로 처리됩니다)",
-            required=false,
-            example="2020-08-17T21:19:24.471+09:00",
-            hidden=false
+            value = "게시글 작성 시간(서버에 요청한 시간으로 처리)",
+            required = false,
+            example = "2020-08-17T21:19:24.471+09:00",
+            hidden = false
     )
     Date writeTime;
     @ApiModelProperty(
-            value="게시글 수정 시간(서버에 요청한 시간으로 처리됩니다)",
-            required=false,
-            example="2020-08-17T21:19:24.471+09:00",
-            hidden=false
+            value = "게시글 수정 시간(서버에 요청한 시간으로 처리)",
+            required = false,
+            example = "2020-08-17T21:19:24.471+09:00",
+            hidden = false
     )
     Date editTime;
     @ApiModelProperty(
-            value="게시글 내용",
-            required=true,
-            example="근데 맛을 보시진 않으셨어요",
-            hidden=false
+            value = "게시글 내용",
+            required = true,
+            example = "근데 맛을 보시진 않으셨어요",
+            hidden = false
     )
     String content;
     @ApiModelProperty(
-            value="첨부 사진(null일시 사진 없음, 아니면 사진 있음)",
-            required=false,
-            example="BINARY DATA",
-            hidden=false
+            value = "첨부 사진(null일시 사진 없음, 아니면 사진 있음)",
+            required = false,
+            example = "BINARY DATA",
+            hidden = false
     )
     Byte[] picture;
 

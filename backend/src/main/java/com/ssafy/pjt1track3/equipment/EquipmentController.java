@@ -1,6 +1,8 @@
 package com.ssafy.pjt1track3.equipment;
 
 import com.ssafy.pjt1track3.gym.GymService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,10 @@ import static com.ssafy.pjt1track3.util.Util.isAdmin;
 @RestController
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/equipments")
+@Api(
+        tags = {"Equipment"},
+        description = "운동기구"
+)
 public class EquipmentController {
 
     private EquipmentService equipmentService;
@@ -31,6 +37,7 @@ public class EquipmentController {
     }
 
     @PostMapping("/equipment")
+    @ApiOperation(value="운동기구 하나를 입력요청합니다.")
     public ResponseEntity<String> createEquipment(@RequestBody Equipment equipment, Principal principal) {
         if(isAdmin(principal) || isOwnGym(equipment.getGymId(), principal)){
             equipmentService.insertEquipment(equipment);
@@ -41,6 +48,7 @@ public class EquipmentController {
     }
 
     @GetMapping("/{equipmentId}")
+    @ApiOperation(value="운동기구 하나를 운동기구 번호를 통해 열람 요청합니다.")
     public ResponseEntity<Equipment> readEquipment(@PathVariable Long equipmentId) {
         Equipment equipment = equipmentService.selectEquipment(equipmentId);
         if(equipment != null) {
@@ -51,6 +59,7 @@ public class EquipmentController {
     }
 
     @PutMapping("/{equipmentId}")
+    @ApiOperation(value="운동기구 하나를 운동기구 번호를 통해 수정 요청합니다.")
     public ResponseEntity<String> updateEquipment(@PathVariable Long equipmentId, @RequestBody Equipment equipment, Principal principal) {
         if(isAdmin(principal) || isOwnGym(equipment.getGymId(), principal)){
             equipmentService.updateEquipment(equipmentId, equipment);
@@ -61,6 +70,7 @@ public class EquipmentController {
     }
 
     @DeleteMapping("/{equipmentId}")
+    @ApiOperation(value="운동기구 하나를 운동기구 번호를 통해 삭제 요청합니다.")
     public ResponseEntity<String> deleteEquipment(@PathVariable Long equipmentId, Principal principal){
         if(isAdmin(principal) || isOwnGym(equipmentService.selectEquipment(equipmentId).getGymId(), principal)){
             equipmentService.updateDelete(equipmentId);
