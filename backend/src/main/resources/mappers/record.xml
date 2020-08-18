@@ -120,4 +120,22 @@
             user.id = record.id;
     </select>
 
+    <!-- List<Record> selectRecordByUsernameV2(String name); -->
+    <select id="selectRecordByUsernameV2" parameterType="String" resultType="RecordV2Dto">
+        SELECT
+            exercise.name as name,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, record, equipment_exercise, exercise
+        where
+            user.username = #{username}
+            and user.id = record.id
+            and record.equipment_exercise_id = equipment_exercise.equipment_exercise_id
+            and equipment_exercise.exercise_id = exercise.exercise_id;
+    </select>
+
 </mapper>

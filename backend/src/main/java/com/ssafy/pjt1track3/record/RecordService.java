@@ -41,6 +41,7 @@ public class RecordService {
     public void deleteRecord(Long recordId) {
         recordRepository.deleteRecord(recordId);
     }
+
     public List<Record> selectRecordByUsername(String name) {
         return recordRepository.selectRecordByUsername(name);
     }
@@ -50,5 +51,9 @@ public class RecordService {
 
     public List<Record> selectRecordByUsernameAndEquipmentId(String name, Long equipmentId) {
         return recordRepository.selectRecordByUsernameAndEquipmentId(new UserEquipmentDto(name, equipmentId));
+    }
+
+    public List<Record> selectRecordByUsernameV2(String name) {
+        return recordRepository.selectRecordByUsernameV2(name);
     }
 }
