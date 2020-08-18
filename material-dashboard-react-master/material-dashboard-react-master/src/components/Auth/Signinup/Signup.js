@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle";
+import "./style.css";
+import { Button } from "react-bootstrap";
 
 const Join = () => {
   const [userId, setUserId] = useState("");
@@ -104,10 +106,10 @@ const Join = () => {
     <div>
       {!isJoinSuccess && (
         <MDBContainer align="center">
-          <h2>Join</h2>
+          <h2 class="title">Join</h2>
           <MDBRow align="center">
             <MDBCol align="center">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} width="500px">
                 <input
                   type="text"
                   name="user_id"
@@ -183,15 +185,17 @@ const Join = () => {
                   placeholder="height"
                 />
                 <br />
-                <button type="submit">제출</button>
+                <Button variant="danger" type="submit">
+                  제출
+                </Button>
               </form>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
       )}
       {isJoinSuccess && (
-        <div>
-          <p>회원가입을 축하합니다!</p>
+        <div align="center">
+          <p color="white">회원가입을 축하합니다!</p>
           <Link to="/login">로그인</Link>
         </div>
       )}
