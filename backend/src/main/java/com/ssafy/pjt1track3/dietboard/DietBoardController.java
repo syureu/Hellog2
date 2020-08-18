@@ -1,6 +1,5 @@
 package com.ssafy.pjt1track3.dietboard;
 
-import com.ssafy.pjt1track3.SwaggerConfig;
 import com.ssafy.pjt1track3.user.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

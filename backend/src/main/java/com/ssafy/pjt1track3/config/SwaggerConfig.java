@@ -1,4 +1,4 @@
-package com.ssafy.pjt1track3;
+package com.ssafy.pjt1track3.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
