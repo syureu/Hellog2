@@ -89,6 +89,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/equipmentExercises/*").permitAll()
                 .antMatchers("/api/records/*").permitAll()
                 .antMatchers("/api/dietboards/*").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/nfcs/nfc").permitAll()
+                .antMatchers("/api/nfcs/login/*").permitAll()
                 .anyRequest().authenticated();
     }
 
