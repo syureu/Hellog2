@@ -13,5 +13,5 @@ public interface RecordRepository {
     List<Record> selectRecordByUsername(String name);
     List<Record> selectTodayRecordByUsername(String name);
     List<Record> selectRecordByUsernameAndEquipmentId(UserEquipmentDto userEquipmentDto);
-    List<Record> selectRecordByUsernameV2(String name);
+    List<RecordV2Dto> selectRecordByUsernameV2(String name);
 }

@@ -53,7 +53,7 @@ public class RecordService {
         return recordRepository.selectRecordByUsernameAndEquipmentId(new UserEquipmentDto(name, equipmentId));
     }
 
-    public List<Record> selectRecordByUsernameV2(String name) {
+    public List<RecordV2Dto> selectRecordByUsernameV2(String name) {
         return recordRepository.selectRecordByUsernameV2(name);
     }
 }

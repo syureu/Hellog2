@@ -77,7 +77,7 @@ public class RecordController {
     }
 
     @GetMapping("/myrecord/v2")
-    public ResponseEntity<List<Record>> readMyRecordListV2(Principal principal) {
+    public ResponseEntity<List<RecordV2Dto>> readMyRecordListV2(Principal principal) {
         return new ResponseEntity<>(recordService.selectRecordByUsernameV2(principal.getName()), HttpStatus.OK);
     }
 }

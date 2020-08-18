@@ -120,7 +120,7 @@
             user.id = record.id;
     </select>
 
-    <!-- List<Record> selectRecordByUsernameV2(String name); -->
+    <!-- List<RecordV2Dto> selectRecordByUsernameV2(String name); -->
     <select id="selectRecordByUsernameV2" parameterType="String" resultType="RecordV2Dto">
         SELECT
             exercise.name as name,
