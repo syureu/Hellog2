@@ -13,42 +13,39 @@ export default function Main() {
       <Carousel interval={null}>
         <Carousel.Item>
           <img className="d-block w-100" src={gym_unsplash} alt="First slide" />
-
           <Carousel.Caption>
-            <h2>
-              <b>First slide label</b>
-            </h2>
-            <h2>First slide label</h2>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h2>헬로그는 건강(Health)과 기록(Log)의 합성어입니다.</h2>
+            {/* <h3>First slide label</h3> */}
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
             className="d-block w-100"
             src={gym_unsplash2}
             alt="Third slide"
           />
-
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>정직하고 꾸준한 기록으로 운동의 즐거움을 선사합니다.</h2>
+            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
             className="d-block w-100"
             src={gym_unsplash3}
             alt="Third slide"
           />
-
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h2>헬로그와 함께 변화를 시작해보세요.</h2>
             <p>
               <a href="/login">
                 <Button className="btn btn-light">로그인</Button>
+              </a>{" "}
+              <a href="/login">
+                <Button className="btn btn-light">회원가입</Button>
               </a>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
