@@ -42,49 +42,55 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const start = new Date();
-const end = new Date(new Date().setMinutes(start.getMinutes() + 30));
-const schedules = [
-  {
-    calendarId: '1',
-    category: 'time',
-    isVisible: true,
-    title: 'Study',
-    id: '1',
-    body: 'Test',
-    start,
-    end,
-  },
-  {
-    calendarId: '2',
-    category: 'time',
-    isVisible: true,
-    title: 'Meeting',
-    id: '2',
-    body: 'Description',
-    start: new Date(new Date().setHours(start.getHours() + 1)),
-    end: new Date(new Date().setHours(start.getHours() + 2)),
-  },
-];
+// const start = new Date();
+// const end = new Date(new Date().setMinutes(start.getMinutes() + 30));
+// const schedules = [
+//   {
+//     calendarId: '1',
+//     category: 'time',
+//     isVisible: true,
+//     title: 'Study',
+//     id: '1',
+//     body: {
+//       Set: 10,
+//       Count: 10,
+//       Weight: 10,
+//     },
+//     start,
+//     end,
+//   },
+//   {
+//     calendarId: '2',
+//     category: 'time',
+//     isVisible: true,
+//     title: 'Meeting',
+//     id: '2',
+//     body: 'Description',
+//     start: new Date(new Date().setHours(start.getHours() + 1)),
+//     end: new Date(new Date().setHours(start.getHours() + 2)),
+//   },
+// ];
 
-const calendars = [
-  {
-    id: '1',
-    name: 'My Calendar',
-    color: '#ffffff',
-    bgColor: '#9e5fff',
-    dragBgColor: '#9e5fff',
-    borderColor: '#9e5fff',
-  },
-  {
-    id: '2',
-    name: 'Company',
-    color: '#ffffff',
-    bgColor: '#00a9ff',
-    dragBgColor: '#00a9ff',
-    borderColor: '#00a9ff',
-  },
-];
+// const calendars = [
+//   {
+//     id: '1',
+//     name: 'My Calendar',
+//     color: '#ffffff',
+//     bgColor: '#9e5fff',
+//     dragBgColor: '#9e5fff',
+//     borderColor: '#9e5fff',
+//   },
+//   {
+//     id: '2',
+//     name: 'Company',
+//     color: '#ffffff',
+//     bgColor: '#00a9ff',
+//     dragBgColor: '#00a9ff',
+//     borderColor: '#00a9ff',
+//   },
+// ];
+
+const AuthID = sessionStorage.getItem('AuthID');
 
 const ArrowStyle = {
   cursor: 'pointer',
@@ -126,8 +132,6 @@ const useGetCategoryDatas = (url) => {
   const [data, setData] = useState([]);
 
   const getDatas = async () => {
-    let respone = [];
-
     setData(categoryDats);
   };
 
@@ -161,6 +165,66 @@ const useOnChangeIndex = (categoryDatas) => {
   return [onChangeIndexHandler, appbarIndex, appbarIndexDelta];
 };
 
+const baseUrl = 'https://i3d203.p.ssafy.io:29002';
+const getRecords = (username) => {
+  return fetch(baseUrl + '/api/records/myrecord/v2?name=' + username, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: AuthID,
+    },
+  }).then((response) => response.json());
+};
+
+const useGetRecordDatas = (username) => {
+  // const { serverUrl, user, setUser } = useContext(CommonContext);
+  const [schedule, setSchedule] = useState([]);
+  const [calendar, setCalendar] = useState([]);
+
+  const getDatas = async () => {
+    const records = await getRecords(username);
+
+    let schedules = records.map((record, index) => {
+      let body = '세트 : ' + record.sett + '\n' + ' 무게 : ' + record.weight + '\n' + ' 횟수 : ' + record.countt + '\n';
+
+      let start = new Date(record.startTime).toISOString();
+      let end = new Date(record.endTime).toISOString();
+
+      return {
+        calendarId: index,
+        category: 'time',
+        isVisible: true,
+        title: record.exerciseName,
+        id: index,
+        body: body,
+        start,
+        end,
+      };
+    });
+
+    let calendars = records.map((record, index) => {
+      let generateColor = '#' + Math.random().toString(16).substr(-6);
+      return {
+        id: index,
+        name: record.exerciseName,
+        color: '#ffffff',
+        bgColor: generateColor,
+        dragBgColor: generateColor,
+        borderColor: generateColor,
+      };
+    });
+
+    setSchedule(schedules);
+    setCalendar(calendars);
+  };
+
+  useEffect(() => {
+    getDatas();
+  }, []);
+
+  return { schedule, calendar };
+};
+
 const MySection = (props) => {
   const { level } = props;
   const cal = useRef(null);
@@ -192,6 +256,7 @@ const MySection = (props) => {
   }, []);
 
   const onBeforeCreateSchedule = useCallback((scheduleData) => {
+    console.log('-----------');
     console.log(scheduleData);
 
     const schedule = {
@@ -268,7 +333,8 @@ const MySection = (props) => {
   function _getFormattedTime(time) {
     const date = new Date(time);
     const h = date.getHours();
-    const m = date.getMinutes();
+    let m = date.getMinutes();
+    m = m == 0 ? '00' : m;
 
     return `${h}:${m}`;
   }
@@ -300,11 +366,12 @@ const MySection = (props) => {
 
   const templates = {
     time: function (schedule) {
-      console.log(schedule);
       setRenderRangeTest();
       return _getTimeTemplate(schedule, false);
     },
   };
+
+  const record = useGetRecordDatas('coach');
 
   const classes = useStyles();
 
@@ -334,8 +401,8 @@ const MySection = (props) => {
             useCreationPopup={true}
             useDetailPopup={true}
             template={templates}
-            calendars={calendars}
-            schedules={schedules}
+            calendars={record.calendar}
+            schedules={record.schedule}
             onClickSchedule={onClickSchedule}
             onBeforeCreateSchedule={onBeforeCreateSchedule}
             onBeforeDeleteSchedule={onBeforeDeleteSchedule}
@@ -400,7 +467,7 @@ const MyLog = (props) => {
     <div className={classes.root}>
       <Grid className='vote-grid-title-grid'>
         <Typography variant='h2' align='center' className={classes.typography}>
-          여기다가 회원의 이름
+          {AuthID}
         </Typography>
       </Grid>
       <br></br>
