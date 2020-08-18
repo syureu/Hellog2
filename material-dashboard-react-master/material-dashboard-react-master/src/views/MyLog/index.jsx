@@ -29,6 +29,9 @@ import { SLIDE_INFO } from "./constants";
 import categoryDats from "./dump.json";
 import ButtonBases from "../../components/Main/ButtonBases";
 
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
