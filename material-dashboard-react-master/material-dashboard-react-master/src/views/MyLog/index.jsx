@@ -29,12 +29,6 @@ import { SLIDE_INFO } from "./constants";
 import categoryDats from "./dump.json";
 import ButtonBases from "../../components/Main/ButtonBases";
 
-import CarouselSlide from "./CarouselSlide";
-import { SLIDE_INFO } from "./constants";
-
-import categoryDats from "./dump.json";
-import ButtonBases from "../../components/Main/ButtonBases";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
