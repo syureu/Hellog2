@@ -25,5 +25,5 @@ urlpatterns = [
     path('renew_machines/', views.renew_machines, name="renew_machines"),
     path('past_record/<str:btn_name>/',
          views.get_past_record, name="past_record"),
-    path('finish_work/', views.finish_work, name="finish_work")
+    path('finish_work/', views.finish_work, name="finish_work"),
 ]

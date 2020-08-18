@@ -269,17 +269,21 @@
       url: "/rasp_server/past_record/" + btn_name,
       success: function (data) {
         let cnt = 0;
-
         data.record_list.some(function (record) {
           cnt++;
+          let li_str_header = "";
+          if (btn_name == "machine") {
+            li_str_header = record.startTime.split("T")[0] + " \n ";
+          } else {
+            li_str_header = record.machine_name + " \n";
+          }
           li = document.createElement("li");
           li_str =
-            record.startTime.split("T")[0] +
-            " " +
+            li_str_header +
             record.startTime.split("T")[1].split(".")[0] +
             " ~ " +
             record.endTime.split("T")[1].split(".")[0] +
-            "\n" +
+            " " +
             record.sett +
             "세트 " +
             record.weight +
@@ -287,7 +291,7 @@
             record.countt +
             "회 ";
           li.innerText = li_str;
-          li.setAttribute("style", "font-size: 15px;");
+          li.setAttribute("style", "font-size: 15px; margin: 7px;");
           ul.append(li);
           if (cnt == 5) return true;
         });
@@ -296,8 +300,6 @@
   }
 
   function finish_work() {
-    //if(cur_set < set_list.length)
-    //for (let i = 0; i < today_list.length; i++) {}
     $.ajax({
       url: "/rasp_server/finish_work/",
       method: "POST",

@@ -38,18 +38,18 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 
 import Dietboard from "views/Dietboard/Dietboard.js";
 import MyLog from "views/MyLog/index.jsx";
-import Test from "views/Test/Test.js";
+import Main from "views/Main/Main.js";
 import Login from "components/Auth/Signinup/Login.js";
 import Recommend from "views/Recommend/index";
 import abc from "views/abc/abc.js";
 
 const dashboardRoutes = [
   {
-    path: "/Test",
-    name: "Test",
-    rtlName: "wtf",
+    path: "/Main",
+    name: "Main",
+    rtlName: "Main",
     icon: Dashboard,
-    component: Test,
+    component: Main,
     layout: "/admin",
   },
   {

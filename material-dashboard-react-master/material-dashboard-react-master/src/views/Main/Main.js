@@ -3,11 +3,11 @@ import { Carousel } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import gym_unsplash from "../Test/gym_unsplash.jpg";
-import gym_unsplash2 from "../Test/gym_unsplash2.jpg";
-import gym_unsplash3 from "../Test/gym_unsplash3.jpg";
+import gym_unsplash from "../Main/gym_unsplash.jpg";
+import gym_unsplash2 from "../Main/gym_unsplash2.jpg";
+import gym_unsplash3 from "../Main/gym_unsplash3.jpg";
 
-export default function Test() {
+export default function Main() {
   return (
     <div>
       <Carousel interval={null}>
