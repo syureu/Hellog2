@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Test from "views/Test/Test";
+import Main from "views/Main/Main";
 import { CookiesProvider } from "react-cookie";
 import Login from "components/Auth/Signinup/Login.js";
 import Signup from "components/Auth/Signinup/Signup.js";
@@ -54,7 +54,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Redirect from="/" to="/admin/dashboard" />
-          <Redirect from="/" to="/admin/Test" />
+          <Redirect from="/" to="/admin/Main" />
         </Switch>
       </BrowserRouter>
     );
