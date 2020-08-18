@@ -33,7 +33,7 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     {/* <CookiesProvider>
-      <Test />
+      <Main />
     </CookiesProvider> */}
     <App />
   </Router>,
