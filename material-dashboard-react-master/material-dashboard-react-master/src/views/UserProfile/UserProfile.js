@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { CardDeck } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -18,10 +20,12 @@ import Button from "components/CustomButtons/Button.js";
 // import CardFooter from "components/Card/CardFooter.js";
 
 import team from "assets/img/faces/team.jpg";
+import back from "assets/img/faces/back.jpg";
 
 import pic1 from "../UserProfile/pic1_nfc.png";
 import pic2 from "../UserProfile/pic2_ultrasound.png";
 import pic3 from "../UserProfile/pic3_web.png";
+import donggyu from "../UserProfile/donggyu.jpg";
 
 const styles = {
   cardCategoryWhite: {
@@ -50,49 +54,67 @@ export default function UserProfile() {
     <div>
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
-          <Card className="text-center">
-            <Card.Img variant="top" src={team} />
-            {/* <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body> */}
-          </Card>
+          <img className="d-block w-100" src={team} alt="Team 5!" />
         </GridItem>
+        <br />
         <GridItem xs={12} sm={12} md={4}>
-          <Card className="text-center">
-            <ListGroup variant="flush">
-              <ListGroup.Item>SSAFY 구미 2반</ListGroup.Item>
-              <ListGroup.Item>Team 5!</ListGroup.Item>
-              <ListGroup.Item>이동규</ListGroup.Item>
-              <ListGroup.Item>전상혁</ListGroup.Item>
-              <ListGroup.Item>김기담</ListGroup.Item>
-              <ListGroup.Item>주지환</ListGroup.Item>
-              <ListGroup.Item>한광욱</ListGroup.Item>
-              <ListGroup.Item>정연욱</ListGroup.Item>
-            </ListGroup>
-          </Card>
+          <>
+            <Card>
+              <Card.Header>팀장 FrontEnd</Card.Header>
+              {/* <Card.Img variant="top" src={pic1} /> */}
+              <Card.Body>
+                <Card.Title>Lee Dong Gyu</Card.Title>
+              </Card.Body>
+            </Card>
+            <br />
+
+            <Card>
+              <Card.Header>FrontEnd</Card.Header>
+              {/* <Card.Img variant="top" src={pic1} /> */}
+              <Card.Body>
+                <Card.Title>Jeon Sang Hyeok</Card.Title>
+              </Card.Body>
+            </Card>
+            <br />
+
+            <Card>
+              <Card.Header>FrontEnd</Card.Header>
+              {/* <Card.Img variant="top" src={pic1} /> */}
+              <Card.Body>
+                <Card.Title>Han Gwang Uk</Card.Title>
+              </Card.Body>
+            </Card>
+            <br />
+
+            <Card>
+              <Card.Header>BackEnd</Card.Header>
+              {/* <Card.Img variant="top" src={pic1} /> */}
+              <Card.Body>
+                <Card.Title>Kim Ki Dam</Card.Title>
+              </Card.Body>
+            </Card>
+            <br />
+
+            <Card>
+              <Card.Header>Embedded</Card.Header>
+              {/* <Card.Img variant="top" src={pic1} /> */}
+              <Card.Body>
+                <Card.Title>Joo Ji Hwan</Card.Title>
+              </Card.Body>
+            </Card>
+            <br />
+
+            <Card>
+              <Card.Header>Embedded</Card.Header>
+              {/* <Card.Img variant="top" src={pic1} /> */}
+              <Card.Body>
+                <Card.Title>Jeong Yeon Uk</Card.Title>
+              </Card.Body>
+            </Card>
+            <br />
+          </>
         </GridItem>
       </GridContainer>
-      {/* <GridContainer>
-        <GridItem>
-          <Card profile>
-            <CardAvatar profile>
-              <img src={team} alt="..." />
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>SSAFY 구미 2반</h6>
-              <h4 className={classes.cardTitle}>Team 5!</h4>
-              <p className={classes.description}>
-                이동규, 전상혁, 김기담, 한광욱, 주지환, 정연욱
-              </p>
-            </CardBody>
-          </Card>
-        </GridItem>
-      </GridContainer> */}
     </div>
   );
 }
