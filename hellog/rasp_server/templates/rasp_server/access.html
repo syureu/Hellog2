@@ -42,4 +42,31 @@
   </form>
 </div>
 
+<script>
+  let warn_cnt = 0;
+  let itv = setInterval(function () {
+    $.ajax({
+      url: "../watch",
+      success: function (data) {
+        alert("성공적으로 로그인 되었습니다.");
+        location.href = "../setting";
+      },
+      error: function (data) {
+        warn_cnt++;
+        clearInterval(itv);
+        if (warn_cnt > 5) {
+          alert(
+            "nfc 로그인에 문제가 생겼습니다. 키보드를 통한 로그인만 가능합니다."
+          );
+        } else {
+          alert(
+            "nfc 로그인 중 문제가 발생했습니다. \n 5초 후에 다시 nfc 로그인을 시도합니다."
+          );
+          setTimeout(itv, 3000);
+        }
+      },
+    });
+  }, 1000);
+</script>
+
 {% endblock %}

@@ -189,30 +189,7 @@ def selected(request, machine_name):
 
 
 def user_logout(request):
-    form = RecordForm(request.POST)
-
-    if(form.is_valid()):
-        username = form.cleaned_data["username"]
-        set_cnt = form.cleaned_data["set_cnt"]
-        cnt = form.cleaned_data["cnt"]
-
-        print(set_cnt + cnt)
-
-        if set_cnt + cnt > 0:
-            machine = Machine.objects.get(selected=True)
-
-            record = Record(
-                auth_key=User.objects.get(username=username).auth_key,
-                date_record=datetime.datetime.now(),
-                machine_name=machine.machine_name,
-                machine_id=machine.machine_id,
-                set_cnt=set_cnt,
-                cnt=cnt
-            )
-
-            record.save()
-
-        User.objects.all().delete()
+    User.objects.all().delete()
     return HttpResponseRedirect('../user_login')
 
 
@@ -239,10 +216,37 @@ def check(request):
 
 
 def watch(request):
-    f = open("/home/pi/Hash/result.mfd", "r")
-    str = f.readline()
-    os.remove("/home/pi/Hash/result.mfd")
-    return
+    #f = open("/home/pi/Hash/result.mfd", "r")
+    #nfc_str = f.readline()
+    # print(nfc_str)
+    nfc_res = requests.get(URL + "api/nfcs/login/blarblar", verify=False)
+    print("res ---------------")
+    print(nfc_res.headers['Authorization'])
+    auth_key = nfc_res.headers['Authorization']
+
+    headers = {'authorization': auth_key}
+
+    isOk = True
+    if(nfc_res.status_code != 200):
+        isOk = False
+    else:
+        user_info = requests.get(
+            URL + "api/users/myinfo/", headers=headers, verify=False).json()
+        # print(user_info.content)
+        user = User(
+            username=user_info['username'],
+            password=user_info['password'],
+            auth_key=auth_key,
+            login_date=datetime.datetime.now(),
+            role=user_info["roles"]
+        )
+        user.save()
+    # os.remove("/home/pi/Hash/result.mfd")
+
+    data = {
+        "isOk": isOk
+    }
+    return JsonResponse(data)
 
 
 def count_clear(request):
@@ -308,6 +312,7 @@ def renew_machines(request):
 def get_past_record(request, btn_name):
     user = User.objects.all()[0]
     auth_key = user.auth_key
+    print(auth_key)
     headers = {'authorization': auth_key,
                'Content-type': 'application/json', 'Accept': 'application/json'}
 
@@ -321,6 +326,7 @@ def get_past_record(request, btn_name):
         response = requests.get(
             URL + "api/records/myrecord/today/", headers=headers, verify=False)
 
+    print(response.status_code)
     record_list = response.json()
     print(record_list)
     # print(type(record_list))
