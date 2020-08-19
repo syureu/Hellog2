@@ -5,6 +5,7 @@ import Main from "views/Main/Main";
 import { CookiesProvider } from "react-cookie";
 import Login from "components/Auth/Signinup/Login.js";
 import Signup from "components/Auth/Signinup/Signup.js";
+import machine from "views/Machine/machine.jsx";
 // import Profilebar from "components/Navbars/AdminNavbarLinks.js";
 
 // core components
@@ -53,6 +54,7 @@ class App extends Component {
           <Route path="/admin" component={Admin} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          {/* <Route path="/machine" component={machine} /> */}
           <Redirect from="/" to="/admin/dashboard" />
           <Redirect from="/" to="/admin/Main" />
         </Switch>
