@@ -10,39 +10,37 @@
         where username=#{username}
     </select>
 
-    <insert id="insertUser" parameterType="com.ssafy.pjt1track3.user.User" >
-        insert into user(
-        username,
-        password,
-        name,
-        birthday,
-        phone,
-        male,
-        sign_up_day,
-        height,
-        weight,
-        gym_id,
-        coach_id,
-        active,
-        limit_permit_day,
-        roles,
-        permissions
-        ) values (
-        #{username},
-        #{password},
-        #{name},
-        #{birthday},
-        #{phone},
-        #{male},
-        #{signUpDay},
-        #{height},
-        #{weight},
-        #{gymId},
-        #{coachId},
-        #{active},
-        #{limitPermitDay},
-        #{roles},
-        #{permissions}
+    <insert id="insertUser" parameterType="User" >
+        insert into
+            user(
+                username,
+                password,
+                name,
+                birthday,
+                phone,
+                male,
+                sign_up_day,
+                height,
+                weight,
+                active,
+                limit_permit_day,
+                roles,
+                permissions
+            )
+        values (
+            #{username},
+            #{password},
+            #{name},
+            #{birthday},
+            #{phone},
+            #{male},
+            now(),
+            #{height},
+            #{weight},
+            #{active},
+            #{limitPermitDay},
+            #{roles},
+            #{permissions}
         )
     </insert>
 
@@ -53,16 +51,19 @@
     </select>
 
     <update id="updateUser" parameterType="User">
-        update user
+        update
+            user
         set
-        password=#{password},
-        name=#{name},
-        age=#{age},
-        phone=#{phone},
-        male=#{male},
-        height=#{height},
-        weight=#{weight}
-        where id=#{id}
+            password = #{password},
+            phone = #{phone},
+            height = #{height},
+            weight = #{weight},
+            gym_id = #{gymId},
+            coach_id = #{coachId},
+            roles = #{roles},
+            permissions = #{permissions}
+        where
+            id = #{id}
     </update>
 
     <delete id="deleteUser" parameterType="Long">

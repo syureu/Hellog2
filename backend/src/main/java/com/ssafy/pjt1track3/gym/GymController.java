@@ -41,6 +41,7 @@ public class GymController {
     public ResponseEntity<String> createGym(@RequestBody Gym gym, Principal principal) {
         if (isAdmin(principal)) {
             gymService.insertGym(gym);
+            gymService.updateUserToRepresentative(gym.getRepresentative());
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);

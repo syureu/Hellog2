@@ -39,7 +39,8 @@ public class Gym {
     )
     private Long representative;
 
-    public Gym(String name, String location, String phone, Long representative) {
+    public Gym(Long gymId, String name, String location, String phone, Long representative) {
+        this.gymId = gymId;
         this.name = name;
         this.location = location;
         this.phone = phone;
@@ -85,5 +86,4 @@ public class Gym {
     public void setRepresentative(Long representative) {
         this.representative = representative;
     }
-
 }
