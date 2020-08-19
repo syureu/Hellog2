@@ -19,9 +19,10 @@ const Join = () => {
   const baseUrl = "https://i3d203.p.ssafy.io:29002";
 
   const checkIdApi = (userId) => {
+    console.log(userId);
     return fetch(baseUrl + "/api/users/username/" + userId, {
       method: "GET",
-      body: JSON.stringify(userId),
+      // body: JSON.stringify(userId),
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,20 +40,20 @@ const Join = () => {
     // .then((response) => response.json());
   };
 
-  const checkId = async (userId) => {
-    userId.preventDefault();
-    console.log(userId);
+  const checkId = async (e) => {
+    // e.preventDefault();
+    console.log(e);
     var id = userId;
     try {
-      const response = await checkIdApi({
-        userId: id,
-      });
-      if (response.status != 200) {
+      const response = await checkIdApi(id);
+      if (response.status !== 200) {
         alert("이미 존재하는 아이디입니다.");
         return false;
+      } else {
+        alert("사용 가능한 아이디 입니다.");
       }
-    } catch {
-      alert("사용 가능한 아이디 입니다.");
+    } catch (err) {
+      console.log(err);
     }
   };
   const handleSubmit = async (e) => {
@@ -109,7 +110,7 @@ const Join = () => {
           <h2 class="title">Join</h2>
           <MDBRow align="center">
             <MDBCol align="center">
-              <form onSubmit={handleSubmit} width="500px">
+              <form onSubmit={handleSubmit}>
                 <input
                   type="text"
                   name="user_id"
@@ -118,9 +119,14 @@ const Join = () => {
                   onChange={(e) => setUserId(e.target.value)}
                   placeholder="id는 4 ~ 20자 필수"
                 />
-                {/* <button onClick={(e) => checkId(e.target.value)}>
+                <Button
+                  variant="danger"
+                  type="button"
+                  onClick={() => checkId(userId)}
+                >
                   중복검사
-                </button> */}
+                </Button>
+
                 <br />
                 <input
                   type="password"
@@ -186,7 +192,7 @@ const Join = () => {
                 />
                 <br />
                 <Button variant="danger" type="submit">
-                  제출
+                  가입하기
                 </Button>
               </form>
             </MDBCol>
