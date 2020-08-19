@@ -9,6 +9,8 @@ import {
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import Admin from "layouts/Admin.js";
 import "bootstrap/dist/css/bootstrap.css";
+import "./style.css";
+import { Button } from "react-bootstrap";
 
 const Login = ({ setHasCookie }) => {
   const [userId, setUserId] = useState("");
@@ -25,6 +27,41 @@ const Login = ({ setHasCookie }) => {
       body: JSON.stringify(user),
     });
   };
+
+  const userApi = (user) => {
+    return fetch(baseUrl + "/api/users/myinfo", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: sessionStorage.getItem("AuthID"),
+      },
+      body: JSON.stringify(user),
+    });
+  };
+
+  const userInfo = async () => {
+    // e.preventDefault();
+    try {
+      const infoResponse = await userApi();
+      if (infoResponse.status === 200) {
+        console.log("여기부터 userinfo");
+
+        console.log(infoResponse);
+        const reader = infoResponse.body.getReader();
+
+        console.log(reader);
+        console.log(reader.read());
+        console.log(infoResponse.body.username);
+
+        // console.log(infoResponse.body.getReader());
+      } else {
+        console.log("Error");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userId || !userPw) {
@@ -44,9 +81,6 @@ const Login = ({ setHasCookie }) => {
           // setHasCookie(true);
 
           console.log(response);
-          // console.log(response.headers.get(userId));
-          // window.localStorage.setItem("userInfo", JSON.stringify(json));
-          // this.setState({
 
           // })
           console.log(response.headers.get("Authorization"));
@@ -54,21 +88,16 @@ const Login = ({ setHasCookie }) => {
             "AuthID",
             response.headers.get("Authorization")
           );
+
           var AuthID = sessionStorage.getItem("AuthID");
+          userInfo();
           console.log(AuthID);
           console.log("pass");
-
           window.location.href = "/";
         } else {
           console.log("Error");
           throw new Error(response.error);
         }
-        // window.sessionStorage.setItem("id", userId);
-        // window.sessionStorage.setItem("password", userPw);
-        // window.sessionStorage.setItem(
-        //   "token",
-        //   response.headers.get("Authorization")
-        // );
       } catch (err) {
         alert("로그인에 실패했습니다.");
         setUserId("");
@@ -79,11 +108,10 @@ const Login = ({ setHasCookie }) => {
   };
   return (
     <MDBContainer align="center" md="6">
-      <h2>Login</h2>
+      <h2 className="title">Login</h2>
       <MDBRow align="center">
         <MDBCol>
           <form onSubmit={handleSubmit}>
-            <p className="h4 text-center mb-4">Sign in</p>
             <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
               Your ID
             </label>
@@ -110,77 +138,19 @@ const Login = ({ setHasCookie }) => {
               placeholder="pw"
             />
             <div className="text-center mt-4">
-              <MDBBtn type="submit">
-                <button>Login </button>
-              </MDBBtn>
+              <Button variant="danger" type="submit" mr="10px">
+                Login
+              </Button>
+              <br />
+              <br />
+              <Link to="/signup">
+                <Button variant="dark">회원가입</Button>
+              </Link>
             </div>
           </form>
         </MDBCol>
       </MDBRow>
-      <Link to="/signup">회원가입</Link>
     </MDBContainer>
   );
 };
 export default Login;
-
-/* { <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="username"
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
-          placeholder="id"
-        />
-        <input
-          type="password"
-          name="user_pw"
-          value={userPw}
-          onChange={(e) => setUserPw(e.target.value)}
-          placeholder="pw"
-        />
-        <button type="submit">Login</button>
-      </form>} */
-
-// import React from "react";
-// import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
-
-// const FormPage = () => {
-// return (
-// <MDBContainer>
-//   <MDBRow>
-//     <MDBCol md="6">
-//       <form>
-//         <p className="h4 text-center mb-4">Sign in</p>
-//         <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-//           Your ID
-//         </label>
-//         <input type="text"
-//           id="defaultFormLoginEmailEx"
-//           className="form-control"
-//           name="username"
-//           value={userId}
-//           onChange={(e) => setUserId(e.target.value)}
-//           placeholder="ID를 입력하세요"
-//           />
-//         <br />
-//         <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-//           Your password
-//         </label>
-//         <input type="password"
-//          id="defaultFormLoginPasswordEx" className="form-control"
-//          name="user_pw"
-//          value={userPw}
-//          onChange={(e) => setUserPw(e.target.value)}
-//          placeholder="pw"
-//           />
-//         <div className="text-center mt-4">
-//           <MDBBtn color="indigo" type="submit">Login</MDBBtn>
-//         </div>
-//       </form>
-//     </MDBCol>
-//   </MDBRow>
-// </MDBContainer>
-// );
-// };
-
-// export default FormPage;

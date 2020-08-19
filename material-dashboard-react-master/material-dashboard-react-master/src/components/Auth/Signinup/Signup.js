@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle";
+import "./style.css";
+import { Button } from "react-bootstrap";
 
 const Join = () => {
   const [userId, setUserId] = useState("");
@@ -9,21 +12,23 @@ const Join = () => {
   const [userName, setUserName] = useState("");
   const [userBirthday, setBirthday] = useState("");
   const [phone, setPhone] = useState("");
+
   const [male, setMale] = useState("");
   const [height, setHeight] = useState("");
   const [idValid, setIdValid] = useState(false);
   const [isJoinSuccess, setJoinSuccess] = useState(false);
   const baseUrl = "https://i3d203.p.ssafy.io:29002";
 
-  // const checkIdApi = (user) => {
-  //   return fetch(baseUrl + "/api/users/username/" + { userId }, {
-  //     method: "GET",
-  //     body: JSON.stringify(user),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  // };
+  const checkIdApi = (userId) => {
+    console.log(userId);
+    return fetch(baseUrl + "/api/users/username/" + userId, {
+      method: "GET",
+      // body: JSON.stringify(userId),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
   const createUserApi = (user) => {
     return fetch(baseUrl + "/api/users/user", {
       method: "POST",
@@ -36,20 +41,22 @@ const Join = () => {
     // .then((response) => response.json());
   };
 
-  // const checkId = async (userId) => {
-  //   userId.preventDefault();
-  //   try {
-  //     const response = await checkIdApi({
-  //       username: userId,
-  //     });
-  //     if (response.status != 200) {
-  //       alert("이미 존재하는 아이디입니다.");
-  //       return false;
-  //     }
-  //   } catch {
-  //     alert("사용 가능한 아이디 입니다.");
-  //   }
-  // };
+  const checkId = async (e) => {
+    // e.preventDefault();
+    console.log(e);
+    var id = userId;
+    try {
+      const response = await checkIdApi(id);
+      if (response.status !== 200) {
+        alert("이미 존재하는 아이디입니다.");
+        return false;
+      } else {
+        alert("사용 가능한 아이디 입니다.");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     var id = userId;
@@ -101,7 +108,7 @@ const Join = () => {
     <div>
       {!isJoinSuccess && (
         <MDBContainer align="center">
-          <h2>Join</h2>
+          <h2 class="title">Join</h2>
           <MDBRow align="center">
             <MDBCol align="center">
               <form onSubmit={handleSubmit}>
@@ -113,7 +120,13 @@ const Join = () => {
                   onChange={(e) => setUserId(e.target.value)}
                   placeholder="id는 4 ~ 20자 필수"
                 />
-                {/* <button onClick={checkId(userId)}>중복검사</button> */}
+                <Button
+                  variant="danger"
+                  type="button"
+                  onClick={() => checkId(userId)}
+                >
+                  중복검사
+                </Button>
 
                 <br />
                 <input
@@ -179,15 +192,17 @@ const Join = () => {
                   placeholder="height"
                 />
                 <br />
-                <button type="submit">제출</button>
+                <Button variant="danger" type="submit">
+                  가입하기
+                </Button>
               </form>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
       )}
       {isJoinSuccess && (
-        <div>
-          <p>회원가입을 축하합니다!</p>
+        <div align="center">
+          <p color="white">회원가입을 축하합니다!</p>
           <Link to="/login">로그인</Link>
         </div>
       )}

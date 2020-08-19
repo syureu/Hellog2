@@ -38,18 +38,22 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 
 import Dietboard from "views/Dietboard/Dietboard.js";
 import MyLog from "views/MyLog/index.jsx";
-import Test from "views/Test/Test.js";
-import Login from "components/Auth/Signinup/Login.js";
+import Main from "views/Main/Main.js";
+// import Login from "components/Auth/Signinup/Login.js";
+
+// import Signup from "components/Auth/Signinup/Sgin.js";
 import Recommend from "views/Recommend/index";
 import abc from "views/abc/abc.js";
 
+import machine from "views/Machine/machine.jsx";
+
 const dashboardRoutes = [
   {
-    path: "/Test",
-    name: "Test",
-    rtlName: "wtf",
+    path: "/Main",
+    name: "Main",
+    rtlName: "Main",
     icon: Dashboard,
-    component: Test,
+    component: Main,
     layout: "/admin",
   },
   {
@@ -84,14 +88,14 @@ const dashboardRoutes = [
     component: abc,
     layout: "/admin",
   },
-  // {
-  //   path: "/dashboard",
-  //   name: "Dashboard",
-  //   rtlName: "لوحة القيادة",
-  //   icon: Dashboard,
-  //   component: Recommend,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/machine",
+    name: "machine",
+    rtlName: "wtf",
+    icon: Dashboard,
+    component: machine,
+    layout: "/admin",
+  },
   {
     path: "/user",
     name: "Contact Us",
