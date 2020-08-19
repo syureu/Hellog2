@@ -11,15 +11,13 @@
                 title,
                 writer,
                 write_time,
-                edit_time,
                 content,
                 picture
             )
         values(
             #{title},
             #{writer},
-            #{writeTime},
-            #{editTime},
+            now(),
             #{content},
             #{picture}
         )
