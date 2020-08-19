@@ -144,8 +144,8 @@
     console.log(element);
   });
 
-  today_list = [];
-  before_list = [];
+  let today_list = [];
+  let before_list = [];
 
   let count_interval;
   function count_up() {
@@ -307,7 +307,7 @@
       success: function (data) {
         if (data.result) {
           alert(data.msg);
-          location.href = "{% url 'user_login' %}";
+          location.href = "{% url 'user_logout' %}";
         } else {
           alert(data.msg);
         }
