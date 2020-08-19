@@ -43,7 +43,7 @@ export default function Main() {
               <a href="/login">
                 <Button className="btn btn-light">로그인</Button>
               </a>{" "}
-              <a href="/login">
+              <a href="/signup">
                 <Button className="btn btn-light">회원가입</Button>
               </a>
             </p>
