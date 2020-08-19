@@ -2,6 +2,8 @@ package com.ssafy.pjt1track3.dietboardcomment;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DietBoardCommentService {
 
@@ -26,5 +28,9 @@ public class DietBoardCommentService {
 
     public void deleteDietBoardComment(Long commentId) {
         dietBoardCommentRepository.deleteDietBoardComment(commentId);
+    }
+
+    public List<DietBoardComment> selectDietBoardCommentListByContentId(Long contentId) {
+        return dietBoardCommentRepository.selectDietBoardCommentListByContentId(contentId);
     }
 }

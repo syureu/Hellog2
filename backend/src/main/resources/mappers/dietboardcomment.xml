@@ -52,4 +52,14 @@
             diet_board_comment_id = #{dietBoardCommentId}
     </delete>
 
+    <!-- List<DietBoardComment> selectDietBoardCommentListByContentId(Long contentId); -->
+    <select id="selectDietBoardCommentListByContentId" resultType="DietBoardComment" parameterType="Long">
+        select
+            *
+        from
+            diet_board_comment
+        where
+            diet_board_content_id = #{contentId}
+    </select>
+
 </mapper>

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
@@ -69,6 +70,16 @@ public class DietBoardCommentController {
             return new ResponseEntity<>("", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @GetMapping("/bycontent/{contentId}")
+    public ResponseEntity<List<DietBoardComment>> readDietBoardCommentListByContentId(@PathVariable Long contentId) {
+        List<DietBoardComment> list = dietBoardCommentService.selectDietBoardCommentListByContentId(contentId);
+        if(list.size()>0) {
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         }
     }
 }
