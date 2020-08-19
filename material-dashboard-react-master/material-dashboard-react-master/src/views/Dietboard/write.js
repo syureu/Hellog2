@@ -4,9 +4,9 @@ import "./main.css";
 import { CKEditor } from "../../inc/index";
 
 import "codemirror/lib/codemirror.css";
-import "@toast-ui/editor/dist/toastui-editor.css";
+// import "@toast-ui/editor/dist/toastui-editor.css";
 
-import { Editor } from "@toast-ui/react-editor";
+// import { Editor } from "@toast-ui/react-editor";
 
 class write extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class write extends Component {
 
         <div>
           <CKEditor _getContents={_getContents} contents={contents} />
-          <Editor
+          {/* <Editor
             initialValue="hello react editor world!"
             previewStyle="vertical"
             height="600px"
@@ -46,7 +46,7 @@ class write extends Component {
             useCommandShortcut={true}
             _getContents={_getContents}
             contents={contents}
-          />
+          /> */}
         </div>
       </div>
     );
