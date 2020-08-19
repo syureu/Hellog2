@@ -116,7 +116,7 @@
             user.username = #{username} AND
             equipment.equipment_id = #{equipmentId} AND
             equipment.equipment_id = equipment_exercise.equipment_id AND
-            equipment_exercise.equipment_id = record.equipment_exercise_id AND
+            equipment_exercise.equipment_exercise_id = record.equipment_exercise_id AND
             user.id = record.id;
     </select>
 

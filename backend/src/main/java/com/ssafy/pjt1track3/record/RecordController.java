@@ -29,7 +29,7 @@ public class RecordController {
     }
 
     @PostMapping("/record")
-    @ApiOperation(value="운동기록 하나를 입력 요청합니다.")
+    @ApiOperation(value = "운동기록 하나를 입력 요청합니다.")
     public ResponseEntity<String> createRecord(@RequestBody Record record, Principal principal) {
         if (recordService.selectUserById(record.getId()).getUsername().equals(principal.getName()) || isAdmin(principal)) {
             recordService.insertRecord(record);
@@ -40,7 +40,7 @@ public class RecordController {
     }
 
     @GetMapping("/{recordId}")
-    @ApiOperation(value="운동기록 하나를 운동기록 번호를 통해 열람 요청합니다.")
+    @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 열람 요청합니다.")
     public ResponseEntity<Record> readRecord(@PathVariable Long recordId, Principal principal) {
         if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
             return new ResponseEntity<>(recordService.selectRecordByRecordId(recordId), HttpStatus.OK);
@@ -50,7 +50,7 @@ public class RecordController {
     }
 
     @PutMapping("/{recordId}")
-    @ApiOperation(value="운동기록 하나를 운동기록 번호를 통해 수정 요청합니다.")
+    @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 수정 요청합니다.")
     public ResponseEntity<String> updateRecord(@PathVariable Long recordId, @RequestBody Record record, Principal principal) {
         if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
             recordService.updateRecord(recordId, record);
@@ -61,7 +61,7 @@ public class RecordController {
     }
 
     @DeleteMapping("/{recordId}")
-    @ApiOperation(value="운동기록 하나를 운동기록 번호를 통해 삭제 요청합니다.")
+    @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 삭제 요청합니다.")
     public ResponseEntity<String> deleteRecord(@PathVariable Long recordId, Principal principal) {
         if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
             recordService.deleteRecord(recordId);
@@ -72,25 +72,30 @@ public class RecordController {
     }
 
     @GetMapping("/myrecord")
-    @ApiOperation(value="로그인한 유저의 모든 운동기록들을 열람 요청합니다.")
+    @ApiOperation(value = "로그인한 유저의 모든 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyRecordList(Principal principal) {
-        return new ResponseEntity<>(recordService.selectRecordByUsername(principal.getName()), HttpStatus.OK);
+        List<Record> list = recordService.selectRecordByUsername(principal.getName());
+        if (list.size() > 0) {
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
     }
 
     @GetMapping("/myrecord/today")
-    @ApiOperation(value="로그인한 유저의 오늘자 운동기록들을 열람 요청합니다.")
+    @ApiOperation(value = "로그인한 유저의 오늘자 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyTodayRecordList(Principal principal) {
         return new ResponseEntity<>(recordService.selectTodayRecordByUsername(principal.getName()), HttpStatus.OK);
     }
 
     @GetMapping("/myrecord/equipment/{equipmentId}")
-    @ApiOperation(value="로그인한 유저가 지정한 운동기구에서 했던 운동기록들을 열람 요청합니다.")
+    @ApiOperation(value = "로그인한 유저가 지정한 운동기구에서 했던 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyRecordListByEquipmentId(@PathVariable Long equipmentId, Principal principal) {
-        return new ResponseEntity<>(recordService.selectRecordByUsernameAndEquipmentId(principal.getName(), equipmentId),HttpStatus.OK);
+        return new ResponseEntity<>(recordService.selectRecordByUsernameAndEquipmentId(principal.getName(), equipmentId), HttpStatus.OK);
     }
 
     @GetMapping("/myrecord/v2")
-    @ApiOperation(value="로그인한 유저의 모든 운동기록들을 열람 요청합니다.\n" +
+    @ApiOperation(value = "로그인한 유저의 모든 운동기록들을 열람 요청합니다.\n" +
             "캘린더에 올릴 수 있도록 제작된 api 입니다.")
     public ResponseEntity<List<RecordV2Dto>> readMyRecordListV2(Principal principal) {
         return new ResponseEntity<>(recordService.selectRecordByUsernameV2(principal.getName()), HttpStatus.OK);
