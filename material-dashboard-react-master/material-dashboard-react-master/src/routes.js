@@ -81,19 +81,20 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
+    path: "/machine",
+    name: "Machine",
+    rtlName: "wtf",
+    icon: Dashboard,
+    component: machine,
+    layout: "/admin",
+  },
+
+  {
     path: "/abc",
     name: "abc",
     rtlName: "wtf",
     icon: "list",
     component: abc,
-    layout: "/admin",
-  },
-  {
-    path: "/machine",
-    name: "machine",
-    rtlName: "wtf",
-    icon: Dashboard,
-    component: machine,
     layout: "/admin",
   },
   {

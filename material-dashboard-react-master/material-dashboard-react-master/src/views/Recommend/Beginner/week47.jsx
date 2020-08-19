@@ -129,7 +129,7 @@ export default function Week47() {
   return (
     <div>
       <div align="center">
-        <h3>전신 운동 주차</h3>
+        <h2>전신 운동 주차</h2>
         <ul>
           <li>전체를 1세트, 총 2세트 진행</li>
           <li>각 운동 간 휴식은 20~30초</li>
@@ -139,7 +139,7 @@ export default function Week47() {
         </ul>
       </div>
       <br />
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} align="center">
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>

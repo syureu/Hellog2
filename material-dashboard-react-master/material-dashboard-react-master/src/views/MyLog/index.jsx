@@ -101,7 +101,8 @@ const useStyles = makeStyles((theme) => ({
 //   },
 // ];
 
-const AuthID = sessionStorage.getItem('AuthID');
+const AuthID = sessionStorage.getItem("AuthID");
+const username = sessionStorage.getItem("username");
 
 const ArrowStyle = {
   cursor: "pointer",
@@ -188,12 +189,12 @@ const useOnChangeIndex = (categoryDatas) => {
   return [onChangeIndexHandler, appbarIndex, appbarIndexDelta];
 };
 
-const baseUrl = 'https://i3d203.p.ssafy.io:29002';
+const baseUrl = "https://i3d203.p.ssafy.io:29002";
 const getRecords = (username) => {
-  return fetch(baseUrl + '/api/records/myrecord/v2?name=' + username, {
-    method: 'GET',
+  return fetch(baseUrl + "/api/records/myrecord/v2?name=" + username, {
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: AuthID,
     },
   }).then((response) => response.json());
@@ -208,14 +209,23 @@ const useGetRecordDatas = (username) => {
     const records = await getRecords(username);
 
     let schedules = records.map((record, index) => {
-      let body = '세트 : ' + record.sett + '\n' + ' 무게 : ' + record.weight + '\n' + ' 횟수 : ' + record.countt + '\n';
+      let body =
+        "세트 : " +
+        record.sett +
+        "\n" +
+        " 무게 : " +
+        record.weight +
+        "\n" +
+        " 횟수 : " +
+        record.countt +
+        "\n";
 
       let start = new Date(record.startTime).toISOString();
       let end = new Date(record.endTime).toISOString();
 
       return {
         calendarId: index,
-        category: 'time',
+        category: "time",
         isVisible: true,
         title: record.exerciseName,
         id: index,
@@ -226,11 +236,11 @@ const useGetRecordDatas = (username) => {
     });
 
     let calendars = records.map((record, index) => {
-      let generateColor = '#' + Math.random().toString(16).substr(-6);
+      let generateColor = "#" + Math.random().toString(16).substr(-6);
       return {
         id: index,
         name: record.exerciseName,
-        color: '#ffffff',
+        color: "#ffffff",
         bgColor: generateColor,
         dragBgColor: generateColor,
         borderColor: generateColor,
@@ -279,7 +289,7 @@ const MySection = (props) => {
   }, []);
 
   const onBeforeCreateSchedule = useCallback((scheduleData) => {
-    console.log('-----------');
+    console.log("-----------");
     console.log(scheduleData);
 
     const schedule = {
@@ -368,7 +378,7 @@ const MySection = (props) => {
     const date = new Date(time);
     const h = date.getHours();
     let m = date.getMinutes();
-    m = m == 0 ? '00' : m;
+    m = m == 0 ? "00" : m;
 
     return `${h}:${m}`;
   }
@@ -405,7 +415,7 @@ const MySection = (props) => {
     },
   };
 
-  const record = useGetRecordDatas('coach');
+  const record = useGetRecordDatas("coach");
 
   const classes = useStyles();
 
@@ -528,9 +538,9 @@ const MyLog = (props) => {
 
   return (
     <div className={classes.root}>
-      <Grid className='vote-grid-title-grid'>
-        <Typography variant='h2' align='center' className={classes.typography}>
-          {AuthID}
+      <Grid className="vote-grid-title-grid">
+        <Typography variant="h2" align="center" className={classes.typography}>
+          {username}
         </Typography>
       </Grid>
       <br></br>

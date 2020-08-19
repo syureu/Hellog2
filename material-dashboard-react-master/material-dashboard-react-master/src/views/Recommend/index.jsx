@@ -45,12 +45,9 @@ import Leg from "./Advanced/leg";
 import Shoulder from "./Advanced/shoulder";
 import Triceps from "./Advanced/triceps";
 
-import ronnie from "./ronnie.jpg";
-
 const TestClicked = () => {
   console.log("Test 성공");
 };
-
 ///////////////////////////////////////////////
 // main section (운동법)
 
@@ -95,19 +92,19 @@ const MainSection = (props) => {
           </Grid>
           <Grid item xs={6} align="right">
             <Link to="/Recommend/stretching">
-              <Button>Warm-up</Button>
+              <Button color="secondary">Warm-up</Button>
             </Link>
             <Link to="/Recommend/beginner/week13">
-              <Button>1-3 Weeks</Button>
+              <Button color="secondary">1-3 Weeks</Button>
             </Link>
             <Link to="/Recommend/beginner/week47">
-              <Button>4-6 Weeks</Button>
+              <Button color="secondary">4-6 Weeks</Button>
             </Link>
             <Link to="/Recommend/beginner/week710">
-              <Button>7-9 Weeks</Button>
+              <Button color="secondary">7-9 Weeks</Button>
             </Link>
             <Link to="/Recommend/beginner/week1012">
-              <Button>10-12 Weeks</Button>
+              <Button color="secondary">10-12 Weeks</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -168,16 +165,16 @@ const MainSection = (props) => {
           </Grid>
           <Grid item xs={6} align="right">
             <Link to="/Recommend/stretching">
-              <Button>Warm-up</Button>
+              <Button color="secondary">Warm-up</Button>
             </Link>
             <Link to="/Recommend/intermediate/workouta">
-              <Button>A</Button>
+              <Button color="secondary">A</Button>
             </Link>
             <Link to="/Recommend/intermediate/workoutb">
-              <Button>B</Button>
+              <Button color="secondary">B</Button>
             </Link>
             <Link to="/Recommend/intermediate/workoutc">
-              <Button>C</Button>
+              <Button color="secondary">C</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -234,22 +231,22 @@ const MainSection = (props) => {
           </Grid>
           <Grid item xs={6} align="right">
             <Link to="/Recommend/advanced/chest">
-              <Button>Chest</Button>
+              <Button color="secondary">Chest</Button>
             </Link>
             <Link to="/Recommend/advanced/back">
-              <Button>Back</Button>
+              <Button color="secondary">Back</Button>
             </Link>
             <Link to="/Recommend/advanced/leg">
-              <Button>Leg</Button>
+              <Button color="secondary">Leg</Button>
             </Link>
             <Link to="/Recommend/advanced/shoulder">
-              <Button>Shoulder</Button>
+              <Button color="secondary">Shoulder</Button>
             </Link>
             <Link to="/Recommend/advanced/biceps">
-              <Button>Biceps</Button>
+              <Button color="secondary">Biceps</Button>
             </Link>
             <Link to="/Recommend/advanced/triceps">
-              <Button>Triceps</Button>
+              <Button color="secondary">Triceps</Button>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -278,14 +275,6 @@ const MainSection = (props) => {
         </Grid>
       </BrowserRouter>
     );
-  } else if (level == 3) {
-    return (
-      <Box>
-        <label>
-          <h4>PT Cource </h4>
-        </label>
-      </Box>
-    );
   } else {
     return (
       <>
@@ -312,7 +301,6 @@ const TabPanel = (props) => {
     >
       {value === index && <Box>{children}</Box>}
       <MainSection level={index}></MainSection>
-      {/* <img align="center" width="700" src={ronnie}></img> */}
     </Typography>
   );
 };
@@ -328,7 +316,6 @@ const a11yProps = (index) => {
 // hook
 
 const useGetCategoryDatas = (url) => {
-  // const { serverUrl, user, setUser } = useContext(CommonContext);
   const [data, setData] = useState([]);
 
   const getDatas = async () => {
@@ -357,9 +344,6 @@ const useOnChangeIndex = (categoryDatas) => {
     if (newIndex !== 0) {
       deltaValue = 0;
     }
-    // if (appbarIndex === newIndex) {
-    //   deltaValue = appbarIndexDelta * -1;
-    // }
     setAppbarIndexDelta(deltaValue);
     setAppbarIndex(newIndex);
   };
@@ -371,8 +355,6 @@ const useOnChangeIndex = (categoryDatas) => {
 // main
 
 const Recommend = (props) => {
-  // const { drawerOpen, serverUrlBase, serverImgUrl } = useContext(CommonContext);
-
   const categoryDatas = useGetCategoryDatas("/category");
 
   const [
@@ -387,7 +369,6 @@ const Recommend = (props) => {
         categoryDatas,
       }}
     >
-      {/* <AppBar position="fixed" color="inherit" className="appbar"> */}
       <Tabs
         value={appbarIndex + appbarIndexDelta}
         onChange={onChangeIndexHandler}
@@ -402,20 +383,11 @@ const Recommend = (props) => {
           <Tab
             key={index}
             {...a11yProps(index)}
-            label={
-              <ButtonBases
-                categoryData={categoryData}
-                // isSelected={index === appbarIndex ? true : false}
-                // serverUrlBase={serverUrlBase}
-                // serverImgUrl={serverImgUrl}
-                index={index}
-              />
-            }
+            label={<ButtonBases categoryData={categoryData} index={index} />}
             className="tab"
           ></Tab>
         ))}
       </Tabs>
-      {/* </AppBar> */}
       {categoryDatas.map((categoryData, index) => (
         <TabPanel
           key={index}
