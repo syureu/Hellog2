@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
@@ -69,5 +70,10 @@ public class DietBoardController {
         } else {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<List<DietBoard>> readDietBoardList() {
+        return new ResponseEntity<>(dietBoardService.selectDietBoardList(), HttpStatus.OK);
     }
 }

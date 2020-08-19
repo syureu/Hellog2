@@ -55,4 +55,12 @@
             diet_board_content_id = #{boardId}
     </delete>
 
+    <!-- List<DietBoard> selectDietBoardList(); -->
+    <select id="selectDietBoardList" resultType="DietBoard">
+        select
+            *
+        from
+            diet_board
+    </select>
+
 </mapper>

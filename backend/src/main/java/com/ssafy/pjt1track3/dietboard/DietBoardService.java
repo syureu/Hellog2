@@ -2,6 +2,8 @@ package com.ssafy.pjt1track3.dietboard;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DietBoardService {
 
@@ -26,5 +28,9 @@ public class DietBoardService {
 
     public void deleteDietBoard(Long boardId) {
         dietBoardRepository.deleteDietBoard(boardId);
+    }
+
+    public List<DietBoard> selectDietBoardList() {
+        return dietBoardRepository.selectDietBoardList();
     }
 }
