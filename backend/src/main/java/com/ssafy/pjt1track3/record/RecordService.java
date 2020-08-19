@@ -29,7 +29,7 @@ public class RecordService {
         return userRepository.selectUser(recordRepository.selectRecord(recordId).getId());
     }
 
-    public Record selectRecordByRecordId(Long recordId) {
+    public Record selectRecord(Long recordId) {
         return recordRepository.selectRecord(recordId);
     }
 
@@ -45,6 +45,7 @@ public class RecordService {
     public List<Record> selectRecordByUsername(String name) {
         return recordRepository.selectRecordByUsername(name);
     }
+
     public List<Record> selectTodayRecordByUsername(String name) {
         return recordRepository.selectTodayRecordByUsername(name);
     }

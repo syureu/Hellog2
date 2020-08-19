@@ -13,6 +13,7 @@ import java.security.Principal;
 import java.util.List;
 
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
+import static com.ssafy.pjt1track3.util.Util.isLoggedIn;
 
 @RestController
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
@@ -32,78 +33,157 @@ public class RecordController {
     @PostMapping("/record")
     @ApiOperation(value = "운동기록 하나를 입력 요청합니다.")
     public ResponseEntity<String> createRecord(@RequestBody Record record, Principal principal) {
-        if (principal == null) {
+        if (isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>("로그인이 필요합니다.", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
         Long requestRecordId = record.getId();
         if (requestRecordId == null) {
             // Request Body의 Record에 참조하는 id가 누락된 경우
-            return new ResponseEntity<>("JSON 요청이 유효하지 않습니다. id 항목을 확인해 주세요.", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
         }
-        User requestUserOfRecordId = recordService.selectUserById(requestRecordId);
         boolean isAdminFlag = isAdmin(principal);
-        if ((requestUserOfRecordId == null) && isAdminFlag) {
-            // 관리자의 요청인데 Request Body의 Record에 참조하는 id로 검색된 사람이 없는 경우
-            // 즉 등록되지 않은 회원 번호에 기록을 입력하려고 시도한 경우이므로
-            // 없는 회원 번호를 참조하려고 했음을 알려주어야 한다
-            return new ResponseEntity<>("해당하는 회원이 없습니다.", HttpStatus.BAD_REQUEST);
-        } else if (((requestUserOfRecordId == null) && !isAdminFlag) ||
-                !requestUserOfRecordId.getUsername().equals(principal.getName())) {
-            // 일반 유저의 요청인데 Request Body의 Record에 참조하는 id로 검색된 사람이 없거나 타인인 경우
-            // 즉 타인의 명의로 된 기록을 입력하려고 시도한 경우이므로 권한적 금지
-            // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
-            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+        User requestUserOfRecordId = recordService.selectUserById(requestRecordId);
+        if (requestUserOfRecordId == null) {
+            if (isAdminFlag) {
+
+                // 관리자의 요청인데 Request Body의 Record에 참조하는 id로 검색된 사람이 없는 경우
+                // 즉 등록되지 않은 회원 번호에 기록을 입력하려고 시도한 경우이므로
+                // 없는 회원 번호를 참조하려고 했음
+                return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
+            } else {
+                // 일반 유저의 요청인데 Request Body의 Record에 참조하는 id로 검색된 사람이 없는 경우
+                // 즉 타인의 명의(없는 유저 정보)로 된 기록을 입력하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            }
         } else {
-            // 로그인한 유저와 요청된 운동기록상의 유저가 같은 경우 (자기 자신에 대한 입력) - 유효한 입력
-            // 혹은 관리자가 운동기록 입력을 요청한 경우 - 유효한 입력
-            // 유효한 요청이므로 insertRecord 서비스 실행 후 200
-            recordService.insertRecord(record);
-            return new ResponseEntity<>("", HttpStatus.OK);
+            if (requestUserOfRecordId.getUsername().equals(principal.getName()) || isAdminFlag) {
+                // 로그인한 유저와 요청된 운동기록상의 유저가 같은 경우 (자기 자신에 대한 입력) - 유효한 입력
+                // 혹은 관리자가 운동기록 입력을 요청한 경우 - 유효한 입력
+                // 유효한 요청이므로 insertRecord 서비스 실행 후 200
+                recordService.insertRecord(record);
+                return new ResponseEntity<>("", HttpStatus.OK);
+            } else {
+                // 일반 유저의 요청인데 Request Body의 Record에 참조하는 id로 검색된 사람이 없거나 타인인 경우
+                // 즉 타인의 명의로 된 기록을 입력하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            }
         }
     }
 
     @GetMapping("/{recordId}")
     @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 열람 요청합니다.")
     public ResponseEntity<Record> readRecord(@PathVariable Long recordId, Principal principal) {
-        if (principal == null) {
+        if (isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
-
-        if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
-            return new ResponseEntity<>(recordService.selectRecordByRecordId(recordId), HttpStatus.OK);
+        boolean isAdminFlag = isAdmin(principal);
+        User requestUserOfRecordId = recordService.selectUserByRecordId(recordId);
+        if (requestUserOfRecordId == null) {
+            if (isAdminFlag) {
+                // 관리자의 요청
+                // 등록되지 않은 회원 번호를 조회 시도한 경우이므로 204
+                return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+            } else {
+                // 일반 유저의 요청
+                // 타인의 명의(이 경우는 없는 유저 요청)로 된 기록을 입력하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            }
         } else {
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            if (requestUserOfRecordId.getUsername().equals(principal.getName()) || isAdminFlag) {
+                // 로그인한 유저와 요청된 운동기록상의 유저가 같은 경우 (자기 자신의 운동기록 열람 요청) - 유효한 입력
+                // 혹은 관리자가 운동기록 열람 ㄴ요청의 경우 - 유효한 입력
+                // 유효한 요청이므로 record와 200
+                return new ResponseEntity<>(recordService.selectRecord(recordId), HttpStatus.OK);
+            } else {
+                // 일반 유저의 요청
+                // 타인의 명의(이 경우는 있는 유저 요청)로 된 기록을 입력하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            }
         }
     }
 
     @PutMapping("/{recordId}")
     @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 수정 요청합니다.")
     public ResponseEntity<String> updateRecord(@PathVariable Long recordId, @RequestBody Record record, Principal principal) {
-        if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
-            recordService.updateRecord(recordId, record);
-            return new ResponseEntity<>("", HttpStatus.OK);
+        if (isLoggedIn(principal)) {
+            // 로그인 안했을 때
+            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        }
+        boolean isAdminFlag = isAdmin(principal);
+        User requestUserOfRecordId = recordService.selectUserByRecordId(recordId);
+        if (requestUserOfRecordId == null) {
+            if (isAdminFlag) {
+                // 관리자의 요청
+                // 등록되지 않은 회원 번호를 수정 시도한 경우이므로 204
+                return new ResponseEntity<>("", HttpStatus.NO_CONTENT);
+            } else {
+                // 일반 유저의 요청
+                // 타인의 명의(이 경우는 없는 유저 요청)로 된 기록을 수정하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트 측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            }
         } else {
-            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            if (requestUserOfRecordId.getUsername().equals(principal.getName()) || isAdminFlag) {
+                // 로그인한 유저와 요청된 운동기록상의 유저가 같은 경우 (자기 자신의 운동기록 수정 요청) - 유효한 입력
+                // 혹은 관리자가 운동기록 수정 요청의 경우 - 유효한 입력
+                // 유효한 요청이므로 updateRecord 처리 후 200
+                recordService.updateRecord(recordId, record);
+                return new ResponseEntity<>("", HttpStatus.OK);
+            } else {
+                // 일반 유저의 요청
+                // 타인의 명의(이 경우는 있는 유저 요청)로 된 기록을 수정하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            }
         }
     }
 
     @DeleteMapping("/{recordId}")
     @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 삭제 요청합니다.")
     public ResponseEntity<String> deleteRecord(@PathVariable Long recordId, Principal principal) {
-        if (recordService.selectUserByRecordId(recordId).getUsername().equals(principal.getName()) || isAdmin(principal)) {
-            recordService.deleteRecord(recordId);
-            return new ResponseEntity<>("", HttpStatus.OK);
+        if (isLoggedIn(principal)) {
+            // 로그인 안했을 때
+            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+        }
+        boolean isAdminFlag = isAdmin(principal);
+        User requestUserOfRecordId = recordService.selectUserByRecordId(recordId);
+        if (requestUserOfRecordId == null) {
+            if (isAdminFlag) {
+                // 관리자의 요청
+                // 등록되지 않은 회원 번호를 삭제 시도한 경우이므로 204
+                return new ResponseEntity<>("", HttpStatus.NO_CONTENT);
+            } else {
+                // 일반 유저의 요청
+                // 타인의 명의(이 경우는 없는 유저 요청)로 된 기록을 삭제하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트 측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            }
         } else {
-            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            if (requestUserOfRecordId.getUsername().equals(principal.getName()) || isAdminFlag) {
+                // 로그인한 유저와 요청된 운동기록상의 유저가 같은 경우 (자기 자신의 운동기록 삭제 요청) - 유효한 입력
+                // 혹은 관리자가 운동기록 삭제 요청의 경우 - 유효한 입력
+                // 유효한 요청이므로 deleteRecord 처리 후 200
+                recordService.deleteRecord(recordId);
+                return new ResponseEntity<>("", HttpStatus.OK);
+            } else {
+                // 일반 유저의 요청
+                // 타인의 명의(이 경우는 있는 유저 요청)로 된 기록을 삭제하려고 시도한 경우이므로 권한적 금지
+                // 그리고 이 경우 클라이언트측에서 잘못된 입력을 만들고 있을 것으로 예상됨
+                return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            }
         }
     }
 
     @GetMapping("/myrecord")
     @ApiOperation(value = "로그인한 유저의 모든 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyRecordList(Principal principal) {
-        if (principal == null) {
+        if (isLoggedIn(principal)) {
             //로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -120,7 +200,7 @@ public class RecordController {
     @GetMapping("/myrecord/today")
     @ApiOperation(value = "로그인한 유저의 오늘자 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyTodayRecordList(Principal principal) {
-        if (principal == null) {
+        if (isLoggedIn(principal)) {
             //로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -137,7 +217,7 @@ public class RecordController {
     @GetMapping("/myrecord/equipment/{equipmentId}")
     @ApiOperation(value = "로그인한 유저가 지정한 운동기구에서 했던 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyRecordListByEquipmentId(@PathVariable Long equipmentId, Principal principal) {
-        if (principal == null) {
+        if (isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -155,7 +235,7 @@ public class RecordController {
     @ApiOperation(value = "로그인한 유저의 모든 운동기록들을 열람 요청합니다.\n" +
             "캘린더에 올릴 수 있도록 제작된 api 입니다.")
     public ResponseEntity<List<RecordV2Dto>> readMyRecordListV2(Principal principal) {
-        if (principal == null) {
+        if (isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
