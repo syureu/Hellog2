@@ -27,6 +27,41 @@ const Login = ({ setHasCookie }) => {
       body: JSON.stringify(user),
     });
   };
+
+  const userApi = (user) => {
+    return fetch(baseUrl + "/api/users/myinfo", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: sessionStorage.getItem("AuthID"),
+      },
+      body: JSON.stringify(user),
+    });
+  };
+
+  const userInfo = async () => {
+    // e.preventDefault();
+    try {
+      const infoResponse = await userApi();
+      if (infoResponse.status === 200) {
+        console.log("여기부터 userinfo");
+
+        console.log(infoResponse);
+        const reader = infoResponse.body.getReader();
+
+        console.log(reader);
+        console.log(reader.read());
+        console.log(infoResponse.body.username);
+
+        // console.log(infoResponse.body.getReader());
+      } else {
+        console.log("Error");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userId || !userPw) {
@@ -46,9 +81,6 @@ const Login = ({ setHasCookie }) => {
           // setHasCookie(true);
 
           console.log(response);
-          // console.log(response.headers.get(userId));
-          // window.localStorage.setItem("userInfo", JSON.stringify(json));
-          // this.setState({
 
           // })
           console.log(response.headers.get("Authorization"));
@@ -56,10 +88,11 @@ const Login = ({ setHasCookie }) => {
             "AuthID",
             response.headers.get("Authorization")
           );
+
           var AuthID = sessionStorage.getItem("AuthID");
+          userInfo();
           console.log(AuthID);
           console.log("pass");
-
           window.location.href = "/";
         } else {
           console.log("Error");
