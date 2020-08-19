@@ -75,7 +75,7 @@ public class User {
     @Column(nullable = false)
     @ApiModelProperty(
             value = "회원의 가입일",
-            required = true,
+            required = false,
             example = "2020-07-28T00:00:00.000+09:00",
             hidden = false
     )
@@ -99,44 +99,42 @@ public class User {
     @Column(nullable = false)
     @ApiModelProperty(
             value = "회원이 허가한 약관 허용 일자",
-            required = true,
+            required = false,
             example = "2025-07-28T00:00:00.000+09:00",
             hidden = false
     )
     private Date limitPermitDay;
     @ApiModelProperty(
             value = "회원의 담당코치(의 id)",
-            required = true,
+            required = false,
             example = "2",
             hidden = false
     )
     private Long coachId;
     @ApiModelProperty(
             value = "회원이 소속된 헬스장(의 gymId)",
-            required = true,
+            required = false,
             example = "1",
             hidden = false
     )
     private Long gymId;
-    @Column(nullable = false)
     @ApiModelProperty(
             value = "회원의 활성화 여부",
-            required = true,
+            required = false,
             example = "1",
             hidden = false
     )
     private int active;
-
     @ApiModelProperty(
             value = "회원의 등급",
-            required = true,
+            required = false,
             example = "USER",
             hidden = false
     )
     private String roles = "";
     @ApiModelProperty(
             value = "회원의 권한",
-            required = true,
+            required = false,
             example = "PERMISSION_1, PERMISSION_2",
             hidden = false
     )
