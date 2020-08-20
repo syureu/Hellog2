@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
+import {
+  createMuiTheme,
+  withStyles,
+  makeStyles,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import { yellow, purple, white } from "@material-ui/core/colors";
 
 import {
   AppBar,
@@ -8,9 +16,9 @@ import {
   Typography,
   Box,
   Divider,
-  Button,
   Grid,
 } from "@material-ui/core";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Axios from "axios";
 
@@ -50,6 +58,15 @@ const TestClicked = () => {
 };
 ///////////////////////////////////////////////
 // main section (운동법)
+const ColorButton = withStyles((theme) => ({
+  root: {
+    color: theme.palette.getContrastText(yellow[100]),
+    backgroundColor: yellow[100],
+    "&:hover": {
+      backgroundColor: yellow[300],
+    },
+  },
+}))(Button);
 
 const MainSection = (props) => {
   const { level } = props;
@@ -92,19 +109,19 @@ const MainSection = (props) => {
           </Grid>
           <Grid item xs={6} align="right">
             <Link to="/Recommend/stretching">
-              <Button color="secondary">Warm-up</Button>
+              <ColorButton>Warm-up</ColorButton>
             </Link>
             <Link to="/Recommend/beginner/week13">
-              <Button color="secondary">1-3 Weeks</Button>
+              <ColorButton>1-3 Weeks</ColorButton>
             </Link>
             <Link to="/Recommend/beginner/week47">
-              <Button color="secondary">4-6 Weeks</Button>
+              <ColorButton>4-6 Weeks</ColorButton>
             </Link>
             <Link to="/Recommend/beginner/week710">
-              <Button color="secondary">7-9 Weeks</Button>
+              <ColorButton>7-9 Weeks</ColorButton>
             </Link>
             <Link to="/Recommend/beginner/week1012">
-              <Button color="secondary">10-12 Weeks</Button>
+              <ColorButton>10-12 Weeks</ColorButton>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -165,16 +182,16 @@ const MainSection = (props) => {
           </Grid>
           <Grid item xs={6} align="right">
             <Link to="/Recommend/stretching">
-              <Button color="secondary">Warm-up</Button>
+              <ColorButton color="secondary">Warm-up</ColorButton>
             </Link>
             <Link to="/Recommend/intermediate/workouta">
-              <Button color="secondary">A</Button>
+              <ColorButton color="secondary">A</ColorButton>
             </Link>
             <Link to="/Recommend/intermediate/workoutb">
-              <Button color="secondary">B</Button>
+              <ColorButton color="secondary">B</ColorButton>
             </Link>
             <Link to="/Recommend/intermediate/workoutc">
-              <Button color="secondary">C</Button>
+              <ColorButton color="secondary">C</ColorButton>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -231,22 +248,22 @@ const MainSection = (props) => {
           </Grid>
           <Grid item xs={6} align="right">
             <Link to="/Recommend/advanced/chest">
-              <Button color="secondary">Chest</Button>
+              <ColorButton color="secondary">Chest</ColorButton>
             </Link>
             <Link to="/Recommend/advanced/back">
-              <Button color="secondary">Back</Button>
+              <ColorButton color="secondary">Back</ColorButton>
             </Link>
             <Link to="/Recommend/advanced/leg">
-              <Button color="secondary">Leg</Button>
+              <ColorButton color="secondary">Leg</ColorButton>
             </Link>
             <Link to="/Recommend/advanced/shoulder">
-              <Button color="secondary">Shoulder</Button>
+              <ColorButton color="secondary">Shoulder</ColorButton>
             </Link>
             <Link to="/Recommend/advanced/biceps">
-              <Button color="secondary">Biceps</Button>
+              <ColorButton color="secondary">Biceps</ColorButton>
             </Link>
             <Link to="/Recommend/advanced/triceps">
-              <Button color="secondary">Triceps</Button>
+              <ColorButton color="secondary">Triceps</ColorButton>
             </Link>
           </Grid>
           <Grid item xs={12}>
@@ -372,11 +389,11 @@ const Recommend = (props) => {
       <Tabs
         value={appbarIndex + appbarIndexDelta}
         onChange={onChangeIndexHandler}
-        indicatorColor="primary"
-        textColor="primary"
+        indicatorColor="secondary"
+        textColor="secondary"
         variant="scrollable"
         aria-label="full width tabs example"
-        className="big-indicator"
+        className="big-indicator text-white"
       >
         // 상단 카테고리
         {categoryDatas.map((categoryData, index) => (
@@ -384,7 +401,7 @@ const Recommend = (props) => {
             key={index}
             {...a11yProps(index)}
             label={<ButtonBases categoryData={categoryData} index={index} />}
-            className="tab"
+            className="tab text-white"
           ></Tab>
         ))}
       </Tabs>
@@ -393,7 +410,7 @@ const Recommend = (props) => {
           key={index}
           value={appbarIndex}
           index={index}
-          className="tab-panel"
+          className="tab-panel "
         >
           <VoteGridTitle categoryData={categoryData} />
           <Divider style={{ margin: "0px 0 20px 0" }} />
