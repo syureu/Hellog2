@@ -15,6 +15,7 @@ import "./styles.css";
 //사진들
 
 import assistedpullup from "./gif/Assistedpullup.gif";
+// import assistedpullup from "../../assets/img/Assistedpullup.gif";
 import hanginglegraise from "./gif/hanginglegraise.gif";
 import latpulldown from "./gif/latpulldown.gif";
 import Lyinglegcurl from "./gif/Lyinglegcurl.gif";

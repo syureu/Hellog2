@@ -10,9 +10,14 @@ import gym_unsplash3 from "../Main/gym_unsplash3.jpg";
 export default function Main() {
   return (
     <div>
-      <Carousel interval={null}>
+      <Carousel interval={null} align="center">
         <Carousel.Item>
-          <img className="d-block w-100" src={gym_unsplash} alt="First slide" />
+          <img
+            className="d-block"
+            width="83%"
+            src={gym_unsplash}
+            alt="First slide"
+          />
           <Carousel.Caption>
             <h2>헬로그는 건강(Health)과 기록(Log)의 합성어입니다.</h2>
             {/* <h3>First slide label</h3> */}
@@ -21,7 +26,8 @@ export default function Main() {
 
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block"
+            width="83%"
             src={gym_unsplash2}
             alt="Third slide"
           />
@@ -33,7 +39,8 @@ export default function Main() {
 
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block"
+            width="83%"
             src={gym_unsplash3}
             alt="Third slide"
           />

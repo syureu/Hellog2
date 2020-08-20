@@ -55,7 +55,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           {/* <Route path="/machine" component={machine} /> */}
-          <Redirect from="/" to="/admin/dashboard" />
+          {/* <Redirect from="/" to="/admin/dashboard" /> */}
           <Redirect from="/" to="/admin/Main" />
         </Switch>
       </BrowserRouter>
