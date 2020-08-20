@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.record.RecordRepository">
+
+    <!-- void insertRecord(Record record); -->
+    <insert id="insertRecord" parameterType="Record">
+        insert into
+            record(
+                id,
+                equipment_exercise_id,
+                sett,
+                weight,
+                countt,
+                start_time,
+                end_time
+            )
+        values(
+            #{id},
+            #{equipmentExerciseId},
+            #{sett},
+            #{weight},
+            #{countt},
+            #{startTime},
+            #{endTime}
+        )
+    </insert>
+
+    <!-- Record selectRecord(Long recordId); -->
+    <select id="selectRecord" parameterType="Long" resultType="Record">
+        select
+            *
+        from
+            record
+        where
+            record_id = #{recordId}
+    </select>
+
+
+    <!-- void updateRecord(Record record); -->
+    <update id="updateRecord" parameterType="Record">
+        update
+            record
+        set
+            id = #{id},
+            equipment_exercise_id = #{equipmentExerciseId},
+            sett = #{sett},
+            weight = #{weight},
+            countt = #{countt},
+            start_time = #{startTime},
+            end_time = #{endTime}
+        where
+            record_id = #{recordId}
+    </update>
+
+    <!-- void deleteRecord(Long recordId); -->
+    <delete id="deleteRecord" parameterType="Long">
+        delete from
+            record
+        where
+            record_id = #{recordId}
+    </delete>
+
+    <!-- List<Record> selectRecordByUsername(String name); -->
+    <select id="selectRecordByUsername" resultType="Record" parameterType="String">
+        SELECT
+            record.record_id as record_id,
+            record.id as id,
+            record.equipment_exercise_id as equipment_exercise_id,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, record
+        where
+            user.username = #{name} and user.id = record.id;
+    </select>
+
+    <!-- List<Record> selectTodayRecordByUsername(String name); -->
+    <select id="selectTodayRecordByUsername" parameterType="String" resultType="Record">
+        SELECT
+            record.record_id as record_id,
+            record.id as id,
+            record.equipment_exercise_id as equipment_exercise_id,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, record
+        where
+            user.username = #{name} and user.id = record.id
+            and year(record.start_time) = year(now())
+            and month(record.start_time) = month(now())
+            and day(record.start_time) = day(now());
+    </select>
+
+    <!-- List<Record> selectRecordByUsernameAndEquipmentId(UserEquipmentDto userEquipmentDto); -->
+    <select id="selectRecordByUsernameAndEquipmentId" resultType="Record" parameterType="UserEquipmentDto">
+        SELECT
+            record.record_id as record_id,
+            record.id as id,
+            record.equipment_exercise_id as equipment_exercise_id,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, equipment, equipment_exercise, record
+        where
+            user.username = #{username} AND
+            equipment.equipment_id = #{equipmentId} AND
+            equipment.equipment_id = equipment_exercise.equipment_id AND
+            equipment_exercise.equipment_exercise_id = record.equipment_exercise_id AND
+            user.id = record.id;
+    </select>
+
+    <!-- List<RecordV2Dto> selectRecordByUsernameV2(String name); -->
+    <select id="selectRecordByUsernameV2" parameterType="String" resultType="RecordV2Dto">
+        SELECT
+            exercise.name as name,
+            record.sett as sett,
+            record.weight as weight,
+            record.countt as countt,
+            record.start_time as start_time,
+            record.end_time as end_time
+        FROM
+            user, record, equipment_exercise, exercise
+        where
+            user.username = #{username}
+            and user.id = record.id
+            and record.equipment_exercise_id = equipment_exercise.equipment_exercise_id
+            and equipment_exercise.exercise_id = exercise.exercise_id;
+    </select>
+
+</mapper>

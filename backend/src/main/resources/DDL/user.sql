@@ -21,3 +21,4 @@ DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE pjt1track3.`user` ADD CONSTRAINT user_FK FOREIGN KEY (gym_id) REFERENCES pjt1track3.gym(gym_id) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE pjt1track3.`user` ADD CONSTRAINT user_UN UNIQUE KEY (username);

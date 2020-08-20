@@ -9,5 +9,5 @@ public interface UserRepository {
     User selectUser(Long Id);
     void updateUser(User user);
     void deleteUser(Long Id);
-    void deleteAll();
+    User selectUserByUsername(String username);
 }
