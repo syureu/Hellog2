@@ -4,5 +4,7 @@
   max-width: 100%;
 }
 .textbox {
-  width: 200px;
+  display: contents;
+  text-align: center;
+  color: white;
 }

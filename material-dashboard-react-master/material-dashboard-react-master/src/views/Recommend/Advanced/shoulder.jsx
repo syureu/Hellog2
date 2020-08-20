@@ -95,7 +95,7 @@ export default function Shoulder() {
 
   return (
     <div>
-      <div align="center">
+      <div className="textbox">
         <h3>주의사항</h3>
         <ul>
           <li>세트 간 휴식은 2분</li>

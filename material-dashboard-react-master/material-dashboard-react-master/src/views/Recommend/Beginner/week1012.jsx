@@ -263,7 +263,7 @@ export default function Week1012() {
 
   return (
     <div>
-      <div align="center">
+      <div className="textbox">
         <h2>3분할 운동 주차</h2>
         <ul>
           <li> A: 등-코어, B: 가슴-어깨, C: 하체 3분할 루틴 </li>

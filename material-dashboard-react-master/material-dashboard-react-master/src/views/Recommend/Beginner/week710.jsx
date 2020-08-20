@@ -215,7 +215,7 @@ export default function Week710() {
 
   return (
     <div>
-      <div align="center">
+      <div className="textbox">
         <h2>분할 운동 주차</h2>
         <ul>
           <li>상체하는 날, 하체하는 날 나누어서 진행 </li>

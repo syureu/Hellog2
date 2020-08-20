@@ -57,7 +57,7 @@ export default function Stretching() {
 
   return (
     <div>
-      <div align="center">
+      <div className="textbox">
         <h1>스 트 레 칭</h1> <h4>완료 후 오늘의 루틴을 선택하세요</h4>
       </div>
       <TableContainer component={Paper} align="center">
