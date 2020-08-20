@@ -33,7 +33,7 @@ public class RecordController {
     @PostMapping("/record")
     @ApiOperation(value = "운동기록 하나를 입력 요청합니다.")
     public ResponseEntity<String> createRecord(@RequestBody Record record, Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
@@ -76,7 +76,7 @@ public class RecordController {
     @GetMapping("/{recordId}")
     @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 열람 요청합니다.")
     public ResponseEntity<Record> readRecord(@PathVariable Long recordId, Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -111,7 +111,7 @@ public class RecordController {
     @PutMapping("/{recordId}")
     @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 수정 요청합니다.")
     public ResponseEntity<String> updateRecord(@PathVariable Long recordId, @RequestBody Record record, Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -147,7 +147,7 @@ public class RecordController {
     @DeleteMapping("/{recordId}")
     @ApiOperation(value = "운동기록 하나를 운동기록 번호를 통해 삭제 요청합니다.")
     public ResponseEntity<String> deleteRecord(@PathVariable Long recordId, Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -183,7 +183,7 @@ public class RecordController {
     @GetMapping("/myrecord")
     @ApiOperation(value = "로그인한 유저의 모든 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyRecordList(Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             //로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -200,7 +200,7 @@ public class RecordController {
     @GetMapping("/myrecord/today")
     @ApiOperation(value = "로그인한 유저의 오늘자 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyTodayRecordList(Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             //로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -217,7 +217,7 @@ public class RecordController {
     @GetMapping("/myrecord/equipment/{equipmentId}")
     @ApiOperation(value = "로그인한 유저가 지정한 운동기구에서 했던 운동기록들을 열람 요청합니다.")
     public ResponseEntity<List<Record>> readMyRecordListByEquipmentId(@PathVariable Long equipmentId, Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
@@ -235,7 +235,7 @@ public class RecordController {
     @ApiOperation(value = "로그인한 유저의 모든 운동기록들을 열람 요청합니다.\n" +
             "캘린더에 올릴 수 있도록 제작된 api 입니다.")
     public ResponseEntity<List<RecordV2Dto>> readMyRecordListV2(Principal principal) {
-        if (isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
             return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
         }
