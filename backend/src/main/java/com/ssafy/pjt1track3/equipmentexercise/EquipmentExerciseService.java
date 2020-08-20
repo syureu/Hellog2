@@ -2,6 +2,8 @@ package com.ssafy.pjt1track3.equipmentexercise;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EquipmentExerciseService {
 
@@ -26,5 +28,9 @@ public class EquipmentExerciseService {
 
     public void deleteEquipmentExercise(Long eeId) {
         equipmentExerciseRepository.deleteEquipmentExercise(eeId);
+    }
+
+    public List<EquipmentExerciseAndExerciseDto> selectEquipmentExerciseAndExerciseListByEquipmentId(Long equipmentId) {
+        return equipmentExerciseRepository.selectEquipmentExerciseAndExerciseListByEquipmentId(equipmentId);
     }
 }

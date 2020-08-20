@@ -100,4 +100,14 @@ public class EquipmentExerciseController {
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
         }
     }
+
+    @GetMapping("/equipment/{equipmentId}")
+    public ResponseEntity<List<EquipmentExerciseAndExerciseDto>> readEquipmentExerciseAndExerciseListByEquipmentId(@PathVariable Long equipmentId) {
+        List<EquipmentExerciseAndExerciseDto> list = equipmentExerciseService.selectEquipmentExerciseAndExerciseListByEquipmentId(equipmentId);
+        if(list.size()>0) {
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+        }
+    }
 }
