@@ -6,7 +6,7 @@ import { CookiesProvider } from "react-cookie";
 import Login from "components/Auth/Signinup/Login.js";
 import Signup from "components/Auth/Signinup/Signup.js";
 import machine from "views/Machine/machine.jsx";
-// import Profilebar from "components/Navbars/AdminNavbarLinks.js";
+import Profilebar from "components/Navbars/AdminNavbarLinks.js";
 
 // core components
 import Admin from "layouts/Admin.js";

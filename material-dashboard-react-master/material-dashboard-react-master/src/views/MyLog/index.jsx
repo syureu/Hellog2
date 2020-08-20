@@ -454,15 +454,29 @@ const MySection = (props) => {
           </Box>
         </Grid>
         <Grid>
-          {username === "헬창" ? (
+          {/* {username === "헬창" ? ( */}
+          <Calendar
+            ref={cal}
+            height="1000"
+            useCreationPopup={true}
+            useDetailPopup={true}
+            template={templates}
+            calendars={record.calendar}
+            schedules={record.schedule}
+            onClickSchedule={onClickSchedule}
+            onBeforeCreateSchedule={onBeforeCreateSchedule}
+            onBeforeDeleteSchedule={onBeforeDeleteSchedule}
+            onBeforeUpdateSchedule={onBeforeUpdateSchedule}
+            view="month"
+            className="myCalendar"
+          ></Calendar>
+          {/* ) : (
             <Calendar
               ref={cal}
               height="1000"
               useCreationPopup={true}
               useDetailPopup={true}
               template={templates}
-              calendars={record.calendar}
-              schedules={record.schedule}
               onClickSchedule={onClickSchedule}
               onBeforeCreateSchedule={onBeforeCreateSchedule}
               onBeforeDeleteSchedule={onBeforeDeleteSchedule}
@@ -470,21 +484,7 @@ const MySection = (props) => {
               view="month"
               className="myCalendar"
             ></Calendar>
-          ) : (
-            <Calendar
-              ref={cal}
-              height="1000"
-              useCreationPopup={true}
-              useDetailPopup={true}
-              template={templates}
-              onClickSchedule={onClickSchedule}
-              onBeforeCreateSchedule={onBeforeCreateSchedule}
-              onBeforeDeleteSchedule={onBeforeDeleteSchedule}
-              onBeforeUpdateSchedule={onBeforeUpdateSchedule}
-              view="month"
-              className="myCalendar"
-            ></Calendar>
-          )}
+          )} */}
         </Grid>
       </>
     );
@@ -550,7 +550,7 @@ const MyLog = (props) => {
     <div className={classes.root}>
       <Grid className="vote-grid-title-grid">
         <Typography variant="h5" align="center" className={classes.typography}>
-          {username ? username : "기록을 보고싶다면 로그인을 해주세요"}
+          {username ? username : ""}
         </Typography>
       </Grid>
       <br></br>
