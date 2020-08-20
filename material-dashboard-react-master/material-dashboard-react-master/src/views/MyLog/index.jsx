@@ -1,27 +1,38 @@
-import React, { useCallback, useRef, useState, useEffect } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from "react";
 // import Layout from '../../layout/';
-import { Grid, Typography, Divider, makeStyles, Button, Tabs, Box, Tab, Slide, withStyles } from '@material-ui/core';
+import {
+  Grid,
+  Typography,
+  Divider,
+  makeStyles,
+  Button,
+  Tabs,
+  Box,
+  Tab,
+  Slide,
+  withStyles,
+} from "@material-ui/core";
 // import Wrapper from './styles';
 
-import { common, grey } from '@material-ui/core/colors';
+import { common, grey } from "@material-ui/core/colors";
 
-import Calendar from '@toast-ui/react-calendar';
-import 'tui-calendar/dist/tui-calendar.css';
-import 'tui-date-picker/dist/tui-date-picker.css';
-import 'tui-time-picker/dist/tui-time-picker.css';
+import Calendar from "@toast-ui/react-calendar";
+import "tui-calendar/dist/tui-calendar.css";
+import "tui-date-picker/dist/tui-date-picker.css";
+import "tui-time-picker/dist/tui-time-picker.css";
 
-import moment from 'moment';
+import moment from "moment";
 
-import CarouselSlide from './CarouselSlide';
-import { SLIDE_INFO } from './constants';
+import CarouselSlide from "./CarouselSlide";
+import { SLIDE_INFO } from "./constants";
 
-import categoryDats from './dump.json';
-import ButtonBases from '../../components/Main/ButtonBases';
+import categoryDats from "./dump.json";
+import ButtonBases from "../../components/Main/ButtonBases";
 
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-import axios from 'axios';
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
   },
   button: {
@@ -44,18 +55,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AuthID = sessionStorage.getItem('AuthID');
-const username = sessionStorage.getItem('username');
+var AuthID = sessionStorage.getItem("AuthID");
+var username = sessionStorage.getItem("name");
+
+console.log(username ? username : "fuck");
 
 const ArrowStyle = {
-  cursor: 'pointer',
-  height: '840px',
-  backgroundColor: '#fafafa',
+  cursor: "pointer",
+  height: "840px",
+  backgroundColor: "#fafafa",
 };
 
 const Arrow = (props) => {
   const { direction, clickFunction } = props;
-  const icon = direction === 'left' ? <ArrowBackIosIcon style={ArrowStyle} /> : <ArrowForwardIosIcon style={ArrowStyle} />;
+  const icon =
+    direction === "left" ? (
+      <ArrowBackIosIcon style={ArrowStyle} />
+    ) : (
+      <ArrowForwardIosIcon style={ArrowStyle} />
+    );
 
   return <Grid onClick={clickFunction}>{icon}</Grid>;
 };
@@ -64,7 +82,14 @@ const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
 
   return (
-    <Typography component='div' role='tabpanel' hidden={value !== index} id={`simple-tabpanel-${index}`} aria-labelledby={`simple-tab-${index}`} {...other}>
+    <Typography
+      component="div"
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
       {value === index && <Box>{children}</Box>}
       <MySection level={index}></MySection>
       {/* <img align="center" width="700" src={ronnie}></img> */}
@@ -75,7 +100,7 @@ const TabPanel = (props) => {
 const a11yProps = (index) => {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 };
 
@@ -167,14 +192,22 @@ const useGetRecordDatas = (username) => {
     const records = await getRecords;
 
     let schedules = records.map((record, index) => {
-      let body = '세트 : ' + record.sett + '<br/>' + ' 무게 : ' + record.weight + '<br/>' + ' 횟수 : ' + record.countt;
+      let body =
+        "세트 : " +
+        record.sett +
+        "<br/>" +
+        " 무게 : " +
+        record.weight +
+        "<br/>" +
+        " 횟수 : " +
+        record.countt;
 
       let start = new Date(record.startTime).toISOString();
       let end = new Date(record.endTime).toISOString();
 
       return {
         calendarId: index,
-        category: 'time',
+        category: "time",
         isVisible: true,
         title: record.exerciseName,
         id: index,
@@ -185,11 +218,11 @@ const useGetRecordDatas = (username) => {
     });
 
     let calendars = records.map((record, index) => {
-      let generateColor = '#' + Math.random().toString(16).substr(-6);
+      let generateColor = "#" + Math.random().toString(16).substr(-6);
       return {
         id: index,
         name: record.exerciseName,
-        color: '#ffffff',
+        color: "#ffffff",
         bgColor: generateColor,
         dragBgColor: generateColor,
         borderColor: generateColor,
@@ -215,13 +248,13 @@ const MySection = (props) => {
   const content = SLIDE_INFO[index];
   const numSlides = SLIDE_INFO.length;
   const [slideIn, setSlideIn] = useState(true);
-  const [slideDirection, setSlideDirection] = useState('down');
+  const [slideDirection, setSlideDirection] = useState("down");
 
   const onArrowClick = (direction) => {
-    const increment = direction === 'left' ? -1 : 1;
+    const increment = direction === "left" ? -1 : 1;
     const newIndex = (index + increment + numSlides) % numSlides;
 
-    const oppDirection = direction === 'left' ? 'right' : 'left';
+    const oppDirection = direction === "left" ? "right" : "left";
     setSlideDirection(direction);
     setSlideIn(false);
 
@@ -237,7 +270,7 @@ const MySection = (props) => {
   }, []);
 
   const onBeforeCreateSchedule = useCallback((scheduleData) => {
-    console.log('-----------');
+    console.log("-----------");
     console.log(scheduleData);
 
     const schedule = {
@@ -246,11 +279,11 @@ const MySection = (props) => {
       isAllDay: scheduleData.isAllDay,
       start: scheduleData.start,
       end: scheduleData.end,
-      category: scheduleData.isAllDay ? 'allday' : 'time',
-      dueDateClass: '',
+      category: scheduleData.isAllDay ? "allday" : "time",
+      dueDateClass: "",
       location: scheduleData.location,
       raw: {
-        class: scheduleData.raw['class'],
+        class: scheduleData.raw["class"],
       },
       state: scheduleData.state,
     };
@@ -271,7 +304,11 @@ const MySection = (props) => {
 
     const { schedule, changes } = e;
 
-    cal.current.calendarInst.updateSchedule(schedule.id, schedule.calendarId, changes);
+    cal.current.calendarInst.updateSchedule(
+      schedule.id,
+      schedule.calendarId,
+      changes
+    );
   }, []);
 
   const handleClickNextButton = () => {
@@ -294,28 +331,35 @@ const MySection = (props) => {
 
   const setRenderRangeTest = () => {
     const calendarInst = cal.current.getInstance();
-    const renderRange = document.getElementById('renderRange');
+    const renderRange = document.getElementById("renderRange");
     const options = calendarInst.getOptions();
     const viewName = calendarInst.getViewName();
     let html = [];
 
-    if (viewName === 'day') {
-      html.push(moment(calendarInst.getDate().getTime()).format('YYYY.MM.DD'));
-    } else if (viewName === 'month' && (!options.month.visibleWeeksCount || options.month.visibleWeeksCount > 4)) {
-      html.push(moment(calendarInst.getDate().getTime()).format('YYYY.MM'));
+    if (viewName === "day") {
+      html.push(moment(calendarInst.getDate().getTime()).format("YYYY.MM.DD"));
+    } else if (
+      viewName === "month" &&
+      (!options.month.visibleWeeksCount || options.month.visibleWeeksCount > 4)
+    ) {
+      html.push(moment(calendarInst.getDate().getTime()).format("YYYY.MM"));
     } else {
-      html.push(moment(calendarInst.getDateRangeStart().getTime()).format('YYYY.MM.DD'));
-      html.push(' ~ ');
-      html.push(moment(calendarInst.getDateRangeEnd().getTime()).format(' MM.DD'));
+      html.push(
+        moment(calendarInst.getDateRangeStart().getTime()).format("YYYY.MM.DD")
+      );
+      html.push(" ~ ");
+      html.push(
+        moment(calendarInst.getDateRangeEnd().getTime()).format(" MM.DD")
+      );
     }
-    renderRange.innerHTML = html.join('');
+    renderRange.innerHTML = html.join("");
   };
 
   function _getFormattedTime(time) {
     const date = new Date(time);
     const h = date.getHours();
     let m = date.getMinutes();
-    m = m === 0 ? '00' : m;
+    m = m === 0 ? "00" : m;
 
     return `${h}:${m}`;
   }
@@ -324,11 +368,11 @@ const MySection = (props) => {
     var html = [];
 
     if (!isAllDay) {
-      html.push('<strong>' + _getFormattedTime(schedule.start) + '</strong> ');
+      html.push("<strong>" + _getFormattedTime(schedule.start) + "</strong> ");
     }
     if (schedule.isPrivate) {
       html.push('<span class="calendar-font-icon ic-lock-b"></span>');
-      html.push(' Private');
+      html.push(" Private");
     } else {
       if (schedule.isReadOnly) {
         html.push('<span class="calendar-font-icon ic-readonly-b"></span>');
@@ -339,10 +383,10 @@ const MySection = (props) => {
       } else if (schedule.location) {
         html.push('<span class="calendar-font-icon ic-location-b"></span>');
       }
-      html.push(' ' + schedule.title);
+      html.push(" " + schedule.title);
     }
 
-    return html.join('');
+    return html.join("");
   }
 
   const templates = {
@@ -352,33 +396,55 @@ const MySection = (props) => {
     },
   };
 
-  const record = useGetRecordDatas('coach');
+  const record = useGetRecordDatas("coach");
 
   const classes = useStyles();
 
   if (level === 0) {
     return (
       <>
-        <Grid container direction='row' justify='space-between' id='menu'>
-          <Box component='span' id='menu-navi'>
-            <Button variant='contained' className={classes.button} data-action='move-today' onClick={handleClickTodayButton}>
+        <Grid container direction="row" justify="space-between" id="menu">
+          <Box component="span" id="menu-navi">
+            <Button
+              variant="contained"
+              className={classes.button}
+              data-action="move-today"
+              onClick={handleClickTodayButton}
+            >
               Today
             </Button>
-            <Button variant='contained' color='primary' className={classes.button} data-action='move-prev' onClick={handleClickPrevButton}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              data-action="move-prev"
+              onClick={handleClickPrevButton}
+            >
               <ArrowBackIosIcon />
             </Button>
-            <Button variant='contained' color='primary' className={classes.button} data-action='move-next' onClick={handleClickNextButton}>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              data-action="move-next"
+              onClick={handleClickNextButton}
+            >
               <ArrowForwardIosIcon />
             </Button>
           </Box>
-          <Box component='span'>
-            <Typography variant='h6' gutterBottom id='renderRange' className={classes.typography}></Typography>
+          <Box component="span">
+            <Typography
+              variant="h6"
+              gutterBottom
+              id="renderRange"
+              className={classes.typography}
+            ></Typography>
           </Box>
         </Grid>
         <Grid>
           <Calendar
             ref={cal}
-            height='1000'
+            height="1000"
             useCreationPopup={true}
             useDetailPopup={true}
             template={templates}
@@ -388,17 +454,17 @@ const MySection = (props) => {
             onBeforeCreateSchedule={onBeforeCreateSchedule}
             onBeforeDeleteSchedule={onBeforeDeleteSchedule}
             onBeforeUpdateSchedule={onBeforeUpdateSchedule}
-            view='month'
-            className='myCalendar'
+            view="month"
+            className="myCalendar"
           ></Calendar>
         </Grid>
       </>
     );
   } else if (level === 1) {
     return (
-      <Grid container direction='row' justify='center' alignItems='stretch'>
+      <Grid container direction="row" justify="center" alignItems="stretch">
         <Grid item>
-          <Arrow direction='left' clickFunction={() => onArrowClick('left')} />
+          <Arrow direction="left" clickFunction={() => onArrowClick("left")} />
         </Grid>
         <Slide in={slideIn} direction={slideDirection}>
           <Grid item>
@@ -406,7 +472,10 @@ const MySection = (props) => {
           </Grid>
         </Slide>
         <Grid item>
-          <Arrow direction='right' clickFunction={() => onArrowClick('right')} />
+          <Arrow
+            direction="right"
+            clickFunction={() => onArrowClick("right")}
+          />
         </Grid>
       </Grid>
     );
@@ -415,25 +484,25 @@ const MySection = (props) => {
 
 const StyledTabs = withStyles({
   indicator: {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-    '& > span': {
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "transparent",
+    "& > span": {
       maxWidth: 80,
-      width: '100%',
-      backgroundColor: '#635ee7',
+      width: "100%",
+      backgroundColor: "#635ee7",
     },
   },
 })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
 
 const StyledTab = withStyles((theme) => ({
   root: {
-    textTransform: 'none',
-    color: '#fff',
+    textTransform: "none",
+    color: "#fff",
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: theme.typography.pxToRem(15),
     marginRight: theme.spacing(1),
-    '&:focus': {
+    "&:focus": {
       opacity: 1,
     },
   },
@@ -441,34 +510,68 @@ const StyledTab = withStyles((theme) => ({
 
 const MyLog = (props) => {
   const classes = useStyles();
-  const categoryDatas = useGetCategoryDatas('/category');
+  const categoryDatas = useGetCategoryDatas("/category");
 
-  const [onChangeIndexHandler, appbarIndex, appbarIndexDelta] = useOnChangeIndex(categoryDatas);
+  const [
+    onChangeIndexHandler,
+    appbarIndex,
+    appbarIndexDelta,
+  ] = useOnChangeIndex(categoryDatas);
 
   return (
     <div className={classes.root}>
-      <Grid className='vote-grid-title-grid'>
-        <Typography variant='h2' align='center' className={classes.typography}>
-          {username ? username : 'username'}
+      <Grid className="vote-grid-title-grid">
+        <Typography variant="h2" align="center" className={classes.typography}>
+          {username ? username : "조상님이 도와주냐?"}
         </Typography>
       </Grid>
       <br></br>
-      <Divider variant='middle' classes={{ root: classes.divider }} />
+      <Divider variant="middle" classes={{ root: classes.divider }} />
       <br></br>
-      <StyledTabs value={appbarIndex + appbarIndexDelta} onChange={onChangeIndexHandler} variant='scrollable' aria-label='full width tabs example' className={classes.tabs}>
+      <StyledTabs
+        value={appbarIndex + appbarIndexDelta}
+        onChange={onChangeIndexHandler}
+        variant="scrollable"
+        aria-label="full width tabs example"
+        className={classes.tabs}
+      >
         {categoryDatas.map((categoryData, index) => (
-          <StyledTab key={index} {...a11yProps(index)} label={<ButtonBases categoryData={categoryData} isSelected={index === appbarIndex ? true : false} index={index} />} className='tab'></StyledTab>
+          <StyledTab
+            key={index}
+            {...a11yProps(index)}
+            label={
+              <ButtonBases
+                categoryData={categoryData}
+                isSelected={index === appbarIndex ? true : false}
+                index={index}
+              />
+            }
+            className="tab"
+          ></StyledTab>
         ))}
       </StyledTabs>
       {categoryDatas.map((categoryData, index) => (
-        <TabPanel key={index} value={appbarIndex} index={index} className='tab-panel'>
-          <Grid className='vote-grid-title-grid'>
-            <Typography variant='h2' align='center' className={classes.typography}>
+        <TabPanel
+          key={index}
+          value={appbarIndex}
+          index={index}
+          className="tab-panel"
+        >
+          <Grid className="vote-grid-title-grid">
+            <Typography
+              variant="h2"
+              align="center"
+              className={classes.typography}
+            >
               {categoryData.cat_title}
             </Typography>
           </Grid>
           <br></br>
-          <Divider variant='middle' classes={{ root: classes.divider }} style={{ margin: '0px 0 20px 0' }} />
+          <Divider
+            variant="middle"
+            classes={{ root: classes.divider }}
+            style={{ margin: "0px 0 20px 0" }}
+          />
         </TabPanel>
       ))}
     </div>

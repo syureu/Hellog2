@@ -41,9 +41,9 @@ const Login = ({ setHasCookie }) => {
         return res.json();
       })
       .then((json) => {
-        // console.log("변환완료");
-        // console.log(json);
-        // console.log(json.name);
+        console.log("변환완료");
+        console.log(json);
+        console.log(json.name);
 
         window.sessionStorage.setItem("active", json.active);
         window.sessionStorage.setItem("birthday", json.birthday);
@@ -86,7 +86,7 @@ const Login = ({ setHasCookie }) => {
 
           var AuthID = sessionStorage.getItem("AuthID");
           // userInfo();
-          // userApi();
+          userApi();
           // console.log(AuthID);
           // console.log("pass");
           var active = sessionStorage.getItem("active");
