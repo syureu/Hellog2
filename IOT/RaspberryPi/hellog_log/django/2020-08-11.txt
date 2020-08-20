@@ -1,0 +1,12 @@
+[12/Aug/2020 09:25:17] "GET / HTTP/1.1" 200 852
+Not Found: /favicon.ico
+[12/Aug/2020 09:25:19] "GET /favicon.ico HTTP/1.1" 404 2634
+[12/Aug/2020 09:27:08] "GET / HTTP/1.1" 200 852
+Not Found: /favicon.ico
+[12/Aug/2020 09:27:10] "GET /favicon.ico HTTP/1.1" 404 2634
+[12/Aug/2020 09:28:58] "GET / HTTP/1.1" 200 852
+Not Found: /favicon.ico
+[12/Aug/2020 09:28:58] "GET /favicon.ico HTTP/1.1" 404 2634
+[12/Aug/2020 09:30:35] "GET / HTTP/1.1" 200 852
+Not Found: /favicon.ico
+[12/Aug/2020 09:30:36] "GET /favicon.ico HTTP/1.1" 404 2628

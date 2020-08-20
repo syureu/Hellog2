@@ -1,0 +1,198 @@
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Input / Output Error
