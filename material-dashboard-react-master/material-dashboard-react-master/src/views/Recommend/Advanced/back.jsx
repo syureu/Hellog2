@@ -120,7 +120,7 @@ export default function Back() {
         </ul>
       </div>
       <br />
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} align="center">
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>

@@ -60,7 +60,7 @@ export default function Stretching() {
       <div align="center">
         <h1>스 트 레 칭</h1> <h4>완료 후 오늘의 루틴을 선택하세요</h4>
       </div>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} align="center">
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>

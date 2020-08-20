@@ -12,6 +12,7 @@ const Join = () => {
   const [userName, setUserName] = useState("");
   const [userBirthday, setBirthday] = useState("");
   const [phone, setPhone] = useState("");
+
   const [male, setMale] = useState("");
   const [height, setHeight] = useState("");
   const [idValid, setIdValid] = useState(false);

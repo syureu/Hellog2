@@ -34,8 +34,12 @@ import Dietboard from "views/Dietboard/Dietboard.js";
 import MyLog from "views/MyLog/index.jsx";
 import Main from "views/Main/Main.js";
 // import Login from "components/Auth/Signinup/Login.js";
+
+// import Signup from "components/Auth/Signinup/Sgin.js";
 import Recommend from "views/Recommend/index";
 import abc from "views/abc/abc.js";
+
+import machine from "views/Machine/machine.jsx";
 
 const dashboardRoutes = [
   {
@@ -70,6 +74,15 @@ const dashboardRoutes = [
     component: Recommend,
     layout: "/admin",
   },
+  {
+    path: "/machine",
+    name: "Machine",
+    rtlName: "wtf",
+    icon: Dashboard,
+    component: machine,
+    layout: "/admin",
+  },
+
   {
     path: "/abc",
     name: "지울예정",

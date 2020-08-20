@@ -32,7 +32,7 @@ class main extends Component {
   };
 
   _getContents = (val) => {
-    const contents = val.trim();
+    const contents = val;
 
     this.setState({ contents: contents });
   };
