@@ -1,0 +1,23 @@
+[
+  {
+    "cat_no": 1,
+    "cat_type": "Beginner",
+    "cat_title": "Beginner",
+    "cat_desc": "운동 초심자를 위한 추천",
+    "cat_img_url": "IMAGE-category-food.jpg"
+  },
+  {
+    "cat_no": 2,
+    "cat_type": "Intermediate",
+    "cat_title": "Intermediate",
+    "cat_desc": "꾸준한 운동을 하고 있는 중급자를 위한 추천",
+    "cat_img_url": "IMAGE-category-movie.jpg"
+  },
+  {
+    "cat_no": 3,
+    "cat_type": "Advanced",
+    "cat_title": "Advanced",
+    "cat_desc": "숙련된 상급자를 위한 추천",
+    "cat_img_url": "IMAGE-category-game.jpg"
+  }
+]
