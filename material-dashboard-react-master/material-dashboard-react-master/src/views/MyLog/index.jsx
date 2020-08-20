@@ -197,7 +197,8 @@ const getRecords = (username) => {
       "Content-Type": "application/json",
       Authorization: AuthID,
     },
-  }).then((response) => response.json());
+  });
+  // .then((response) => response.json());
 };
 
 const useGetRecordDatas = (username) => {
