@@ -190,15 +190,41 @@ const useOnChangeIndex = (categoryDatas) => {
 };
 
 const baseUrl = "https://i3d203.p.ssafy.io:29002";
-const getRecords = (username) => {
-  return fetch(baseUrl + "/api/records/myrecord/v2?name=" + username, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: AuthID,
-    },
-  }).then((response) => response.json());
-};
+// const getRecords = (username) => {
+//   return fetch(baseUrl + "/api/records/myrecord/v2?name=" + username, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: AuthID,
+//     },
+//   }).then((response) => response.json());
+// };
+const getRecords = [
+  {
+    countt: 8,
+    endTime: "2020-08-17T21:24:24.471+09:00",
+    exerciseName: "데드리프트",
+    sett: 3,
+    startTime: "2020-08-17T21:19:24.471+09:00",
+    weight: 100,
+  },
+  {
+    countt: 10,
+    endTime: "2020-08-20T21:24:24.471+09:00",
+    exerciseName: "스미스머신",
+    sett: 3,
+    startTime: "2020-08-20T21:19:24.471+09:00",
+    weight: 100,
+  },
+  {
+    countt: 10,
+    endTime: "2020-08-20T21:24:24.471+09:00",
+    exerciseName: "스위스여신",
+    sett: 3,
+    startTime: "2020-08-20T21:19:24.471+09:00",
+    weight: 100,
+  },
+];
 
 const useGetRecordDatas = (username) => {
   // const { serverUrl, user, setUser } = useContext(CommonContext);
@@ -206,7 +232,8 @@ const useGetRecordDatas = (username) => {
   const [calendar, setCalendar] = useState([]);
 
   const getDatas = async () => {
-    const records = await getRecords(username);
+    // const records = await getRecords(username)[0];
+    const records = await getRecords;
 
     let schedules = records.map((record, index) => {
       let body =
