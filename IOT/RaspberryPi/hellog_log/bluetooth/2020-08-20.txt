@@ -1,0 +1,21 @@
+bluetooth connected!
+bluetooth device is connected
+200
+recived message : b'count'
+200
+recived message : b'count'
+200
+recived message : b'count'
+200
+recived message : b'count'
+Traceback (most recent call last):
+  File "<string>", line 3, in recv
+_bluetooth.error: (110, 'Connection timed out')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/my-blue-soinc/blueSonic.py", line 16, in <module>
+    msg = client_socket.recv(1024)
+  File "<string>", line 5, in recv
+bluetooth.btcommon.BluetoothError: [Errno 110] Connection timed out
