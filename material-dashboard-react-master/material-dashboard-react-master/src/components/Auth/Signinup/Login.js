@@ -29,37 +29,34 @@ const Login = ({ setHasCookie }) => {
   };
 
   const userApi = (user) => {
-    return fetch(baseUrl + "/api/users/myinfo", {
+    fetch(baseUrl + "/api/users/myinfo", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: sessionStorage.getItem("AuthID"),
       },
       body: JSON.stringify(user),
-    });
-  };
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        // console.log("변환완료");
+        // console.log(json);
+        // console.log(json.name);
 
-  const userInfo = async () => {
-    // e.preventDefault();
-    try {
-      const infoResponse = await userApi();
-      if (infoResponse.status === 200) {
-        console.log("여기부터 userinfo");
-
-        console.log(infoResponse);
-        const reader = infoResponse.body.getReader();
-
-        console.log(reader);
-        console.log(reader.read());
-        console.log(infoResponse.body.username);
-
-        // console.log(infoResponse.body.getReader());
-      } else {
-        console.log("Error");
-      }
-    } catch (err) {
-      console.log(err);
-    }
+        window.sessionStorage.setItem("active", json.active);
+        window.sessionStorage.setItem("birthday", json.birthday);
+        window.sessionStorage.setItem("gymId", json.gymId);
+        window.sessionStorage.setItem("height", json.height);
+        window.sessionStorage.setItem("limitPermitDay", json.limitPermitDay);
+        window.sessionStorage.setItem("male", json.male);
+        window.sessionStorage.setItem("name", json.name);
+        window.sessionStorage.setItem("phone", json.phone);
+        window.sessionStorage.setItem("signUpDay", json.signUpDay);
+        window.sessionStorage.setItem("username", json.username);
+        window.sessionStorage.setItem("weight", json.weight);
+      });
   };
 
   const handleSubmit = async (e) => {
@@ -78,8 +75,6 @@ const Login = ({ setHasCookie }) => {
           console.log("200확인");
           alert(userId + "님 환영합니다.");
 
-          // setHasCookie(true);
-
           console.log(response);
 
           // })
@@ -90,9 +85,23 @@ const Login = ({ setHasCookie }) => {
           );
 
           var AuthID = sessionStorage.getItem("AuthID");
-          userInfo();
-          console.log(AuthID);
-          console.log("pass");
+          // userInfo();
+          // userApi();
+          // console.log(AuthID);
+          // console.log("pass");
+          var active = sessionStorage.getItem("active");
+          var birthday = sessionStorage.getItem("birthday");
+          var height = sessionStorage.getItem("height");
+          var limitPermitDay = sessionStorage.getItem("limitPermitDay");
+          var male = sessionStorage.getItem("male");
+          var name = sessionStorage.getItem("name");
+          var phone = sessionStorage.getItem("phone");
+          var signUpDay = sessionStorage.getItem("signUpDay");
+          var username = sessionStorage.getItem("username");
+          var weight = sessionStorage.getItem("weight");
+
+          console.log("이름검사");
+          console.log(name);
           window.location.href = "/";
         } else {
           console.log("Error");
