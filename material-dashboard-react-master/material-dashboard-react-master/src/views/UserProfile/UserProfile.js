@@ -57,7 +57,7 @@ export default function UserProfile() {
           <img className="d-block w-100" src={team} alt="Team 5!" />
         </GridItem>
         <br />
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={4} textColor>
           <>
             <Card>
               <Card.Header>팀장 FrontEnd</Card.Header>

@@ -18,16 +18,16 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Notifications from "@material-ui/icons/Notifications";
-import Unarchive from "@material-ui/icons/Unarchive";
-import Language from "@material-ui/icons/Language";
+// import LibraryBooks from "@material-ui/icons/LibraryBooks";
+// import BubbleChart from "@material-ui/icons/BubbleChart";
+// import LocationOn from "@material-ui/icons/LocationOn";
+// import Notifications from "@material-ui/icons/Notifications";
+// import Unarchive from "@material-ui/icons/Unarchive";
+// import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 // import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
-import Icons from "views/Icons/Icons.js";
+// import Icons from "views/Icons/Icons.js";
 // core components/views for RTL layout
 
 import Dietboard from "views/Dietboard/Dietboard.js";
@@ -52,67 +52,42 @@ const dashboardRoutes = [
   },
   {
     path: "/Dietboard",
-    name: "Dietboard",
+    name: "식단관리",
     rtlName: "wtf",
-    icon: "content_paste",
+    icon: "restaurant",
     component: Dietboard,
     layout: "/admin",
   },
   {
     path: "/MyLog",
-    name: "MyLog",
+    name: "운동기록",
     rtlName: "wtf",
-    icon: "book_online",
+    icon: "date_range",
     component: MyLog,
     layout: "/admin",
   },
   {
     path: "/Recommend",
-    name: "Recommend",
+    name: "운동추천",
     rtlName: "wtf",
-    icon: "list",
+    icon: "fitness_center",
     component: Recommend,
     layout: "/admin",
   },
   {
     path: "/machine",
-    name: "Machine",
+    name: "대표운동",
     rtlName: "wtf",
-    icon: Dashboard,
+    icon: "menu_book",
     component: machine,
-    layout: "/admin",
-  },
-
-  {
-    path: "/abc",
-    name: "abc",
-    rtlName: "wtf",
-    icon: "list",
-    component: abc,
     layout: "/admin",
   },
   {
     path: "/user",
     name: "Contact Us",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
+    rtlName: "Contact Us",
+    icon: "account_box",
     component: UserProfile,
-    layout: "/admin",
-  },
-  // {
-  //   path: "/login",
-  //   name: "login",
-  //   rtlName: "wtf",
-  //   icon: LibraryBooks,
-  //   component: Login,
-  //   layout: "/admin",
-  // },
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
     layout: "/admin",
   },
 ];
