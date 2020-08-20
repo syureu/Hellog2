@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
+import React from "react";
+// import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -8,7 +8,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+// import Paper from "@material-ui/core/Paper";
 
 import "./styles.css";
 
@@ -50,55 +50,55 @@ const Machine = () => {
 
   const rows = [
     createData(
-      <img className="photo" src={assistedpullup}></img>,
+      <img className="photo" src={assistedpullup} alt=""></img>,
       <div class="text-color">
         <h2>Assisted Pull-up</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={hanginglegraise}></img>,
+      <img className="photo" src={hanginglegraise} alt=""></img>,
       <div class="text-color">
         <h2>Hanging Leg Raise</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={latpulldown}></img>,
+      <img className="photo" src={latpulldown} alt=""></img>,
       <div class="text-color">
         <h2>Lat Pull-Down</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={Lyinglegcurl}></img>,
+      <img className="photo" src={Lyinglegcurl} alt=""></img>,
       <div class="text-color">
         <h2>Lying Leg Curl</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={rearlegextension}></img>,
+      <img className="photo" src={rearlegextension} alt=""></img>,
       <div class="text-color">
         <h2>Rear Leg Extension</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={seatedarmcurl}></img>,
+      <img className="photo" src={seatedarmcurl} alt=""></img>,
       <div class="text-color">
         <h2>Seated Arm Curl</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={seatedlegcurl}></img>,
+      <img className="photo" src={seatedlegcurl} alt=""></img>,
       <div class="text-color">
         <h2>Seated Leg Curl</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={seatedoverheadpress}></img>,
+      <img className="photo" src={seatedoverheadpress} alt=""></img>,
       <div class="text-color">
         <h2>Seated Over Head Press</h2>
       </div>
     ),
     createData(
-      <img className="photo" src={Seatedpress}></img>,
+      <img className="photo" src={Seatedpress} alt=""></img>,
       <div class="text-color">
         <h2>Seated Press</h2>
       </div>

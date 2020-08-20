@@ -75,49 +75,49 @@ const rows = [
     </div>
   ),
   createData(
-    <img className="photo" src={latpulldown}></img>,
+    <img className="photo" src={latpulldown} alt=""></img>,
     <div>
       <h2>Lat Pulldown</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cabletwistingonearmrow}></img>,
+    <img className="photo" src={cabletwistingonearmrow} alt=""></img>,
     <div>
       <h2>Cable Twisting One-arm Row</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellcurl}></img>,
+    <img className="photo" src={dumbbellcurl} alt=""></img>,
     <div>
       <h2>Dumbbell Curl</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={barbellreversecurl}></img>,
+    <img className="photo" src={barbellreversecurl} alt=""></img>,
     <div>
       <h2>Barbell Reverse Curl</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyingsidehipraise}></img>,
+    <img className="photo" src={lyingsidehipraise} alt=""></img>,
     <div>
       <h2>Lying Side Hip Raise</h2>
       <h4>2 X 25-30</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bicyclecrunch}></img>,
+    <img className="photo" src={bicyclecrunch} alt=""></img>,
     <div>
       <h2>Bicycle Crunch</h2>
       <h4>2 X 25-30</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedkneeraise}></img>,
+    <img className="photo" src={seatedkneeraise} alt=""></img>,
     <div>
       <h2>Seated Knee Raise</h2>
       <h4>2 X 25-30</h4>
@@ -135,56 +135,56 @@ const rows = [
     </div>
   ),
   createData(
-    <img className="photo" src={barbellbenchpress}></img>,
+    <img className="photo" src={barbellbenchpress} alt=""></img>,
     <div>
       <h2>Barbell Bench Press</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={inclinereversedumbbellbenchpress}></img>,
+    <img className="photo" src={inclinereversedumbbellbenchpress} alt=""></img>,
     <div>
       <h2>Incline Reverse Dumbbell Bench Press</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellonearmoverheadpress}></img>,
+    <img className="photo" src={dumbbellonearmoverheadpress} alt=""></img>,
     <div>
       <h2>Dumbbell One Arm Overhead Press</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellbentoverlateralraise}></img>,
+    <img className="photo" src={dumbbellbentoverlateralraise} alt=""></img>,
     <div>
       <h2>Dumbbell Bentover Lateral Raise</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cablefacepull}></img>,
+    <img className="photo" src={cablefacepull} alt=""></img>,
     <div>
       <h2>Cable Face Pull</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={diamondpushup}></img>,
+    <img className="photo" src={diamondpushup} alt=""></img>,
     <div>
       <h2>Diamond Push Up</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={declinedumbbelltricepsextension}></img>,
+    <img className="photo" src={declinedumbbelltricepsextension} alt=""></img>,
     <div>
       <h2>Decline Dumbbell Triceps Extension</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={hangingvariation}></img>,
+    <img className="photo" src={hangingvariation} alt=""></img>,
     <div>
       <h2>Haning variation</h2>
       <h4>2 X 12-14</h4>
@@ -202,49 +202,49 @@ const rows = [
     </div>
   ),
   createData(
-    <img className="photo" src={barbellsumosquat}></img>,
+    <img className="photo" src={barbellsumosquat} alt=""></img>,
     <div>
       <h2>Barbell Sumo Squat</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={weightoneleghipthrust}></img>,
+    <img className="photo" src={weightoneleghipthrust} alt=""></img>,
     <div>
       <h2>One-leg Hip Thrust</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedlegcurl}></img>,
+    <img className="photo" src={seatedlegcurl} alt=""></img>,
     <div>
       <h2>Seated Leg Curl</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyinglegcurl}></img>,
+    <img className="photo" src={lyinglegcurl} alt=""></img>,
     <div>
       <h2>Lying Leg Curl</h2>
       <h4>2 X 12-14</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={standingcalfraise}></img>,
+    <img className="photo" src={standingcalfraise} alt=""></img>,
     <div>
       <h2>Standing Calf Raise</h2>
       <h4>2 X 20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={wheelrollout}></img>,
+    <img className="photo" src={wheelrollout} alt=""></img>,
     <div>
       <h2>Wheel Rollout</h2>
       <h4>2 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cablewoodchop}></img>,
+    <img className="photo" src={cablewoodchop} alt=""></img>,
     <div>
       <h2>Cable Wood Chop</h2>
       <h4>2 X 12-14</h4>

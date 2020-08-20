@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Switch, BrowserRouter } from "react-router-dom";
 import {
-  createMuiTheme,
+  // createMuiTheme,
   withStyles,
-  makeStyles,
-  ThemeProvider,
+  // makeStyles,
+  // ThemeProvider,
 } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { yellow, purple, white } from "@material-ui/core/colors";
+import { yellow } from "@material-ui/core/colors";
 
 import {
-  AppBar,
+  // AppBar,
   Tabs,
   Tab,
   Typography,
@@ -20,13 +20,13 @@ import {
 } from "@material-ui/core";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Axios from "axios";
+// import Axios from "axios";
 
-import { CommonContext } from "../../context/CommonContext";
+// import { CommonContext } from "../../context/CommonContext";
 import { ViewContext } from "../../context/ViewContext";
 
 import ButtonBases from "../../components/Main/ButtonBases";
-import VoteGridList from "../../components/Grid/VoteGridList";
+// import VoteGridList from "../../components/Grid/VoteGridList";
 import VoteGridTitle from "../../components/Grid/VoteGridTitle";
 
 import categoryDats from "./dump.json";
@@ -53,9 +53,9 @@ import Leg from "./Advanced/leg";
 import Shoulder from "./Advanced/shoulder";
 import Triceps from "./Advanced/triceps";
 
-const TestClicked = () => {
-  console.log("Test 성공");
-};
+// const TestClicked = () => {
+//   console.log("Test 성공");
+// };
 ///////////////////////////////////////////////
 // main section (운동법)
 const ColorButton = withStyles((theme) => ({
@@ -70,7 +70,7 @@ const ColorButton = withStyles((theme) => ({
 
 const MainSection = (props) => {
   const { level } = props;
-  if (level == 0) {
+  if (level === 0) {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
@@ -151,7 +151,7 @@ const MainSection = (props) => {
         </Grid>
       </BrowserRouter>
     );
-  } else if (level == 1) {
+  } else if (level === 1) {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
@@ -217,7 +217,7 @@ const MainSection = (props) => {
         </Grid>
       </BrowserRouter>
     );
-  } else if (level == 2) {
+  } else if (level === 2) {
     return (
       <BrowserRouter>
         <Grid container spacing={2}>
@@ -336,7 +336,7 @@ const useGetCategoryDatas = (url) => {
   const [data, setData] = useState([]);
 
   const getDatas = async () => {
-    let respone = [];
+    // let respone = [];
 
     setData(categoryDats);
   };
@@ -386,6 +386,7 @@ const Recommend = (props) => {
         categoryDatas,
       }}
     >
+      <br />
       <Tabs
         value={appbarIndex + appbarIndexDelta}
         onChange={onChangeIndexHandler}
@@ -395,7 +396,6 @@ const Recommend = (props) => {
         aria-label="full width tabs example"
         className="big-indicator text-white"
       >
-        // 상단 카테고리
         {categoryDatas.map((categoryData, index) => (
           <Tab
             key={index}

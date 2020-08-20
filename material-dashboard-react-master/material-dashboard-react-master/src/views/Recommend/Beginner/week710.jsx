@@ -65,14 +65,14 @@ const rows = [
     </div>
   ),
   createData(
-    <img className="photo" src={onearmlatpulldown}></img>,
+    <img className="photo" src={onearmlatpulldown} alt=""></img>,
     <div>
       <h2>One-Arm Lap Pulldown</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cablerow}></img>,
+    <img className="photo" src={cablerow} alt=""></img>,
     <div>
       <h2>Cable Row</h2>
       <h4>2 X 13-15</h4>
@@ -80,49 +80,49 @@ const rows = [
   ),
 
   createData(
-    <img className="photo" src={barbellbenchpress}></img>,
+    <img className="photo" src={barbellbenchpress} alt=""></img>,
     <div>
       <h2>Barbell Bench Press</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={barbellmilitarypress}></img>,
+    <img className="photo" src={barbellmilitarypress} alt=""></img>,
     <div>
       <h2>Barbell Military Press</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={facepull}></img>,
+    <img className="photo" src={facepull} alt=""></img>,
     <div>
       <h2>Face Pull</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={tricepsropepushdown}></img>,
+    <img className="photo" src={tricepsropepushdown} alt=""></img>,
     <div>
       <h2>Triceps Rope Push-down</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellconcentrationcurl}></img>,
+    <img className="photo" src={dumbbellconcentrationcurl} alt=""></img>,
     <div>
       <h2>Dumbbell Curl </h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cabletwist}></img>,
+    <img className="photo" src={cabletwist} alt=""></img>,
     <div>
       <h2>Cable Twist</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={frontplank}></img>,
+    <img className="photo" src={frontplank} alt=""></img>,
     <div>
       <h2>Front Plank</h2>
       <h4>2 X 45-60초</h4>
@@ -140,63 +140,63 @@ const rows = [
     </div>
   ),
   createData(
-    <img className="photo" src={barbellfrontsquat}></img>,
+    <img className="photo" src={barbellfrontsquat} alt=""></img>,
     <div>
       <h2>BarBell Front Squat</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbellrearlunge}></img>,
+    <img className="photo" src={dumbellrearlunge} alt=""></img>,
     <div>
       <h2>Dumbbel Rear Lunge</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={romaniandeadlift}></img>,
+    <img className="photo" src={romaniandeadlift} alt=""></img>,
     <div>
       <h2>Romanian Deadlift</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedlegcurl}></img>,
+    <img className="photo" src={seatedlegcurl} alt=""></img>,
     <div>
       <h2>Seated Leg Curl</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyinglegcurl}></img>,
+    <img className="photo" src={lyinglegcurl} alt=""></img>,
     <div>
       <h2>Lying Leg Curl</h2>
       <h4>2 X 13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={standingdumbbellonelegcalfraise}></img>,
+    <img className="photo" src={standingdumbbellonelegcalfraise} alt=""></img>,
     <div>
       <h2>Dumbbell Calf Raise</h2>
       <h4>2 X 20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyingsidehipraise}></img>,
+    <img className="photo" src={lyingsidehipraise} alt=""></img>,
     <div>
       <h2>Lying Side Hip Raise</h2>
       <h4>2 X 20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bicyclecrunch}></img>,
+    <img className="photo" src={bicyclecrunch} alt=""></img>,
     <div>
       <h2>Bicycle Crunch</h2>
       <h4>2 X 20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyingleghipraise}></img>,
+    <img className="photo" src={lyingleghipraise} alt=""></img>,
     <div>
       <h2>Lying Leg Hip Raise</h2>
       <h4>2 X 15-20</h4>

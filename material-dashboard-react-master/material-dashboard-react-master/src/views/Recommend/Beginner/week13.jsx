@@ -45,70 +45,70 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={dumbbellsquat}></img>,
+    <img className="photo" src={dumbbellsquat} alt=""></img>,
     <div>
       <h2>Dumbbell-Squat</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={widegriplatpulldowm}></img>,
+    <img className="photo" src={widegriplatpulldowm} alt=""></img>,
     <div>
       <h2>Wide Grib Lat Pulldown</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedlegcurl}></img>,
+    <img className="photo" src={seatedlegcurl} alt=""></img>,
     <div>
       <h2>Seated Leg Curl</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellbenchpress}></img>,
+    <img className="photo" src={dumbbellbenchpress} alt=""></img>,
     <div>
       <h2>Dumbbell BenchPress</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={leverstandingcalfraise}></img>,
+    <img className="photo" src={leverstandingcalfraise} alt=""></img>,
     <div>
       <h2>Standing Calf Raise</h2>
       <h4>25-30</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cablerow}></img>,
+    <img className="photo" src={cablerow} alt=""></img>,
     <div>
       <h2>Cable Row</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bicyclecrunch}></img>,
+    <img className="photo" src={bicyclecrunch} alt=""></img>,
     <div>
       <h2>Bicycle Crunch</h2>
       <h4>15-20</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellshoulderpress}></img>,
+    <img className="photo" src={dumbbellshoulderpress} alt=""></img>,
     <div>
       <h2>Dumbbell Shoulder Press</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellkickback}></img>,
+    <img className="photo" src={dumbbellkickback} alt=""></img>,
     <div>
       <h2>Dumbbell Kick Back</h2>
       <h4>15-18</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bodyweightsquat}></img>,
+    <img className="photo" src={bodyweightsquat} alt=""></img>,
     <div>
       <h2>Squat</h2>
       <h4>15-18</h4>

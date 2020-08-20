@@ -45,21 +45,21 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barellsquat}></img>,
+    <img className="photo" src={barellsquat} alt=""></img>,
     <div>
       <h2>Barbell-Squat</h2>
       <h4>13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cableclosegrippulldown}></img>,
+    <img className="photo" src={cableclosegrippulldown} alt=""></img>,
     <div>
       <h2>Close Grib Lat Pulldown</h2>
       <h4>13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={pushup}></img>,
+    <img className="photo" src={pushup} alt=""></img>,
     <div>
       <h2>Push up</h2>
       <h4>13-15</h4>
@@ -67,49 +67,49 @@ const rows = [
   ),
 
   createData(
-    <img className="photo" src={dumbbelllunge}></img>,
+    <img className="photo" src={dumbbelllunge} alt=""></img>,
     <div>
       <h2>Dumbbell Lunge</h2>
       <h4>13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bentoveronearmdumbbellrow}></img>,
+    <img className="photo" src={bentoveronearmdumbbellrow} alt=""></img>,
     <div>
       <h2>Bentover One Arm Dumbbell Row</h2>
       <h4>13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyinglegcurl}></img>,
+    <img className="photo" src={lyinglegcurl} alt=""></img>,
     <div>
       <h2>Lying Leg Curl</h2>
       <h4>13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellonearmshoulderpress}></img>,
+    <img className="photo" src={dumbbellonearmshoulderpress} alt=""></img>,
     <div>
       <h2>Dumbbell One Arm Shoulder Press</h2>
       <h4>13-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={standingdumbbellonelegcalfraise}></img>,
+    <img className="photo" src={standingdumbbellonelegcalfraise} alt=""></img>,
     <div>
       <h2>Dumbbell One-leg Calf Raise</h2>
       <h4>25-30</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bicyclecrunch}></img>,
+    <img className="photo" src={bicyclecrunch} alt=""></img>,
     <div>
       <h2>Bicycle Crunch</h2>
       <h4>20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={ezbarcurl}></img>,
+    <img className="photo" src={ezbarcurl} alt=""></img>,
     <div>
       <h2>EZ Bar Curl</h2>
       <h4>13-15</h4>

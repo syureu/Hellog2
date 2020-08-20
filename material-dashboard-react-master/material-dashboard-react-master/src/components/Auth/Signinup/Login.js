@@ -1,13 +1,13 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import {
   Link,
-  Route,
-  Switch,
-  BrowserRouter,
-  withRouter,
+  // Route,
+  // Switch,
+  // BrowserRouter,
+  // withRouter,
 } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-import Admin from "layouts/Admin.js";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+// import Admin from "layouts/Admin.js";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.css";
 import { Button } from "react-bootstrap";
@@ -84,21 +84,21 @@ const Login = ({ setHasCookie }) => {
             response.headers.get("Authorization")
           );
 
-          var AuthID = sessionStorage.getItem("AuthID");
+          // var AuthID = sessionStorage.getItem("AuthID");
           // userInfo();
           userApi();
           // console.log(AuthID);
           console.log("pass");
-          var active = sessionStorage.getItem("active");
-          var birthday = sessionStorage.getItem("birthday");
-          var height = sessionStorage.getItem("height");
-          var limitPermitDay = sessionStorage.getItem("limitPermitDay");
-          var male = sessionStorage.getItem("male");
+          // var active = sessionStorage.getItem("active");
+          // var birthday = sessionStorage.getItem("birthday");
+          // var height = sessionStorage.getItem("height");
+          // var limitPermitDay = sessionStorage.getItem("limitPermitDay");
+          // var male = sessionStorage.getItem("male");
           var name = sessionStorage.getItem("name");
-          var phone = sessionStorage.getItem("phone");
-          var signUpDay = sessionStorage.getItem("signUpDay");
-          var username = sessionStorage.getItem("username");
-          var weight = sessionStorage.getItem("weight");
+          // var phone = sessionStorage.getItem("phone");
+          // var signUpDay = sessionStorage.getItem("signUpDay");
+          // var username = sessionStorage.getItem("username");
+          // var weight = sessionStorage.getItem("weight");
 
           console.log("이름검사");
           console.log(name);

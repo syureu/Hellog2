@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
-import store from 'store';
+import { useEffect, useState, useRef } from "react";
+import store from "store";
 
 export const usePrevious = (value) => {
   const ref = useRef();
@@ -28,22 +28,22 @@ export const useKeyPress = (targetKey) => {
   };
 
   // Add event listeners
-  useEffect(() => {
-    window.addEventListener('keydown', downHandler);
-    window.addEventListener('keyup', upHandler);
-    // Remove event listeners on cleanup
-    return () => {
-      window.removeEventListener('keydown', downHandler);
-      window.removeEventListener('keyup', upHandler);
-    };
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  // useEffect(() => {
+  //   window.addEventListener('keydown', downHandler);
+  //   window.addEventListener('keyup', upHandler);
+  //   // Remove event listeners on cleanup
+  //   return () => {
+  //     window.removeEventListener('keydown', downHandler);
+  //     window.removeEventListener('keyup', upHandler);
+  //   };
+  // }, []); // Empty array ensures that effect is only run on mount and unmount
 
   return keyPressed;
 };
 
 export const useLocalStorageSetState = (initialValue, name) => {
   if (!name) {
-    throw new Error('Name must be provided to persist to localStorage');
+    throw new Error("Name must be provided to persist to localStorage");
   }
   const actualInitialValue =
     store.get(name) !== undefined ? store.get(name) : initialValue;
@@ -60,7 +60,7 @@ export const useIntersectionObserver = ({
   target,
   onIntersect,
   threshold = 1.0,
-  rootMargin = '0px',
+  rootMargin = "0px",
 }) => {
   useEffect(() => {
     if (!root) {

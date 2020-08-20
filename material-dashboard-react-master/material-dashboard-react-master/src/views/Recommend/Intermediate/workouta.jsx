@@ -41,42 +41,42 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellbenchpress}></img>,
+    <img className="photo" src={barbellbenchpress} alt=""></img>,
     <div>
       <h2>Barbell Bench Press</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={inclinedumbbellbenchpress}></img>,
+    <img className="photo" src={inclinedumbbellbenchpress} alt=""></img>,
     <div>
       <h2>Incline Dumbbell BenchPress</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={arnoldpress}></img>,
+    <img className="photo" src={arnoldpress} alt=""></img>,
     <div>
       <h2>Arnold press</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={facepull}></img>,
+    <img className="photo" src={facepull} alt=""></img>,
     <div>
       <h2>Cable Face Pull</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={tricepsdips}></img>,
+    <img className="photo" src={tricepsdips} alt=""></img>,
     <div>
       <h2>Triceps Dips</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bicyclecrunch}></img>,
+    <img className="photo" src={bicyclecrunch} alt=""></img>,
     <div>
       <h2>Bicycle Crunch</h2>
       <h4>3 X 20-25</h4>

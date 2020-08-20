@@ -33,8 +33,6 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import recordDummy from "./record.json";
 
-import axios from "axios";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -56,10 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-var AuthID = sessionStorage.getItem("AuthID");
 var username = sessionStorage.getItem("name");
-
-console.log(username ? username : "fuck");
 
 const ArrowStyle = {
   cursor: "pointer",
@@ -146,7 +141,6 @@ const useOnChangeIndex = (categoryDatas) => {
   return [onChangeIndexHandler, appbarIndex, appbarIndexDelta];
 };
 
-const baseUrl = "https://i3d203.p.ssafy.io:29002";
 // const getRecords = (username) => {
 //   return fetch(baseUrl + "/api/records/myrecord/v2?name=" + username, {
 //     method: "GET",
@@ -281,47 +275,47 @@ const MySection = (props) => {
     console.log(e);
   }, []);
 
-  const onBeforeCreateSchedule = useCallback((scheduleData) => {
-    console.log("-----------");
-    console.log(scheduleData);
+  // const onBeforeCreateSchedule = useCallback((scheduleData) => {
+  //   console.log("-----------");
+  //   console.log(scheduleData);
 
-    const schedule = {
-      id: String(Math.random()),
-      title: scheduleData.title,
-      isAllDay: scheduleData.isAllDay,
-      start: scheduleData.start,
-      end: scheduleData.end,
-      category: scheduleData.isAllDay ? "allday" : "time",
-      dueDateClass: "",
-      location: scheduleData.location,
-      raw: {
-        class: scheduleData.raw["class"],
-      },
-      state: scheduleData.state,
-    };
+  //   const schedule = {
+  //     id: String(Math.random()),
+  //     title: scheduleData.title,
+  //     isAllDay: scheduleData.isAllDay,
+  //     start: scheduleData.start,
+  //     end: scheduleData.end,
+  //     category: scheduleData.isAllDay ? "allday" : "time",
+  //     dueDateClass: "",
+  //     location: scheduleData.location,
+  //     raw: {
+  //       class: scheduleData.raw["class"],
+  //     },
+  //     state: scheduleData.state,
+  //   };
 
-    cal.current.calendarInst.createScheduls([schedule]);
-  }, []);
+  //   cal.current.calendarInst.createScheduls([schedule]);
+  // }, []);
 
-  const onBeforeDeleteSchedule = useCallback((res) => {
-    console.log(res);
+  // const onBeforeDeleteSchedule = useCallback((res) => {
+  //   console.log(res);
 
-    const { id, calendarId } = res.schedule;
+  //   const { id, calendarId } = res.schedule;
 
-    cal.current.calendarInst.deleteSchedule(id, calendarId);
-  });
+  //   // cal.current.calendarInst.deleteSchedule(id, calendarId);
+  // });
 
-  const onBeforeUpdateSchedule = useCallback((e) => {
-    console.log(e);
+  // const onBeforeUpdateSchedule = useCallback((e) => {
+  //   console.log(e);
 
-    const { schedule, changes } = e;
+  //   const { schedule, changes } = e;
 
-    cal.current.calendarInst.updateSchedule(
-      schedule.id,
-      schedule.calendarId,
-      changes
-    );
-  }, []);
+  //   cal.current.calendarInst.updateSchedule(
+  //     schedule.id,
+  //     schedule.calendarId,
+  //     changes
+  //   );
+  // }, []);
 
   const handleClickNextButton = () => {
     const calendarInst = cal.current.getInstance();
@@ -464,9 +458,9 @@ const MySection = (props) => {
             calendars={record.calendar}
             schedules={record.schedule}
             onClickSchedule={onClickSchedule}
-            onBeforeCreateSchedule={onBeforeCreateSchedule}
-            onBeforeDeleteSchedule={onBeforeDeleteSchedule}
-            onBeforeUpdateSchedule={onBeforeUpdateSchedule}
+            // onBeforeCreateSchedule={onBeforeCreateSchedule}
+            // onBeforeDeleteSchedule={onBeforeDeleteSchedule}
+            // onBeforeUpdateSchedule={onBeforeUpdateSchedule}
             view="month"
             className="myCalendar"
           ></Calendar>
