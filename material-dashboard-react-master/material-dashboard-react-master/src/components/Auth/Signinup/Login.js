@@ -86,9 +86,9 @@ const Login = ({ setHasCookie }) => {
 
           var AuthID = sessionStorage.getItem("AuthID");
           // userInfo();
-          // userApi();
+          userApi();
           // console.log(AuthID);
-          // console.log("pass");
+          console.log("pass");
           var active = sessionStorage.getItem("active");
           var birthday = sessionStorage.getItem("birthday");
           var height = sessionStorage.getItem("height");

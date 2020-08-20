@@ -98,6 +98,8 @@ const Join = () => {
       });
       if (response.status === 200) {
         setJoinSuccess(true);
+        alert("회원이 되신 걸 환영합니다!");
+        window.location.href = "/login";
       }
     } catch (err) {
       console.error("login error", err);
@@ -200,12 +202,12 @@ const Join = () => {
           </MDBRow>
         </MDBContainer>
       )}
-      {isJoinSuccess && (
+      {/* {isJoinSuccess && (
         <div align="center">
           <p color="white">회원가입을 축하합니다!</p>
           <Link to="/login">로그인</Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
