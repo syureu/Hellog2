@@ -1,0 +1,10 @@
+.photo {
+  height: 400px;
+  width: 100%;
+  max-width: 100%;
+}
+.textbox {
+  display: contents;
+  text-align: center;
+  color: white;
+}
