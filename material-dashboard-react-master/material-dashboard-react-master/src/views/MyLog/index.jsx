@@ -120,7 +120,17 @@ const useOnChangeIndex = (categoryDatas) => {
   return [onChangeIndexHandler, appbarIndex, appbarIndexDelta];
 };
 
-const baseUrl = 'https://i3d203.p.ssafy.io:29002';
+const baseUrl = "https://i3d203.p.ssafy.io:29002";
+const getRecords = (username) => {
+  return fetch(baseUrl + "/api/records/myrecord/v2?name=" + username, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: AuthID,
+    },
+  });
+  // .then((response) => response.json());
+};
 
 const useGetRecordDatas = (username) => {
   // const { serverUrl, user, setUser } = useContext(CommonContext);
