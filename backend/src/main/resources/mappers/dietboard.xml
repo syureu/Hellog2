@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.dietboard.DietBoardRepository">
+
+    <!-- void insertDietBoard(DietBoard dietBoard); -->
+    <insert id="insertDietBoard" parameterType="DietBoard">
+        insert into
+            diet_board(
+                title,
+                writer,
+                write_time,
+                content,
+                picture
+            )
+        values(
+            #{title},
+            #{writer},
+            now(),
+            #{content},
+            #{picture}
+        )
+    </insert>
+
+    <!-- DietBoard selectDietBoard(Long boardId); -->
+    <select id="selectDietBoard" parameterType="Long" resultType="DietBoard">
+        select
+            *
+        from
+            diet_board
+        where
+            diet_board_content_id = #{boardId}
+    </select>
+
+    <!-- void updateDietBoard(DietBoard dietBoard); -->
+    <update id="updateDietBoard" parameterType="DietBoard">
+        update
+            diet_board
+        set
+            title = #{title},
+            writer = #{writer},
+            edit_time = now(),
+            content = #{content},
+            picture = #{picture}
+        where
+            diet_board_content_id = #{dietBoardContentId}
+    </update>
+
+    <!-- void deleteDietBoard(Long boardId); -->
+    <delete id="deleteDietBoard" parameterType="Long">
+        delete from
+            diet_board
+        where
+            diet_board_content_id = #{boardId}
+    </delete>
+
+    <!-- List<DietBoard> selectDietBoardList(); -->
+    <select id="selectDietBoardList" resultType="DietBoard">
+        select
+            *
+        from
+            diet_board
+    </select>
+
+</mapper>

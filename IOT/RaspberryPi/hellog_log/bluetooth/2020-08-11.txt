@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<string>", line 3, in connect
+_bluetooth.error: (112, 'Host is down')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/my-blue-soinc/blueSonic.py", line 7, in <module>
+    client_socket.connect(("98:D3:31:F7:48:CD",1))
+  File "<string>", line 5, in connect
+bluetooth.btcommon.BluetoothError: [Errno 112] Host is down
+ce or resource busy

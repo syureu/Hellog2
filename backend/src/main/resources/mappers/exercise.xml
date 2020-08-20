@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.exercise.ExerciseRepository">
+
+    <!-- void insertExercise(Exercise exercise); -->
+    <insert id="insertExercise" parameterType="Exercise">
+        insert into
+            exercise(
+                name,
+                part
+            )
+        values(
+            #{name},
+            #{part}
+        )
+    </insert>
+
+    <!-- Exercise selectExercise(Long exerciseId); -->
+    <select id="selectExercise" parameterType="Long" resultType="Exercise">
+        select
+            *
+        from
+            exercise
+        where
+            exercise_id = #{exerciseId}
+    </select>
+
+    <!-- void updateExercise(Exercise exercise); -->
+    <update id="updateExercise" parameterType="exercise">
+        update
+            exercise
+        set
+            name = #{name},
+            part = #{part}
+        where
+            exercise_id = #{exerciseId}
+    </update>
+
+    <!-- void deleteExercise(Long exerciseId); -->
+    <delete id="deleteExercise" parameterType="Long">
+        delete from
+            exercise
+        where
+            exercise_id = #{exerciseId}
+    </delete>
+</mapper>
