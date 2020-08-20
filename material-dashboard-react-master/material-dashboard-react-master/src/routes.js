@@ -18,22 +18,22 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Notifications from "@material-ui/icons/Notifications";
-import Unarchive from "@material-ui/icons/Unarchive";
-import Language from "@material-ui/icons/Language";
+// import LibraryBooks from "@material-ui/icons/LibraryBooks";
+// import BubbleChart from "@material-ui/icons/BubbleChart";
+// import LocationOn from "@material-ui/icons/LocationOn";
+// import Notifications from "@material-ui/icons/Notifications";
+// import Unarchive from "@material-ui/icons/Unarchive";
+// import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 // import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
-import Icons from "views/Icons/Icons.js";
+// import Icons from "views/Icons/Icons.js";
 // core components/views for RTL layout
 
 import Dietboard from "views/Dietboard/Dietboard.js";
 import MyLog from "views/MyLog/index.jsx";
 import Main from "views/Main/Main.js";
-import Login from "components/Auth/Signinup/Login.js";
+// import Login from "components/Auth/Signinup/Login.js";
 import Recommend from "views/Recommend/index";
 import abc from "views/abc/abc.js";
 
@@ -48,7 +48,7 @@ const dashboardRoutes = [
   },
   {
     path: "/Dietboard",
-    name: "Dietboard",
+    name: "식단관리",
     rtlName: "wtf",
     icon: "content_paste",
     component: Dietboard,
@@ -56,7 +56,7 @@ const dashboardRoutes = [
   },
   {
     path: "/MyLog",
-    name: "MyLog",
+    name: "운동기록",
     rtlName: "wtf",
     icon: "book_online",
     component: MyLog,
@@ -64,7 +64,7 @@ const dashboardRoutes = [
   },
   {
     path: "/Recommend",
-    name: "Recommend",
+    name: "운동추천",
     rtlName: "wtf",
     icon: "list",
     component: Recommend,
@@ -72,7 +72,7 @@ const dashboardRoutes = [
   },
   {
     path: "/abc",
-    name: "abc",
+    name: "지울예정",
     rtlName: "wtf",
     icon: "list",
     component: abc,
@@ -81,7 +81,7 @@ const dashboardRoutes = [
   {
     path: "/user",
     name: "Contact Us",
-    rtlName: "ملف تعريفي للمستخدم",
+    rtlName: "Contact Us",
     icon: Person,
     component: UserProfile,
     layout: "/admin",
@@ -94,14 +94,14 @@ const dashboardRoutes = [
   //   component: Login,
   //   layout: "/admin",
   // },
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/icons",
+  //   name: "Icons",
+  //   rtlName: "الرموز",
+  //   icon: BubbleChart,
+  //   component: Icons,
+  //   layout: "/admin",
+  // },
 ];
 
 export default dashboardRoutes;
