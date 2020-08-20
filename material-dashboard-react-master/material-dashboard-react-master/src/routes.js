@@ -50,14 +50,14 @@ const dashboardRoutes = [
     component: Main,
     layout: "/admin",
   },
-  {
-    path: "/Dietboard",
-    name: "식단관리",
-    rtlName: "wtf",
-    icon: "restaurant",
-    component: Dietboard,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/Dietboard",
+  //   name: "식단관리",
+  //   rtlName: "wtf",
+  //   icon: "restaurant",
+  //   component: Dietboard,
+  //   layout: "/admin",
+  // },
   {
     path: "/MyLog",
     name: "운동기록",

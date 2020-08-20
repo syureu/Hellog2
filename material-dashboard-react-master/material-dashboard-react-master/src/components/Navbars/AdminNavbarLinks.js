@@ -55,102 +55,22 @@ export default function AdminNavbarLinks() {
     window.location.href = "/";
   };
   return (
-    <div>
-      <div className={classes.searchWrapper}>
-        <CustomInput
-          formControlProps={{
-            className: classes.margin + " " + classes.search,
-          }}
-          inputProps={{
-            placeholder: "Search",
-            inputProps: {
-              "aria-label": "Search",
-            },
-          }}
-        />
-        <Button color="white" aria-label="edit" justIcon round>
-          <Search />
-        </Button>
-      </div>
-      <div className={classes.manager}>
-        <Button
-          color={window.innerWidth > 959 ? "transparent" : "white"}
-          justIcon={window.innerWidth > 959}
-          simple={!(window.innerWidth > 959)}
-          aria-owns={openProfile ? "profile-menu-list-grow" : null}
-          aria-haspopup="true"
-          onClick={handleClickProfile}
-          className={classes.buttonLink}
-        >
-          <Person className={classes.icons} />
-          <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Profile</p>
-          </Hidden>
-        </Button>
-        <Poppers
-          open={Boolean(openProfile)}
-          anchorEl={openProfile}
-          transition
-          disablePortal
-          className={
-            classNames({ [classes.popperClose]: !openProfile }) +
-            " " +
-            classes.popperNav
-          }
-        >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              id="profile-menu-list-grow"
-              style={{
-                transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom",
-              }}
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleCloseProfile}>
-                  <MenuList role="menu">
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Profile
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Settings
-                    </MenuItem>
-                    <Divider light />
-                    {/* <MenuItem
-                      onClick={handleCloseProfile}
-                      className={classes.dropdownItem}
-                    >
-                      Logout
-                    </MenuItem> */}
-                    <MenuItem className={classes.dropdownItem}>
-                      {id ? (
-                        <Button onClick={onLogout}>Logout</Button>
-                      ) : (
-                        <a href="/login">
-                          <Button>Login</Button>
-                        </a>
-                      )}
-                      {/* <Link to="/admin/login">
-                        <Button>Login</Button>
-                      </Link> */}
-                      <Switch>
-                        <Route path="/admin/login" component={Login}></Route>
-                      </Switch>
-                    </MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-        </Poppers>
-      </div>
+    <div className={classes.manager}>
+      <MenuItem className="d-flex justify-content-center">
+        {id ? (
+          <Button onClick={onLogout}>로그아웃</Button>
+        ) : (
+          <div>
+            <a href="/login">
+              <Button>로그인</Button>
+            </a>
+            &nbsp; &nbsp;
+            <a href="/signup">
+              <Button>회원가입</Button>
+            </a>
+          </div>
+        )}
+      </MenuItem>
     </div>
   );
 }

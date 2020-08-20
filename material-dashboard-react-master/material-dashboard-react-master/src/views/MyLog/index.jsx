@@ -31,6 +31,7 @@ import ButtonBases from "../../components/Main/ButtonBases";
 
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import recordDummy from "./record.json";
 
 import axios from "axios";
 
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
@@ -155,32 +156,34 @@ const baseUrl = "https://i3d203.p.ssafy.io:29002";
 //     },
 //   }).then((response) => response.json());
 // };
-const getRecords = [
-  {
-    countt: 8,
-    endTime: "2020-08-17T21:24:24.471+09:00",
-    exerciseName: "데드리프트",
-    sett: 3,
-    startTime: "2020-08-17T21:19:24.471+09:00",
-    weight: 100,
-  },
-  {
-    countt: 10,
-    endTime: "2020-08-20T21:24:24.471+09:00",
-    exerciseName: "스미스머신",
-    sett: 3,
-    startTime: "2020-08-20T21:19:24.471+09:00",
-    weight: 100,
-  },
-  {
-    countt: 10,
-    endTime: "2020-08-20T21:24:24.471+09:00",
-    exerciseName: "스위스여신",
-    sett: 3,
-    startTime: "2020-08-20T21:19:24.471+09:00",
-    weight: 100,
-  },
-];
+// const getRecords = [
+//   {
+//     countt: 8,
+//     endTime: "2020-08-17T21:24:24.471+09:00",
+//     exerciseName: "데드리프트",
+//     sett: 3,
+//     startTime: "2020-08-17T21:19:24.471+09:00",
+//     weight: 100,
+//   },
+//   {
+//     countt: 10,
+//     endTime: "2020-08-20T21:24:24.471+09:00",
+//     exerciseName: "스미스머신",
+//     sett: 3,
+//     startTime: "2020-08-20T21:19:24.471+09:00",
+//     weight: 100,
+//   },
+//   {
+//     countt: 10,
+//     endTime: "2020-08-20T21:24:24.471+09:00",
+//     exerciseName: "스위스여신",
+//     sett: 3,
+//     startTime: "2020-08-20T21:19:24.471+09:00",
+//     weight: 100,
+//   },
+// ];
+
+const getRecords = recordDummy;
 
 const useGetRecordDatas = (username) => {
   // const { serverUrl, user, setUser } = useContext(CommonContext);
@@ -193,14 +196,23 @@ const useGetRecordDatas = (username) => {
 
     let schedules = records.map((record, index) => {
       let body =
-        "세트 : " +
-        record.sett +
-        "<br/>" +
-        " 무게 : " +
+        // "세트 : " +
+        // record.sett +
+        // "<br/>" +
+        // " 무게 : " +
+        // record.weight +
+        // " kg" +
+        // "<br/>" +
+        // " 횟수 : " +
+        // record.countt;
         record.weight +
+        " kg" +
         "<br/>" +
-        " 횟수 : " +
-        record.countt;
+        record.countt +
+        " 회" +
+        " X " +
+        record.sett +
+        " 세트";
 
       let start = new Date(record.startTime).toISOString();
       let end = new Date(record.endTime).toISOString();
@@ -396,7 +408,7 @@ const MySection = (props) => {
     },
   };
 
-  const record = useGetRecordDatas("coach");
+  const record = useGetRecordDatas("");
 
   const classes = useStyles();
 
@@ -442,21 +454,37 @@ const MySection = (props) => {
           </Box>
         </Grid>
         <Grid>
-          <Calendar
-            ref={cal}
-            height="1000"
-            useCreationPopup={true}
-            useDetailPopup={true}
-            template={templates}
-            calendars={record.calendar}
-            schedules={record.schedule}
-            onClickSchedule={onClickSchedule}
-            onBeforeCreateSchedule={onBeforeCreateSchedule}
-            onBeforeDeleteSchedule={onBeforeDeleteSchedule}
-            onBeforeUpdateSchedule={onBeforeUpdateSchedule}
-            view="month"
-            className="myCalendar"
-          ></Calendar>
+          {username === "헬창" ? (
+            <Calendar
+              ref={cal}
+              height="1000"
+              useCreationPopup={true}
+              useDetailPopup={true}
+              template={templates}
+              calendars={record.calendar}
+              schedules={record.schedule}
+              onClickSchedule={onClickSchedule}
+              onBeforeCreateSchedule={onBeforeCreateSchedule}
+              onBeforeDeleteSchedule={onBeforeDeleteSchedule}
+              onBeforeUpdateSchedule={onBeforeUpdateSchedule}
+              view="month"
+              className="myCalendar"
+            ></Calendar>
+          ) : (
+            <Calendar
+              ref={cal}
+              height="1000"
+              useCreationPopup={true}
+              useDetailPopup={true}
+              template={templates}
+              onClickSchedule={onClickSchedule}
+              onBeforeCreateSchedule={onBeforeCreateSchedule}
+              onBeforeDeleteSchedule={onBeforeDeleteSchedule}
+              onBeforeUpdateSchedule={onBeforeUpdateSchedule}
+              view="month"
+              className="myCalendar"
+            ></Calendar>
+          )}
         </Grid>
       </>
     );
@@ -521,8 +549,8 @@ const MyLog = (props) => {
   return (
     <div className={classes.root}>
       <Grid className="vote-grid-title-grid">
-        <Typography variant="h2" align="center" className={classes.typography}>
-          {username ? username : "조상님이 도와주냐?"}
+        <Typography variant="h5" align="center" className={classes.typography}>
+          {username ? username : "기록을 보고싶다면 로그인을 해주세요"}
         </Typography>
       </Grid>
       <br></br>
@@ -559,7 +587,7 @@ const MyLog = (props) => {
         >
           <Grid className="vote-grid-title-grid">
             <Typography
-              variant="h2"
+              variant="h4"
               align="center"
               className={classes.typography}
             >

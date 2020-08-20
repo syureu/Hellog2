@@ -119,7 +119,7 @@ export default function Sidebar(props) {
         >
           {brand}
           <div className={classes.sidebarWrapper}>
-            {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+            <AdminNavbarLinks />
             {links}
           </div>
           <div
@@ -140,7 +140,10 @@ export default function Sidebar(props) {
           }}
         >
           {brand}
-          <div className={classes.sidebarWrapper}>{links}</div>
+          <div className={classes.sidebarWrapper}>
+            <AdminNavbarLinks />
+            {links}
+          </div>
           <div
             className={classes.background}
             style={{ backgroundImage: { sidebarImg } }}
