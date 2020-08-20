@@ -128,7 +128,7 @@ export default function Week47() {
 
   return (
     <div>
-      <div align="center">
+      <div className="textbox">
         <h2>전신 운동 주차</h2>
         <ul>
           <li>전체를 1세트, 총 2세트 진행</li>

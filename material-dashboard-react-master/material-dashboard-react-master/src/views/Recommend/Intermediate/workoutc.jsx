@@ -103,7 +103,7 @@ export default function Week13() {
 
   return (
     <div>
-      <div align="center">
+      <div className="textbox">
         <h3>주의사항</h3>
         <ul>
           <li>슈퍼세트로 운동을 진행합니다</li>

@@ -110,16 +110,16 @@ const MainSection = (props) => {
           <Grid item xs={6} align="right">
             <Link to="/Recommend/stretching">
               <ColorButton>Warm-up</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/beginner/week13">
               <ColorButton>1-3 Weeks</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/beginner/week47">
               <ColorButton>4-6 Weeks</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/beginner/week710">
               <ColorButton>7-9 Weeks</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/beginner/week1012">
               <ColorButton>10-12 Weeks</ColorButton>
             </Link>
@@ -183,13 +183,13 @@ const MainSection = (props) => {
           <Grid item xs={6} align="right">
             <Link to="/Recommend/stretching">
               <ColorButton color="secondary">Warm-up</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/intermediate/workouta">
               <ColorButton color="secondary">A</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/intermediate/workoutb">
               <ColorButton color="secondary">B</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/intermediate/workoutc">
               <ColorButton color="secondary">C</ColorButton>
             </Link>
@@ -249,19 +249,19 @@ const MainSection = (props) => {
           <Grid item xs={6} align="right">
             <Link to="/Recommend/advanced/chest">
               <ColorButton color="secondary">Chest</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/advanced/back">
               <ColorButton color="secondary">Back</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/advanced/leg">
               <ColorButton color="secondary">Leg</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/advanced/shoulder">
               <ColorButton color="secondary">Shoulder</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/advanced/biceps">
               <ColorButton color="secondary">Biceps</ColorButton>
-            </Link>
+            </Link>{" "}
             <Link to="/Recommend/advanced/triceps">
               <ColorButton color="secondary">Triceps</ColorButton>
             </Link>
