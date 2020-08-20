@@ -34,7 +34,7 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={stretching}></img>,
+    <img className="photo" src={stretching} alt=""></img>,
     <div>
       <h4> 오늘 운동할 부위를</h4>
       <h4> 집중적으로 풀어주세요</h4>

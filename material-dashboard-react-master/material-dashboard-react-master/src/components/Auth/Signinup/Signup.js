@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle";
+// import { Link } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+// import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle";
 import "./style.css";
 import { Button } from "react-bootstrap";
 
@@ -15,7 +15,7 @@ const Join = () => {
 
   const [male, setMale] = useState("");
   const [height, setHeight] = useState("");
-  const [idValid, setIdValid] = useState(false);
+  // const [idValid, setIdValid] = useState(false);
   const [isJoinSuccess, setJoinSuccess] = useState(false);
   const baseUrl = "https://i3d203.p.ssafy.io:29002";
 
@@ -66,7 +66,7 @@ const Join = () => {
     }
     var pw = userPw;
     var rep = userRePw;
-    if (pw != rep) {
+    if (pw !== rep) {
       alert("비밀번호가 일치하지 않습니다");
       return false;
     }

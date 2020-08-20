@@ -41,42 +41,42 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellbenchpress}></img>,
+    <img className="photo" src={barbellbenchpress} alt=""></img>,
     <div>
       <h2>Barbell Bench Press</h2>
       <h4>6 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dip}></img>,
+    <img className="photo" src={dip} alt=""></img>,
     <div>
       <h2>Dips</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelchestfly}></img>,
+    <img className="photo" src={dumbbelchestfly} alt=""></img>,
     <div>
       <h2>Dumbbel Chest Fly</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={inclinedumbbelbenchpress}></img>,
+    <img className="photo" src={inclinedumbbelbenchpress} alt=""></img>,
     <div>
       <h2>Incline Dumbbel Bench Press</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={inclinebarbellbenchpress}></img>,
+    <img className="photo" src={inclinebarbellbenchpress} alt=""></img>,
     <div>
       <h2>Incline Barbell Bench Press</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={pecdecfly}></img>,
+    <img className="photo" src={pecdecfly} alt=""></img>,
     <div>
       <h2>Pecdecfly</h2>
       <h4>4 X 12-20</h4>

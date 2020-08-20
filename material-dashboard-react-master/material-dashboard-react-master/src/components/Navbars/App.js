@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Main from "views/Main/Main";
-import { CookiesProvider } from "react-cookie";
+// import Main from "views/Main/Main";
+// import { CookiesProvider } from "react-cookie";
 import Login from "components/Auth/Signinup/Login.js";
 import Signup from "components/Auth/Signinup/Signup.js";
-import machine from "views/Machine/machine.jsx";
-import Profilebar from "components/Navbars/AdminNavbarLinks.js";
+// import machine from "views/Machine/machine.jsx";
+// import Profilebar from "components/Navbars/AdminNavbarLinks.js";
 
 // core components
 import Admin from "layouts/Admin.js";
@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   render() {
-    const { logged, onLogout } = this.state;
+    // const { logged, onLogout } = this.state;
     // exports.logged = logged;
     return (
       <BrowserRouter>

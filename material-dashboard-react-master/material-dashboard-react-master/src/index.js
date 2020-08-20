@@ -20,9 +20,9 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import {
   BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
+  // Route,
+  // Switch,
+  // Redirect,
 } from "react-router-dom";
 import App from "./components/Navbars/App.js";
 
@@ -32,9 +32,6 @@ const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
-    {/* <CookiesProvider>
-      <Main />
-    </CookiesProvider> */}
     <App />
   </Router>,
   document.getElementById("root")

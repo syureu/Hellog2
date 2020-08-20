@@ -42,49 +42,53 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbelldeadlift}></img>,
+    <img className="photo" src={barbelldeadlift} alt=""></img>,
     <div>
       <h2>Barbell Deadlift</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={pullup}></img>,
+    <img className="photo" src={pullup} alt=""></img>,
     <div>
       <h2>Pull up</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedcablerow}></img>,
+    <img className="photo" src={seatedcablerow} alt=""></img>,
     <div>
       <h2>Seated Cable Row</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={bentoverdumbbellrow}></img>,
+    <img className="photo" src={bentoverdumbbellrow} alt=""></img>,
     <div>
       <h2>Bent Over Dumbbell Row</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={ezbarcurl}></img>,
+    <img className="photo" src={ezbarcurl} alt=""></img>,
     <div>
       <h2>EZ-Bar Curl</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={wheelrollout}></img>,
+    <img className="photo" src={wheelrollout} alt=""></img>,
     <div>
       <h2>Wheel Rollout</h2>
       <h4>3 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelllyingexternalshoulderrotation}></img>,
+    <img
+      className="photo"
+      src={dumbbelllyingexternalshoulderrotation}
+      alt=""
+    ></img>,
     <div>
       <h2>Dumbbell Lying Shoulder</h2>
       <h4>2 X 15-20</h4>

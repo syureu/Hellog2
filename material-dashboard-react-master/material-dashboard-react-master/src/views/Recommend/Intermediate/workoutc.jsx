@@ -42,49 +42,49 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellsquat}></img>,
+    <img className="photo" src={barbellsquat} alt=""></img>,
     <div>
       <h2>Barbell Squat</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelllunge}></img>,
+    <img className="photo" src={dumbbelllunge} alt=""></img>,
     <div>
       <h2>Dumbbell Lunge</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={inverselegcurl}></img>,
+    <img className="photo" src={inverselegcurl} alt=""></img>,
     <div>
       <h2>Inverse Leg Curl</h2>
       <h4>3 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedcalfraise}></img>,
+    <img className="photo" src={seatedcalfraise} alt=""></img>,
     <div>
       <h2>Seated Calf Raise</h2>
       <h4>2 X 20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={standingcalfraise}></img>,
+    <img className="photo" src={standingcalfraise} alt=""></img>,
     <div>
       <h2>Standing Calf Raise</h2>
       <h4>2 X 20-25</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cabledownuptwist}></img>,
+    <img className="photo" src={cabledownuptwist} alt=""></img>,
     <div>
       <h2>Cable Down Up Twist</h2>
       <h4>2 X 9-11</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={hanginglegraise}></img>,
+    <img className="photo" src={hanginglegraise} alt=""></img>,
     <div>
       <h2>Hanging Leg Raise</h2>
       <h4>3 X 9-11</h4>

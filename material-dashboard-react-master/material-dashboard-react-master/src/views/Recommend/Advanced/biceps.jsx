@@ -41,28 +41,28 @@ function createData(pic, exp, prog) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellcurl}></img>,
+    <img className="photo" src={barbellcurl} alt=""></img>,
     <div>
       <h2>Barbell Curl</h2>
       <h4>5 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelconcentrationcurl}></img>,
+    <img className="photo" src={dumbbelconcentrationcurl} alt=""></img>,
     <div>
       <h2>Dumbbel Concentration Curl</h2>
       <h4>5 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelcurl}></img>,
+    <img className="photo" src={dumbbelcurl} alt=""></img>,
     <div>
       <h2>Dumbbel Curl</h2>
       <h4>5 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellhammercurl}></img>,
+    <img className="photo" src={dumbbellhammercurl} alt=""></img>,
     <div>
       <h2>Dumbbel Hammer Curl</h2>
       <h4>5 X 8-15</h4>
@@ -70,14 +70,14 @@ const rows = [
     ""
   ),
   createData(
-    <img className="photo" src={ezbarcurl}></img>,
+    <img className="photo" src={ezbarcurl} alt=""></img>,
     <div>
       <h2>EZ Bar Curl</h2>
       <h4>5 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={preachercurl}></img>,
+    <img className="photo" src={preachercurl} alt=""></img>,
     <div>
       <h2>Preacher Curl</h2>
       <h4>5 X 8-15</h4>

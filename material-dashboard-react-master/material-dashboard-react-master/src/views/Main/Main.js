@@ -48,10 +48,10 @@ export default function Main() {
             <h2>헬로그와 함께 변화를 시작해보세요.</h2>
             <p>
               <a href="/login">
-                <Button className="btn btn-light">로그인</Button>
+                <Button className="btn btn-danger">로그인</Button>
               </a>{" "}
               <a href="/signup">
-                <Button className="btn btn-light">회원가입</Button>
+                <Button className="btn btn-danger">회원가입</Button>
               </a>
             </p>
           </Carousel.Caption>

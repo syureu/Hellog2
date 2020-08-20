@@ -42,49 +42,49 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellsquat}></img>,
+    <img className="photo" src={barbellsquat} alt=""></img>,
     <div>
       <h2>Barbell Squat</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={barbelllegdeadlift}></img>,
+    <img className="photo" src={barbelllegdeadlift} alt=""></img>,
     <div>
       <h2>Barbell Leg Deadlift</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellunge}></img>,
+    <img className="photo" src={dumbbellunge} alt=""></img>,
     <div>
       <h2>Dumbbel Lunge</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={legpress}></img>,
+    <img className="photo" src={legpress} alt=""></img>,
     <div>
       <h2>Leg Press</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={legextension}></img>,
+    <img className="photo" src={legextension} alt=""></img>,
     <div>
       <h2>Leg Extension</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyinglegcurl}></img>,
+    <img className="photo" src={lyinglegcurl} alt=""></img>,
     <div>
       <h2>Lying Leg Curl</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seatedlegcurl}></img>,
+    <img className="photo" src={seatedlegcurl} alt=""></img>,
     <div>
       <h2>Seated Leg Curl</h2>
       <h4>5 X 12-15</h4>

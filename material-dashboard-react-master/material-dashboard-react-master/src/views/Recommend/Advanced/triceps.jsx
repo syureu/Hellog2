@@ -40,28 +40,32 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellseatedoverheadtricepsextension}></img>,
+    <img
+      className="photo"
+      src={barbellseatedoverheadtricepsextension}
+      alt=""
+    ></img>,
     <div>
       <h2>Barbell Seated Overhead T-Extension</h2>
       <h4>4 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={lyingbarbelltricepsextension}></img>,
+    <img className="photo" src={lyingbarbelltricepsextension} alt=""></img>,
     <div>
       <h2>Lying Barbell T-Extension</h2>
       <h4>4 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={tricepsdip}></img>,
+    <img className="photo" src={tricepsdip} alt=""></img>,
     <div>
       <h2>Triceps Dips</h2>
       <h4>4 X 8-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={tricepsropepushdown}></img>,
+    <img className="photo" src={tricepsropepushdown} alt=""></img>,
     <div>
       <h2>Triceps Rope Push Down</h2>
       <h4>4 X 8-15</h4>

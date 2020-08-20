@@ -41,42 +41,42 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellmilitarypress}></img>,
+    <img className="photo" src={barbellmilitarypress} alt=""></img>,
     <div>
       <h2>Barbell Military Press</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={behindneckpress}></img>,
+    <img className="photo" src={behindneckpress} alt=""></img>,
     <div>
       <h2>Behind Neck Press</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cableexternalrotation}></img>,
+    <img className="photo" src={cableexternalrotation} alt=""></img>,
     <div>
       <h2>Cable External Rotation</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelllateralraise}></img>,
+    <img className="photo" src={dumbbelllateralraise} alt=""></img>,
     <div>
       <h2>Dumbbel Lateral Raise</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellrearlateralraise}></img>,
+    <img className="photo" src={dumbbellrearlateralraise} alt=""></img>,
     <div>
       <h2>Dumbbel Rear Lateral Raise</h2>
       <h4>5 X 12-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={seateddumbbeloverheadpress}></img>,
+    <img className="photo" src={seateddumbbeloverheadpress} alt=""></img>,
     <div>
       <h2>Seated Dumbbel Overhead Press</h2>
       <h4>5 X 12-15</h4>

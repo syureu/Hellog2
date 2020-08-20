@@ -1,40 +1,34 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   GridList,
   Grid,
   MenuItem,
   FormControl,
   Select,
-  Typography,
 } from "@material-ui/core";
 import TuneIcon from "@material-ui/icons/Tune";
-import Axios from "axios";
-import { useHistory } from "react-router-dom";
 import { CommonContext } from "../../../context/CommonContext";
-import { ViewContext } from "../../../context/ViewContext";
 import { useNowCols } from "../../../common/MediaQueryHooks";
-import { usePrevious } from "../../../common/CommonHooks";
+// import { usePrevious } from "../../../common/CommonHooks";
 import { useInfiniteScroll } from "../../../common/InfiniteScroll";
 import VoteGridItem from "./../VoteGridItem/";
 
 import voteDatas from "./dump.json";
 
 const useGetdata = (value, index, categoryData, itemType, itemValue) => {
-  const { serverUrl, user, setUser } = useContext(CommonContext);
+  const { user } = useContext(CommonContext);
 
   const [filterItem, setFilterItem] = useState("default");
-  const filterItemPrevious = usePrevious(filterItem);
   const [gridItemDatas, setGridItemDatas] = useState([]);
-  const nextToken = useRef(null);
   const isScrollBottom = useInfiniteScroll();
 
   const getDatas = async () => {
     setGridItemDatas(voteDatas.items);
   };
 
-  const getNextPage = async () => {
-    await getDatas();
-  };
+  // const getNextPage = async () => {
+  //   await getDatas();
+  // };
 
   const onChangeFilterItem = (event) => {
     setFilterItem(event.target.value);

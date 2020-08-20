@@ -1,13 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import Axios from "axios";
+import React, { useContext, useState } from "react";
+// import { useHistory } from "react-router-dom";
+// import Axios from "axios";
 
-import { Grid, Typography, Avatar, Badge } from "@material-ui/core";
+import { Grid, Typography, Avatar } from "@material-ui/core";
 import HowToVoteIcon from "@material-ui/icons/HowToVote";
 import MessageIcon from "@material-ui/icons/Message";
 import CheckIcon from "@material-ui/icons/Check";
-import VideogameAssetIcon from "@material-ui/icons/VideogameAsset";
-import { withStyles } from "@material-ui/core/styles";
+// import VideogameAssetIcon from "@material-ui/icons/VideogameAsset";
+// import { withStyles } from "@material-ui/core/styles";
 
 import { CommonContext } from "../../../context/CommonContext";
 import { ViewContext } from "../../../context/ViewContext";
@@ -22,19 +22,19 @@ export default function VoteGridItem(props) {
 
   const [sw, setSw] = useState(itemData.vote_state === "Y" ? true : false);
 
-  let history = useHistory();
+  // let history = useHistory();
 
   const {
-    user,
-    serverUrl,
+    // user,
+    // serverUrl,
     serverImgUrl,
     setInfoData,
     setInfoDetailDialogOpen,
-    setUser,
+    // setUser,
   } = useContext(CommonContext);
 
   const infoOpenHandler = async (event) => {
-    let respone = [];
+    // let respone = [];
 
     setInfoData(voteDetailData);
     setInfoDetailDialogOpen(true);
@@ -42,7 +42,7 @@ export default function VoteGridItem(props) {
 
   const handleVoteState = async () => {
     setSw(!sw);
-    const voteState = sw ? "N" : "Y";
+    // const voteState = sw ? "N" : "Y";
 
     alert("Not implemented yet.");
   };

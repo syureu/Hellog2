@@ -43,56 +43,56 @@ function createData(pic, exp) {
 
 const rows = [
   createData(
-    <img className="photo" src={barbellbentoverrow}></img>,
+    <img className="photo" src={barbellbentoverrow} alt=""></img>,
     <div>
       <h2>Barbell Bent Over Row</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={barbelldeadlift}></img>,
+    <img className="photo" src={barbelldeadlift} alt=""></img>,
     <div>
       <h2>Barbell Deadlift</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={cablerow}></img>,
+    <img className="photo" src={cablerow} alt=""></img>,
     <div>
       <h2>Cable Row</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbelpullover}></img>,
+    <img className="photo" src={dumbbelpullover} alt=""></img>,
     <div>
       <h2>Dumbbel Pull Over</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={dumbbellrow}></img>,
+    <img className="photo" src={dumbbellrow} alt=""></img>,
     <div>
       <h2>Dummbell Row</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={tbarrow}></img>,
+    <img className="photo" src={tbarrow} alt=""></img>,
     <div>
       <h2>T bar Row</h2>
       <h4>4 X 10-15</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={pullup}></img>,
+    <img className="photo" src={pullup} alt=""></img>,
     <div>
       <h2>Pull up</h2>
       <h4>4 X MAX</h4>
     </div>
   ),
   createData(
-    <img className="photo" src={romaniandeadlift}></img>,
+    <img className="photo" src={romaniandeadlift} alt=""></img>,
     <div>
       <h2>Romanian Deadlift</h2>
       <h4>4 X 10-15</h4>
