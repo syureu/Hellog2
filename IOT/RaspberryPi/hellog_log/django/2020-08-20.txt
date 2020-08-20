@@ -1,0 +1,158 @@
+[20/Aug/2020 17:03:23] "GET /rasp_server/ HTTP/1.1" 200 2775
+Not Found: /favicon.ico
+[20/Aug/2020 17:03:23] "GET /favicon.ico HTTP/1.1" 404 2084
+[20/Aug/2020 17:03:23] "GET /rasp_server/access/ HTTP/1.1" 200 4294
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:03:26.470794) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:03:26] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:03:27.681878) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:03:27] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:03:28] "GET /rasp_server/setting/ HTTP/1.1" 200 2851
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:03:28.705357) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:03:28] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:03:30] "GET /rasp_server/renew_machines/ HTTP/1.1" 200 3405
+[20/Aug/2020 17:03:32] "GET /rasp_server/selected/%EC%BC%80%EC%9D%B4%EB%B8%94%20%EB%A8%B8%EC%8B%A0/ HTTP/1.1" 302 0
+[20/Aug/2020 17:03:32] "GET /rasp_server/user_login/ HTTP/1.1" 200 4217
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:03:34.949155) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:03:34] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:03:36.075323) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:03:36] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:03:37] "GET /rasp_server/user_nfc_login/ HTTP/1.1" 200 3638
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:03:37.098717) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:03:37] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+[20/Aug/2020 17:03:39] "GET /rasp_server/select_exercise/%EC%82%BC%EB%91%90%EC%9A%B4%EB%8F%99/2/ HTTP/1.1" 200 10313
+[20/Aug/2020 17:03:42] "GET /rasp_server/working_set/ HTTP/1.1" 200 7529
+[20/Aug/2020 17:03:57] "GET /rasp_server/main/ HTTP/1.1" 200 10313
+[20/Aug/2020 17:04:01] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:02] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:03] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:04] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:05] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:06] "GET /rasp_server/up/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:06] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:07] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:08] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:09] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:10] "GET /rasp_server/up/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:10] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:11] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:12] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:12] "GET /rasp_server/up/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:13] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:14] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:14] "GET /rasp_server/up/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:15] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:16] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:17] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:18] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:19] "GET /rasp_server/count_clear/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:22] "GET /rasp_server/check/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:23] "GET /rasp_server/count_clear/ HTTP/1.1" 200 10
+[20/Aug/2020 17:04:27] "GET /rasp_server/count_clear/ HTTP/1.1" 200 10
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 20, 2020 - 17:03:18
+Django version 2.1.15, using settings 'hellog.settings'
+Starting development server at http://0.0.0.0:8888/
+Quit the server with CONTROL-C.
+08C5A54E766E56A6F8430524D46FB0FEE37B775701C44995DAAF36640E33D265
+res ---------------
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYwNX0.C8DHCIMNuZsd7_m-7H_MU-W9euFgu9ZDEJbrax7OiFUoj8v2IjgDEgny2O4h20JZkZ7c8e57vMHLDPsx2Oi5EQ
+08C5A54E766E56A6F8430524D46FB0FEE37B775701C44995DAAF36640E33D265
+res ---------------
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYwN30.hTzKlao6Bd_TRHF-177UXuUDt0Vmy-ffZkeWjd66qtlk0xHA4ScyMXZS-H1HYNcf70BoShaCrKHfQ7R4el8wtw
+08C5A54E766E56A6F8430524D46FB0FEE37B775701C44995DAAF36640E33D265
+res ---------------
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYwOH0.pHeraPLv-_fnuoJ8DJ5j54nrKFVcRs2RO0OkIg4NSozNr0CcWXZWaW7ZACTR63aJzyvWopdr41qvw2VovKq0yA
+케이블 머신
+레그프레스
+렛풀다운
+케이블 머신
+There is no machine had seleted
+08C5A54E766E56A6F8430524D46FB0FEE37B775701C44995DAAF36640E33D265
+res ---------------
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYxNH0.asiTTTeUK2v9FVeF8fW1LDQ05QuJ0AVjgKautAW94olYEw3XKi6skHqtplTPXPqbuPRJz0XtxOccTBNYHUamaw
+08C5A54E766E56A6F8430524D46FB0FEE37B775701C44995DAAF36640E33D265
+res ---------------
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYxNX0.qpR6fkosSP08nlTLbmvmVP8HE8RRuaaof8LmVym58478nIbJRgA8ewSakBnvPvPQ4iE8djXBpTOya89BI1aZpQ
+08C5A54E766E56A6F8430524D46FB0FEE37B775701C44995DAAF36640E33D265
+res ---------------
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYxNn0.yOqMTSG6awdYysdvMBDtsatYhdBR-UsW3uMNFPgKv1Csb73CrkJQO2gI9GFyVfWtlbvl5OB5GxIa4S6c7W6yqw
+[{'equipmentExerciseId': 1, 'equipmentId': 1, 'exerciseId': 1, 'name': '광배근운동', 'part': '전신'}, {'equipmentExerciseId': 2, 'equipmentId': 1, 'exerciseId': 2, 'name': '삼두운동', 'part': '코어'}, {'equipmentExerciseId': 3, 'equipmentId': 1, 'exerciseId': 3, 'name': '이두운동', 'part': '정신력'}, {'equipmentExerciseId': 4, 'equipmentId': 1, 'exerciseId': 4, 'name': '가슴 운동', 'part': '자극충'}]
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb2FjaCIsImV4cCI6MTU5ODc3NDYxNH0.asiTTTeUK2v9FVeF8fW1LDQ05QuJ0AVjgKautAW94olYEw3XKi6skHqtplTPXPqbuPRJz0XtxOccTBNYHUamaw
+200
+[{'recordId': 1, 'id': 3, 'equipmentExerciseId': 1, 'sett': 10, 'weight': 100, 'countt': 30, 'startTime': '2020-08-12T16:23:00.000+09:00', 'endTime': '2020-08-12T16:25:00.000+09:00'}, {'recordId': 10, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T07:23:30.000+09:00', 'endTime': '2020-08-14T07:23:30.000+09:00'}, {'recordId': 11, 'id': 3, 'equipmentExerciseId': 1, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T07:23:31.000+09:00', 'endTime': '2020-08-14T07:23:31.000+09:00'}, {'recordId': 12, 'id': 3, 'equipmentExerciseId': 1, 'sett': 3, 'weight': 35, 'countt': 0, 'startTime': '2020-08-14T07:23:32.000+09:00', 'endTime': '2020-08-14T07:23:33.000+09:00'}, {'recordId': 47, 'id': 3, 'equipmentExerciseId': 1, 'sett': 3, 'weight': 100, 'countt': 8, 'startTime': '2020-08-17T21:19:24.000+09:00', 'endTime': '2020-08-17T21:24:24.000+09:00'}, {'recordId': 48, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-19T10:54:13.000+09:00', 'endTime': '2020-08-19T10:54:31.000+09:00'}, {'recordId': 60, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T15:42:17.000+09:00', 'endTime': '2020-08-20T15:42:18.000+09:00'}, {'recordId': 61, 'id': 3, 'equipmentExerciseId': 1, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T15:42:19.000+09:00', 'endTime': '2020-08-20T15:42:20.000+09:00'}, {'recordId': 62, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T15:44:35.000+09:00', 'endTime': '2020-08-20T15:44:35.000+09:00'}, {'recordId': 63, 'id': 3, 'equipmentExerciseId': 1, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T15:44:36.000+09:00', 'endTime': '2020-08-20T15:44:36.000+09:00'}, {'recordId': 64, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 6, 'startTime': '2020-08-20T15:49:39.000+09:00', 'endTime': '2020-08-20T15:49:56.000+09:00'}, {'recordId': 65, 'id': 3, 'equipmentExerciseId': 1, 'sett': 2, 'weight': 20, 'countt': 5, 'startTime': '2020-08-20T15:50:01.000+09:00', 'endTime': '2020-08-20T15:50:16.000+09:00'}, {'recordId': 66, 'id': 3, 'equipmentExerciseId': 1, 'sett': 3, 'weight': 20, 'countt': 4, 'startTime': '2020-08-20T15:50:19.000+09:00', 'endTime': '2020-08-20T15:51:01.000+09:00'}, {'recordId': 67, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 68, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 69, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 70, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 71, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 72, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 73, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 10, 'startTime': '2020-08-20T16:41:07.000+09:00', 'endTime': '2020-08-20T16:42:07.000+09:00'}, {'recordId': 74, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T16:43:39.000+09:00', 'endTime': '2020-08-20T16:43:40.000+09:00'}, {'recordId': 75, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T16:43:39.000+09:00', 'endTime': '2020-08-20T16:43:40.000+09:00'}, {'recordId': 76, 'id': 3, 'equipmentExerciseId': 1, 'sett': 1, 'weight': 35, 'countt': 4, 'startTime': '2020-08-20T17:00:25.000+09:00', 'endTime': '2020-08-20T17:00:40.000+09:00'}, {'recordId': 77, 'id': 3, 'equipmentExerciseId': 1, 'sett': 2, 'weight': 40, 'countt': 0, 'startTime': '2020-08-20T17:00:43.000+09:00', 'endTime': '2020-08-20T17:00:44.000+09:00'}, {'recordId': 78, 'id': 3, 'equipmentExerciseId': 1, 'sett': 3, 'weight': 15, 'countt': 0, 'startTime': '2020-08-20T17:00:45.000+09:00', 'endTime': '2020-08-20T17:00:46.000+09:00'}, {'recordId': 2, 'id': 3, 'equipmentExerciseId': 2, 'sett': 10, 'weight': 100, 'countt': 30, 'startTime': '2020-08-12T16:23:00.000+09:00', 'endTime': '2020-08-12T16:25:00.000+09:00'}, {'recordId': 6, 'id': 3, 'equipmentExerciseId': 2, 'sett': 100, 'weight': 99, 'countt': 25202, 'startTime': '2020-08-13T15:15:00.000+09:00', 'endTime': '2020-08-13T15:18:30.000+09:00'}, {'recordId': 3, 'id': 3, 'equipmentExerciseId': 3, 'sett': 10, 'weight': 100, 'countt': 30, 'startTime': '2020-08-12T16:23:00.000+09:00', 'endTime': '2020-08-12T16:25:00.000+09:00'}, {'recordId': 7, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T02:50:07.000+09:00', 'endTime': '2020-08-14T02:50:10.000+09:00'}, {'recordId': 8, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T02:50:07.000+09:00', 'endTime': '2020-08-14T02:50:10.000+09:00'}, {'recordId': 9, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T02:50:07.000+09:00', 'endTime': '2020-08-14T02:50:10.000+09:00'}, {'recordId': 13, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-15T06:23:59.000+09:00', 'endTime': '2020-08-15T06:24:07.000+09:00'}, {'recordId': 14, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-15T06:24:08.000+09:00', 'endTime': '2020-08-15T06:24:17.000+09:00'}, {'recordId': 15, 'id': 3, 'equipmentExerciseId': 3, 'sett': 3, 'weight': 20, 'countt': 0, 'startTime': '2020-08-15T06:24:22.000+09:00', 'endTime': '2020-08-15T06:24:24.000+09:00'}, {'recordId': 16, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-15T15:26:28.000+09:00', 'endTime': '2020-08-15T15:26:30.000+09:00'}, {'recordId': 17, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-15T15:26:30.000+09:00', 'endTime': '2020-08-15T15:26:31.000+09:00'}, {'recordId': 18, 'id': 3, 'equipmentExerciseId': 3, 'sett': 3, 'weight': 20, 'countt': 0, 'startTime': '2020-08-15T15:26:32.000+09:00', 'endTime': '2020-08-15T15:26:33.000+09:00'}, {'recordId': 19, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T09:50:07.000+09:00', 'endTime': '2020-08-14T09:50:10.000+09:00'}, {'recordId': 20, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-14T18:50:07.000+09:00', 'endTime': '2020-08-14T18:50:10.000+09:00'}, {'recordId': 21, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T09:55:13.000+09:00', 'endTime': '2020-08-18T09:55:14.000+09:00'}, {'recordId': 22, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T09:55:14.000+09:00', 'endTime': '2020-08-18T09:55:14.000+09:00'}, {'recordId': 23, 'id': 3, 'equipmentExerciseId': 3, 'sett': 3, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T09:55:15.000+09:00', 'endTime': '2020-08-18T09:55:15.000+09:00'}, {'recordId': 24, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T00:55:44.000+09:00', 'endTime': '2020-08-18T00:55:44.000+09:00'}, {'recordId': 25, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T00:55:44.000+09:00', 'endTime': '2020-08-18T00:55:45.000+09:00'}, {'recordId': 26, 'id': 3, 'equipmentExerciseId': 3, 'sett': 3, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T00:55:45.000+09:00', 'endTime': '2020-08-18T00:55:45.000+09:00'}, {'recordId': 27, 'id': 3, 'equipmentExerciseId': 3, 'sett': 4, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T00:55:46.000+09:00', 'endTime': '2020-08-18T00:55:46.000+09:00'}, {'recordId': 29, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:40:47.000+09:00', 'endTime': '2020-08-18T01:40:48.000+09:00'}, {'recordId': 30, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:40:49.000+09:00', 'endTime': '2020-08-18T01:40:49.000+09:00'}, {'recordId': 31, 'id': 3, 'equipmentExerciseId': 3, 'sett': 3, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:40:49.000+09:00', 'endTime': '2020-08-18T01:40:49.000+09:00'}, {'recordId': 32, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:43:30.000+09:00', 'endTime': '2020-08-18T01:43:31.000+09:00'}, {'recordId': 33, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:43:30.000+09:00', 'endTime': '2020-08-18T01:43:31.000+09:00'}, {'recordId': 34, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:43:30.000+09:00', 'endTime': '2020-08-18T01:43:31.000+09:00'}, {'recordId': 35, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 36, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 37, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 38, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 39, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 40, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 44, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 45, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-18T01:46:30.000+09:00', 'endTime': '2020-08-18T01:46:30.000+09:00'}, {'recordId': 49, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-19T11:44:45.000+09:00', 'endTime': '2020-08-19T11:44:45.000+09:00'}, {'recordId': 50, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-19T11:44:46.000+09:00', 'endTime': '2020-08-19T11:44:46.000+09:00'}, {'recordId': 55, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T10:57:23.000+09:00', 'endTime': '2020-08-20T10:57:23.000+09:00'}, {'recordId': 56, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T13:59:37.000+09:00', 'endTime': '2020-08-20T13:59:37.000+09:00'}, {'recordId': 57, 'id': 3, 'equipmentExerciseId': 3, 'sett': 2, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T13:59:46.000+09:00', 'endTime': '2020-08-20T13:59:46.000+09:00'}, {'recordId': 58, 'id': 3, 'equipmentExerciseId': 3, 'sett': 1, 'weight': 20, 'countt': 0, 'startTime': '2020-08-20T14:28:21.000+09:00', 'endTime': '2020-08-20T14:28:21.000+09:00'}, {'recordId': 4, 'id': 3, 'equipmentExerciseId': 4, 'sett': 10, 'weight': 100, 'countt': 30, 'startTime': '2020-08-12T16:23:00.000+09:00', 'endTime': '2020-08-12T16:25:00.000+09:00'}, {'recordId': 5, 'id': 3, 'equipmentExerciseId': 4, 'sett': 50, 'weight': 35000, 'countt': 2700, 'startTime': '2020-08-13T15:00:00.000+09:00', 'endTime': '2020-08-13T15:10:00.000+09:00'}, {'recordId': 28, 'id': 3, 'equipmentExerciseId': 4, 'sett': 20, 'weight': 350, 'countt': 25, 'startTime': '2020-08-18T10:22:17.000+09:00', 'endTime': '2020-08-18T10:32:17.000+09:00'}, {'recordId': 41, 'id': 3, 'equipmentExerciseId': 4, 'sett': 20, 'weight': 350, 'countt': 25, 'startTime': '2020-08-18T11:22:17.000+09:00', 'endTime': '2020-08-18T11:32:17.000+09:00'}, {'recordId': 42, 'id': 3, 'equipmentExerciseId': 4, 'sett': 20, 'weight': 350, 'countt': 25, 'startTime': '2020-08-18T10:22:17.000+09:00', 'endTime': '2020-08-18T10:32:17.000+09:00'}, {'recordId': 43, 'id': 3, 'equipmentExerciseId': 4, 'sett': 20, 'weight': 350, 'countt': 25, 'startTime': '2020-08-18T10:22:17.000+09:00', 'endTime': '2020-08-18T10:32:17.000+09:00'}]/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:04:31] "GET /rasp_server/past_record/machine/ HTTP/1.1" 200 16176
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:04:35] "GET /rasp_server/past_record/today/ HTTP/1.1" 200 5332
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:04:41] "POST /rasp_server/finish_work/ HTTP/1.1" 200 132
+[20/Aug/2020 17:04:44] "GET /rasp_server/user_logout/ HTTP/1.1" 302 0
+[20/Aug/2020 17:04:45] "GET /rasp_server/user_login/ HTTP/1.1" 200 4217
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:04:47.245211) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:04:47] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:04:48.479113) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:04:48] "GET /rasp_server/watch/ HTTP/1.1" 200 14
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+[20/Aug/2020 17:04:49] "GET /rasp_server/user_nfc_login/ HTTP/1.1" 200 3638
+/usr/lib/python3/dist-packages/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)
+/home/pi/.local/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField User.login_date received a naive datetime (2020-08-20 17:04:49.601889) while time zone support is active.
+  RuntimeWarning)
+[20/Aug/2020 17:04:49] "GET /rasp_server/watch/ HTTP/1.1" 200 14
