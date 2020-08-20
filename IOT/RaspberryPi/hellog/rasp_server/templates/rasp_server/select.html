@@ -1,0 +1,18 @@
+{% extends 'base.html' %}{% block content %}
+
+<div>
+  <ul>
+    {% for part in part_list %}
+    <li>
+      <button class="btn btn-secondary">
+        {{part.name}}
+      </button>
+    </li>
+    {% endfor %}
+    <li>
+      <a href="{% url 'working_set' %}" class="btn btn-secondary">임시링크</a>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}
