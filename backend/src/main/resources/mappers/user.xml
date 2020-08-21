@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.user.UserRepository">
+
+    <select id="findByUsername" parameterType="String" resultType="User">
+        select *
+        from user
+        where username=#{username}
+    </select>
+
+    <insert id="insertUser" parameterType="User" >
+        insert into
+            user(
+                username,
+                password,
+                name,
+                birthday,
+                phone,
+                male,
+                sign_up_day,
+                height,
+                weight,
+                active,
+                limit_permit_day,
+                roles,
+                permissions
+            )
+        values (
+            #{username},
+            #{password},
+            #{name},
+            #{birthday},
+            #{phone},
+            #{male},
+            now(),
+            #{height},
+            #{weight},
+            #{active},
+            #{limitPermitDay},
+            #{roles},
+            #{permissions}
+        )
+    </insert>
+
+    <select id="selectUser" parameterType="Long" resultType="User">
+        select *
+        from user
+        where id=#{id}
+    </select>
+
+    <update id="updateUser" parameterType="User">
+        update
+            user
+        set
+            password = #{password},
+            phone = #{phone},
+            height = #{height},
+            weight = #{weight},
+            gym_id = #{gymId},
+            coach_id = #{coachId},
+            roles = #{roles},
+            permissions = #{permissions}
+        where
+            id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="Long">
+        delete from user
+        where id=#{id}
+    </delete>
+
+    <!-- User selectUserByUsername(String username); -->
+    <select id="selectUserByUsername" parameterType="String" resultType="User">
+        select
+            *
+        from
+            user
+        where
+            username = #{username}
+    </select>
+</mapper>

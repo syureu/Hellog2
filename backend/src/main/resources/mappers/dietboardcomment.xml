@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.dietboardcomment.DietBoardCommentRepository">
+
+    <!-- void insertDietBoardComment(DietBoardComment dietBoardComment); -->
+    <insert id="insertDietBoardComment" parameterType="DietBoardComment">
+        insert into
+            diet_board_comment(
+                diet_board_content_id,
+                writer,
+                write_time,
+                content,
+                reference_id
+            )
+        values(
+            #{dietBoardContentId},
+            #{writer},
+            now(),
+            #{content},
+            #{referenceId}
+        )
+    </insert>
+
+    <!-- DietBoardComment selectDietBoardComment(Long commentId); -->
+    <select id="selectDietBoardComment" parameterType="Long" resultType="DietBoardComment">
+        select
+            *
+        from
+            diet_board_comment
+        where
+            diet_board_comment_id = #{dietBoardCommentId}
+    </select>
+
+    <!-- void updateDietBoardComment(DietBoardComment dietBoardComment); -->
+    <update id="updateDietBoardComment" parameterType="DietBoardComment">
+        update
+            diet_board_comment
+        set
+            edit_time = now(),
+            content = #{content}
+        where
+            diet_board_comment_id = #{dietBoardCommentId}
+    </update>
+
+    <!-- void deleteDietBoardComment(Long commentId); -->
+    <delete id="deleteDietBoardComment" parameterType="Long">
+        delete from
+            diet_board_comment
+        where
+            diet_board_comment_id = #{dietBoardCommentId}
+    </delete>
+
+    <!-- List<DietBoardComment> selectDietBoardCommentListByContentId(Long contentId); -->
+    <select id="selectDietBoardCommentListByContentId" resultType="DietBoardComment" parameterType="Long">
+        select
+            *
+        from
+            diet_board_comment
+        where
+            diet_board_content_id = #{contentId}
+    </select>
+
+</mapper>

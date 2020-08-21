@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<style>
+  a {
+    width: 200px;
+    margin: 10px;
+  }
+</style>
+
+<div>
+  {% if exercise_list %}
+  <span>이 기구에서 할 수 있는 운동의 종류입니다.</span><br />
+  <span>기록을 위해 운동 종류를 선택해주세요.</span><br />
+  <ul class="list-unstyled">
+    {% for exercise in exercise_list %}
+    <li>
+      <a
+        class="btn btn-secondary"
+        href="{% url 'select_exercise' exercise_name=exercise.name exercise_id=exercise.exerciseId %}"
+        >{{exercise.name}}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <span>서버에 등록된 운동이 없습니다.</span><br />
+  {% endif %}
+</div>
+
+<div>
+  <button
+    class="btn btn-secondary"
+    onclick="location.href='/rasp_server/select_exercise/other'"
+  >
+    운동 시작
+  </button>
+</div>
+
+<script></script>
+{% endblock %}

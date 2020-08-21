@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.equipment.EquipmentRepository">
+    <!-- void insertEquipment(Equipment equipment); -->
+    <insert id="insertEquipment" parameterType="Equipment">
+        insert into
+            equipment(
+                gym_id,
+                name
+            )
+        values(
+            #{gymId},
+            #{name}
+        )
+    </insert>
+
+    <!-- Equipment selectEquipment(Long equipmentId); -->
+    <select id="selectEquipment" parameterType="Long" resultType="Equipment">
+        select
+            *
+        from
+            equipment
+        where
+            equipment_id = #{equipmentId}
+    </select>
+
+    <!-- void updateEquipment(Equipment equipment); -->
+    <update id="updateEquipment" parameterType="Equipment">
+        update
+            equipment
+        set
+            gym_id = #{gymId},
+            name = #{name}
+        where
+            equipment_id = #{equipmentId}
+    </update>
+
+    <!-- void deleteEquipment(Long equipmentId); -->
+    <delete id="deleteEquipment" parameterType="Long">
+        delete from
+            equipment
+        where
+            equipment_id = #{equipmentId}
+    </delete>
+</mapper>

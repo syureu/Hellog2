@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.pjt1track3.nfc.NfcRepository">
+
+    <!-- void insertNfc(Nfc nfc); -->
+    <insert id="insertNfc" parameterType="Nfc">
+        insert into
+            nfc(
+                nfc_hash,
+                id
+            )
+        values(
+            #{nfcHash},
+            #{id}
+        )
+    </insert>
+
+    <!-- Long selectIdByHashcode(String hashcode); -->
+    <select id="selectIdByHashcode" parameterType="String" resultType="Long">
+        select
+            id
+        from
+            nfc
+        where
+            nfc_hash = #{hashcode}
+    </select>
+
+    <!-- String selectUsernameFromNfcId(Long nfcId); -->
+    <select id="selectUsernameFromNfcId" resultType="String" parameterType="Long">
+        select
+            user.username
+        from
+            user, nfc
+        where
+            nfc.nfc_id = #{nfcId}
+            and
+            user.id = nfc.id;
+    </select>
+
+    <!-- Nfc selectNfc(Long nfcId); -->
+    <select id="selectNfc" parameterType="Long" resultType="Nfc">
+        select
+            *
+        from
+            nfc
+        where
+            nfc.nfc_id = #{nfcId}
+    </select>
+</mapper>
