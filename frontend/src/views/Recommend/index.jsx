@@ -410,7 +410,7 @@ const Recommend = (props) => {
           key={index}
           value={appbarIndex}
           index={index}
-          className="tab-panel "
+          className="tab-panel text-white"
         >
           <VoteGridTitle categoryData={categoryData} />
           <Divider style={{ margin: "0px 0 20px 0" }} />
