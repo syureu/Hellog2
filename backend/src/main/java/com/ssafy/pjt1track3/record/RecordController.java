@@ -16,7 +16,6 @@ import static com.ssafy.pjt1track3.util.Util.isAdmin;
 import static com.ssafy.pjt1track3.util.Util.isLoggedIn;
 
 @RestController
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/records")
 @Api(
         tags = {"Record"},

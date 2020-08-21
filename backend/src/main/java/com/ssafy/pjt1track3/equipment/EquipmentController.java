@@ -12,7 +12,6 @@ import java.security.Principal;
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
 @RestController
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/equipments")
 @Api(
         tags = {"Equipment"},

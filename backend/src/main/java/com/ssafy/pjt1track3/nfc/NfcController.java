@@ -2,7 +2,6 @@ package com.ssafy.pjt1track3.nfc;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.ssafy.pjt1track3.auth.LoginViewModel;
 import com.ssafy.pjt1track3.auth.jwt.JwtProperties;
 import io.swagger.annotations.Api;
 import org.springframework.http.HttpHeaders;
@@ -16,7 +15,6 @@ import java.util.Date;
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
 @RestController
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/nfcs")
 @Api(
         tags = {"NFC"},
