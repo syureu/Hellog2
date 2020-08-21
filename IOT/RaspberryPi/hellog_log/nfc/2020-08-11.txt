@@ -1,0 +1,804 @@
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Commerror	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Erroreerror	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Erroreerror	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Erroreerror	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Errorerror	libnfc.driver.pn532_i2c	Length checksum miserror	libnfc.driver.pn532_i2c	Command Code verificatioerror	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 1,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 51)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 21)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 51,  expected 83)
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 83,  expected 1)
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Command Code verification failed.  (got 21,  expected 83)
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+error	libnfc.chip.pn53x	Unexpected PN53x reply!
+pn53x_check_communication: Input / Output Error
+error	libnfc.driver.pn532_i2c	Length checksum mismatch
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+pn53x_check_communication: Inpuerror	libnfc.bus.error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)
+nication: Input / Output Error
+error	libnfc.bus.i2c	Error: wrote only -1 bytes (10 expected).
+error	libnfc.driver.pn532_i2c	Unable to transmit data. (TX)

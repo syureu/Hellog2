@@ -1,7 +1,6 @@
 package com.ssafy.pjt1track3.gym;
 
 import com.ssafy.pjt1track3.equipment.Equipment;
-import com.ssafy.pjt1track3.user.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
@@ -14,7 +13,6 @@ import java.util.List;
 import static com.ssafy.pjt1track3.util.Util.isAdmin;
 
 @RestController
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RequestMapping("/api/gyms")
 @Api(
         tags = {"Gym"},
