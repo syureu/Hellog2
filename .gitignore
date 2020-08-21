@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+backend/src/main/resources/application.properties
+backend/src/main/resources/bootsecurity.p12
+backend/src/main/resources/keystore.p12
+=======
 
 # Created by https://www.toptal.com/developers/gitignore/api/react
 # Edit at https://www.toptal.com/developers/gitignore?templates=react
@@ -19,3 +24,4 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react
+>>>>>>> 04972b967b0c44f62f9a39a79cd88e84721ceb9d
