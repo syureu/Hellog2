@@ -20,6 +20,10 @@ public class GymService {
 
     public void insertGym(Gym gym) {
         gymRepository.insertGym(gym);
+        User user = userRepository.selectUser(gym.getRepresentative());
+        user.setGymId(gym.getGymId());
+        user.setRoles("COACH");
+        userRepository.updateUser(user);
     }
 
     public Gym selectGym(Long gymId) {
@@ -41,12 +45,5 @@ public class GymService {
 
     public List<Equipment> selectGymEquipmentsListByUsername(String name) {
         return gymRepository.selectGymEquipmentsListByUsername(name);
-    }
-    public void updateUserToRepresentative(Long representative) {
-        User user = userRepository.selectUser(representative);
-        Gym representativesGym = gymRepository.selectGymByRepresentative(representative);
-        user.setGymId(representativesGym.getGymId());
-        user.setRoles("COACH");
-        userRepository.updateUser(user);
     }
 }
