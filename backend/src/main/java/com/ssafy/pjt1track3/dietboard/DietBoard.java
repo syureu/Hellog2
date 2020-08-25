@@ -11,49 +11,49 @@ public class DietBoard {
             example = "1",
             hidden = true
     )
-    Long dietBoardContentId;
+    private Long dietBoardContentId;
     @ApiModelProperty(
             value = "게시글 제목",
             required = true,
             example = "제가 만든 아침인데 백종원 선생님께서 보시고 우셨습니다.",
             hidden = false
     )
-    String title;
+    private String title;
     @ApiModelProperty(
             value = "작성자(의 id)",
             required = true,
             example = "1",
             hidden = false
     )
-    Long writer;
+    private Long writer;
     @ApiModelProperty(
             value = "게시글 작성 시간(서버에 요청한 시간으로 처리)",
             required = false,
             example = "2020-08-17T21:19:24.471+09:00",
-            hidden = false
+            hidden = true
     )
-    Date writeTime;
+    private Date writeTime;
     @ApiModelProperty(
             value = "게시글 수정 시간(서버에 요청한 시간으로 처리)",
             required = false,
             example = "2020-08-17T21:19:24.471+09:00",
-            hidden = false
+            hidden = true
     )
-    Date editTime;
+    private Date editTime;
     @ApiModelProperty(
             value = "게시글 내용",
             required = true,
             example = "근데 맛을 보시진 않으셨어요",
             hidden = false
     )
-    String content;
+    private String content;
     @ApiModelProperty(
             value = "첨부 사진(null일시 사진 없음, 아니면 사진 있음)",
             required = false,
             example = "BINARY DATA",
             hidden = false
     )
-    Byte[] picture;
+    private Byte[] picture;
 
     public DietBoard(Long dietBoardContentId, String title, Long writer, Date writeTime, Date editTime, String content, Byte[] picture) {
         this.dietBoardContentId = dietBoardContentId;

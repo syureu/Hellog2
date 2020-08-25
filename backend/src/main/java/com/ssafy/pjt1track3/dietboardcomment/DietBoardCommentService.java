@@ -1,5 +1,7 @@
 package com.ssafy.pjt1track3.dietboardcomment;
 
+import com.ssafy.pjt1track3.user.User;
+import com.ssafy.pjt1track3.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,9 +10,11 @@ import java.util.List;
 public class DietBoardCommentService {
 
     private DietBoardCommentRepository dietBoardCommentRepository;
+    private UserService userService;
 
-    public DietBoardCommentService(final DietBoardCommentRepository dietBoardCommentRepository) {
+    public DietBoardCommentService(final DietBoardCommentRepository dietBoardCommentRepository, final UserService userService) {
         this.dietBoardCommentRepository = dietBoardCommentRepository;
+        this.userService = userService;
     }
 
     public void insertDietBoardComment(DietBoardComment dietBoardComment) {
@@ -32,5 +36,9 @@ public class DietBoardCommentService {
 
     public List<DietBoardComment> selectDietBoardCommentListByContentId(Long contentId) {
         return dietBoardCommentRepository.selectDietBoardCommentListByContentId(contentId);
+    }
+
+    public User selectUserByWriter(Long writer) {
+        return userService.selectUser(writer);
     }
 }

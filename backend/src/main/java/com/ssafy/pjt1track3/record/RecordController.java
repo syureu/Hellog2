@@ -34,7 +34,7 @@ public class RecordController {
     public ResponseEntity<String> createRecord(@RequestBody Record record, Principal principal) {
         if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         Long requestRecordId = record.getId();
         if (requestRecordId == null) {
@@ -45,7 +45,6 @@ public class RecordController {
         User requestUserOfRecordId = recordService.selectUserById(requestRecordId);
         if (requestUserOfRecordId == null) {
             if (isAdminFlag) {
-
                 // 관리자의 요청인데 Request Body의 Record에 참조하는 id로 검색된 사람이 없는 경우
                 // 즉 등록되지 않은 회원 번호에 기록을 입력하려고 시도한 경우이므로
                 // 없는 회원 번호를 참조하려고 했음
@@ -77,7 +76,7 @@ public class RecordController {
     public ResponseEntity<Record> readRecord(@PathVariable Long recordId, Principal principal) {
         if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         boolean isAdminFlag = isAdmin(principal);
         User requestUserOfRecordId = recordService.selectUserByRecordId(recordId);
@@ -112,7 +111,7 @@ public class RecordController {
     public ResponseEntity<String> updateRecord(@PathVariable Long recordId, @RequestBody Record record, Principal principal) {
         if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         boolean isAdminFlag = isAdmin(principal);
         User requestUserOfRecordId = recordService.selectUserByRecordId(recordId);
@@ -148,7 +147,7 @@ public class RecordController {
     public ResponseEntity<String> deleteRecord(@PathVariable Long recordId, Principal principal) {
         if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         boolean isAdminFlag = isAdmin(principal);
         User requestUserOfRecordId = recordService.selectUserByRecordId(recordId);
@@ -184,7 +183,7 @@ public class RecordController {
     public ResponseEntity<List<Record>> readMyRecordList(Principal principal) {
         if (!isLoggedIn(principal)) {
             //로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         List<Record> list = recordService.selectRecordByUsername(principal.getName());
         if (list.size() > 0) {
@@ -201,7 +200,7 @@ public class RecordController {
     public ResponseEntity<List<Record>> readMyTodayRecordList(Principal principal) {
         if (!isLoggedIn(principal)) {
             //로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         List<Record> list = recordService.selectTodayRecordByUsername(principal.getName());
         if (list.size() > 0) {
@@ -218,7 +217,7 @@ public class RecordController {
     public ResponseEntity<List<Record>> readMyRecordListByEquipmentId(@PathVariable Long equipmentId, Principal principal) {
         if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         List<Record> list = recordService.selectRecordByUsernameAndEquipmentId(principal.getName(), equipmentId);
         if (list.size() > 0) {
@@ -236,7 +235,7 @@ public class RecordController {
     public ResponseEntity<List<RecordV2Dto>> readMyRecordListV2(Principal principal) {
         if (!isLoggedIn(principal)) {
             // 로그인 안했을 때
-            return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         List<RecordV2Dto> list = recordService.selectRecordByUsernameV2(principal.getName());
         if (list.size() > 0) {

@@ -1,5 +1,7 @@
 package com.ssafy.pjt1track3.dietboard;
 
+import com.ssafy.pjt1track3.user.User;
+import com.ssafy.pjt1track3.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,9 +10,11 @@ import java.util.List;
 public class DietBoardService {
 
     private DietBoardRepository dietBoardRepository;
+    private UserService userService;
 
-    public DietBoardService(final DietBoardRepository dietBoardRepository) {
+    public DietBoardService(final DietBoardRepository dietBoardRepository, final UserService userService) {
         this.dietBoardRepository = dietBoardRepository;
+        this.userService = userService;
     }
 
     public void insertDietBoard(DietBoard dietBoard) {
@@ -32,5 +36,9 @@ public class DietBoardService {
 
     public List<DietBoard> selectDietBoardList() {
         return dietBoardRepository.selectDietBoardList();
+    }
+
+    public User selectUserByWriter(Long writer) {
+        return userService.selectUser(writer);
     }
 }
