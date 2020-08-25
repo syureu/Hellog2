@@ -32,12 +32,12 @@ public class EquipmentController {
             // 로그인 안 했을 때
             return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
-        if(equipment.getGymId() == null) {
+        if (equipment.getGymId() == null) {
             // 어느 헬스장 소속 기구인지에 대한 정보가 없다면
             // 잘못된 json 요청
             return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
         }
-        if(isAdmin(principal)) {
+        if (isAdmin(principal)) {
             // 관리자의 요청
             // 바로 처리
             equipmentService.insertEquipment(equipment);
@@ -46,7 +46,7 @@ public class EquipmentController {
             // 관리자가 아닌 유저의 요청인 경우
             // 로그인한 유저가 삽입 요청된 기구가 속한 헬스장의 대표 코치인지 확인해야 함
             String username = equipmentService.selectUsernameByEquipment(equipment);
-            if(username.equals(principal.getName())) {
+            if (username.equals(principal.getName())) {
                 // 일치한다면 => 대표코치
                 // 옳은 요청
                 equipmentService.insertEquipment(equipment);
@@ -89,7 +89,7 @@ public class EquipmentController {
             return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         Equipment originEquipment = equipmentService.selectEquipment(equipmentId);
-        if(originEquipment==null) {
+        if (originEquipment == null) {
             // 수정 요청한 기구 번호가 존재하지 않기 때문에
             return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
         }
@@ -102,7 +102,7 @@ public class EquipmentController {
             // 관리자가 아닌 유저의 요청인 경우
             // 로그인한 유저가 수정 요청된 기구가 속한 헬스장의 대표 코치인지 확인해야 함
             String username = equipmentService.selectUsernameByEquipment(originEquipment);
-            if(username.equals(principal.getName())) {
+            if (username.equals(principal.getName())) {
                 // 일치한다면 => 대표코치
                 // 옳은 요청
                 equipmentService.updateEquipment(equipmentId, requestEquipment);
@@ -132,7 +132,7 @@ public class EquipmentController {
             return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         Equipment originEquipment = equipmentService.selectEquipment(equipmentId);
-        if(originEquipment==null) {
+        if (originEquipment == null) {
             // 삭제 요청한 기구 번호가 존재하지 않기 때문에
             return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
         }
@@ -145,7 +145,7 @@ public class EquipmentController {
             // 관리자가 아닌 유저의 요청인 경우
             // 로그인한 유저가 삭제 요청된 기구가 속한 헬스장의 대표 코치인지 확인해야 함
             String username = equipmentService.selectUsernameByEquipment(originEquipment);
-            if(username.equals(principal.getName())) {
+            if (username.equals(principal.getName())) {
                 // 일치한다면 => 대표코치
                 // 옳은 요청
                 equipmentService.deleteEquipment(equipmentId);

@@ -110,16 +110,16 @@ public class DietBoardController {
             // 수정 요청 게시글 번호가 있으면
             if (isAdminFlag) {
                 // 관리자는 바로 처리
-                dietBoardService.updateDietBoard(boardId,dietBoard);
+                dietBoardService.updateDietBoard(boardId, dietBoard);
                 return new ResponseEntity<>("", HttpStatus.OK);
             }
             // 관리자가 아닌경우면
             // board의 writer를 통해 그 사람의 아이디를 확인 (이건 무조건 있음)
             User user = dietBoardService.selectUserByWriter(board.getWriter());
-            if(user.getUsername().equals(principal.getName())) {
+            if (user.getUsername().equals(principal.getName())) {
                 // 요청한 사람과 현재 로그인한 사람이 같으면 (자신의 컨텐츠를 작성하는 것이라면)
                 // 옳은 요청이므로 처리
-                dietBoardService.updateDietBoard(boardId,dietBoard);
+                dietBoardService.updateDietBoard(boardId, dietBoard);
                 return new ResponseEntity<>("", HttpStatus.OK);
             } else {
                 // 관리자도 아닌데 타인의 명의로 입력 시도 하면(있는 명의의 경우)
@@ -146,9 +146,9 @@ public class DietBoardController {
         }
         boolean isAdminFlag = isAdmin(principal);
         DietBoard board = dietBoardService.selectDietBoard(boardId);
-        if(board == null) {
+        if (board == null) {
             // 없는 게시글 번호 삭제 요청이 들어왔을 경우
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자라면 잘못된 번호로 삭제 요청함 (없는 게시글)
                 return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
             } else {
@@ -158,7 +158,7 @@ public class DietBoardController {
             }
         } else {
             // 있는 게시글 번호 삭제 요청이 들어왔을 경우
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자라면 일단 처리
                 dietBoardService.deleteDietBoard(boardId);
                 return new ResponseEntity<>("", HttpStatus.OK);

@@ -29,13 +29,13 @@ public class DietBoardCommentController {
     }
 
     @PostMapping("/dietboardcomment")
-    @ApiOperation(value="식단관리 게시판에 댓글 하나를 입력 요청합니다.")
+    @ApiOperation(value = "식단관리 게시판에 댓글 하나를 입력 요청합니다.")
     public ResponseEntity<String> createDietBoardComment(@RequestBody DietBoardComment dietBoardComment, Principal principal) {
-        if(!isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안 했을 때
             return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
-        if(dietBoardComment.getWriter() == null) {
+        if (dietBoardComment.getWriter() == null) {
             // 요청 댓글의 작성자 항목이 없다면 불완전한 json인풋
             return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
         }
@@ -43,9 +43,9 @@ public class DietBoardCommentController {
         boolean isAdminFlag = isAdmin(principal);
         User user = dietBoardCommentService.selectUserByWriter(dietBoardComment.getWriter());
 
-        if(user == null) {
+        if (user == null) {
             // 요청 댓글의 작성자가 없는 회원이라면
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자의 요청이라면 잘못된 요청
                 return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
             } else {
@@ -56,13 +56,13 @@ public class DietBoardCommentController {
             }
         } else {
             // 요청 댓글의 작성자가 있는 회원이라면
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자의 요청이라면 바로 처리
                 dietBoardCommentService.insertDietBoardComment(dietBoardComment);
                 return new ResponseEntity<>("", HttpStatus.OK);
             } else {
                 // 일반 유저의 요청인데
-                if(user.getUsername().equals(principal.getName())) {
+                if (user.getUsername().equals(principal.getName())) {
                     // 요청자와 요청 댓글의 작성자가 같으면
                     // 옳은 요청이므로 처리
                     dietBoardCommentService.insertDietBoardComment(dietBoardComment);
@@ -87,11 +87,11 @@ public class DietBoardCommentController {
     }
 
     @GetMapping("/{commentId}")
-    @ApiOperation(value="식단관리 게시판의 댓글 하나를 댓글 번호를 통해 열람 요청합니다.")
+    @ApiOperation(value = "식단관리 게시판의 댓글 하나를 댓글 번호를 통해 열람 요청합니다.")
     public ResponseEntity<DietBoardComment> readDietBoardComment(@PathVariable Long commentId) {
         // 게시판 댓글은 누구나 볼 수 있다.
         DietBoardComment comment = dietBoardCommentService.selectDietBoardComment(commentId);
-        if(comment!= null) {
+        if (comment != null) {
             return new ResponseEntity<>(comment, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
@@ -99,17 +99,17 @@ public class DietBoardCommentController {
     }
 
     @PutMapping("/{commentId}")
-    @ApiOperation(value="식단관리 게시판의 댓글 하나를 댓글 번호를 통해 수정 요청합니다.")
+    @ApiOperation(value = "식단관리 게시판의 댓글 하나를 댓글 번호를 통해 수정 요청합니다.")
     public ResponseEntity<String> updateDietBoardComment(@PathVariable Long commentId, @RequestBody DietBoardComment dietBoardComment, Principal principal) {
-        if(!isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안 했을 때
             return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         boolean isAdminFlag = isAdmin(principal);
         DietBoardComment comment = dietBoardCommentService.selectDietBoardComment(commentId);
-        if(comment==null) {
+        if (comment == null) {
             // 수정 요청 한 댓글 번호가 존재 하지 않을 때
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자라면
                 // 잘못된 요청
                 return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
@@ -121,12 +121,12 @@ public class DietBoardCommentController {
             }
         } else {
             // 댓글 번호 존재 할 때
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자라면
                 // 바로 처리
                 dietBoardCommentService.updateDietBoardComment(commentId, dietBoardComment);
                 return new ResponseEntity<>("", HttpStatus.OK);
-            } else if (comment.getWriter().equals(principal.getName())){
+            } else if (comment.getWriter().equals(principal.getName())) {
                 // 일반 유저인데 댓글 작성자와 로그인한 유저가 같으면
                 // 옳은 요청이므로 수정 처리
                 dietBoardCommentService.updateDietBoardComment(commentId, dietBoardComment);
@@ -151,17 +151,17 @@ public class DietBoardCommentController {
     }
 
     @DeleteMapping("/{commentId}")
-    @ApiOperation(value="식단관리 게시판의 댓글 하나를 댓글 번호를 통해 삭제 요청합니다.")
+    @ApiOperation(value = "식단관리 게시판의 댓글 하나를 댓글 번호를 통해 삭제 요청합니다.")
     public ResponseEntity<String> deleteDietBoardComment(@PathVariable Long commentId, Principal principal) {
-        if(!isLoggedIn(principal)) {
+        if (!isLoggedIn(principal)) {
             // 로그인 안 했을 때
             return new ResponseEntity<>("", HttpStatus.UNAUTHORIZED);
         }
         boolean isAdminFlag = isAdmin(principal);
         DietBoardComment comment = dietBoardCommentService.selectDietBoardComment(commentId);
-        if(comment == null) {
+        if (comment == null) {
             // 댓글 번호의 댓글이 없으면
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자라면
                 // 잘못된 삭제 요청
                 return new ResponseEntity<>("", HttpStatus.BAD_REQUEST);
@@ -173,7 +173,7 @@ public class DietBoardCommentController {
             }
         } else {
             // 댓글 번호의 댓글이 있으면
-            if(isAdminFlag) {
+            if (isAdminFlag) {
                 // 관리자라면
                 // 바로 처리
                 dietBoardCommentService.deleteDietBoardComment(commentId);
@@ -204,7 +204,7 @@ public class DietBoardCommentController {
     @GetMapping("/bycontent/{contentId}")
     public ResponseEntity<List<DietBoardComment>> readDietBoardCommentListByContentId(@PathVariable Long contentId) {
         List<DietBoardComment> list = dietBoardCommentService.selectDietBoardCommentListByContentId(contentId);
-        if(list.size()>0) {
+        if (list.size() > 0) {
             return new ResponseEntity<>(list, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
