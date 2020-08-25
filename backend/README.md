@@ -2,7 +2,7 @@
 
 ## 발표용 자료는 아래를 참조하세요.
 
-[발표용 자료 확인](https://drive.google.com/file/d/1fhAHiIl2cWime065To0_3jW1dw42V1af/view?usp=sharing)
+[발표용 자료 확인](https://drive.google.com/drive/folders/1X6DLyIvsabescjggW2A1cYe6d102yDHK?usp=sharing)
 
 ## 로컬에서 헬로그 백엔드를 실행하는 법
 
